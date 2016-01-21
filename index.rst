@@ -11,3 +11,6 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+
+   jupyter_notebooks
+     
