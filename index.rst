@@ -1,15 +1,18 @@
-.. Development II seminar documentation master file, created by
-   sphinx-quickstart on Wed Jan 20 14:50:04 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Econ Development II seminar (Spring 2016)
-===========================================
+Development II seminar (Spring 2016)
+=======================================
+Notes and support materials for The Graduate
+Center's `Economics 842:`_ taught by Jonathan Conning
 
 
-Contents:
+Please note that this is very much a draft of work in progress. Some of
+the sections of the documents that follow are *very* preliminar.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
+
 
    notebooks/jupyter_notebooks
+   notebooks/Harris_Todaro
+   notebooks/dataAPIs
+
+.. _Economics 842: http://www.gc.cuny.edu/Page-Elements/Academics-Research-Centers-Initiatives/Doctoral-Programs/Economics/Courses
