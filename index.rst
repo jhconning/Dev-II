@@ -1,6 +1,7 @@
 Development II seminar (Spring 2016)
 =======================================
 Notes and support materials for The Graduate
+
 Center's `Economics 842:`_ taught by Jonathan Conning
 
 
@@ -14,5 +15,6 @@ the sections of the documents that follow are *very* preliminar.
    notebooks/jupyter_notebooks
    notebooks/Harris_Todaro
    notebooks/dataAPIs
+
 
 .. _Economics 842: http://www.gc.cuny.edu/Page-Elements/Academics-Research-Centers-Initiatives/Doctoral-Programs/Economics/Courses
