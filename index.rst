@@ -14,10 +14,11 @@ The rest of the site is a very early stab at assembling lecture
 notes and reading notes on development microeconomics topics all written
 as interactive jupyter notebooks (described below).
 
-This is a *very, very* preliminary set of materials.   These will get cleaned
+This is a *very* preliminary set of materials.   These will get cleaned
 up over time and more content posted. If you'd like to suggest edits or
 contribute material please do so via the github repository:
-    https://github.com/jhconning/Dev-II
+
+https://github.com/jhconning/Dev-II
 
 Development Microeconomics with Jupyter Notebooks
 ----------------------------------------------------
