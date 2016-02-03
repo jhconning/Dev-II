@@ -25,6 +25,7 @@ Development Microeconomics with Jupyter Notebooks
    :maxdepth: 3
 
    notebooks/jupyter_notebooks
+   notebooks/Lucas88
    notebooks/Harris_Todaro
    notebooks/DataAPIs
 
