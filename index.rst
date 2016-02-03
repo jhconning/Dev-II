@@ -4,20 +4,26 @@ Notes and support materials for The Graduate
 
 Center's `Economics 842:`_ taught by Jonathan Conning
 
+The `Reading list`_ provides (where possible) links to weekly reading
+assignments and the original course Syllabus_.
+.. _Reading list: https://goo.gl/ZDoOJ5
+.. _Syllabus: https://goo.gl/ZDoOJ5
 
-Please note that this is very much work in progress; not much
-more than a collection of notebook fragments. Some of
-the sections of the documents that follow are *very* preliminary
-and several code blocks may be broken.  Over time this will get cleaned
-and more content posted.
+The rest of the site is very early stab at an effort to assemble lecture
+notes and reading materials written as jupyter notebooks (see below).
+This is a *very* preliminary set of materials.  This will get cleaned
+up over time and more content posted. If you'd like to suggest edits or 
+contribute material please do so via the github repository for this site
+at the `github repo`_ for this site.
+.._gitub repo: https://github.com/jhconning/Dev-II
 
+Development Microeconomics with Jupyter Notebooks
+----------------------------------------------------
 .. toctree::
    :maxdepth: 3
-
 
    notebooks/jupyter_notebooks
    notebooks/Harris_Todaro
    notebooks/dataAPIs
-
 
 .. _Economics 842: http://www.gc.cuny.edu/Page-Elements/Academics-Research-Centers-Initiatives/Doctoral-Programs/Economics/Courses
