@@ -22,8 +22,11 @@ https://github.com/jhconning/Dev-II
 
 Development Microeconomics with Jupyter Notebooks
 ----------------------------------------------------
+Table of contents isn't showing right indentation for some
+reason...
+
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    notebooks/jupyter_notebooks
    notebooks/Lucas88
