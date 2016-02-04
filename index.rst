@@ -1,6 +1,6 @@
-Development II seminar (Spring 2016)
+Econ 842 Development II (Spring 2016)
 =======================================
-Notes and support materials for The Graduate
+Notes and materials for The Graduate
 Center's Economics 842 taught by Jonathan Conning
 
 `Reading list`_ (with links to weekly reading assignments):
@@ -14,22 +14,25 @@ The rest of the site is a very early stab at assembling lecture
 notes and reading notes on development microeconomics topics all written
 as interactive jupyter notebooks (described below).
 
-This is a *very* preliminary set of materials.   These will get cleaned
-up over time and more content posted. If you'd like to suggest edits or
-contribute material please do so via the github repository:
+This is a *very* preliminary.   Over time I'll post more content and
+improve the posted drafts. If you'd like to suggest edits or
+contribute material please do so via the github repository
+(start an 'issue ticket'):
 
 https://github.com/jhconning/Dev-II
 
 Development Microeconomics with Jupyter Notebooks
 ----------------------------------------------------
-Table of contents isn't showing right indentation for some
-reason...
+Table of contents is not showing correct indentation for some
+reason (bear with me while I struggle with Sphinx rendering)...
 
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
 
    notebooks/jupyter_notebooks
    notebooks/Lucas88
+   notebooks/SFM
    notebooks/Harris_Todaro
    notebooks/DataAPIs
 
