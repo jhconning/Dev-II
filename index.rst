@@ -33,7 +33,6 @@ reason (bear with me while I struggle with Sphinx rendering)...
    notebooks/jupyter_notebooks
    notebooks/Lucas88
    notebooks/SFM
-   notebooks/Harris_Todaro
    notebooks/DataAPIs
 
 .. _Economics 842: http://www.gc.cuny.edu/Page-Elements/Academics-Research-Centers-Initiatives/Doctoral-Programs/Economics/Courses
