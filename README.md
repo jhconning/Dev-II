@@ -41,7 +41,7 @@ this somewhat as the semester advances.
 | --------| :-----|
 | [jupyter_notebooks]  | Economics with Jupyter Notebooks  |
 | [SFM] |The Specific Factors Model |
-| [Lucas88] |Lucas' 1990 AER paper 'Why Doesn't Capital Flow from Rich to Poor Countries?'' |
+| [Lucas90] |Lucas' 1990 AER paper 'Why Doesn't Capital Flow from Rich to Poor Countries?'' |
 | __Jupyter and python tips__ | |
 | [DHBox] | How to run notebooks using the GC's DHBox service (no setup on your machine)  |
 | [DataAPIs] | Use the pandas library and a data API to access online datasets |
@@ -53,7 +53,7 @@ this somewhat as the semester advances.
 [notebooks folder]:https://github.com/jhconning/Dev-II/tree/master/notebooks
 [dev-ii-seminar.readthedocs.org]:http://dev-ii-seminar.readthedocs.org/
 [jupyter_notebooks]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/jupyter_notebooks.ipynb
-[Lucas88]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/Lucas88.ipynb
+[Lucas90]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/Lucas90.ipynb
 [SFM]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SFM.ipynb
 [DHBox]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DHBox.ipynb
 [DataAPIs]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DataAPIs.ipynb
