@@ -10,6 +10,11 @@ Original course Syllabus_
 .. _Reading list:  https://goo.gl/6Nvy4b
 .. _Syllabus: https://goo.gl/ZDoOJ5
 
+PLEASE VISIT THE GITHUB REPOSITORY FOR THE MOST UP TO DATE CONTENT
+(AS NOT EVERYTHING IS BEING RENDERED HERE)
+
+https://github.com/jhconning/Dev-II
+
 The rest of the site is a very early stab at assembling lecture
 notes and reading notes on development microeconomics topics all written
 as interactive jupyter notebooks (described below).
@@ -31,8 +36,9 @@ reason (bear with me while I struggle with Sphinx rendering)...
    :titlesonly:
 
    notebooks/jupyter_notebooks
-   notebooks/Lucas88
+   notebooks/Lucas90
    notebooks/SFM
+   notebooks/HarrisTodaro
    notebooks/DataAPIs
 
 .. _Economics 842: http://www.gc.cuny.edu/Page-Elements/Academics-Research-Centers-Initiatives/Doctoral-Programs/Economics/Courses
