@@ -37,12 +37,14 @@ all this content (but as of 2/6 not all repo content was converting).
 There are only a few draft notebooks in the collection now.  I hope to expand
 this somewhat as the semester advances.
 
-| Lectures and Reading notes |  |
+| Lecture/Reading Note |Description  |
 | --------| :-----|
 | [jupyter_notebooks]  | Economics with Jupyter Notebooks  |
 | [SFM] |The Specific Factors Model |
 | [Lucas90] |Lucas' 1990 AER paper 'Why Doesn't Capital Flow from Rich to Poor Countries?'' |
-| __Jupyter and python tips__ | |
+| __Building blocks__ | |
+| [consume_opt1] | Consumer optimum and (interactive) indifference curve plots  |
+| __Jupyter & python tips__ | |
 | [DHBox] | How to run notebooks using the GC's DHBox service (no setup on your machine)  |
 | [DataAPIs] | Use the pandas library and a data API to access online datasets |
 
@@ -55,5 +57,22 @@ this somewhat as the semester advances.
 [jupyter_notebooks]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/jupyter_notebooks.ipynb
 [Lucas90]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/Lucas90.ipynb
 [SFM]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SFM.ipynb
+[consume_opt]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/consume_opt1.ipynb
 [DHBox]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DHBox.ipynb
 [DataAPIs]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DataAPIs.ipynb
+
+
+
+ __Other Resources__
+
+ A few other sites similar to this using jupyter notebooks and scientific
+ python for economics:
+
+ | Sites and Repos |Description  |
+ | --------| :-----|
+ | [Quantecon]  | Economics with Jupyter Notebooks  |
+ | [nyu_eco370] |NYU's Spring '16 ECO370: Quantitative Economics with Python|
+
+
+[Quantecon]:http://quant-econ.net/
+[nyu_eco370]:https://github.com/mmcky/nyu-econ-370
