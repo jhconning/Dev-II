@@ -1,0 +1,7 @@
+dependencies:
+- numpy
+- seaborn
+- scipy
+- ipywidgets
+- pandas-datareader
+- bokeh

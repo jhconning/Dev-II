@@ -42,8 +42,8 @@ this somewhat as the semester advances.
 | [jupyter_notebooks]  | Economics with Jupyter Notebooks  |
 | [SFM] |The Specific Factors Model |
 | [Lucas90] |Lucas' 1990 AER paper 'Why Doesn't Capital Flow from Rich to Poor Countries?'' |
-| __Building blocks__ | |
-| [consume_opt1] | Consumer optimum and (interactive) indifference curve plots  |
+| __Micro-building blocks__ | |
+| [consume_opt1] | Static consumer optimum and (interactive) indifference curve plot  |
 | __Jupyter & python tips__ | |
 | [DHBox] | How to run notebooks using the GC's DHBox service (no setup on your machine)  |
 | [DataAPIs] | Use the pandas library and a data API to access online datasets |
