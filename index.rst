@@ -39,6 +39,8 @@ reason (bear with me while I struggle with Sphinx rendering)...
    notebooks/Lucas90
    notebooks/SFM
    notebooks/HarrisTodaro
+   notebooks/consume_opt1
    notebooks/DataAPIs
+   notebooks/Stata_in_jupyter
 
 .. _Economics 842: http://www.gc.cuny.edu/Page-Elements/Academics-Research-Centers-Initiatives/Doctoral-Programs/Economics/Courses

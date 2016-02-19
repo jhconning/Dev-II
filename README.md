@@ -41,6 +41,7 @@ to quick static views of the notebook content.
 | [consume_opt1] | Static consumer optimum and (interactive) indifference curve plot  |
 | __Jupyter & python tips__ | |
 | [DHBox] | How to run notebooks using the GC's DHBox service (no setup on your machine)  |
+| [Stata_in_jupyter] | Run Stata in a jupyter notebook moving data to and from python  |
 | [DataAPIs] | Use the pandas library and a data API to access online datasets |
 
 
@@ -55,6 +56,7 @@ to quick static views of the notebook content.
 [consume_opt1]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/consume_opt1.ipynb
 [DHBox]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DHBox.ipynb
 [DataAPIs]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DataAPIs.ipynb
+[Stata_in_jupyter]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/Stata_in_jupyter.ipynb
 
 The course site [dev-ii-seminar.readthedocs.org] has the reading list
 and syllabus for the course and auto-generated styled HTML and PDF versions of
