@@ -37,6 +37,7 @@ to quick static views of the notebook content.
 | [SFM] |The Specific Factors Model |
 | [Lucas90] |Lucas' 1990 AER paper 'Why Doesn't Capital Flow from Rich to Poor Countries?'' |
 | [HarrisTodaro] |Harris and Todaro's 1970 paper 'Migration, unemployment and development' |
+| [FarmHousehold] |Separable and non-separable Farm Household Models|
 | __useful building blocks__ | |
 | [consume_opt1] | Static consumer optimum and (interactive) indifference curve plot  |
 | __Jupyter & python tips__ | |
@@ -51,6 +52,7 @@ to quick static views of the notebook content.
 [dev-ii-seminar.readthedocs.org]:http://dev-ii-seminar.readthedocs.org/
 [jupyter_notebooks]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/jupyter_notebooks.ipynb
 [HarrisTodaro]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/HarrisTodaro.ipynb
+[FarmHousehold]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/FarmHousehold.ipynb
 [Lucas90]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/Lucas90.ipynb
 [SFM]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SFM.ipynb
 [consume_opt1]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/consume_opt1.ipynb

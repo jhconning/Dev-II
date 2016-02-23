@@ -39,6 +39,7 @@ reason (bear with me while I struggle with Sphinx rendering)...
    notebooks/Lucas90
    notebooks/SFM
    notebooks/HarrisTodaro
+   notebooks/FarmHousehold
    notebooks/consume_opt1
    notebooks/DataAPIs
    notebooks/Stata_in_jupyter
