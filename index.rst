@@ -19,8 +19,8 @@ The rest of the site is a very early stab at assembling lecture
 notes and reading notes on development microeconomics topics all written
 as interactive jupyter notebooks (described below).
 
-This is a *very* preliminary.   Over time I'll post more content and
-improve the posted drafts. If you'd like to suggest edits or
+This is a *very* preliminary set of notes.  Over time I'll post new content and
+improve the posted drafts. If you spot errors or would like to suggest edits or
 contribute material please do so via the github repository
 (start an 'issue ticket'):
 
@@ -28,8 +28,8 @@ https://github.com/jhconning/Dev-II
 
 Development Microeconomics with Jupyter Notebooks
 ----------------------------------------------------
-Table of contents is not showing correct indentation for some
-reason (bear with me while I struggle with Sphinx rendering)...
+The table of contents is not indenting properly for some
+reason (bear with me while I struggle to understand Sphinx rendering)...
 
 .. toctree::
    :maxdepth: 2
@@ -37,6 +37,7 @@ reason (bear with me while I struggle with Sphinx rendering)...
 
    notebooks/jupyter_notebooks
    notebooks/Lucas90
+   notebooks/EdgeworthProduction
    notebooks/SFM
    notebooks/HarrisTodaro
    notebooks/FarmHousehold
