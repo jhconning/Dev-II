@@ -39,6 +39,7 @@ to quick static views of the notebook content.
 | [SFM] |The Specific Factors Model |
 | [HarrisTodaro] |Harris and Todaro's 1970 paper 'Migration, unemployment and development' |
 | [FarmHousehold] |Separable and non-separable Farm Household Models|
+| [SizeDistribution] |General Equilibium Size Distribution of Farms |
 | __useful building blocks__ | |
 | [consume_opt1] | Static consumer optimum and (interactive) indifference curve plot  |
 | __Jupyter & python tips__ | |
@@ -55,6 +56,7 @@ to quick static views of the notebook content.
 [Edgeworth]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/EdgeworthProduction.ipynb
 [HarrisTodaro]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/HarrisTodaro.ipynb
 [FarmHousehold]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/FarmHousehold.ipynb
+[SizeDistribution]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SizeDistribution.ipynb
 [Lucas90]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/Lucas90.ipynb
 [SFM]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SFM.ipynb
 [consume_opt1]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/consume_opt1.ipynb

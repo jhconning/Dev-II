@@ -10,8 +10,8 @@ Original course Syllabus_
 .. _Reading list:  https://goo.gl/6Nvy4b
 .. _Syllabus: https://goo.gl/ZDoOJ5
 
-PLEASE VISIT THE GITHUB REPOSITORY FOR THE MOST UP TO DATE CONTENT
-(AS NOT EVERYTHING IS BEING RENDERED HERE)
+PLEASE ALOS VISIT THE GITHUB REPOSITORY FOR THE MOST UP TO DATE CONTENT
+(AS SOME CONTENT MAY NOT BE BEING RENDERED HERE)
 
 https://github.com/jhconning/Dev-II
 
@@ -41,6 +41,7 @@ reason (bear with me while I struggle to understand Sphinx rendering)...
    notebooks/SFM
    notebooks/HarrisTodaro
    notebooks/FarmHousehold
+   notebooks/SizeDistribution
    notebooks/consume_opt1
    notebooks/DataAPIs
    notebooks/Stata_in_jupyter
