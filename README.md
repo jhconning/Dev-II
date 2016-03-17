@@ -33,16 +33,15 @@ to quick static views of the notebook content.
 
 | Lecture/Reading Note |Description  |
 | --------| :-----|
-| [jupyter_notebooks]  | Economics with Jupyter Notebooks  |
+| [jupyter_notebooks]  |Economics with Jupyter Notebooks  |
 | [Lucas90] |Lucas' 1990 AER paper 'Why Doesn't Capital Flow from Rich to Poor Countries?'' |
 | [Edgeworth] |Edgeworth Box: Efficiency in Production|
 | [SFM] |The Specific Factors Model |
 | [HarrisTodaro] |Harris and Todaro's 1970 paper 'Migration, unemployment and development' |
 | [FarmHousehold] |Separable and non-separable Farm Household Models|
 | [SizeDistribution] |General Equilibrium Size Distribution of Farms |
-| __useful building blocks__ | |
-| [InsecureRights] | Causes and consequences of insecure property
-rights to land |
+| [InsecureRights] |Causes and consequences of insecure property rights to land|
+| __useful building blocks__ |
 | [consume_opt1] | Static consumer optimum and (interactive) indifference curve plot  |
 | __Jupyter & python tips__ | |
 | [DHBox] | How to run notebooks using the GC's DHBox service (no setup on your machine)  |
