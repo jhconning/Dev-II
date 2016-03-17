@@ -39,8 +39,10 @@ to quick static views of the notebook content.
 | [SFM] |The Specific Factors Model |
 | [HarrisTodaro] |Harris and Todaro's 1970 paper 'Migration, unemployment and development' |
 | [FarmHousehold] |Separable and non-separable Farm Household Models|
-| [SizeDistribution] |General Equilibium Size Distribution of Farms |
+| [SizeDistribution] |General Equilibrium Size Distribution of Farms |
 | __useful building blocks__ | |
+| [InsecureRights] | Causes and consequences of insecure property
+rights to land |
 | [consume_opt1] | Static consumer optimum and (interactive) indifference curve plot  |
 | __Jupyter & python tips__ | |
 | [DHBox] | How to run notebooks using the GC's DHBox service (no setup on your machine)  |
@@ -57,6 +59,7 @@ to quick static views of the notebook content.
 [HarrisTodaro]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/HarrisTodaro.ipynb
 [FarmHousehold]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/FarmHousehold.ipynb
 [SizeDistribution]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SizeDistribution.ipynb
+[InsecureRights]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/InsecureRights.ipynb
 [Lucas90]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/Lucas90.ipynb
 [SFM]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SFM.ipynb
 [consume_opt1]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/consume_opt1.ipynb
