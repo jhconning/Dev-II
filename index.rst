@@ -10,17 +10,18 @@ Original course Syllabus_
 .. _Reading list:  https://goo.gl/6Nvy4b
 .. _Syllabus: https://goo.gl/ZDoOJ5
 
-PLEASE ALOS VISIT THE GITHUB REPOSITORY FOR THE MOST UP TO DATE CONTENT
-(AS SOME CONTENT MAY NOT BE BEING RENDERED HERE)
+This is the Sphinx (html) rendered version of these notebooks.
+Please visit the github repository for the most up to date content
+(some content may not be rendered here)
 
 https://github.com/jhconning/Dev-II
 
-The rest of the site is a very early stab at assembling lecture
-notes and reading notes on development microeconomics topics all written
-as interactive jupyter notebooks (described below).
+The rest of the site is a very rough assembling of reading and
+lecture notes on development microeconomics topics all written
+as interactive jupyter notebooks.
 
-This is a *very* preliminary set of notes.  Over time I'll post new content and
-improve the posted drafts. If you spot errors or would like to suggest edits or
+This is *very* preliminary.  Over time I'll improve the posted drafts.
+If you spot errors or would like to suggest edits or
 contribute material please do so via the github repository
 (start an 'issue ticket'):
 
@@ -42,6 +43,7 @@ reason (bear with me while I struggle to understand Sphinx rendering)...
    notebooks/HarrisTodaro
    notebooks/FarmHousehold
    notebooks/SizeDistribution
+   notebooks/InsecureRights
    notebooks/consume_opt1
    notebooks/DataAPIs
    notebooks/Stata_in_jupyter
