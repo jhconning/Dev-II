@@ -41,8 +41,8 @@ to quick static views of the notebook content.
 | [FarmHousehold] |Separable and non-separable Farm Household Models|
 | [SizeDistribution] |General Equilibrium Size Distribution of Farms |
 | [InsecureRights] |Causes and consequences of insecure property rights to land|
-| __useful building blocks__ |
-| [consume_opt1] | Static consumer optimum and (interactive) indifference curve plot  |
+| [consume_opt1] | Static and intertemporal consumer optimum w/interactive indifference plots  |
+| [SavingsCommit] | Time-inconsistent preferences and commitment savings (theory and data replication) |
 | __Jupyter & python tips__ | |
 | [DHBox] | How to run notebooks using the GC's DHBox service (no setup on your machine)  |
 | [Stata_in_jupyter] | Run Stata in a jupyter notebook moving data to and from python  |
@@ -62,6 +62,7 @@ to quick static views of the notebook content.
 [Lucas90]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/Lucas90.ipynb
 [SFM]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SFM.ipynb
 [consume_opt1]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/consume_opt1.ipynb
+[SavingsCommit]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SavingsCommit.ipynb
 [DHBox]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DHBox.ipynb
 [DataAPIs]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DataAPIs.ipynb
 [Stata_in_jupyter]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/Stata_in_jupyter.ipynb

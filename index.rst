@@ -45,6 +45,7 @@ reason (bear with me while I struggle to understand Sphinx rendering)...
    notebooks/SizeDistribution
    notebooks/InsecureRights
    notebooks/consume_opt1
+   notebooks/SavingsCommit
    notebooks/DataAPIs
    notebooks/Stata_in_jupyter
 
