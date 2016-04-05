@@ -3,5 +3,6 @@ dependencies:
 - seaborn
 - scipy
 - ipywidgets
+- ipystata
 - pandas-datareader
 - bokeh
