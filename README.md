@@ -43,6 +43,7 @@ to quick static views of the notebook content.
 | [InsecureRights] |Causes and consequences of insecure property rights to land|
 | [consume_opt1] | Static and intertemporal consumer optimum w/interactive indifference plots  |
 | [SavingsCommit] | Time-inconsistent preferences and commitment savings (theory and data replication) |
+| [Incentives_Corruption] | Principal-Intermediary-Agent models in procurement and corruption |
 | __Jupyter & python tips__ | |
 | [DHBox] | How to run notebooks using the GC's DHBox service (no setup on your machine)  |
 | [Stata_in_jupyter] | Run Stata in a jupyter notebook moving data to and from python  |
@@ -63,6 +64,7 @@ to quick static views of the notebook content.
 [SFM]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SFM.ipynb
 [consume_opt1]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/consume_opt1.ipynb
 [SavingsCommit]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SavingsCommit.ipynb
+[Incentives_Corruption]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/incentives_corruption.ipynb
 [DHBox]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DHBox.ipynb
 [DataAPIs]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DataAPIs.ipynb
 [Stata_in_jupyter]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/Stata_in_jupyter.ipynb
