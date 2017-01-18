@@ -1,6 +1,6 @@
 Econ 842 Development II (Spring 2016)
 =======================================
-Notes and materials for The Graduate
+Lecture Notes and materials for The Graduate
 Center's Economics 842 taught by Jonathan Conning
 
 `Reading list`_ (with links to weekly reading assignments):
@@ -42,6 +42,7 @@ reason (bear with me while I struggle to understand Sphinx rendering)...
    notebooks/SFM
    notebooks/HarrisTodaro
    notebooks/FarmHousehold
+   notebooks/SeparationTests
    notebooks/SizeDistribution
    notebooks/InsecureRights
    notebooks/consume_opt1
