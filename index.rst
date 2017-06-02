@@ -23,6 +23,8 @@ contribute material please do so via the github repository
 Development Microeconomics with Jupyter Notebooks
 ----------------------------------------------------
 List of notebooks:
+
+
 .. toctree::
    :maxdepth: 2
    :titlesonly:
