@@ -10,28 +10,19 @@ Original course Syllabus_
 .. _Reading list:  https://goo.gl/6Nvy4b
 .. _Syllabus: https://goo.gl/ZDoOJ5
 
-This is the Sphinx (html) rendered version of these notebooks.
-Please visit the github repository for the most up to date content
-(some content may not be rendered here)
-
-https://github.com/jhconning/Dev-II
-
-The rest of the site is a very rough assembling of reading and
+This is a rough assembling of reading and
 lecture notes on development microeconomics topics all written
-as interactive jupyter notebooks.
+as interactive jupyter notebooks. The content can be read in a variety of ways: (1) as webpages  http://dev-ii-seminar.readthedocs.io/
+(2) as a PDF book: http://readthedocs.org/projects/dev-ii-seminar/downloads/pdf/latest/ or (3) as jupyter notebooks and other files at: https://github.com/jhconning/Dev-II
 
-This is *very* preliminary.  Over time I'll improve the posted drafts.
+These are *very* preliminary.  Over time I'll improve the posted drafts.
 If you spot errors or would like to suggest edits or
 contribute material please do so via the github repository
 (start an 'issue ticket'):
 
-https://github.com/jhconning/Dev-II
-
 Development Microeconomics with Jupyter Notebooks
 ----------------------------------------------------
-The table of contents is not indenting properly for some
-reason (bear with me while I struggle to understand Sphinx rendering)...
-
+List of notebooks:
 .. toctree::
    :maxdepth: 2
    :titlesonly:
