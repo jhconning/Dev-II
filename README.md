@@ -23,8 +23,14 @@ of lecture notes and more like an idiosyncratic collection of reading notes
 and materials that complement lecture notes by inviting you to explore and
 extend the embedded simulations and data analyses.
 
-If you click [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/jhconning/Dev-II)
-you will launch a cloud-based juptyer notebook server that will allow you to
+Viewing and interacting with content
+----------------------------------------------
+Jupyter notebooks opens a world of new ways of creating content including text, math and code for interactive 
+simulation and visualization. Jupyter notebooks can also be easily converted to render the content in different ways and
+formats.
+
+(NEW!) This content is now mirrored to a [Microsoft Azure Notebook library for this content](https://notebooks.azure.com/jhconning/libraries/DevII).  If you login with a free Microsoft account
+you can launch a cloud-based juptyer notebook server that will allow you to
 run any of the notebooks interactively.  Alternatively, clone this github
 and run them on your own computer.
 
