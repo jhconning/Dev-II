@@ -5,6 +5,11 @@
 
  __Lecture and reading Notes as Jupyter Notebooks__
 
+**NEW !** The jupyter notebooks can now be run from a Microsoft Azure 
+[jupyter notebook server](https://notebooks.azure.com/jhconning/libraries/DevII). 
+Create a free account and clone and/or run from the
+[notebook folder](https://notebooks.azure.com/jhconning/libraries/DevII/tree/notebooks) 
+
 This is a repository of [jupyter notebooks] on topics in the Microeconomics of
 Development. There are only a couple rough notebooks here now, but over time
 these should become more numerous and more polished. Some notebooks offer
