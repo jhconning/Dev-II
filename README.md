@@ -1,5 +1,5 @@
 # Dev-II
- Materials for The Graduate Center's Spring 2016 Economics
+ Materials for The Graduate Center's Spring 2018 Economics
  Development II PhD seminar.
 
 
@@ -10,23 +10,29 @@
 Create a free account and clone and/or run from the
 [notebook folder](https://notebooks.azure.com/jhconning/libraries/DevII/tree/notebooks) 
 
-This is a repository of [jupyter notebooks] on topics in the Microeconomics of
-Development. There are only a couple rough notebooks here now, but over time
-these should become more numerous and more polished. Some notebooks offer
-just simple analytic summaries of interesting topics or academic papers, while
-others provide code for simulations and visualizations of applied theory models
-to replicate and extend results. I hope to add a few replications of empirical
+This is a repository of [jupyter notebooks] on topics in the
+Microeconomics of Development. Most of what you see here were first
+developed for a Spring 2016 version of this course. Most are still only
+rough notebooks on specific topics, but over time I hope these should
+become more numerous and more polished.
+
+Some notebooks offer just simple analytic summaries of interesting
+topics or academic papers, while others provide code for simulations
+and visualizations of applied theory models
+to replicate and extend results. I hope to add a few replications
+of empirical
 papers as well. Topics are drawn from the fields of trade and growth,
 household economics, agrarian production structure and the equilibrium
 size distribution of firms, the political economy of property rights,
-institutions and policy reform, the theory of contracts and intermediation
-(in markets for land, labor and financial services), as well as papers on
-targeting, RCTs and program impact evaluation.
+institutions and policy reform, the theory of contracts and
+intermediation (in markets for land, labor and financial services),
+as well as papers on targeting, RCTs and program impact evaluation.
 
-In its present form this is much less like a coherent sequential collection
-of lecture notes and more like an idiosyncratic collection of reading notes
-and materials that complement lecture notes by inviting you to explore and
-extend the embedded simulations and data analyses.
+In its present form this is much less like a coherent sequential
+collection of lecture notes and more like an idiosyncratic collection
+of reading notes and materials that complement lecture notes by
+inviting you to explore and extend the embedded simulations and
+data analyses.
 
 Viewing and interacting with content
 ----------------------------------------------
