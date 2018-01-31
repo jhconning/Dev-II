@@ -9,7 +9,7 @@ Center's Economics 842 taught by Jonathan Conning
 
 Original course Syllabus_
 
-.. _Reading list:  https://goo.gl/6Nvy4b
+.. _Weekly Reading list:  coming soon
 .. _Syllabus: https://goo.gl/ZDoOJ5
 
 This is a rough assembly of reading and
