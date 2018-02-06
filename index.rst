@@ -3,33 +3,18 @@ Econ 842 Development II (Spring 2018)
 Lecture Notes and materials for The Graduate
 Center's Economics 842 taught by Jonathan Conning
 
-**NEW !** jupyter notebooks can be run interactively at: https://notebooks.azure.com/jhconning/libraries/DevII
+- `Reading list`_ (links to weekly reading assignments)
+- `Syllabus`_ (course details and longer bibliography)
 
-`Reading list`_ (with links to weekly reading assignments):
-
-Original course Syllabus_
-
-.. _Weekly Reading list:  coming soon
+.. _Reading list:  https://docs.google.com/document/d/1J-wXvwgqtep2HkwHhlahWs6Te-UgxKcaR0h73pIPQSs/edit?usp=sharing
 .. _Syllabus: https://goo.gl/ZDoOJ5
 
-This is a rough assembly of reading and
-lecture notes on development microeconomics topics all written
-as interactive jupyter notebooks. The content can be read in a variety
-of ways. You can read them in styled but static `webpages`_ form or
-as a `PDF book`_ (via the readthedocs service) or you can run them
-interactively on a `MS Azure jupyter notebook server`_ to allow
-you to interact with code and widgets.  If you know
-how to run your own jupyter notebook server with a python kernel you can
-also just clone/download content from the github repo: https://github.com/jhconning/Dev-II
+These reading and lecture notes on development microeconomics
+are written mostly as interactive jupyter notebooks which are kept at this github repository.
 
-.. _webpages: http://dev-ii-seminar.readthedocs.io/
-.. _PDF book: http://readthedocs.org/projects/dev-ii-seminar/downloads/pdf/latest/
-.. _jupyter notebook server: https://notebooks.azure.com/jhconning/libraries/DevII
+- https://github.com/jhconning/Dev-II
 
-This is *very* preliminary content (most from a Spring 2016 class), much of it
-quick first draft form.  Over time I'll try to improve the posted drafts.
-If you spot errors or would like to suggest edits or contribute material please do
-so via the github repository (start an 'issue ticket'):
+See below for different ways to access and interact with this content.
 
 Development Microeconomics with Jupyter Notebooks
 ----------------------------------------------------
@@ -56,3 +41,17 @@ List of notebooks:
    notebooks/Stata_in_jupyter
 
 .. _Economics 842: http://www.gc.cuny.edu/Page-Elements/Academics-Research-Centers-Initiatives/Doctoral-Programs/Economics/Courses
+
+You can view the notebooks there or clone/download them to run them on a jupyter server on your own
+computer (see how `here`_). The github content is also auto-rendeered as (1) a styled but static `webpages`_ and  2)
+a `PDF book`_ using Sphinx and the readthedocs service. The github repo is also cloned
+to a Microsoft `Azure notebook library`_ where you can run the notebooks on a cloud-based jupyter notebook server.
+
+.. _webpages: http://dev-ii-seminar.readthedocs.io/
+.. _here: https://lectures.quantecon.org/py/getting_started.html/
+.. _PDF book: http://readthedocs.org/projects/dev-ii-seminar/downloads/pdf/latest/
+.. _Azure notebook library: https://notebooks.azure.com/jhconning/libraries/DevII
+
+Some of this is still quite rough/preliminary content.  Over time I'll try to edit and improve.
+If you spot errors or would like to suggest edits or contribute material please do
+so via the github repository (start an 'issue ticket'):
