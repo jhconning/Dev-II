@@ -20,13 +20,13 @@ Development Microeconomics with Jupyter Notebooks
 ----------------------------------------------------
 List of notebooks:
 
-
 .. toctree::
    :maxdepth: 2
    :titlesonly:
 
    notebooks/jupyter_notebooks
    notebooks/Lucas90
+   notebooks/RDD_R
    notebooks/EdgeworthProduction
    notebooks/SFM
    notebooks/HarrisTodaro

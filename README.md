@@ -5,12 +5,12 @@
 
  __Lecture and reading Notes as Jupyter Notebooks__
 
-**NEW !** The jupyter notebooks can now be run from a Microsoft Azure 
+The jupyter notebooks can now be run from a Microsoft Azure 
 [jupyter notebook server](https://notebooks.azure.com/jhconning/libraries/DevII). 
 Create a free account and clone and/or run from the
 [notebook folder](https://notebooks.azure.com/jhconning/libraries/DevII/tree/notebooks) 
 
-This is a repository of [jupyter notebooks] on topics in the
+This is a repository of jupyter notebooks on topics in the
 Microeconomics of Development. Most of what you see here were first
 developed for a Spring 2016 version of this course. Most are still only
 rough notebooks on specific topics, but over time I hope these should
@@ -52,6 +52,7 @@ to quick static views of the notebook content.
 | --------| :-----|
 | [jupyter_notebooks]  |Economics with Jupyter Notebooks  |
 | [Lucas90] |Lucas' 1990 AER paper 'Why Doesn't Capital Flow from Rich to Poor Countries?'' |
+| [RDD_R] |Regression Discontinuity Designs (RDD) for Natural Experiments in History  (code in R) |
 | [Edgeworth] |Edgeworth Box: Efficiency in Production|
 | [SFM] |The Specific Factors Model |
 | [HarrisTodaro] |Harris and Todaro's 1970 paper 'Migration, unemployment and development' |
@@ -95,10 +96,10 @@ all this content (but sometimes not all repo content converts).
  A few other sites similar to this using jupyter notebooks and scientific
  python for economics:
 
- | Sites and Repos |Description  |
- | --------| :-----|
- | [Quantecon]  | Economics with Jupyter Notebooks  |
- | [nyu_eco370] |NYU's Spring '16 ECO370: Quantitative Economics with Python|
+| Sites and Repos |Description  |
+| --------| :-----|
+| [Quantecon]  | Economics with Jupyter Notebooks  |
+| [nyu_eco370] |NYU's Spring '16 ECO370: Quantitative Economics with Python|
 
 
 [Quantecon]:http://quant-econ.net/
