@@ -30,6 +30,7 @@ List of notebooks:
    notebooks/EdgeworthProduction
    notebooks/SFM
    notebooks/HarrisTodaro
+   notebooks/Coase
    notebooks/FarmHousehold
    notebooks/SeparationTests
    notebooks/SizeDistribution
