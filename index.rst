@@ -3,11 +3,11 @@ Econ 842 Development II (Spring 2018)
 Lecture Notes and materials for The Graduate
 Center's Economics 842 taught by Jonathan Conning
 
-- `Reading list`_ (links to weekly reading assignments)
+- `Reading list`_ (links to weekly reading assignments and slides)
 - `Syllabus`_ (course details and longer bibliography)
 
 .. _Reading list:  https://docs.google.com/document/d/1J-wXvwgqtep2HkwHhlahWs6Te-UgxKcaR0h73pIPQSs/edit?usp=sharing
-.. _Syllabus: https://goo.gl/ZDoOJ5
+.. _Syllabus: https://goo.gl/EKaCNM
 
 These reading and lecture notes on development microeconomics
 are written mostly as interactive jupyter notebooks which are kept at this github repository.
