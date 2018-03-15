@@ -7,7 +7,7 @@ Center's Economics 842 taught by Jonathan Conning
 - `Syllabus`_ (course details and longer bibliography)
 
 .. _Reading list:  https://docs.google.com/document/d/1J-wXvwgqtep2HkwHhlahWs6Te-UgxKcaR0h73pIPQSs/edit?usp=sharing
-.. _Syllabus: https://drive.google.com/drive/folders/1zONa0q11HVAsW2OUi-jtrcpVZSB-hOQJ
+.. _Syllabus: https://drive.google.com/file/d/1mJqvqNlmItmcTtVu9dexiNJcAZu8r-M-/view?usp=sharing
 
 These reading and lecture notes on development microeconomics
 are written mostly as interactive jupyter notebooks which are kept at this github repository.
