@@ -26,7 +26,6 @@ List of notebooks:
 
    notebooks/jupyter_notebooks
    notebooks/Lucas90
-   notebooks/RDD_R
    notebooks/EdgeworthProduction
    notebooks/SFM
    notebooks/HarrisTodaro
@@ -38,6 +37,7 @@ List of notebooks:
    notebooks/consume_opt1
    notebooks/SavingsCommit
    notebooks/incentives_corruption
+   notebooks/RDD_R
    notebooks/DataAPIs
    notebooks/Stata_in_jupyter
 
