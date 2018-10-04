@@ -65,7 +65,7 @@ to quick static views of the notebook content. If you plan to only read the cont
 [DHBox]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DHBox.ipynb
 [DataAPIs]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DataAPIs.ipynb
 [Stata_in_jupyter]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/Stata_in_jupyter.ipynb
-[RDD_R]: http://npbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/RDD_R.ipynb
+[RDD_R]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/RDD_R.ipynb
 
 The course site [dev-ii-seminar.readthedocs.org] has the reading list
 and syllabus for the course and auto-generated styled HTML and PDF versions of
