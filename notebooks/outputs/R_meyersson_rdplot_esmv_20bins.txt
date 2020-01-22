@@ -1,0 +1,26 @@
+> out = rdplot(Y, X, nbins = c(20, 20), binselect = "esmv", y.lim = c(0, 
++ 25))
+> summary(out)
+Call: rdplot
+
+Number of Obs.                 2629
+Kernel                      Uniform
+
+Number of Obs.                2314            315
+Eff. Number of Obs.           2314            315
+Order poly. fit (p)              4              4
+BW poly. fit (h)           100.000         99.051
+Number of bins scale             1              1
+
+Bins Selected                   20             20
+Average Bin Length           5.000          4.953
+Median Bin Length            5.000          4.953
+
+IMSE-optimal bins               11              7
+Mimicking Variance bins         40             75
+
+Relative to IMSE-optimal:
+Implied scale                1.818          2.857
+WIMSE variance weight        0.143          0.041
+WIMSE bias weight            0.857          0.959
+

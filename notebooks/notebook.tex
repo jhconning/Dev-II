@@ -1,0 +1,2168 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Beta\_Delta}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \hypertarget{breakable-commitments}{%
+\section{Breakable Commitments\ldots{}}\label{breakable-commitments}}
+
+\hypertarget{code-to-generate-figures}{%
+\subsection{Code to generate figures}\label{code-to-generate-figures}}
+
+\textbf{Karna Basu and Jonathan Conning}
+
+Department of Economics, Hunter College and The Graduate Center, City
+University of New York
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{o}{\PYZpc{}}\PY{k}{reload\PYZus{}ext} watermark
+        \PY{o}{\PYZpc{}}\PY{k}{watermark} \PYZhy{}u \PYZhy{}n \PYZhy{}t 
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Last updated: Thu Oct 06 2016 17:02:27 
+
+    \end{Verbatim}
+
+    \textbf{Abstract:} Important empirical and theoretical literaturea have
+developed around models of procrastination and the struggle for
+self-control or resistance to present-bias or temptation. A popular
+modeling strategy is to follow Laibson (1997) in assuming that consumers
+are present-biased and have time inconsistent \(\beta-\delta\)
+quasi-hyperbolic and preferences. While several papers have analyzed
+different properties of this model have variations and extensions have
+even been employed in calibrated numerical macro models, we are not
+aware of any papers that explain the model in simple graphical terms.
+
+This note describes the relatively simple mathematical and graphical
+analysis of the challenges facing a time-inconsistent in consumer
+attempting to smooth consumption over time. Because the sophisticated
+present-biased quasi-hyperbolic discounter anticipates the ways in which
+her future self will attempt to renegotiate or refinance the terms of a
+contract, she acts to choose the terms of the contract anticipating her
+latter-period self's best reaction. The equilibrium contract is found as
+the sub-game perfect Nash equilibrium of a Stackelberg game. The
+equilibrium that the time-inconsistent consumer can achieve on her own
+will in general deliver less utility than if the period zero consumer
+could commit their latter selves to sticking to the the terms of the
+contract that the period zero self prefers. This gives rise to the
+demand fr commitment services.
+
+    \hypertarget{python-preliminaries}{%
+\subsection{Python Preliminaries}\label{python-preliminaries}}
+
+The simulations and diagrams below were written in python. The following
+code block just imports various libraries and sets a few global
+parameters.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{gridspec}
+        \PY{k+kn}{from} \PY{n+nn}{ipywidgets} \PY{k}{import} \PY{n}{interact}\PY{p}{,}\PY{n}{fixed}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure.figsize}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{8}
+        \PY{n}{np}\PY{o}{.}\PY{n}{set\PYZus{}printoptions}\PY{p}{(}\PY{n}{precision}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)} 
+\end{Verbatim}
+
+
+    \hypertarget{the-model}{%
+\subsection{The model}\label{the-model}}
+
+    Consider the following simple workhorse three-period consumption
+smoothing model where consumers' preferences are summarized by constant
+relative risk aversion (CRRA) utility. In any period the consumer's
+instantaneous utility is given by \(u(c)=c^{1-ρ}/(1-ρ)\). Over three
+period the agent maximizes utility
+
+\[ U(c_0, c_1, c_2) =u(c_0) + \beta [\delta u(c_1) + \delta^2 u(c_2)]\]
+
+This is a version of the classic \(\beta-\delta\) quasi-hyperbolic
+discounting model. We assume the consumer has an autarky income stream
+\({y}=\{y_{0},y_{1},y_{2}\}\) which defines autarky or reservation
+utility \$ \overline{u}(y) = U(y₀,y₁,y₂)\$ but in general will prefer a
+smoother consumption profile from contracting on financial markets.
+
+    \hypertarget{consumption-smoothing-with-and-without-commitment-services}{%
+\subsubsection{Consumption smoothing with and without commitment
+services}\label{consumption-smoothing-with-and-without-commitment-services}}
+
+    \hypertarget{competitive-full-commitment}{%
+\paragraph{Competitive
+full-commitment}\label{competitive-full-commitment}}
+
+Assume at first that financial intermediaries compete to offer contracts
+to a client.
+
+Let's assume at first that a financial intermediary can offer a
+multiperiod contract and can -- at zero cost -- credibly commit to not
+renegotiating the terms of that contract. For the moment as well we will
+assume that this contract can also be made exclusive in the sense that
+we can stop a new bank from offering a more attractive additional or
+alternative contract to the period 1 self. We'll relax both assumptions
+shortly.
+
+    The offered contract will maximize the period-0 self's present value of
+utility
+\[ U(c_{0},c_{1},c_{2})=u(c_{0})+\beta \left[ \delta u(c_{1})+\delta ^{2}u(c_{2})\right] \]
+subject to the bank's zero profit condition or, same thing, consumer
+budget constraint:
+
+\[\sum\limits_{t=0}^{2}\frac{\left( y_{t}-c_{t}\right) }{\left( 1+r\right) ^{t}} = 0\]
+
+At the optimal contract \(C^fc\) the consumer may save or borrow,
+depending on their initial income stream and preferred/feasible smoothed
+consumption stream available from contracting.
+
+    The first order conditions for an optimum are:
+
+\[u'(c_0) = \beta \delta (1+r) u'(c_1)\]
+
+\[u'(c_1) = \delta (1+r) u'(c_2)\]
+
+    The optimal contract will be the three period consumption profile that
+brings the consumer to the highest feasible iso-utility surface
+(analagous to an indifference curve except in 3 dimensins), and that
+will be at a point where the iso-utility surface is tangent to the
+zero-profit hyperplane that cuts through endowment point \emph{\(y\)}
+
+Rather than try to depict the optimal contract om three-dimensional
+space, we will employ a simple trick to depict the optimal contract in
+two-dimensional figures. Since the optimal contract must satisfy the
+consumer budget or zero-profit constraint, if we know the \(c_0\) and
+\(c_1\) the value of \(c_2\) is determined from the budget constraint.
+
+    For the CRRA case these can be rewritten as:
+
+\[c_1 = c_0 [ \beta \delta (1+r) ]^\frac{1}{\rho}\]
+
+\[c_1 = c_2\]
+
+    In what follows we'll assume for simplicity and without loss of
+generality that \(\delta = \frac{1}{1+r}\) and furthermore that \(r=0\)
+and hence \(\delta = 1\). This simplifies the expressions without
+changing the essential tradeoffs.
+
+If we substitute the FOC \(c_1=c_2\) into the consumer's binding budget
+constraint (the bank's zero profit condition) the problem can be reduced
+from three equation (two FOC and the zero profit condition) to two:
+
+\[c_1 = \beta^\frac{1}{\rho} c_0\]
+
+\[ c_1 = \frac{\sum y - c_0}{2}\]
+
+    The first equation highlight's the period-zero self's present bias
+--they want to consume more in period zer than in period one-- while the
+second summarizes that hey want to smooth whatever resources are left to
+future consumption equally between periods 1 and 2.
+
+    Figure 1 below illustrates how the equilibrium contract is determined,
+drawn for the CRRA case where \(\beta=0.5\) and \(\rho = 1\) and
+\(\sum y =300\). The first of these two lines (that the MRS between
+period 0 and period 1 equal the price ratio or interest rate) can be
+seen as the upward sloping income-expansion income-expansion line in the
+rightmost quadrant diagram in \(c_0\) and \(c_1\) space. The second line
+which combines the second FOC and zero profit condition is seen as the
+downward sloping dashed line.
+
+The two dashed lines meet at point \((c_0^{fc}, c_1^{fc})\) in the
+rightmost quadrant.
+
+The leftmost quadrant is in \(c_1\) and \(c_2\) space, turned on its
+side, 90 degrees counterclockwise. The FOC condition (\(c_1 = c_2\)) is
+represented by a 45 degree line. We can simply read off \(c_2 = c_1\)
+from this line and the value of \(c_1\) determined in the other
+quadrant, but we should also note that the point of intersection must
+also satisfy the budget constraint, namely that consumption in periods 1
+and 2 cannot exceed the value of the endowment less period zero
+consumption.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{from} \PY{n+nn}{IPython}\PY{n+nn}{.}\PY{n+nn}{display} \PY{k}{import} \PY{n}{Image}\PY{p}{,} \PY{n}{display}
+        \PY{n}{i} \PY{o}{=} \PY{n}{Image}\PY{p}{(}\PY{n}{filename}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Figure1.jpg}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{display}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_16_0.jpeg}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    For the CRRA case it's easy to find closed form solutions:
+
+\[c_0^{fc} = \frac{\sum y}{1+2\beta^\frac{1}{\rho}}\]
+\[c_1^{fc} = c_2^{fc} = \beta^\frac{1}{\rho} c_0^{fc} \]
+
+    \hypertarget{a-simple-numerical-example}{%
+\paragraph{A simple numerical
+example}\label{a-simple-numerical-example}}
+
+Suppose the model parameters were as follows (and as all along \(r=0\)
+and \(\delta=1\))
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{beta} \PY{o}{=} \PY{l+m+mf}{0.5}
+        \PY{n}{rho} \PY{o}{=} \PY{l+m+mi}{1}
+        \PY{n}{Y} \PY{o}{=} \PY{l+m+mi}{300}
+\end{Verbatim}
+
+
+    The following function solves for period zero's optimal `full commitment
+contract' using the equations above:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{k}{def} \PY{n+nf}{c0fc}\PY{p}{(}\PY{n}{beta}\PY{o}{=}\PY{n}{beta}\PY{p}{,} \PY{n}{rho}\PY{o}{=}\PY{n}{rho}\PY{p}{)}\PY{p}{:}
+            \PY{l+s+sd}{\PYZsq{}\PYZsq{}\PYZsq{}Full Commitment contract\PYZsq{}\PYZsq{}\PYZsq{}}
+            \PY{n}{btr} \PY{o}{=} \PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rho}\PY{p}{)}
+            \PY{n}{Y} \PY{o}{=} \PY{l+m+mi}{300}
+            \PY{n}{c0} \PY{o}{=} \PY{n}{Y}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{btr}\PY{p}{)}
+            \PY{k}{return} \PY{n}{c0}\PY{p}{,} \PY{n}{btr}\PY{o}{*}\PY{n}{c0}\PY{p}{,} \PY{n}{btr}\PY{o}{*}\PY{n}{c0}
+\end{Verbatim}
+
+
+    The optimal contract for these parameters is
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{c0fc}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}6}]:} (150.0, 75.0, 75.0)
+\end{Verbatim}
+            
+    If the consumer had an income stream \$ y =(100, 100, 100)\$ then we'd
+interpret this as a borrowing contract, as the period 0 consumer would
+want to borrow 50 in period zero andthen balance repayments between
+period 1 and 2.
+
+Saving/repayments (positives) and borrowing/dissaving (negatives) in
+each period would be written:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{p}{[}\PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{c0fc}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}7}]:} array([-50.,  25.,  25.])
+\end{Verbatim}
+            
+    If on the other hand the consumer had an income stream \$ y =(200, 50,
+50)\$ then we'd interpret this as a savings contrac, with the consumer
+saving 50 in period zero to be shared equally between period 1 and 2
+consumption.
+
+    \hypertarget{refinance-and-self-control}{%
+\subsection{refinance and
+self-control}\label{refinance-and-self-control}}
+
+    We recast this slightly to focus on the role of savings. Period 0 self
+(henceforth `zero-self') chooses period zero savings \(s_0\) (and by
+implication period 0 consumption \(c_0 = y_0 - s_0\)). In period 1 his
+later `one-self' reacts by choosing her own preferred period 1 savings
+\(s_1\) (or, same thing \(c_1\) and by implication \(c_2\)).
+
+We need to find one-self's `reaction function'. They choose \(c_1\) to
+maximize
+
+\[u(c_{1})+\beta \delta u(c_{2})\]
+
+subject to
+
+\[c_1(1+r)+c_2 =y_1 (1+r) +y_2+s_0 (1+r)^2\]
+
+    The FOC give us
+
+\[u'(c_{1})=\beta \delta(1+r) {u'(c_2)} \]
+
+which for this CRRA case give us
+
+\[c_{2} = [\beta \delta (1+r) ]^\frac{1}{\rho} c_1\]
+
+Substituting this into the intertemporal budget constraint above we can
+solve for the reaction function:
+
+\[ c_1(s_{0} )= \frac{s_0 (1+r)^2+y_1 (1+r) +y_2}
+{(1+r)+[ \beta \delta(1+r)]^\frac{1}{\rho} }
+ \]
+
+    Note that if \(\delta=\frac{1}{1+r}\) and \(r=0\) then this last
+expression simplifies to:
+
+\[ c^1_1(s_{0} )= \frac{s_0+y_1 +y_2}{1 + \beta ^\frac{1}{\rho} }  \]
+
+Without loss of generality we will focus on this stripped down version
+of the expression.
+
+    Note that the zero-self wants each extra dollar of saving (or debt)
+\(s_0\) that they pass on to period one that 1/2 of that dollar be for
+period 1 and the other half for period 2. In other words they want
+
+\[\frac{dc^0_1}{ds_0} = \frac{dc_2}{ds_0} =\frac{1}{2}\]
+
+But One-self instead prefers
+
+\[\frac{dc^1_1}{ds_0} =\frac{1}{1+\beta^\frac{1}{\rho}} > \frac{1}{2}\]
+and
+\[\frac{dc^1_2}{ds_0} =\frac{\beta^\frac{1}{\rho}}{1+\beta^\frac{1}{\rho}}<\frac{1}{2}\]
+
+Zero-self will therefore act to strategically control how much savings
+is passed on, behaving much like a Stackelberg leader.
+
+    They choose \(s_0\) to:
+
+\[\max u(y_0-s_{0})+\beta \left[ u(c^1_1(s_0))+u(c^1_2(s_0))\right] \]
+
+    Recall that One-self will always have
+\(c_2^1 =\beta^\frac{1}{\rho} c_1^1\) and also note that for the CRRA
+case we can write
+\(u(\beta^\frac{1}{\rho}c_1^1)=\beta^\frac{1-\rho}{\rho}u(c_1^1)\) so we
+can rewrite the objective as:
+
+\[\max u(y_0-s_{0})+\beta (1+\beta^\frac{1-\rho}{\rho}) u(c^1_1(s_0))\]
+
+    The FOC will therefore be:
+\[u'(y_0-s_0) = \beta (1+\beta^\frac{1-\rho}{\rho}) u'(c_1^1(s_0)) \frac{dc_1^1}{ds_0}\]
+
+    \[u'(y_0-s_0) = \frac{\beta +\beta^\frac{1}{\rho}}{1+\beta^\frac{1}{\rho}} u'(c_1^1(s_0)) \]
+
+    and after some substitutions and simplifications: \[(y_0-s_0)^{-\rho}
+= \frac{ \beta+\beta^\frac{1}{\rho}}{1+\beta^\frac{1}{\rho}}
+(\frac{s_0+y_1 +y_2}{1 + \beta ^\frac{1}{\rho} })^{-\rho} \]
+
+    \[   \frac{s_0+y_1 +y_2}{1 + \beta ^\frac{1}{\rho} }
+= \Lambda^\frac{1}{\rho}
+(y_0-s_0) \]
+
+where
+\(\Lambda = \frac{\beta +\beta^\frac{1}{\rho}}{1+\beta^\frac{1}{\rho}}\)
+
+    Or solving for \(c_0\) :
+
+\[c_0 = \frac{\sum y}{1+\Lambda^\frac{1}{\rho}(1+\beta^\frac{1}{\rho})} \]
+
+    Note that we can compare period 0 consumption under this `own smoothing'
+situation to the full commitment situation where we have shown that:
+
+\[c_0 = \frac{\sum y}{1+2\beta^\frac{1}{\rho}} \]
+
+From which it's clear that savings is higher or lower depending on a
+comparison of the two denominators\ldots{} Empirically however the
+difference in period 0 consumption seems very small\ldots{} Most of the
+action is in terms of period 1 and 2 as the follownig shows.
+
+    \hypertarget{visualized}{%
+\subsubsection{Visualized}\label{visualized}}
+
+    As in the other notebooks we import a module that gives us a generic
+`Contract' class that defines a few attributes (e.g.~default parameters
+of the utility function, initial endowments, etc.) and useful methods to
+calculate profits, utility, etc.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{c+c1}{\PYZsh{}import seaborn as sns}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{gridspec}
+        \PY{k+kn}{from} \PY{n+nn}{ipywidgets} \PY{k}{import} \PY{n}{interact}\PY{p}{,}\PY{n}{fixed}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure.figsize}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{8}
+        \PY{n}{np}\PY{o}{.}\PY{n}{set\PYZus{}printoptions}\PY{p}{(}\PY{n}{precision}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)} 
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{k}{def} \PY{n+nf}{c0own}\PY{p}{(}\PY{n}{beta}\PY{o}{=}\PY{n}{beta}\PY{p}{,} \PY{n}{rho}\PY{o}{=}\PY{n}{rho}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sd}{\PYZsq{}\PYZsq{}\PYZsq{}Own\PYZhy{}smoothing contract\PYZsq{}\PYZsq{}\PYZsq{}}
+             \PY{n}{btr} \PY{o}{=} \PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rho}\PY{p}{)}
+             \PY{n}{lm} \PY{o}{=} \PY{p}{(}\PY{n}{beta} \PY{o}{+} \PY{n}{btr}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{btr}\PY{p}{)}
+             \PY{n}{c0} \PY{o}{=} \PY{n}{Y}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{btr}\PY{p}{)}\PY{o}{*}\PY{n}{lm}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rho}\PY{p}{)}\PY{p}{)}
+             \PY{n}{c1} \PY{o}{=} \PY{p}{(}\PY{n}{Y}\PY{o}{\PYZhy{}}\PY{n}{c0}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{btr}\PY{p}{)}
+             \PY{n}{c2} \PY{o}{=} \PY{n}{btr}\PY{o}{*}\PY{n}{c1}
+             \PY{k}{return} \PY{n}{c0}\PY{p}{,} \PY{n}{c1}\PY{p}{,} \PY{n}{c2}
+             
+             
+         \PY{k}{def} \PY{n+nf}{plotC}\PY{p}{(}\PY{n}{rho}\PY{o}{=}\PY{n}{rho}\PY{p}{)}\PY{p}{:}
+             \PY{n}{bt} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{)}
+             \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
+             \PY{n}{c0F}\PY{p}{,}\PY{n}{c1F}\PY{p}{,}\PY{n}{c2F} \PY{o}{=} \PY{n}{c0fc}\PY{p}{(}\PY{n}{bt}\PY{p}{,} \PY{n}{rho}\PY{p}{)}
+             \PY{n}{c0o}\PY{p}{,}\PY{n}{c1o}\PY{p}{,}\PY{n}{c2o} \PY{o}{=} \PY{n}{c0own}\PY{p}{(}\PY{n}{bt}\PY{p}{,} \PY{n}{rho}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{bt}\PY{p}{,} \PY{n}{c0F}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{bt}\PY{p}{,} \PY{n}{c1F}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{bt}\PY{p}{,} \PY{n}{c0F}\PY{o}{+}\PY{n}{c1F}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{bt}\PY{p}{,} \PY{n}{c0o}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{bt}\PY{p}{,} \PY{n}{c1o}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{bt}\PY{p}{,} \PY{n}{c0o}\PY{o}{+}\PY{n}{c1o}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{bt}\PY{p}{,} \PY{n}{c2o}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{fig}\PY{o}{.}\PY{n}{suptitle}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{rho\PYZdl{} = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{rho}\PY{p}{)}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{18}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{beta\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{16}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+             \PY{k}{return}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{c0fc}\PY{p}{(}\PY{n}{beta}\PY{p}{,} \PY{n}{rho}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}13}]:} (150.0, 75.0, 75.0)
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{c0own}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}22}]:} (150.0, 100.0, 50.0)
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{interact}\PY{p}{(}\PY{n}{plotC}\PY{p}{,}\PY{n}{y0}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{150}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{n}{y1}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{150}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{n}{rho}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mf}{0.05}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_46_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{best-response-function-and-stackelberg}{%
+\subsection{Best response function, and
+Stackelberg}\label{best-response-function-and-stackelberg}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{k}{def} \PY{n+nf}{c1br}\PY{p}{(}\PY{n}{c0}\PY{p}{,} \PY{n}{beta}\PY{o}{=}\PY{n}{beta}\PY{p}{,} \PY{n}{rho}\PY{o}{=}\PY{n}{rho}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sd}{\PYZsq{}\PYZsq{}\PYZsq{}One Selfs best response to Zero\PYZhy{}self contract \PYZsq{}\PYZsq{}\PYZsq{}}
+             \PY{n}{btr} \PY{o}{=} \PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rho}\PY{p}{)}
+             \PY{n}{c11} \PY{o}{=} \PY{p}{(}\PY{n}{Y} \PY{o}{\PYZhy{}} \PY{n}{c0}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{btr}\PY{p}{)}
+             \PY{n}{c12} \PY{o}{=} \PY{n}{btr}\PY{o}{*}\PY{n}{c11}
+             \PY{k}{return} \PY{n}{c0}\PY{p}{,}\PY{n}{c11}\PY{p}{,}\PY{n}{c12}
+             
+         \PY{k}{def} \PY{n+nf}{c0rp}\PY{p}{(}\PY{n}{beta}\PY{o}{=}\PY{n}{beta}\PY{p}{,} \PY{n}{rho}\PY{o}{=}\PY{n}{rho}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sd}{\PYZsq{}\PYZsq{}\PYZsq{}Zero\PYZsq{}s Stackelberg contract \PYZsq{}\PYZsq{}\PYZsq{}}
+             \PY{n}{btr} \PY{o}{=} \PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rho}\PY{p}{)}
+             \PY{n}{lam} \PY{o}{=} \PY{p}{(}\PY{n}{beta} \PY{o}{+} \PY{n}{btr}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{btr}\PY{p}{)}
+             \PY{n}{lmr} \PY{o}{=} \PY{n}{lam}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rho}\PY{p}{)}
+             \PY{n}{c00rp} \PY{o}{=} \PY{n}{Y}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{btr}\PY{p}{)}\PY{o}{*}\PY{n}{lmr}\PY{p}{)}
+             \PY{n}{c01rp} \PY{o}{=} \PY{n}{lmr}\PY{o}{*}\PY{n}{c00rp}
+             \PY{n}{c02rp} \PY{o}{=} \PY{n}{btr}\PY{o}{*}\PY{n}{c01rp}
+             \PY{k}{return} \PY{n}{c00rp}\PY{p}{,} \PY{n}{c01rp}\PY{p}{,} \PY{n}{c02rp} 
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{c0fc}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}16}]:} (150.0, 75.0, 75.0)
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{cc} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{300}\PY{p}{,}\PY{l+m+mi}{300}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{cc} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{300}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{)}
+         \PY{n}{btr} \PY{o}{=} \PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rho}\PY{p}{)}
+         \PY{n}{lam} \PY{o}{=} \PY{p}{(}\PY{n}{beta} \PY{o}{+} \PY{n}{btr}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{btr}\PY{p}{)}
+         \PY{n}{lmr} \PY{o}{=} \PY{n}{lam}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rho}\PY{p}{)}
+\end{Verbatim}
+
+
+    \hypertarget{two-quadrant-plot}{%
+\subsection{Two-quadrant plot}\label{two-quadrant-plot}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{k}{def} \PY{n+nf}{bdplot}\PY{p}{(}\PY{n}{beta}\PY{o}{=}\PY{n}{beta}\PY{p}{,} \PY{n}{rho}\PY{o}{=}\PY{n}{rho}\PY{p}{,} \PY{n}{fc} \PY{o}{=} \PY{k+kc}{True}\PY{p}{,} \PY{n}{rp} \PY{o}{=} \PY{k+kc}{True}\PY{p}{,} \PY{n}{figname}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Figure}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sd}{\PYZsq{}\PYZsq{}\PYZsq{}Plot two quadrant diagram representation. The flag fc and rp allow us to turn on}
+         \PY{l+s+sd}{    or supress full commit or \PYZsq{}\PYZsq{}\PYZsq{}}
+             \PY{n}{ymax} \PY{o}{=} \PY{l+m+mi}{200}
+             \PY{n}{aspect} \PY{o}{=} \PY{l+m+mi}{1}
+             \PY{n}{cfc} \PY{o}{=} \PY{n}{c0fc}\PY{p}{(}\PY{n}{beta}\PY{o}{=}\PY{n}{beta}\PY{p}{,} \PY{n}{rho}\PY{o}{=}\PY{n}{rho}\PY{p}{)}
+             \PY{n}{crp} \PY{o}{=} \PY{n}{c0rp}\PY{p}{(}\PY{n}{beta}\PY{o}{=}\PY{n}{beta}\PY{p}{,} \PY{n}{rho}\PY{o}{=}\PY{n}{rho}\PY{p}{)}
+             \PY{n}{fontsize} \PY{o}{=} \PY{l+m+mi}{18}
+             
+             \PY{n}{btr} \PY{o}{=} \PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rho}\PY{p}{)}
+             \PY{n}{lam} \PY{o}{=} \PY{p}{(}\PY{n}{beta} \PY{o}{+} \PY{n}{btr}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{btr}\PY{p}{)}
+             \PY{n}{lmr} \PY{o}{=} \PY{n}{lam}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rho}\PY{p}{)}
+         
+             \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+             \PY{n}{gs} \PY{o}{=} \PY{n}{gridspec}\PY{o}{.}\PY{n}{GridSpec}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{width\PYZus{}ratios}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)} 
+         
+             \PY{n}{ax0} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{n}{gs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+             \PY{n}{ax0}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{beta=\PYZdl{} }\PY{l+s+si}{\PYZob{}:2.1f\PYZcb{}}\PY{l+s+s1}{ \PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{rho=\PYZdl{} }\PY{l+s+si}{\PYZob{}:2.1f\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{beta}\PY{p}{,} \PY{n}{rho}\PY{p}{)}\PY{p}{)}
+             \PY{n}{ax0}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{ymax}\PY{p}{)}
+             \PY{n}{ax0}\PY{o}{.}\PY{n}{yaxis}\PY{o}{.}\PY{n}{set\PYZus{}label\PYZus{}position}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{right}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+             \PY{n}{ax0}\PY{o}{.}\PY{n}{yaxis}\PY{o}{.}\PY{n}{tick\PYZus{}right}\PY{p}{(}\PY{p}{)}
+             \PY{n}{ax0}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}0\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{n}{fontsize}\PY{p}{)}
+             \PY{n}{ax0}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}1\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{n}{fontsize}\PY{p}{)}
+         
+             \PY{n}{ax1} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{n}{gs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+             \PY{n}{ax1}\PY{o}{.}\PY{n}{yaxis}\PY{o}{.}\PY{n}{set\PYZus{}ticks\PYZus{}position}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{ax1}\PY{o}{.}\PY{n}{xaxis}\PY{o}{.}\PY{n}{set\PYZus{}ticks\PYZus{}position}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bottom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{ax1}\PY{o}{.}\PY{n}{yaxis}\PY{o}{.}\PY{n}{set\PYZus{}label\PYZus{}position}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}1\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{n}{fontsize}\PY{p}{)}
+             \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}cfc=\PYZdl{} (}\PY{l+s+si}{\PYZob{}:3.1f\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}:3.1f\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}:3.1f\PYZcb{}}\PY{l+s+s1}{)}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{cfc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{cfc}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{cfc}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+             
+             \PY{k}{if} \PY{n}{fc}\PY{p}{:}
+                 \PY{n}{fcstyle} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}
+                 \PY{n}{fccolor} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}
+                 \PY{k}{if} \PY{n}{fc} \PY{o+ow}{and} \PY{o+ow}{not} \PY{n}{rp}\PY{p}{:}
+                     \PY{n}{linestyle} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}
+                 \PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cc}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{o}{*}\PY{p}{(}\PY{n}{Y}\PY{o}{\PYZhy{}}\PY{n}{cc}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Zero FC future}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cc}\PY{p}{,} \PY{n}{btr}\PY{o}{*}\PY{n}{cc}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{n}{fcstyle}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{n}{fccolor}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FC smooth}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cfc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{cfc}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cc}\PY{p}{,} \PY{n}{Y}\PY{o}{\PYZhy{}}\PY{n}{cc}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Future net income}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cc}\PY{p}{,} \PY{p}{(}\PY{n}{Y}\PY{o}{\PYZhy{}}\PY{n}{cfc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{cc}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cc}\PY{p}{,} \PY{n}{cc}\PY{o}{*}\PY{n}{btr}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cc}\PY{p}{,} \PY{n}{cc}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cfc}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{cfc}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax0}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{l+m+mi}{250}\PY{p}{,} \PY{n}{btr}\PY{o}{*}\PY{l+m+mi}{230}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{beta\PYZca{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{frac}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{rho\PYZcb{}\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+                 \PY{n}{xx} \PY{o}{=} \PY{p}{[}\PY{n}{cfc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{]}
+                 \PY{n}{yy} \PY{o}{=} \PY{p}{[}\PY{n}{cfc}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}
+                 \PY{n}{zz} \PY{o}{=} \PY{p}{[}\PY{n}{cfc}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}
+                 \PY{p}{[}\PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c0}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{dot\PYZus{}c1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c1} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]} 
+                 \PY{p}{[}\PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{dot\PYZus{}c0}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{n}{dot\PYZus{}c1}\PY{p}{,} \PY{n}{dot\PYZus{}c1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c1} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]}
+                 \PY{p}{[}\PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{dot\PYZus{}c0}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{n}{dot\PYZus{}c1}\PY{p}{,} \PY{n}{dot\PYZus{}c1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c1} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]}
+                 \PY{p}{[}\PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c0}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{n}{dot\PYZus{}c1}\PY{p}{,} \PY{n}{Y}\PY{o}{\PYZhy{}}\PY{n}{dot\PYZus{}c0}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c1} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]}
+                 \PY{p}{[}\PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{n}{Y}\PY{o}{\PYZhy{}}\PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{Y}\PY{o}{\PYZhy{}}\PY{n}{dot\PYZus{}c0}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c1} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]}
+                 \PY{p}{[}\PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{n}{dot\PYZus{}c2}\PY{p}{,} \PY{n}{dot\PYZus{}c2}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{dot\PYZus{}c1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c1}\PY{p}{,} \PY{n}{dot\PYZus{}c2} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{yy}\PY{p}{,}\PY{n}{zz}\PY{p}{)} \PY{p}{]}
+                 \PY{p}{[}\PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{n}{dot\PYZus{}c2}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{n}{dot\PYZus{}c1}\PY{p}{,} \PY{n}{dot\PYZus{}c1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c1}\PY{p}{,} \PY{n}{dot\PYZus{}c2} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{yy}\PY{p}{,}\PY{n}{zz}\PY{p}{)} \PY{p}{]}
+         
+             \PY{k}{if} \PY{n}{rp}\PY{p}{:}
+                 \PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cc}\PY{p}{,} \PY{n}{c1br}\PY{p}{(}\PY{n}{cc}\PY{p}{,} \PY{n}{beta}\PY{p}{,} \PY{n}{rho}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{One BR}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cc}\PY{p}{,} \PY{n}{lmr}\PY{o}{*}\PY{n}{cc}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Stackelberg}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{crp}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{crp}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}    
+                 \PY{n}{ax0}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{l+m+mi}{250}\PY{p}{,} \PY{n}{lmr}\PY{o}{*}\PY{l+m+mi}{235}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{Lambda\PYZca{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{frac}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{rho\PYZcb{}\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+                 \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{crp}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{crp}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{xx} \PY{o}{=} \PY{p}{[}\PY{n}{crp}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{]}
+                 \PY{n}{yy} \PY{o}{=} \PY{p}{[}\PY{n}{crp}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}
+                 \PY{n}{zz} \PY{o}{=} \PY{p}{[}\PY{n}{crp}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}
+                 \PY{p}{[}\PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c0}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{dot\PYZus{}c1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c1} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]} 
+                 \PY{p}{[}\PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{dot\PYZus{}c0}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{n}{dot\PYZus{}c1}\PY{p}{,} \PY{n}{dot\PYZus{}c1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c1} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]}
+                 \PY{p}{[}\PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{dot\PYZus{}c0}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{n}{dot\PYZus{}c1}\PY{p}{,} \PY{n}{dot\PYZus{}c1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c1} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]}
+                 \PY{p}{[}\PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c0}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{n}{dot\PYZus{}c1}\PY{p}{,} \PY{n}{Y}\PY{o}{\PYZhy{}}\PY{n}{dot\PYZus{}c0}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c1} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]}
+                 \PY{p}{[}\PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{n}{Y}\PY{o}{\PYZhy{}}\PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{Y}\PY{o}{\PYZhy{}}\PY{n}{dot\PYZus{}c0}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c0}\PY{p}{,} \PY{n}{dot\PYZus{}c1} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]}
+                 \PY{p}{[}\PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{n}{dot\PYZus{}c2}\PY{p}{,} \PY{n}{dot\PYZus{}c2}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{dot\PYZus{}c1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c1}\PY{p}{,} \PY{n}{dot\PYZus{}c2} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{yy}\PY{p}{,}\PY{n}{zz}\PY{p}{)} \PY{p}{]}
+                 \PY{p}{[}\PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{n}{dot\PYZus{}c2}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{n}{dot\PYZus{}c1}\PY{p}{,} \PY{n}{dot\PYZus{}c1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}c1}\PY{p}{,} \PY{n}{dot\PYZus{}c2} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{yy}\PY{p}{,}\PY{n}{zz}\PY{p}{)} \PY{p}{]}
+         
+             \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{ymax}\PY{p}{)}
+             \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}xlim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{150}\PY{p}{)}
+             \PY{n}{ax1}\PY{o}{.}\PY{n}{invert\PYZus{}xaxis}\PY{p}{(}\PY{p}{)}
+             \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}2\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{n}{fontsize}\PY{p}{)}
+         
+             \PY{k}{for} \PY{n}{side} \PY{o+ow}{in} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{right}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{top}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{:}
+                 \PY{n}{ax0}\PY{o}{.}\PY{n}{spines}\PY{p}{[}\PY{n}{side}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}visible}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}
+                 \PY{n}{ax1}\PY{o}{.}\PY{n}{spines}\PY{p}{[}\PY{n}{side}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}visible}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}
+         
+             \PY{c+c1}{\PYZsh{}scaling and grid    }
+             \PY{n}{ax0}\PY{o}{.}\PY{n}{set\PYZus{}aspect}\PY{p}{(}\PY{n}{aspect}\PY{p}{)}
+             \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}aspect}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+             \PY{c+c1}{\PYZsh{}ax0.grid()}
+             \PY{c+c1}{\PYZsh{}ax1.grid()}
+         
+             \PY{c+c1}{\PYZsh{}ax0.text(20, 0.5*(Y\PYZhy{}50), r\PYZsq{}\PYZdl{}\PYZbs{}frac\PYZob{}1\PYZcb{}\PYZob{}2\PYZcb{}\PYZbs{}sum (y\PYZhy{}c\PYZus{}0)\PYZdl{}\PYZsq{}, fontsize=14)}
+             \PY{c+c1}{\PYZsh{}ax0.text(20, (1/(1+btr))*(Y\PYZhy{}30), r\PYZsq{}\PYZdl{}\PYZbs{}frac\PYZob{}1\PYZcb{}\PYZob{}1+\PYZbs{}beta\PYZca{}\PYZbs{}frac\PYZob{}1\PYZcb{}\PYZob{}\PYZbs{}rho\PYZcb{}\PYZcb{}\PYZbs{}sum (y\PYZhy{}c\PYZus{}0)\PYZdl{}\PYZsq{}, fontsize=14)}
+         
+             \PY{n}{ax1}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{n}{btr}\PY{o}{*}\PY{l+m+mi}{150}\PY{p}{,} \PY{l+m+mi}{150}\PY{p}{,}  \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{beta\PYZca{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{frac}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{rho\PYZcb{}\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{,} \PY{n}{rotation}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{vertical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         
+             \PY{n}{fig}\PY{o}{.}\PY{n}{subplots\PYZus{}adjust}\PY{p}{(}\PY{n}{wspace}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+             \PY{n}{fig}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{n}{figname}\PY{o}{+}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.jpg}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{dpi}\PY{o}{=}\PY{n}{fig}\PY{o}{.}\PY{n}{dpi}\PY{p}{)}
+             \PY{k}{return}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{bdplot}\PY{p}{(}\PY{n}{fc}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{rp}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{figname}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Figure1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_54_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{interact}\PY{p}{(}\PY{n}{bdplot}\PY{p}{,}\PY{n}{beta}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{)}\PY{p}{,}\PY{n}{rho}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mf}{0.05}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_55_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{import} \PY{n+nn}{Contract}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{cC} \PY{o}{=} \PY{n}{Contract}\PY{o}{.}\PY{n}{Competitive}\PY{p}{(}\PY{n}{beta}\PY{o}{=}\PY{l+m+mf}{0.7}\PY{p}{)}
+         \PY{n}{c}\PY{o}{.}\PY{n}{print\PYZus{}params}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+beta    : 0.7
+delta   : 1.0
+r       : 0.0
+rho     : 0.95
+y       : [100 100 100]
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{c0FC}\PY{p}{(}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{,} \PY{n}{cC}\PY{o}{.}\PY{n}{rho}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}21}]:} (126.37092267796187, 86.81453866101907, 86.81453866101907)
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}30}]:} \PY{n}{cC} \PY{o}{=} \PY{n}{Contract}\PY{o}{.}\PY{n}{Competitive}\PY{p}{(}\PY{n}{beta} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}
+         \PY{n}{cCF} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{fcommit}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{c0own}\PY{p}{(}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{,} \PY{n}{cC}\PY{o}{.}\PY{n}{rho}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}31}]:} (126.43496814508534, 102.88493916224135, 70.68009269267331)
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}32}]:} \PY{n}{cC}\PY{o}{.}\PY{n}{reneg\PYZus{}proof}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{x}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}32}]:} array([ 117.33,  108.28,   74.39])
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{n}{cCRP} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{ownsmooth}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+G =0.8221676254784243
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}39}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{figure.figsize}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{)}
+         \PY{n}{c1min} \PY{o}{=} \PY{l+m+mi}{0}
+         \PY{n}{c1max} \PY{o}{=} \PY{l+m+mi}{160}
+         \PY{n}{c1} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{c1max}\PY{p}{,}\PY{n}{c1max}\PY{o}{/}\PY{l+m+mi}{20}\PY{p}{)}
+         \PY{n}{c1\PYZus{}} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{40}\PY{p}{,}\PY{n}{c1max}\PY{p}{,}\PY{n}{c1max}\PY{o}{/}\PY{l+m+mi}{20}\PY{p}{)}
+         \PY{n}{y} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{y}
+         \PY{c+c1}{\PYZsh{}cCRP = cCRPa}
+         \PY{c+c1}{\PYZsh{}indifference curves functions}
+         \PY{n}{ubar0} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{)}
+         \PY{n}{idc0} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{indif}\PY{p}{(}\PY{n}{ubar0}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{)}
+         \PY{n}{ubar1} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}
+         \PY{n}{idc1} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{indif}\PY{p}{(}\PY{n}{ubar1}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}
+         \PY{n}{ubar0RP} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{)}
+         \PY{n}{idc0RP} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{indif}\PY{p}{(}\PY{n}{ubar0RP}\PY{p}{,}\PY{l+m+mf}{1.0}\PY{p}{)}
+         \PY{n}{ubar1RP} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}
+         \PY{n}{idc1RP} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{indif}\PY{p}{(}\PY{n}{ubar1RP}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}
+         
+         
+         \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} trick to display contract points and coordinate lines http://bit.ly/1CaTMDX}
+         \PY{n}{xx} \PY{o}{=} \PY{p}{[}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}
+         \PY{n}{yy} \PY{o}{=} \PY{p}{[}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{l+m+mi}{50}\PY{p}{,} \PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{p}{[}\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{n}{dot\PYZus{}x}\PY{p}{,} \PY{n}{dot\PYZus{}x}\PY{p}{]} \PY{p}{,}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{dot\PYZus{}y}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}x}\PY{p}{,} \PY{n}{dot\PYZus{}y} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]} 
+         \PY{p}{[}\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{dot\PYZus{}x}\PY{p}{]} \PY{p}{,}\PY{p}{[}\PY{n}{dot\PYZus{}y}\PY{p}{,} \PY{n}{dot\PYZus{}y}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}x}\PY{p}{,} \PY{n}{dot\PYZus{}y} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]}
+         
+         \PY{c+c1}{\PYZsh{} indifference curves}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{c1\PYZus{}}\PY{p}{,}\PY{n}{idc0}\PY{p}{(}\PY{n}{c1\PYZus{}}\PY{p}{)}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}          
+         \PY{c+c1}{\PYZsh{}plt.plot(c1\PYZus{},idc1(c1\PYZus{}),color=\PYZsq{}red\PYZsq{}) }
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{c1\PYZus{}}\PY{p}{,}\PY{n}{idc0RP}\PY{p}{(}\PY{n}{c1\PYZus{}}\PY{p}{)}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{c1\PYZus{}}\PY{p}{,}\PY{n}{idc1RP}\PY{p}{(}\PY{n}{c1\PYZus{}}\PY{p}{)}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} rays}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{c1}\PY{p}{,} \PY{n}{c1}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{c1}\PY{p}{,} \PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{cC}\PY{o}{.}\PY{n}{rho}\PY{p}{)}\PY{o}{*}\PY{n}{c1}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} isoprofit line(s)}
+         \PY{n}{isoprofline} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{isoprofit}\PY{p}{(}\PY{n}{cC}\PY{o}{.}\PY{n}{profit}\PY{p}{(}\PY{n}{cCF}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{y}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{p}{(}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{c1}\PY{p}{,}  \PY{n}{isoprofline}\PY{p}{(}\PY{n}{c1}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)}
+         
+         \PY{n}{ax}\PY{o}{.}\PY{n}{spines}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{right}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}color}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{none}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{n}{ax}\PY{o}{.}\PY{n}{spines}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{top}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}color}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{none}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylim}\PY{p}{(}\PY{p}{(}\PY{n}{c1min}\PY{p}{,} \PY{n}{c1max}\PY{o}{*}\PY{l+m+mf}{0.9}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{p}{(}\PY{n}{c1min}\PY{p}{,} \PY{n}{c1max}\PY{o}{*}\PY{l+m+mf}{0.9}\PY{p}{)}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{xaxis}\PY{o}{.}\PY{n}{tick\PYZus{}bottom}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{n}{ax}\PY{o}{.}\PY{n}{yaxis}\PY{o}{.}\PY{n}{tick\PYZus{}left}\PY{p}{(}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} label the points}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{+}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}F\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}P\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZca{}}\PY{l+s+si}{\PYZob{}cp\PYZcb{}}\PY{l+s+s1}{\PYZus{}}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{8}\PY{p}{,} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZca{}}\PY{l+s+si}{\PYZob{}cp\PYZcb{}}\PY{l+s+s1}{\PYZus{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZca{}}\PY{l+s+si}{\PYZob{}cf\PYZcb{}}\PY{l+s+s1}{\PYZus{}}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{8}\PY{p}{,} \PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZca{}}\PY{l+s+si}{\PYZob{}cf\PYZcb{}}\PY{l+s+s1}{\PYZus{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{}ax.text(0, \PYZhy{}10, r\PYZsq{}Competitive \PYZdl{}\PYZbs{}kappa = \PYZob{}\PYZcb{}\PYZdl{}\PYZsq{}}
+         \PY{c+c1}{\PYZsh{}        .format(cC.kappa), fontsize=12)}
+         \PY{c+c1}{\PYZsh{}ax.text(0, \PYZhy{}15, r\PYZsq{}\PYZdl{}\PYZbs{}beta = \PYZob{}\PYZcb{}, \PYZbs{}  \PYZbs{}rho = \PYZob{}\PYZcb{}\PYZdl{}\PYZsq{}}
+         \PY{c+c1}{\PYZsh{}        .format(cC.beta, cC.rho), fontsize=12)}
+         
+         \PY{c+c1}{\PYZsh{} isoprofit lines could be plotted like so}
+         \PY{c+c1}{\PYZsh{}isop  = cC.isoprofit( cC.kappa, cCRP)   \PYZsh{} returns a function of c1 }
+         \PY{c+c1}{\PYZsh{}plt.plot(c1\PYZus{}, isop(c1\PYZus{}),\PYZsq{}:\PYZsq{})}
+         \PY{c+c1}{\PYZsh{}turn off the axis numbers}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{axes}\PY{o}{.}\PY{n}{get\PYZus{}xaxis}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{set\PYZus{}visible}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{axes}\PY{o}{.}\PY{n}{get\PYZus{}yaxis}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{set\PYZus{}visible}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figs}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{CompetitiveFig.eps}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n+nb}{format}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{eps}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_63_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+        \PY{k+kn}{import} \PY{n+nn}{sys}
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{optimize} \PY{k}{import} \PY{n}{minimize}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{figure.figsize}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{axes.formatter.useoffset}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{False}\PY{l+s+s1}{\PYZsq{}}
+        \PY{n}{np}\PY{o}{.}\PY{n}{set\PYZus{}printoptions}\PY{p}{(}\PY{n}{precision}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)}    \PY{c+c1}{\PYZsh{} array printing format }
+\end{Verbatim}
+
+
+    Now the definition of the Contract class.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{import} \PY{n+nn}{Contract}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{c} \PY{o}{=} \PY{n}{Contract}\PY{o}{.}\PY{n}{Competitive}\PY{p}{(}\PY{n}{beta} \PY{o}{=} \PY{l+m+mf}{0.7}\PY{p}{)}
+        \PY{n}{c}\PY{o}{.}\PY{n}{rho} \PY{o}{=} \PY{l+m+mf}{0.5}
+        \PY{n}{c}\PY{o}{.}\PY{n}{y} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{200}\PY{p}{,}\PY{l+m+mi}{50}\PY{p}{,}\PY{l+m+mi}{50}\PY{p}{]}
+        \PY{n}{c}\PY{o}{.}\PY{n}{print\PYZus{}params}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+beta    : 0.7
+delta   : 1.0
+guess   : [100 100 100]
+kappa   : 0
+r       : 0.0
+rho     : 0.5
+y       : [200, 50, 50]
+
+    \end{Verbatim}
+
+    \hypertarget{plot-of-zero-selfs-utility-as-a-function-of-s_0}{%
+\subsection{\texorpdfstring{Plot of Zero self's utility as a function of
+\(s_0\)}{Plot of Zero self's utility as a function of s\_0}}\label{plot-of-zero-selfs-utility-as-a-function-of-s_0}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{k}{def} \PY{n+nf}{C\PYZus{}opt}\PY{p}{(}\PY{n}{c0}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Return contract from consuming y0\PYZhy{}s0 and splitting rest equally across c1 and c2\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{s0} \PY{o}{=} \PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{c0}
+             \PY{n}{ce} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{o}{+}\PY{n}{s0}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}
+             \PY{n}{C} \PY{o}{=} \PY{p}{[}\PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{s0}\PY{p}{,} \PY{n}{ce}\PY{p}{,} \PY{n}{ce}\PY{p}{]}
+             \PY{k}{return} \PY{n}{C}
+         
+         \PY{k}{def} \PY{n+nf}{C\PYZus{}bias}\PY{p}{(}\PY{n}{c0}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Return contract from consuming y0\PYZhy{}s0 and then having One self allocate across c1 and c2\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{B1p}  \PY{o}{=} \PY{n}{c}\PY{o}{.}\PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{rho}\PY{p}{)}
+             \PY{n}{s0} \PY{o}{=} \PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{c0}
+             \PY{n}{c1} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{o}{+}\PY{n}{s0}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{B1p}\PY{p}{)}
+             \PY{n}{c2} \PY{o}{=} \PY{n}{B1p} \PY{o}{*} \PY{n}{c1}
+             \PY{n}{C} \PY{o}{=} \PY{p}{[}\PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{s0}\PY{p}{,} \PY{n}{c1}\PY{p}{,} \PY{n}{c2}\PY{p}{]}
+             \PY{k}{return} \PY{n}{C}
+\end{Verbatim}
+
+
+    Just like above above but with \(s_0\) argument:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}35}]:} \PY{k}{def} \PY{n+nf}{C\PYZus{}opt}\PY{p}{(}\PY{n}{s0}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Return discounted utility from consuming y0\PYZhy{}s0 and splitting rest equally across c1 and c2\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{ce} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{o}{+}\PY{n}{s0}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}
+             \PY{n}{C} \PY{o}{=} \PY{p}{[}\PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{s0}\PY{p}{,} \PY{n}{ce}\PY{p}{,} \PY{n}{ce}\PY{p}{]}
+             \PY{k}{return} \PY{n}{C}
+         
+         \PY{k}{def} \PY{n+nf}{C\PYZus{}bias}\PY{p}{(}\PY{n}{s0}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Return discounted utility from consuming y0\PYZhy{}s0 and splitting rest equally across c1 and c2\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{B1p}  \PY{o}{=} \PY{n}{c}\PY{o}{.}\PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{rho}\PY{p}{)}
+             \PY{n}{c1} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{o}{+}\PY{n}{s0}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{B1p}\PY{p}{)}
+             \PY{n}{c2} \PY{o}{=} \PY{n}{B1p} \PY{o}{*} \PY{n}{c1}
+             \PY{n}{C} \PY{o}{=} \PY{p}{[}\PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{s0}\PY{p}{,} \PY{n}{c1}\PY{p}{,} \PY{n}{c2}\PY{p}{]}
+             \PY{k}{return} \PY{n}{C}
+\end{Verbatim}
+
+
+    \[   \frac{s_0+y_1 +y_2}{1 + \beta ^\frac{1}{\rho} }
+= \Lambda^\frac{1}{\rho}
+(y_0-s_0) \]
+
+where
+\(\Lambda = \frac{\beta (1+\beta^\frac{1-\rho}{\rho})}{1+\beta^\frac{1}{\rho}}\)
+
+    So we can solve for \(s_0\) as:
+
+\[s_0 = \frac{y_0 \Lambda^\frac{1}{\rho} -y_1 -y_2}{1+\Lambda^\frac{1}{\rho}(1+\beta^\frac{1}{\rho})} \]
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}57}]:} \PY{n}{C\PYZus{}bias}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}57}]:} [190, 73.825503355704697, 36.174496644295296]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}58}]:} \PY{k}{def} \PY{n+nf}{C\PYZus{}own}\PY{p}{(}\PY{n}{y}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Return discounted utility from consuming y0\PYZhy{}s0 and splitting rest equally across c1 and c2\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{b}\PY{p}{,} \PY{n}{rh}\PY{o}{=} \PY{n}{c}\PY{o}{.}\PY{n}{beta}\PY{p}{,}\PY{n}{c}\PY{o}{.}\PY{n}{rho} 
+             \PY{n}{B1p}  \PY{o}{=} \PY{n}{b}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rh}\PY{p}{)}
+             \PY{n}{Lp} \PY{o}{=} \PY{n}{b}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{b}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{rh}\PY{p}{)}\PY{o}{/}\PY{n}{rh}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{B1p}\PY{p}{)}
+             \PY{n}{s0} \PY{o}{=} \PY{p}{(}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{n}{Lp} \PY{o}{\PYZhy{}}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{Lp}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{B1p}\PY{p}{)}\PY{p}{)}
+             \PY{n}{c0} \PY{o}{=} \PY{n}{y}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{s0}
+             \PY{n}{c1}\PY{p}{,} \PY{n}{c2} \PY{o}{=} \PY{n}{C\PYZus{}bias}\PY{p}{(}\PY{n}{s0}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{C\PYZus{}bias}\PY{p}{(}\PY{n}{s0}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}
+             
+             \PY{n}{C} \PY{o}{=} \PY{p}{[}\PY{n}{c0}\PY{p}{,} \PY{n}{c1}\PY{p}{,} \PY{n}{c2}\PY{p}{]}
+             \PY{k}{return} \PY{n}{C}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}68}]:} \PY{n}{c}\PY{o}{.}\PY{n}{y} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{180}\PY{p}{,}\PY{l+m+mi}{60}\PY{p}{,}\PY{l+m+mi}{60}\PY{p}{]}
+         \PY{n}{C\PYZus{}own}\PY{p}{(}\PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{)} \PY{p}{,} \PY{n}{c}\PY{o}{.}\PY{n}{fcommit}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}68}]:} ([143.06025036094968, 105.32869103291968, 51.611058606130634],
+          array([ 151.52,   74.24,   74.24]))
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}66}]:} \PY{n}{c}\PY{o}{.}\PY{n}{ownsmooth}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+G =0.7986577181208053
+
+    \end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}66}]:} array([ 153.81,   98.11,   48.07])
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}67}]:} \PY{n+nb}{sum}\PY{p}{(}\PY{n}{C\PYZus{}own}\PY{p}{(}\PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}67}]:} 300.0
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}39}]:} \PY{n}{sz}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{50}\PY{p}{,}\PY{l+m+mi}{50}\PY{p}{)}
+         \PY{n}{C\PYZus{}opt}\PY{p}{(}\PY{n}{sz}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}39}]:} array([ 25. ,  25.5,  26. ,  26.5,  27. ,  27.5,  28. ,  28.5,  29. ,
+                 29.5,  30. ,  30.5,  31. ,  31.5,  32. ,  32.5,  33. ,  33.5,
+                 34. ,  34.5,  35. ,  35.5,  36. ,  36.5,  37. ,  37.5,  38. ,
+                 38.5,  39. ,  39.5,  40. ,  40.5,  41. ,  41.5,  42. ,  42.5,
+                 43. ,  43.5,  44. ,  44.5,  45. ,  45.5,  46. ,  46.5,  47. ,
+                 47.5,  48. ,  48.5,  49. ,  49.5,  50. ,  50.5,  51. ,  51.5,
+                 52. ,  52.5,  53. ,  53.5,  54. ,  54.5,  55. ,  55.5,  56. ,
+                 56.5,  57. ,  57.5,  58. ,  58.5,  59. ,  59.5,  60. ,  60.5,
+                 61. ,  61.5,  62. ,  62.5,  63. ,  63.5,  64. ,  64.5,  65. ,
+                 65.5,  66. ,  66.5,  67. ,  67.5,  68. ,  68.5,  69. ,  69.5,
+                 70. ,  70.5,  71. ,  71.5,  72. ,  72.5,  73. ,  73.5,  74. ,  74.5])
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}38}]:} \PY{n}{C\PYZus{}bias}\PY{p}{(}\PY{n}{sz}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}38}]:} array([  33.56,   34.23,   34.9 ,   35.57,   36.24,   36.91,   37.58,
+                  38.26,   38.93,   39.6 ,   40.27,   40.94,   41.61,   42.28,
+                  42.95,   43.62,   44.3 ,   44.97,   45.64,   46.31,   46.98,
+                  47.65,   48.32,   48.99,   49.66,   50.34,   51.01,   51.68,
+                  52.35,   53.02,   53.69,   54.36,   55.03,   55.7 ,   56.38,
+                  57.05,   57.72,   58.39,   59.06,   59.73,   60.4 ,   61.07,
+                  61.74,   62.42,   63.09,   63.76,   64.43,   65.1 ,   65.77,
+                  66.44,   67.11,   67.79,   68.46,   69.13,   69.8 ,   70.47,
+                  71.14,   71.81,   72.48,   73.15,   73.83,   74.5 ,   75.17,
+                  75.84,   76.51,   77.18,   77.85,   78.52,   79.19,   79.87,
+                  80.54,   81.21,   81.88,   82.55,   83.22,   83.89,   84.56,
+                  85.23,   85.91,   86.58,   87.25,   87.92,   88.59,   89.26,
+                  89.93,   90.6 ,   91.28,   91.95,   92.62,   93.29,   93.96,
+                  94.63,   95.3 ,   95.97,   96.64,   97.32,   97.99,   98.66,
+                  99.33,  100.  ])
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}34}]:} \PY{n}{c}\PY{o}{.}\PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{rho}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}34}]:} 0.48999999999999994
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}48}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{sz}\PY{p}{,}\PY{n}{C\PYZus{}opt}\PY{p}{(}\PY{n}{sz}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{copt[1]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{sz}\PY{p}{,}\PY{n}{C\PYZus{}bias}\PY{p}{(}\PY{n}{sz}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cbias[1]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{sz}\PY{p}{,}\PY{n}{C\PYZus{}opt}\PY{p}{(}\PY{n}{sz}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{copt[2]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{sz}\PY{p}{,}\PY{n}{C\PYZus{}bias}\PY{p}{(}\PY{n}{sz}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cbias[2]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}48}]:} <matplotlib.legend.Legend at 0xacec160>
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_82_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{C\PYZus{}opt}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}18}]:} [10, 145.0, 145.0]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{C\PYZus{}bias}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}19}]:} [10, 194.63087248322148, 95.369127516778519]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{cF} \PY{o}{=} \PY{n}{c}\PY{o}{.}\PY{n}{fcommit}\PY{p}{(}\PY{p}{)}
+         \PY{n}{cF0}\PY{o}{=}\PY{n}{cF}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+         \PY{n}{sF} \PY{o}{=} \PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{cF}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+         \PY{n}{sF}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}20}]:} 48.48484848484847
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{Plot} \PY{n}{Zero} \PY{n+nb+bp}{self} \PY{n}{utility} \PY{n}{under} \PY{n}{each} 
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{cz}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n}{cF0}\PY{o}{\PYZhy{}}\PY{l+m+mi}{50}\PY{p}{,}\PY{n}{cF0}\PY{o}{+}\PY{l+m+mi}{50}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cz}\PY{p}{,}\PY{n}{c}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{C\PYZus{}opt}\PY{p}{(}\PY{n}{cz}\PY{p}{)}\PY{p}{,}\PY{n}{c}\PY{o}{.}\PY{n}{beta}\PY{p}{)}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cz}\PY{p}{,}\PY{n}{c}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{C\PYZus{}bias}\PY{p}{(}\PY{n}{cz}\PY{p}{)}\PY{p}{,}\PY{n}{c}\PY{o}{.}\PY{n}{beta}\PY{p}{)}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{n}{cF0}\PY{o}{\PYZhy{}}\PY{l+m+mi}{50}\PY{p}{,}\PY{n}{cF0}\PY{o}{+}\PY{l+m+mi}{50}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{cF}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dashed}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{solid}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}21}]:} <matplotlib.lines.Line2D at 0x83ceb38>
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_87_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{U\PYZus{}opt}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{s}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{c}\PY{o}{.}\PY{n}{y}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    Let's plot an indifference curve in c1-c2 space. For example if the
+agent in autarky has income \(\{y_{0},y_{1},y_{2}\}\) and no access to
+saving or borrowing then (from period 0 self's perspective) entering
+period 1 they have reservation utility
+\(u(y_{1})+\delta u(y_{2})=\overline{u}_{0}\). But when period 1 rolls
+around their preferences change. From period 1 self's perspective they
+have reservation utility
+\(u(y_{1})+\beta \delta u(y_{2})=\overline{u}_{1}\).
+
+    \hypertarget{exclusive-competitive-contracts}{%
+\subsubsection{Exclusive competitive
+contracts}\label{exclusive-competitive-contracts}}
+
+    The contract class defines a generic contract which holds consumption
+stream objects of the form \(\left( c_{0},c_{1},c_{2}\right)\) and
+allows a few manipulations. Now comes the job of solving for optimal
+contracts and we do this with a CompetitiveContract class which inherits
+the attributes and methods of the more generic contract class and then
+adds a few methods such as calculating the optimal contract full
+commitment and renegotiation-proof contracts in the competitive lender
+case. Note that the methods have the same names as the mon\_contract
+class but some behave differently, reflecting the reversed objective and
+constraint.
+
+    \hypertarget{full-commitment-contracts}{%
+\paragraph{Full-commitment contracts}\label{full-commitment-contracts}}
+
+    When the competitive lender can commit to not-renegotiating the contract
+(i.e.~to not pandering to the period-1 self's desire to renegotiate
+period-0's contract) and the contracts are exclusive (so no third party
+lender will enter to offer such renegotiation either) the contract
+solves
+
+\[\max \  u\left( c_{0}\right) +\beta \left[ \delta u\left( c_{1}\right) +\delta ^{2}u\left( c_{2}\right) \right] \]
+
+subject to the zero profit constraint
+\[s.t.  (y_{0}-c_{0})+\frac{(y_{1}-c_{1})}{(1+r)}+\frac{(y_{2}-c_{2})}{(1+r)^{2}}  \geq 0\]
+
+When \(\delta =\frac{1}{(1+r)}\) for the CRRA case an optimum will set
+\(c_{1}=c_{2}=\overline{c}\) and
+\(\overline{c}=\beta ^{\frac{1}{\rho }}c_{0}\) from which a closed form
+solution can be easily found (see fcommit() function below for
+formulas).
+
+\textbf{Note} that we are here assuming that the consumer has no choice
+but to consume their income stream \(y\) under autarky. This would be
+true if the agent does not have acess to any `own savings' technologies.
+Later below we see how things change only slightly when we allow them to
+use own savings to create a slightly more smooth autarky consumption
+stream (not perfectly smooth because they cannot overcome their
+self-control problems on their own).
+
+    \hypertarget{renegotiaton-proof-contracts}{%
+\paragraph{Renegotiaton-proof
+contracts}\label{renegotiaton-proof-contracts}}
+
+    \textbf{\emph{{[}THIS EXPLANATION HAS NOT BEEN UPDATED YET{]}}} The
+agent's period-1-self's preferences differ from those of his period 0
+self so they will often want to renegotiate any contract their period 0
+self contracted, and the bank can profit from this renegotiation so long
+as its renegotiaton cost \$\kappa \$ is low. In particular if the
+period-0-self agreed to contract \$\left(
+\bar\{c\}\emph{\{0\},\bar\{c\}}\{1\},\bar\{c\}\emph{\{2\}\right) \$ a
+competitive firm would offer to renegotiate the remaining
+\((\bar{c}_{1},\bar{c}_{2})\) to contract \$\left(
+c}\{1\}\textsuperscript{\{r\},c\_\{2\}}\{r\}\right) \$ chosen to
+maximize
+
+\[\max \ \ u(c_{1})+\beta (\delta u(c_{1}) +\delta^{2} u(c_{2})) \]
+subject to \[(y_{1}-c_{1})+\frac{(y_{2}-c_{2})}{(1+r)} \geq 0\]
+
+We can show from the agent's first order conditions for the CRRA case
+that a renegotiated contract will always satisfy
+\(c_{2}=\beta ^{\frac{1}{\rho }}c_{1}\) and indeed for CRRA we get the
+closed form: \[ \hat{c}_{0} =\frac{\sum y_{i}}{1+2\beta^{1/\rho}}\]
+
+and
+\(c_{2}^{r}(\bar{c}_{1},\bar{c}_{2})=\beta ^{\frac{1}{\rho }}c_{1}^{r}(\bar{c}_{1},\bar{c}_{2})\).
+See the reneg(c) function.
+
+A sophisticated present-biased consumer anticipates that this type of
+renegotiation may happen and will only agree to renegotiation-proof
+contracts that do not renegotiate to favor their period 1 selves. The
+profit-maximizing renegotiation-proof contract solves
+
+\[\max_{c_{0},c_{1},c_{2}}\Pi \left( c_{0},c_{1},c_{2}\right) \]
+\[U(c_{0},c_{1},c_{2})\geq U_{0}(y_{0},y_{1},y_{2})\]
+\[\Pi \left( c_{1}^{r},c_{2}^{r}\right) -\Pi \left( c_{1},c_{2}\right) \leq \overline{\kappa }\]
+The first constraint is the period 0 self's participation constraint and
+the second is the no-renegotiation proof constraint that the bank not
+find it profitable to offer to renegotiate to the contract that period-1
+self will demand.
+
+    Let's create an object instance which we will call cM, printout the
+parameters associated with this instance and then run a few checks to
+make sure the cM.reneg function works right:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{cC} \PY{o}{=} \PY{n}{Contract}\PY{o}{.}\PY{n}{Competitive}\PY{p}{(}\PY{n}{beta} \PY{o}{=} \PY{l+m+mf}{0.5}\PY{p}{)}
+        \PY{n}{cC}\PY{o}{.}\PY{n}{rho} \PY{o}{=} \PY{l+m+mf}{1.25}
+        \PY{n}{cC}\PY{o}{.}\PY{n}{y} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{200}\PY{p}{,}\PY{l+m+mi}{50}\PY{p}{,}\PY{l+m+mi}{50}\PY{p}{]}
+        \PY{n}{cC}\PY{o}{.}\PY{n}{print\PYZus{}params}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{cC}\PY{o}{.}\PY{n}{rho}\PY{p}{)}
+\end{Verbatim}
+
+
+    \#\#\#Full commitment contract: closed form solution \#\#\#\# Case 1:
+where potential renegotiation surplus goes to consumer
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{}Analytically calculated renegotiation proof when kappa=0}
+        \PY{k}{def} \PY{n+nf}{ccrpa}\PY{p}{(}\PY{n}{C}\PY{p}{)}\PY{p}{:}
+            \PY{n}{B} \PY{o}{=} \PY{n}{C}\PY{o}{.}\PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{C}\PY{o}{.}\PY{n}{rho}\PY{p}{)}
+            \PY{n}{D} \PY{o}{=} \PY{l+m+mi}{1}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{B}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{n}{C}\PY{o}{.}\PY{n}{beta}\PY{o}{+}\PY{n}{B}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{B}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{C}\PY{o}{.}\PY{n}{rho}\PY{p}{)}\PY{p}{)}
+            \PY{n}{c0} \PY{o}{=} \PY{n+nb}{sum}\PY{p}{(}\PY{n}{C}\PY{o}{.}\PY{n}{y}\PY{p}{)}\PY{o}{*}\PY{n}{D}
+            \PY{n}{c1} \PY{o}{=} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{C}\PY{o}{.}\PY{n}{y}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{c0}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{B}\PY{p}{)}
+            \PY{n}{c2} \PY{o}{=} \PY{n}{B}\PY{o}{*} \PY{n}{c1}
+            \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{c0}\PY{p}{,} \PY{n}{c1}\PY{p}{,} \PY{n}{c2}\PY{p}{]}\PY{p}{)}
+        
+        \PY{n}{cCRPa} \PY{o}{=}\PY{n}{ccrpa}\PY{p}{(}\PY{n}{cC}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{cCRPa}\PY{p}{,} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cCRPa}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Let\PYZsq{}s find reneg\PYZhy{}proof contract for pure profit with zero reneg. cost}
+        \PY{n}{cCF}\PY{o}{=}\PY{n}{cC}\PY{o}{.}\PY{n}{fcommit}\PY{p}{(}\PY{p}{)}
+        \PY{n}{cC}\PY{o}{.}\PY{n}{kappa} \PY{o}{=} \PY{l+m+mi}{0}
+        \PY{n}{cC}\PY{o}{.}\PY{n}{guess} \PY{o}{=} \PY{n}{cCRPa}
+        \PY{n}{cCR} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{reneg}\PY{p}{(}\PY{n}{cCF}\PY{p}{)}
+        \PY{n}{cCRP} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{reneg\PYZus{}proof}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{x}
+        \PY{n}{cCRP}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} compare three contracts (string label into var name)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{kappa = }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{kappa}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y =}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{y}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{consumption and net saving in each period}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{k}{for} \PY{n}{con} \PY{o+ow}{in} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cCF }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cCR }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cCRP}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cCRPa}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{:}
+            \PY{n}{C} \PY{o}{=} \PY{n+nb}{eval}\PY{p}{(}\PY{n}{con}\PY{p}{)}
+            \PY{n}{y} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{y}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{con} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{       : }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{  sum   : }\PY{l+s+si}{\PYZob{}:4.0f\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}
+                  \PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{C}\PY{p}{,} \PY{n}{C}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{con} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{(net s): }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{     profit: }\PY{l+s+si}{\PYZob{}:4.2f\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}
+                  \PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{y} \PY{o}{\PYZhy{}} \PY{n}{C}\PY{p}{,} \PY{n}{cC}\PY{o}{.}\PY{n}{profit}\PY{p}{(}\PY{n}{C}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{y}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+           
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{PVU0: }\PY{l+s+si}{\PYZob{}:4.3f\PYZcb{}}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{  b*[]: }\PY{l+s+si}{\PYZob{}:4.3f\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}
+                  \PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{C}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{u}\PY{p}{(}\PY{n}{C}\PY{p}{)}\PY{p}{,}
+                        \PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{o}{*}\PY{n}{cC}\PY{o}{.}\PY{n}{u}\PY{p}{(}\PY{n}{C}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)} \PY{p}{)}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{PVU(1): }\PY{l+s+si}{\PYZob{}:4.4f\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}
+                  \PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{C}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{rate: }\PY{l+s+si}{\PYZob{}:4.2f\PYZcb{}}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{100}\PY{o}{*}\PY{p}{(}\PY{n}{C}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{C}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{p}{)}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    The bank does not profit from this type of opportunistic renegotiation,
+if we assume `competition' at time of renegotiation \textbf{although one
+might argue} that the relation is ex-ante competitive but ex-post favors
+the bank.
+
+    A sophisticated consumer will however anticipate this type of
+opporunistic renegotiation and only agree to a renegotiation-proof
+contract.
+
+    As expected the bank's profits are lowered due to its inability to
+commit to not renegotiate.
+
+Here's a plot.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{c1min}\PY{p}{,} \PY{n}{c1max} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{n}{cCR}\PY{p}{)}\PY{o}{*}\PY{l+m+mf}{0.6}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{n}{cC}\PY{o}{.}\PY{n}{y}\PY{p}{)}
+        \PY{n}{c1min} \PY{o}{=} \PY{l+m+mi}{0}
+        \PY{n}{c1max} \PY{o}{=} \PY{l+m+mi}{160}
+        \PY{n}{c1} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{c1max}\PY{p}{,}\PY{n}{c1max}\PY{o}{/}\PY{l+m+mi}{20}\PY{p}{)}
+        \PY{n}{c1\PYZus{}} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{40}\PY{p}{,}\PY{n}{c1max}\PY{p}{,}\PY{n}{c1max}\PY{o}{/}\PY{l+m+mi}{20}\PY{p}{)}
+        \PY{n}{y} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{y}
+        \PY{c+c1}{\PYZsh{}cCRP = cCRPa}
+        \PY{c+c1}{\PYZsh{}indifference curves functions}
+        \PY{n}{ubar0} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{)}
+        \PY{n}{idc0} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{indif}\PY{p}{(}\PY{n}{ubar0}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{)}
+        \PY{n}{ubar1} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}
+        \PY{n}{idc1} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{indif}\PY{p}{(}\PY{n}{ubar1}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}
+        \PY{n}{ubar0RP} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{)}
+        \PY{n}{idc0RP} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{indif}\PY{p}{(}\PY{n}{ubar0RP}\PY{p}{,}\PY{l+m+mf}{1.0}\PY{p}{)}
+        \PY{n}{ubar1RP} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}
+        \PY{n}{idc1RP} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{indif}\PY{p}{(}\PY{n}{ubar1RP}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}
+        
+        
+        \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
+        \PY{c+c1}{\PYZsh{} trick to display contract points and coordinate lines http://bit.ly/1CaTMDX}
+        \PY{n}{xx} \PY{o}{=} \PY{p}{[}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}
+        \PY{n}{yy} \PY{o}{=} \PY{p}{[}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{l+m+mi}{50}\PY{p}{,} \PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{p}{[}\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{n}{dot\PYZus{}x}\PY{p}{,} \PY{n}{dot\PYZus{}x}\PY{p}{]} \PY{p}{,}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{dot\PYZus{}y}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}x}\PY{p}{,} \PY{n}{dot\PYZus{}y} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]} 
+        \PY{p}{[}\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{dot\PYZus{}x}\PY{p}{]} \PY{p}{,}\PY{p}{[}\PY{n}{dot\PYZus{}y}\PY{p}{,} \PY{n}{dot\PYZus{}y}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{linewidth} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)} \PY{k}{for} \PY{n}{dot\PYZus{}x}\PY{p}{,} \PY{n}{dot\PYZus{}y} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{xx}\PY{p}{,}\PY{n}{yy}\PY{p}{)} \PY{p}{]}
+        
+        \PY{c+c1}{\PYZsh{} indifference curves}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{c1\PYZus{}}\PY{p}{,}\PY{n}{idc0}\PY{p}{(}\PY{n}{c1\PYZus{}}\PY{p}{)}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}          
+        \PY{c+c1}{\PYZsh{}plt.plot(c1\PYZus{},idc1(c1\PYZus{}),color=\PYZsq{}red\PYZsq{}) }
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{c1\PYZus{}}\PY{p}{,}\PY{n}{idc0RP}\PY{p}{(}\PY{n}{c1\PYZus{}}\PY{p}{)}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{c1\PYZus{}}\PY{p}{,}\PY{n}{idc1RP}\PY{p}{(}\PY{n}{c1\PYZus{}}\PY{p}{)}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{c+c1}{\PYZsh{} rays}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{c1}\PY{p}{,} \PY{n}{c1}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{c1}\PY{p}{,} \PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{cC}\PY{o}{.}\PY{n}{rho}\PY{p}{)}\PY{o}{*}\PY{n}{c1}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{c+c1}{\PYZsh{} isoprofit line(s)}
+        \PY{c+c1}{\PYZsh{}isoprofline = cC.isoprofit(cC.profit(cMF,cC.y)\PYZhy{}(y[0]\PYZhy{}cCF[0]), y)}
+        \PY{c+c1}{\PYZsh{}plt.plot(c1,  isoprofline(c1),\PYZsq{}:\PYZsq{} )}
+        
+        \PY{n}{ax}\PY{o}{.}\PY{n}{spines}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{right}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}color}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{none}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{n}{ax}\PY{o}{.}\PY{n}{spines}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{top}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}color}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{none}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylim}\PY{p}{(}\PY{p}{(}\PY{n}{c1min}\PY{p}{,} \PY{n}{c1max}\PY{o}{*}\PY{l+m+mf}{0.9}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{p}{(}\PY{n}{c1min}\PY{p}{,} \PY{n}{c1max}\PY{o}{*}\PY{l+m+mf}{0.9}\PY{p}{)}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{xaxis}\PY{o}{.}\PY{n}{tick\PYZus{}bottom}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{n}{ax}\PY{o}{.}\PY{n}{yaxis}\PY{o}{.}\PY{n}{tick\PYZus{}left}\PY{p}{(}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} label the points}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{+}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}F\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}P\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZca{}}\PY{l+s+si}{\PYZob{}cp\PYZcb{}}\PY{l+s+s1}{\PYZus{}}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{8}\PY{p}{,} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZca{}}\PY{l+s+si}{\PYZob{}cp\PYZcb{}}\PY{l+s+s1}{\PYZus{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZca{}}\PY{l+s+si}{\PYZob{}cf\PYZcb{}}\PY{l+s+s1}{\PYZus{}}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{8}\PY{p}{,} \PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZca{}}\PY{l+s+si}{\PYZob{}cf\PYZcb{}}\PY{l+s+s1}{\PYZus{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{}ax.text(0, \PYZhy{}10, r\PYZsq{}Competitive \PYZdl{}\PYZbs{}kappa = \PYZob{}\PYZcb{}\PYZdl{}\PYZsq{}}
+        \PY{c+c1}{\PYZsh{}        .format(cC.kappa), fontsize=12)}
+        \PY{c+c1}{\PYZsh{}ax.text(0, \PYZhy{}15, r\PYZsq{}\PYZdl{}\PYZbs{}beta = \PYZob{}\PYZcb{}, \PYZbs{}  \PYZbs{}rho = \PYZob{}\PYZcb{}\PYZdl{}\PYZsq{}}
+        \PY{c+c1}{\PYZsh{}        .format(cC.beta, cC.rho), fontsize=12)}
+        
+        \PY{c+c1}{\PYZsh{} isoprofit lines could be plotted like so}
+        \PY{c+c1}{\PYZsh{}isop  = cC.isoprofit( cC.kappa, cCRP)   \PYZsh{} returns a function of c1 }
+        \PY{c+c1}{\PYZsh{}plt.plot(c1\PYZus{}, isop(c1\PYZus{}),\PYZsq{}:\PYZsq{})}
+        \PY{c+c1}{\PYZsh{}turn off the axis numbers}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{axes}\PY{o}{.}\PY{n}{get\PYZus{}xaxis}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{set\PYZus{}visible}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{axes}\PY{o}{.}\PY{n}{get\PYZus{}yaxis}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{set\PYZus{}visible}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figs}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{CompetitiveFig.eps}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n+nb}{format}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{eps}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} isoprofit lines could be plotted like so}
+        \PY{c+c1}{\PYZsh{} isop  = cM.isoprofit( 0.0, cM.y)   \PYZsh{} returns a function of c1 }
+        \PY{c+c1}{\PYZsh{} plt.plot(c1, isop(c1))}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k}{for} \PY{n}{cont} \PY{o+ow}{in} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cCF }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cCR }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cCRP}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cCRPa}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{cont} \PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n+nb}{eval}\PY{p}{(}\PY{n}{cont}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \#\#Optimal contract when renegotiation cost \$\kappa \$ \textgreater{}0
+
+    Plot to explore how the renegotiation cost \$\kappa \$ affects the terms
+of the contract and firm profits
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Note:  re\PYZhy{}run all cells above if the plot seems wrong}
+        \PY{n}{cC}\PY{o}{.}\PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{100}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{]}\PY{p}{)} 
+        \PY{n}{cCF} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{fcommit}\PY{p}{(}\PY{p}{)}
+        \PY{n}{num\PYZus{}pts} \PY{o}{=} \PY{l+m+mi}{21}
+        \PY{n}{kaps} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{,} \PY{n}{num\PYZus{}pts}\PY{p}{)}      \PY{c+c1}{\PYZsh{} different renegotiation cost values }
+        \PY{n}{cCRP}\PY{p}{,} \PY{n}{pvu0RP} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{n}{num\PYZus{}pts}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)}  \PY{c+c1}{\PYZsh{} init (c0,c1,c2) and profits at each kappa}
+        
+        \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{num\PYZus{}pts}\PY{p}{)}\PY{p}{:}               \PY{c+c1}{\PYZsh{} look through kappa recalculating optimal contract each time}
+            \PY{n}{cC}\PY{o}{.}\PY{n}{kappa} \PY{o}{=} \PY{n}{kaps}\PY{p}{[}\PY{n}{i}\PY{p}{]} 
+            \PY{n}{cCRP}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{reneg\PYZus{}proof}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{x} 
+            \PY{n}{pvu0RP}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cCRP}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}
+        
+        \PY{n}{c0}\PY{p}{,}\PY{n}{c1}\PY{p}{,}\PY{n}{c2} \PY{o}{=} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{p}{:}\PY{p}{]}\PY{p}{,} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{p}{:}\PY{p}{]}\PY{p}{,}\PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{p}{:}\PY{p}{]}                \PY{c+c1}{\PYZsh{} save results for plotting}
+        
+        \PY{n}{fig}\PY{p}{,} \PY{p}{(}\PY{n}{ax0}\PY{p}{,} \PY{n}{ax1}\PY{p}{)} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{nrows} \PY{o}{=} \PY{l+m+mi}{2}\PY{p}{)}
+        \PY{c+c1}{\PYZsh{}ax0.plot(kaps, c0, label=\PYZsq{}\PYZdl{}c\PYZus{}\PYZob{}0\PYZcb{}\PYZdl{}\PYZsq{})}
+        \PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{kaps}\PY{p}{,} \PY{n}{c1}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{kaps}\PY{p}{,} \PY{n}{c2}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax0}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{kaps}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)}\PY{o}{*}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}}\PY{l+s+si}{\PYZob{}F\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax0}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+        \PY{n}{ax0}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Reneg\PYZhy{}Proof Contract terms, PVU and \PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{kappa\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{n}{ax0}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{consumption}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax0}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+m+mi}{9}\PY{p}{,}\PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{1.25}\PY{p}{)}\PY{p}{,} \PY{n}{ncol} \PY{o}{=} \PY{l+m+mi}{3}\PY{p}{)}
+        
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{kaps}\PY{p}{,} \PY{n}{pvu0RP}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{PVU0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{renegotiation cost \PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{kappa\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{pvumin}\PY{p}{,}\PY{n}{pvumax} \PY{o}{=} \PY{n+nb}{min}\PY{p}{(}\PY{n}{pvu0RP}\PY{p}{)}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{n}{pvu0RP}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylim}\PY{p}{(}\PY{p}{(}\PY{n}{pvumin}\PY{p}{,} \PY{n}{pvumax}\PY{p}{)}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    At lower renegotiation costs the bank is forced to offer less
+consumption smoothing in periods 1 and 2 as a way to credibly commit to
+limit their gains to renegotiation with a period 1 self. Hence bank
+profits rise with their ability to commit to incur a renegotiation cost
+\(\kappa\)
+
+We haven't plotted \(c_{0}\) for each \(\kappa\) but that's because it
+varies less relative to \(c_{1}, c_{2}\) and way above the full
+commitment consumption smoothing. The following shows a non-monotonic
+relation though ws should remember this is varying very little.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{kaps}\PY{p}{,} \PY{n}{c0}\PY{p}{)} 
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylim}\PY{p}{(}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n}{c0}\PY{p}{)}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{n}{c0}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{renegotiation cost \PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{kappa\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \hypertarget{the-choice-to-become-a-commercial-non-profit}{%
+\subsubsection{The choice to become a commercial
+non-profit}\label{the-choice-to-become-a-commercial-non-profit}}
+
+    \hypertarget{modeling-the-non-profit}{%
+\subsubsection{Modeling the non-profit}\label{modeling-the-non-profit}}
+
+    The no-renegotiation constraint has two parts. A pure for-profit
+captures fraction \(\alpha = 1\) of profits and faces renegotiation cost
+not-for-profit of type \(\alpha\) and faces renegotiation cost
+\(h(\alpha) = h(1)\). More generally a non-profit of type \(\alpha\) has
+a no-renegotiation constraint of the form
+\[\alpha \left[ \Pi ^{R}-\Pi \right] \geq h(\alpha )\]
+
+To be specific here let's model this as
+\[h(\alpha )=\kappa \left( 1-\alpha \right) \]
+
+So that at \(\alpha =1\) there is no cost to renegotiation and at
+\(0< \alpha <1\) there is a non-negative non-pecuniary cost of up to
+\(\kappa\). The constraint can then be written as
+\[\left[ \Pi ^{R}-\Pi \right] \geq C(\alpha )=\frac{h(\alpha )}{\alpha }\]
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Similar to above but solve for contract as a function of firm type ALPHA}
+        \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{100}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{]}\PY{p}{)}          \PY{c+c1}{\PYZsh{} To see how endowment affects contract}
+        \PY{n}{cC}\PY{o}{.}\PY{n}{y}     \PY{o}{=} \PY{n}{y}                            
+        \PY{n}{cCF}      \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{fcommit}\PY{p}{(}\PY{p}{)}
+        \PY{n}{num\PYZus{}pts}  \PY{o}{=} \PY{l+m+mi}{10}
+        \PY{n}{alphs}    \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mf}{0.0}\PY{p}{,}\PY{l+m+mf}{1.0}\PY{p}{,}\PY{n}{num\PYZus{}pts}\PY{p}{)}   \PY{c+c1}{\PYZsh{} iterate over different values of beta}
+        \PY{n}{HA}       \PY{o}{=} \PY{l+m+mi}{10}\PY{o}{*}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{alphs}\PY{p}{)}   \PY{c+c1}{\PYZsh{}  h(alpha)/alpha  or cost of renegotiaton}
+        \PY{n}{cCRP}     \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{n}{num\PYZus{}pts}\PY{p}{)}\PY{p}{)}          \PY{c+c1}{\PYZsh{} matrix for (c0,c1,c2) at each kappa}
+        \PY{n}{pvu0RP}   \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)}  \PY{c+c1}{\PYZsh{}PVU0 when contracting with alpha=1 firm}
+        
+        \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{num\PYZus{}pts}\PY{p}{)}\PY{p}{:}
+            \PY{n}{cC}\PY{o}{.}\PY{n}{kappa} \PY{o}{=} \PY{n}{HA}\PY{p}{[}\PY{n}{i}\PY{p}{]}                 \PY{c+c1}{\PYZsh{} change optimal contract}
+            \PY{n}{cCRP}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{reneg\PYZus{}proof}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{x} 
+            \PY{n}{cC}\PY{o}{.}\PY{n}{guess} \PY{o}{=}  \PY{n}{cCRP}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}                 \PY{c+c1}{\PYZsh{} use this sol as guess for next optimum}
+            \PY{n}{pvu0RP}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cCRP}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}
+            
+        \PY{c+c1}{\PYZsh{}last entry is \PYZsq{}pure profit\PYZsq{} pvu0RP[\PYZhy{}1]}
+        \PY{n}{pvu0RP\PYZus{}pure} \PY{o}{=} \PY{n}{pvu0RP}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+        
+        \PY{n}{c0}\PY{p}{,}\PY{n}{c1}\PY{p}{,}\PY{n}{c2} \PY{o}{=} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{p}{:}\PY{p}{]}\PY{p}{,} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{p}{:}\PY{p}{]}\PY{p}{,}\PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{p}{:}\PY{p}{]}                \PY{c+c1}{\PYZsh{} save results for plotting}
+        
+        \PY{n}{fig3} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}  
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,}\PY{n}{c1}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,}\PY{n}{c2}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)}\PY{o}{*}\PY{n}{cCF}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZdl{} commit}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Renegotiation Proof Contract and alpha}\PY{l+s+s1}{\PYZsq{}} \PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{alpha }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{consumption}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{upper left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \hypertarget{commercial-non-profits}{%
+\subsubsection{`Commercial' non-profits}\label{commercial-non-profits}}
+
+A `pure' for profit (with \(\alpha\)=1.0) earns a reduced (possibly
+negative) profit due to it's inability to commit. Seen in the plot as
+profits the height of the horizontal line.
+
+Any non-profit with \(\alpha\) above about 0.4 and below 1.0 can better
+commit to not renegotiate a larger set of contracts and therefore can
+offer a more profitable renegotiation-proof contract. Even though they
+capture only fraction \(\alpha\) of those profits, the take home profits
+exceed the profits of the pure for-profit.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{cC}\PY{o}{.}\PY{n}{y} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{130}\PY{p}{,}\PY{l+m+mi}{85}\PY{p}{,}\PY{l+m+mi}{85}\PY{p}{]}  
+        \PY{c+c1}{\PYZsh{}last entry is \PYZsq{}pure profit\PYZsq{} pvu0RP[\PYZhy{}1]}
+        \PY{n}{pvu0RP\PYZus{}full} \PY{o}{=} \PY{n}{pvu0RP}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)}
+        \PY{n}{pvu0\PYZus{}aut}  \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cC}\PY{o}{.}\PY{n}{y}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)}
+        
+        \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+        \PY{n}{ax} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{111}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Renegotiation\PYZhy{}Proof PVU0 vs. alpha}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{type of firm \PYZdl{} }\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{alpha\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0\PYZhy{}self present discounted utility}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,}\PY{n}{pvu0RP\PYZus{}full}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{PVU from pure\PYZhy{}profit}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,}\PY{n}{pvu0RP}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{PVU from non\PYZhy{}profit}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,}\PY{n}{pvu0\PYZus{}aut}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{PVU from autarky}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        
+        \PY{n}{ax}\PY{o}{.}\PY{n}{fill\PYZus{}between}\PY{p}{(}\PY{n}{alphs}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{fmax}\PY{p}{(}\PY{n}{pvu0RP}\PY{p}{,}\PY{n}{pvu0\PYZus{}aut}\PY{p}{)}\PY{p}{,} \PY{n}{pvu0\PYZus{}aut}\PY{p}{,}\PY{n}{hatch}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{/}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{upper center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{0.1}\PY{p}{)}\PY{p}{,}
+                  \PY{n}{fancybox}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{ncol}\PY{o}{=}\PY{l+m+mi}{5}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    The figure above compares what the customer can get (present discounted
+utility of period 0 self) from autarky compared to what he could get
+contracting in a situation with competition and exclusive contracts.
+
+In the particular example (\(\beta = 0.5, \rho=0.75, y=[130,85, 85]\))
+the autarky consumption bundle is rather close to what could be offered
+via consumption smothing so the total surplus to be divided is not that
+large. The pure for profit firm offers a renegotiation proof contract
+that does such a poor smoothing job that the consumer prefers to stay in
+authaky. However a commercial non-profit with alpha below
+\textasciitilde{} 0.8 offers a smoother contract and hence gains to
+trade.
+
+Now as presently modeld that non-profit will of course get zero profits
+(80\% of zero!). We can model instead situations where at any period 1
+renegotiation it's the consumer who gives up all surplus since the
+assumption of exclusive contracts means the period 1 self will be
+willing to give up quite a bit. Or maybe they Nash bargain. THese cases
+might be more realistic.
+
+We'll get to these in a moment but first lets look at how the above
+situation depends on the initial y vector.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{cC}\PY{o}{.}\PY{n}{print\PYZus{}params}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{}plot(alphs,cMRP[0,:],label=\PYZsq{}\PYZdl{}c\PYZus{}\PYZob{}0\PYZcb{}\PYZdl{}\PYZsq{})}
+        \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,}\PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{p}{:}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{cC}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}\PYZhy{}c\PYZus{}}\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{p}{:}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{p}{:}\PY{p}{]}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}c\PYZus{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Consumption profile as a function of alpha}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{upper center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{0.05}\PY{p}{)}\PY{p}{,}
+                  \PY{n}{fancybox}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{ncol}\PY{o}{=}\PY{l+m+mi}{5}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \textbf{Loan, repayment and PVU breakdown by periods as function of
+alpha} (to be completed\ldots{}results below are from monopoly case)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{}print(\PYZdq{}alpha      c0     c1    c2        profit = (y0\PYZhy{}cMRP0) + (y1\PYZhy{}cMRP1) + (y2\PYZhy{}cMRP2)\PYZdq{})}
+        \PY{c+c1}{\PYZsh{}print(\PYZdq{}\PYZhy{}\PYZdq{}*79)}
+        \PY{c+c1}{\PYZsh{}for i,a in enumerate(alphs):}
+        \PY{c+c1}{\PYZsh{}    print(\PYZdq{}\PYZob{}:5.2f\PYZcb{}:   \PYZob{}:6.2f\PYZcb{} \PYZob{}:6.2f\PYZcb{} \PYZob{}:5.2f\PYZcb{},   \PYZob{}:8.2f\PYZcb{} = \PYZob{}:8.2f\PYZcb{}   + \PYZob{}:8.2f\PYZcb{}   + \PYZob{}:8.2f\PYZcb{}   \PYZdq{}}
+        \PY{c+c1}{\PYZsh{}          .format(a, cMRP[0,i], cMRP[1,i], cMRP[2,i],profitRP[i],y[0]\PYZhy{}cMRP[0,i],y[1]\PYZhy{}cMRP[1,i],y[2]\PYZhy{}cMRP[2,i],))}
+        \PY{c+c1}{\PYZsh{}print()}
+\end{Verbatim}
+
+
+    The inability to commit means the renegotiation proof contract doesn't
+smooth consumption very well for the consumer. This ends up hurting the
+bank, since they must now `compensate' the consumer for the higher
+variance of consumption if the participation constraint is still to be
+met.
+
+    The code that follows produces a grid of subplots to illustrate how the
+results (the relation between \(\alpha\) and retained profits) depends
+on the initial y vector, which in turn also determines whether this will
+be borrowing or saving.
+
+    \#\#The role of y \#\#\#Gains to consumer with diferent firms \(\alpha\)
+Even though it earns zero profits a pure for-profit firm's renegotiation
+proof contract will offer less consumption smoothing that a firm that
+due to its non-profit status has higher renegotiation costs.
+
+    NOTE: some parts of this script need manual adjustment
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Left: present discounted U (shaded = NP dominates). Right: net saving in each period as function of α :}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{num\PYZus{}pts}  \PY{o}{=} \PY{l+m+mi}{21}
+        \PY{n}{alphs}    \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{num\PYZus{}pts}\PY{p}{)}       \PY{c+c1}{\PYZsh{} iterate over different alphas}
+        \PY{n}{HA}        \PY{o}{=} \PY{l+m+mi}{10}\PY{o}{*}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{alphs}\PY{p}{)}     \PY{c+c1}{\PYZsh{} h(alpha)/alpha  or cost of renegotiaton}
+        \PY{n}{cCRP}     \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{n}{num\PYZus{}pts}\PY{p}{)}\PY{p}{)}             \PY{c+c1}{\PYZsh{} to store (c0,c1,c2) for each alpha}
+        \PY{n}{pvu0RP}   \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)}  \PY{c+c1}{\PYZsh{}PVU0 when contracting with alpha=1 firm}
+        \PY{n}{pvu0\PYZus{}aut}  \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cC}\PY{o}{.}\PY{n}{y}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)}
+        
+        \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{n}{sharex}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+        \PY{n}{numy0} \PY{o}{=} \PY{l+m+mi}{3}     \PY{c+c1}{\PYZsh{} rows of subplots}
+        \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{n}{numy0}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Vary y contracts (maintaining PV at 300 in zero interest rate setting)}
+        \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{numy0} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}  
+            \PY{n}{y0} \PY{o}{=} \PY{l+m+mi}{100} \PY{o}{+} \PY{n}{j}\PY{o}{*}\PY{l+m+mi}{20}
+            \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{y0}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{]}\PY{p}{)}            
+            \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{y0}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{300}\PY{o}{\PYZhy{}}\PY{n}{y0}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{300}\PY{o}{\PYZhy{}}\PY{n}{y0}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}   
+            \PY{n}{cC}\PY{o}{.}\PY{n}{y} \PY{o}{=} \PY{n}{y}
+            \PY{n}{pvu0\PYZus{}aut}  \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cC}\PY{o}{.}\PY{n}{y}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)}
+            
+            \PY{n}{ax1} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{n}{numy0}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{j}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{sharex}\PY{o}{=}\PY{n}{ax}\PY{p}{)}  
+            \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{num\PYZus{}pts}\PY{p}{)}\PY{p}{:}
+                \PY{n}{cC}\PY{o}{.}\PY{n}{kappa} \PY{o}{=} \PY{n}{HA}\PY{p}{[}\PY{n}{i}\PY{p}{]}             \PY{c+c1}{\PYZsh{} change reneg cost  }
+                
+                \PY{n}{cCRP}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}    \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{reneg\PYZus{}proof}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{x} 
+                \PY{n}{cC}\PY{o}{.}\PY{n}{guess}     \PY{o}{=} \PY{n}{cCRP}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}         \PY{c+c1}{\PYZsh{} store sol as guess for next search}
+                \PY{n}{pvu0RP}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{cC}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cCRP}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{beta}\PY{p}{)}
+           
+            \PY{c+c1}{\PYZsh{}last entry is \PYZsq{}pure profit\PYZsq{} pvu0RP[\PYZhy{}1]}
+            \PY{c+c1}{\PYZsh{}pvu0RP\PYZus{}pure = pvu0RP[\PYZhy{}1]}
+            
+            \PY{n}{pvu0RP\PYZus{}full} \PY{o}{=} \PY{n}{pvu0RP}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)} 
+            
+            \PY{c+c1}{\PYZsh{} I HAVE NOT YET AUTOMATED THE AXIS BOUNDS}
+            \PY{n}{pumin} \PY{o}{=}  \PY{n+nb}{min}\PY{p}{(}\PY{n}{pvu0RP}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n+nb}{min}\PY{p}{(}\PY{n}{pvu0\PYZus{}aut}\PY{p}{)}\PY{p}{)}
+            \PY{n}{pumax} \PY{o}{=} \PY{n+nb}{max}\PY{p}{(}\PY{n}{pvu0RP}\PY{p}{)}
+            \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{50.25}\PY{p}{,} \PY{l+m+mf}{50.6}\PY{p}{]}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{y}\PY{p}{,}\PY{n}{pumin}\PY{p}{,}\PY{n}{pumax}\PY{p}{,}\PY{n+nb}{min}\PY{p}{(}\PY{n}{pvu0\PYZus{}aut}\PY{p}{)}\PY{p}{,}\PY{n}{pvu0RP}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{cCF : }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{cCF}\PY{p}{)}
+            
+            \PY{n}{pvu0RP\PYZus{}full} \PY{o}{=} \PY{n}{pvu0RP}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)} 
+            \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}y=( }\PY{l+s+si}{\PYZpc{}2.0f}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZpc{}2.0f}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZpc{}2.0f}\PY{l+s+s1}{)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}}\PY{p}{(}\PY{n}{y0}\PY{p}{,}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+            \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,} \PY{n}{pvu0\PYZus{}aut}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{aut}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,} \PY{n}{pvu0RP}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NP}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,} \PY{n}{pvu0RP\PYZus{}full}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FP}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n}{ax1}\PY{o}{.}\PY{n}{fill\PYZus{}between}\PY{p}{(}\PY{n}{alphs}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{fmax}\PY{p}{(}\PY{n}{pvu0RP}\PY{p}{,}\PY{n}{pvu0\PYZus{}aut}\PY{p}{)}\PY{p}{,} \PY{n}{pvu0\PYZus{}aut}\PY{p}{,}\PY{n}{hatch}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{/}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+                
+            \PY{n}{ax2} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{n}{numy0}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{j}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{sharex}\PY{o}{=}\PY{n}{ax}\PY{p}{,} \PY{n}{sharey}\PY{o}{=}\PY{n}{ax}\PY{p}{)}    \PY{c+c1}{\PYZsh{} Plot contract terms in right column plot}
+            \PY{c+c1}{\PYZsh{}ax1.set\PYZus{}ylim([0, 25])}
+            \PY{n}{ax2}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,} \PY{n}{y0} \PY{o}{\PYZhy{}} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{p}{:}\PY{p}{]}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{d\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}y\PYZus{}0\PYZhy{}c\PYZus{}0\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n}{ax2}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,} \PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{p}{:}\PY{p}{]}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}y\PYZus{}1\PYZhy{}c\PYZus{}1\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n}{ax2}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,} \PY{n}{y}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{cCRP}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{p}{:}\PY{p}{]}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}y\PYZus{}2\PYZhy{}c\PYZus{}2\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{c+c1}{\PYZsh{}ax2.axhline(y=0, color =\PYZsq{}k\PYZsq{})}
+            \PY{c+c1}{\PYZsh{}ax2.plot(alphs, y[0]*np.ones(num\PYZus{}pts))}
+            \PY{c+c1}{\PYZsh{}ax2.plot(alphs, y[1]*np.ones(num\PYZus{}pts))}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}    
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{lower center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fancybox}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{ncol}\PY{o}{=}\PY{l+m+mi}{5}\PY{p}{)}
+        \PY{n}{ax2}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{lower center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fancybox}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{ncol}\PY{o}{=}\PY{l+m+mi}{5}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+        
+        \PY{n}{plt}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figs}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{Comp\PYZus{}excl.pdf}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n+nb}{format}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pdf}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}    
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{plt}\PY{o}{.}\PY{n}{close}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{all}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \textbf{INTERPRETATION}: The left column of plots above shows
+renegotiation-proof profits as a function of \(\alpha\) where \(\alpha\)
+affects both the share of profits that are captured as well as the cost
+of renegotiation as described above. The blue shaded area indicates
+where commercial non-profits (that choose an \(\alpha <1\)) capture more
+profit than a pure for-profit.
+
+The right column of plots shows the terms of the associated contract
+displayed as `net savings' (y0-c0), (y1-c1), and (y2-c2). When these are
+positive the client is saving or repaying, when negative they are
+borrowing.
+
+When we keep the PV of y constant but change the ratio of period zero
+income y0 to later period income, y vectors that lead to borrowing
+(lower y0, higher y1,y2) deliver higher full-commitment (and
+renegotiation-proof) profits at any level of alpha.
+
+Since most of the profits are in the 0 to 1 period, they weigh more
+heavily in total profits. Turning non-profit is only attractive at
+relatively high values of alpha (since at lower alpha they're forfeiting
+the period 0-1 profits). At higher y0 (tilted more toward savings) full
+commitment (and renegotiation-proof) profits are lower The pattern seems
+to be that as we move toward first period savings\ldots{}
+
+    \hypertarget{not-finished}{%
+\subsubsection{NOT FINISHED}\label{not-finished}}
+
+Profitability as a function of y0
+
+    \hypertarget{own-savings-strategies}{%
+\subsubsection{Own-savings strategies}\label{own-savings-strategies}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{cC} \PY{o}{=} \PY{n}{Contract}\PY{o}{.}\PY{n}{Competitive}\PY{p}{(}\PY{n}{beta} \PY{o}{=} \PY{l+m+mf}{0.9}\PY{p}{)}
+        \PY{n}{cC}\PY{o}{.}\PY{n}{rho} \PY{o}{=} \PY{l+m+mf}{0.5}
+        \PY{n}{cC}\PY{o}{.}\PY{n}{y} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{110}\PY{p}{,}\PY{l+m+mi}{95}\PY{p}{,}\PY{l+m+mi}{95}\PY{p}{]}
+        \PY{n}{cC}\PY{o}{.}\PY{n}{print\PYZus{}params}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k}{def} \PY{n+nf}{saving}\PY{p}{(}\PY{n}{c}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n}{c}\PY{o}{\PYZhy{}}\PY{n}{y}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n+nb}{print}\PY{p}{(}\PY{n}{cC}\PY{o}{.}\PY{n}{y}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{cC}\PY{o}{.}\PY{n}{ownsmooth}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{cC}\PY{o}{.}\PY{n}{fcommit}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{saving}\PY{p}{(}\PY{n}{cC}\PY{o}{.}\PY{n}{ownsmooth}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{n}{cC}\PY{o}{.}\PY{n}{y}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{PDV} \PY{o}{=}\PY{l+m+mi}{300}
+        \PY{n}{y0\PYZus{}step} \PY{o}{=} \PY{l+m+mi}{2}
+        \PY{n}{y0\PYZus{}start} \PY{o}{=} \PY{l+m+mi}{50}
+        \PY{n}{y0\PYZus{}end} \PY{o}{=} \PY{n}{PDV} \PY{o}{\PYZhy{}}\PY{l+m+mi}{50}
+        \PY{n}{Y0} \PY{o}{=} \PY{n+nb}{range}\PY{p}{(}\PY{n}{y0\PYZus{}start}\PY{p}{,}\PY{n}{y0\PYZus{}end}\PY{p}{,}\PY{n}{y0\PYZus{}step}\PY{p}{)}
+        \PY{n}{n} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{Y0}\PY{p}{)}
+        \PY{n}{profity0} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+        \PY{n}{profity0B} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+        \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}
+        
+        \PY{k}{for} \PY{n}{y0} \PY{o+ow}{in} \PY{n}{Y0}\PY{p}{:}  
+            \PY{n}{ybar} \PY{o}{=} \PY{p}{(}\PY{n}{PDV}\PY{o}{\PYZhy{}}\PY{n}{y0}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}
+            \PY{n}{cM}\PY{o}{.}\PY{n}{y} \PY{o}{=}\PY{p}{(}\PY{p}{[}\PY{n}{y0}\PY{p}{,}\PY{n}{ybar}\PY{p}{,}\PY{n}{ybar}\PY{p}{]}\PY{p}{)}
+            \PY{n}{cMF} \PY{o}{=} \PY{n}{cM}\PY{o}{.}\PY{n}{fcommit}\PY{p}{(}\PY{p}{)}
+            \PY{n}{cMRP} \PY{o}{=} \PY{n}{cM}\PY{o}{.}\PY{n}{reneg\PYZus{}proof}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{x}
+            \PY{n}{cM}\PY{o}{.}\PY{n}{guess} \PY{o}{=} \PY{n}{cMRP}
+            \PY{n}{profity0}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{cM}\PY{o}{.}\PY{n}{profit}\PY{p}{(}\PY{n}{cMRP}\PY{p}{,}\PY{n}{cM}\PY{o}{.}\PY{n}{y}\PY{p}{)}
+            \PY{n}{profity0B}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{cM}\PY{o}{.}\PY{n}{profit}\PY{p}{(}\PY{n}{cMF}\PY{p}{,}\PY{n}{cM}\PY{o}{.}\PY{n}{y}\PY{p}{)}
+            
+            \PY{n}{i} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{profity0}\PY{p}{,}\PY{n}{Y0}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{reneg. proof}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{profity0B}\PY{p}{,}\PY{n}{Y0}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{full commit}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{80}\PY{p}{,}\PY{l+m+mi}{160}\PY{p}{]}\PY{p}{)}\PY{n}{c}
+        
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Profits as a function of y0}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{profits \PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{pi\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{y0}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center right}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \hypertarget{modifications-when-consumer-has-a-home-savings-option}{%
+\subsection{Modifications when consumer has a home savings
+option}\label{modifications-when-consumer-has-a-home-savings-option}}
+
+The above ana
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{cM} \PY{o}{=} \PY{n}{Monopoly}\PY{p}{(}\PY{l+m+mf}{0.8}\PY{p}{)} 
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{cM}\PY{o}{.}\PY{n}{kappa} \PY{o}{=}\PY{l+m+mi}{0}
+        \PY{n}{cM}\PY{o}{.}\PY{n}{guess} \PY{o}{=} \PY{n}{cMF}
+        \PY{n}{cMRP} \PY{o}{=} \PY{n}{cM}\PY{o}{.}\PY{n}{reneg\PYZus{}proof}\PY{p}{(}\PY{p}{)}
+        \PY{n}{cMRP}\PY{o}{.}\PY{n}{x}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,}\PY{n}{C}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Three subplots sharing both x/y axes}
+        \PY{n}{f}\PY{p}{,} \PY{p}{(}\PY{n}{ax1}\PY{p}{,} \PY{n}{ax2}\PY{p}{,} \PY{n}{ax3}\PY{p}{)} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{sharex}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{sharey}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,} \PY{n}{profitRP}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,} \PY{n}{NprofitRP}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,}\PY{n}{cM}\PY{o}{.}\PY{n}{profit}\PY{p}{(}\PY{n}{cMF}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{o}{*}\PY{n}{ones}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{True}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Sharing both axes}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax2}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,} \PY{n}{NprofitRP}\PY{p}{)}
+        \PY{n}{ax3}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{alphs}\PY{p}{,}\PY{n}{cM}\PY{o}{.}\PY{n}{profit}\PY{p}{(}\PY{n}{cMF}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{o}{*}\PY{n}{ones}\PY{p}{(}\PY{n}{num\PYZus{}pts}\PY{p}{)}\PY{p}{)}
+        \PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \hypertarget{other-results}{%
+\subsection{Other Results}\label{other-results}}
+
+    \hypertarget{beta-and-loan-size}{%
+\subsubsection{\texorpdfstring{\(\beta\) and loan
+size}{\textbackslash{}beta and loan size}}\label{beta-and-loan-size}}
+
+    Let's plot the the relationship between period 0 loan size in a
+full-commitment contract and the extent of present-bias captured by
+\(\beta\)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{cM} \PY{o}{=} \PY{n}{Contract}\PY{o}{.}\PY{n}{Monopoly}\PY{p}{(}\PY{l+m+mf}{0.8}\PY{p}{)}               \PY{c+c1}{\PYZsh{} create an instance m}
+        
+        \PY{n}{num\PYZus{}pts} \PY{o}{=} \PY{l+m+mi}{21}
+        \PY{n}{betas} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{num\PYZus{}pts}\PY{p}{)}           \PY{c+c1}{\PYZsh{} iterate over different values of beta}
+        \PY{n}{CMF} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{n}{num\PYZus{}pts}\PY{p}{)}\PY{p}{)}                  \PY{c+c1}{\PYZsh{} a three row matrix to store (c0,c1,c2) for each beta}
+        
+        \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{num\PYZus{}pts}\PY{p}{)}\PY{p}{:}
+            \PY{n}{cM}\PY{o}{.}\PY{n}{beta} \PY{o}{=} \PY{n}{betas}\PY{p}{[}\PY{n}{i}\PY{p}{]}                    \PY{c+c1}{\PYZsh{} change beta before recalculating optimal contract}
+            \PY{n}{CMF}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{cM}\PY{o}{.}\PY{n}{fcommit}\PY{p}{(}\PY{p}{)}       
+        
+        \PY{n}{loan}   \PY{o}{=} \PY{n}{CMF}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{p}{:}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{cM}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}               \PY{c+c1}{\PYZsh{} save results for plotting}
+        \PY{n}{repay1} \PY{o}{=} \PY{n}{CMF}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{p}{:}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{cM}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+        \PY{n}{repay2} \PY{o}{=} \PY{n}{CMF}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{p}{:}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{cM}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}
+        
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{betas}\PY{p}{,}\PY{n}{loan}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}                          \PY{c+c1}{\PYZsh{} plot    }
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{betas}\PY{p}{,}\PY{n}{repay1}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{betas}\PY{p}{,}\PY{n}{repay2}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Monopoly Commitment Contract as function of beta}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{beta}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{net repayment}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{loan}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{repay1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{repay2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+    \hypertarget{example-full-commitment-contract-and-renegotiation-with-a-naive-consumer}{%
+\subsubsection{Example full commitment contract (and renegotiation with
+a naive
+consumer)}\label{example-full-commitment-contract-and-renegotiation-with-a-naive-consumer}}
+
+    Here is an example of the full-commitment contracts a monopolist offers
+and the contract a monopolist and a naive consumer would renegotiate to
+from that same full commitment contract (but note that a intermediary
+who knows they are dealing with a naive consumer would bait them with a
+different initial contract).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{cM}\PY{o}{.}\PY{n}{beta} \PY{o}{=} \PY{l+m+mf}{0.8}            \PY{c+c1}{\PYZsh{} Reset to beta = 0.8 case and print out other parameters}
+        \PY{n}{cM}\PY{o}{.}\PY{n}{print\PYZus{}params}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{cMF} \PY{o}{=} \PY{n}{cM}\PY{o}{.}\PY{n}{fcommit}\PY{p}{(}\PY{p}{)}      
+        \PY{n}{cMr} \PY{o}{=} \PY{n}{cM}\PY{o}{.}\PY{n}{reneg}\PY{p}{(}\PY{n}{cMF}\PY{p}{)}       
+        \PY{n}{y} \PY{o}{=} \PY{n}{cM}\PY{o}{.}\PY{n}{y}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0\PYZhy{}Discounted utility full commit: }\PY{l+s+si}{\PYZob{}0:4.3f\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{cM}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cMF}\PY{p}{,}\PY{n}{cM}\PY{o}{.}\PY{n}{beta}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{and   Naive renegotiate: }\PY{l+s+si}{\PYZob{}1:4.3f\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{cM}\PY{o}{.}\PY{n}{PVU}\PY{p}{(}\PY{n}{cMr}\PY{p}{,}\PY{n}{cM}\PY{o}{.}\PY{n}{beta}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+        \PY{c+c1}{\PYZsh{}print(\PYZsq{}Profits from full commit: \PYZob{}0:4.3f\PYZcb{}   and   Naive renegotiate:\PYZob{}1:4.3f\PYZcb{}\PYZsq{}.format(cM.profit(y,cMF), cM.profit(y,cMr)))}
+\end{Verbatim}
+
+
+    \hypertarget{scratch-play-area}{%
+\subparagraph{Scratch play area}\label{scratch-play-area}}
+
+    \hypertarget{d-plots}{%
+\paragraph{3D plots}\label{d-plots}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits}\PY{n+nn}{.}\PY{n+nn}{mplot3d} \PY{k}{import} \PY{n}{axes3d}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{cm}
+        
+        \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+        \PY{n}{ax} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{111}\PY{p}{,} \PY{n}{projection}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3d}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z} \PY{o}{=} \PY{n}{axes3d}\PY{o}{.}\PY{n}{get\PYZus{}test\PYZus{}data}\PY{p}{(}\PY{l+m+mf}{0.05}\PY{p}{)}
+        \PY{n}{cset} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{contour}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{clabel}\PY{p}{(}\PY{n}{cset}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{9}\PY{p}{,} \PY{n}{inline}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+        
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits}\PY{n+nn}{.}\PY{n+nn}{mplot3d} \PY{k}{import} \PY{n}{axes3d}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{cm}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+        \PY{n}{ax} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{gca}\PY{p}{(}\PY{n}{projection}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3d}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{c0}\PY{p}{,} \PY{n}{c1} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{150}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{150}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{n}{c2} \PY{o}{=}  
+        \PY{n}{ax}\PY{o}{.}\PY{n}{plot\PYZus{}surface}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{,} \PY{n}{rstride}\PY{o}{=}\PY{l+m+mi}{8}\PY{p}{,} \PY{n}{cstride}\PY{o}{=}\PY{l+m+mi}{8}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{)}
+        \PY{n}{cset} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{contour}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{,} \PY{n}{zdir}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{z}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{offset}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mi}{100}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{cm}\PY{o}{.}\PY{n}{coolwarm}\PY{p}{)}
+        \PY{n}{cset} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{contour}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{,} \PY{n}{zdir}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{offset}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mi}{40}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{cm}\PY{o}{.}\PY{n}{coolwarm}\PY{p}{)}
+        \PY{n}{cset} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{contour}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{,} \PY{n}{zdir}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{offset}\PY{o}{=}\PY{l+m+mi}{40}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{cm}\PY{o}{.}\PY{n}{coolwarm}\PY{p}{)}
+        
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{X}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlim}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{40}\PY{p}{,} \PY{l+m+mi}{40}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{40}\PY{p}{,} \PY{l+m+mi}{40}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}zlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Z}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}zlim}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{)}
+        
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \hypertarget{is-c_0-and-hence-net-borrowing-higher-or-lower-in-renegotiation-proof-contracts}{%
+\subsubsection{\texorpdfstring{Is \(c_0\) (and hence net borrowing)
+higher or lower in renegotiation-proof
+contracts?}{Is c\_0 (and hence net borrowing) higher or lower in renegotiation-proof contracts?}}\label{is-c_0-and-hence-net-borrowing-higher-or-lower-in-renegotiation-proof-contracts}}
+
+It's going to depend on \(\rho\)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{bb} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mf}{0.05}\PY{p}{)}
+        \PY{n}{bb}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k}{for} \PY{n}{rh} \PY{o+ow}{in} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mf}{0.2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mf}{0.2}\PY{p}{)}\PY{p}{:}
+            \PY{n}{c0RP} \PY{o}{=} \PY{l+m+mi}{300}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{bb}\PY{o}{+}\PY{n}{bb}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rh}\PY{p}{)}\PY{p}{)}
+            \PY{n}{c0F} \PY{o}{=} \PY{l+m+mi}{300}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{bb}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rh}\PY{p}{)} \PY{p}{)} 
+            \PY{n}{rat} \PY{o}{=} \PY{n}{c0RP}\PY{o}{/}\PY{n}{c0F}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{bb}\PY{p}{,}\PY{n}{rat}\PY{p}{)}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}:3.1f\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{rh}\PY{p}{)}\PY{p}{,}\PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,}\PY{n}{rat}\PY{p}{[}\PY{n+nb}{len}\PY{p}{(}\PY{n}{rat}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Ratio \PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{frac}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{c\PYZus{}0\PYZca{}}\PY{l+s+si}{\PYZob{}RP\PYZcb{}}\PY{l+s+s1}{\PYZcb{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{c\PYZus{}0\PYZca{}F\PYZcb{}\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{beta \PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k}{for} \PY{n}{rh} \PY{o+ow}{in} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mf}{0.2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mf}{0.2}\PY{p}{)}\PY{p}{:}
+            \PY{n}{c0RP} \PY{o}{=} \PY{l+m+mi}{300}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{bb}\PY{o}{+}\PY{n}{bb}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rh}\PY{p}{)}\PY{p}{)}
+            \PY{n}{c0F} \PY{o}{=} \PY{l+m+mi}{300}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{bb}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{rh}\PY{p}{)} \PY{p}{)} 
+            \PY{n}{rat} \PY{o}{=} \PY{n}{c0RP}\PY{o}{/}\PY{n}{c0F}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{bb}\PY{p}{,}\PY{n}{c0F}\PY{p}{)}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}:3.1f\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{rh}\PY{p}{)}\PY{p}{,}\PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,}\PY{n}{rat}\PY{p}{[}\PY{n+nb}{len}\PY{p}{(}\PY{n}{c0RP}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{consumption \PYZdl{}c\PYZus{}0\PYZca{}}\PY{l+s+si}{\PYZob{}RP\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{beta\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}70}]:} \PY{n+nb}{len}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{BDDBCBDBDBCBAA BBAAABCBCCBCABBCABBBAAAADD}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{DBDDBCBDBDBCBAA} \PY{n}{BBAAABCBCCBCABBCABBBAAAADD}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}70}]:} 41
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}71}]:} \PY{n+nb}{len}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{BDDBCCDCDBCBBAABDDAACCDBBBCABCDABBCAxACDA}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}71}]:} 41
+\end{Verbatim}
+            
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}

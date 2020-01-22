@@ -1,0 +1,1321 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  D:\Users\jconning\Google Drive\GC\DevII_S15\other\SEED.QJEtables.takeup.log
+  log type:  text
+ opened on:  18 Mar 2016, 16:05:39
+
+. 
+. use "seedanalysis_011204_080404_1.dta", clear
+
+. gen control = 1 if group == "C"
+(2,344 missing values generated)
+
+. replace control = 0 if control ==.
+(2,344 real changes made)
+
+. macro define GB "GBloan GBloandefault"
+
+. macro define fullset "married edhi numhh unemployed age $GB hh_inc hh_inc2"
+
+. macro define fullset_noGB "married edhi numhh unemployed age hh_inc hh_inc2"
+
+. 
+end of do-file
+
+. do "D:\Users\jconning\AppData\Local\Temp\STD05000000.tmp"
+
+. 
+. gen dormant_new = 1- active
+
+. drop dormant
+
+. rename dormant_new dormant
+
+. replace totbal = totbal/100
+(2,839 real changes made)
+
+. replace newtotbal = newtotbal/100
+(2,193 real changes made)
+
+. gen dist_GB = dbutuan if butuan ==1
+(762 missing values generated)
+
+. replace dist_GB = dampayon if ampayon == 1
+(762 real changes made)
+
+. destring pop, ignore(",") replace
+pop: characters , removed; replaced as int
+
+. gen brgy_penetration = no_clients /pop
+
+. bysort brgy: egen sd_totbal = sd(totbal)
+
+. bysort brgy: egen mean_totbal = mean(totbal)
+
+. 
+. set more off
+
+. *log using table1_3.log, replace
+. 
+. *TABLE 1: Savings Goals
+. tab goal_category if seedtakeup==1
+
+                    Savings goal |      Freq.     Percent        Cum.
+---------------------------------+-----------------------------------
+Agricultural Financing/Investing |          4        2.04        2.04
+            Capital for Business |         20       10.20       12.24
+Christmas/Birthday/Celebration/G |         95       48.47       60.71
+                       Education |         41       20.92       81.63
+House/Lot construction and purch |         20       10.20       91.84
+                         Medical |          1        0.51       92.35
+  Personal Needs/Future Expenses |          3        1.53       93.88
+Purchase or Maintenance of Machi |          8        4.08       97.96
+                 Vacation/Travel |          4        2.04      100.00
+---------------------------------+-----------------------------------
+                           Total |        196      100.00
+
+. tab goal_type if seedtakeup==1
+
+    Type of |
+    savings |
+       goal |      Freq.     Percent        Cum.
+------------+-----------------------------------
+     amount |         62       30.69       30.69
+       date |        140       69.31      100.00
+------------+-----------------------------------
+      Total |        202      100.00
+
+. tab box if seedtakeup==1
+
+     Bought |
+  ganansiya |
+        box |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |         35       17.33       17.33
+          1 |        167       82.67      100.00
+------------+-----------------------------------
+      Total |        202      100.00
+
+. 
+end of do-file
+
+. do "D:\Users\jconning\AppData\Local\Temp\STD05000000.tmp"
+
+. 
+. *TABLE 2: Sumstats 
+. *Panel A
+. tabstat totbal active if call==1, by(group) stats(mean sem)
+
+Summary statistics: mean, se(mean)
+  by categories of: group 
+
+ group |    totbal    active
+-------+--------------------
+     C |  530.7378  .3603412
+       |  23.38712  .0221926
+-------+--------------------
+     M |  499.0084  .3626609
+       |  23.50222  .0222951
+-------+--------------------
+     T |   502.685  .3491686
+       |  17.33115  .0164382
+-------+--------------------
+ Total |  509.1248  .3556556
+       |  11.97734  .0113593
+----------------------------
+
+. reg totbal treatment control if call ==1
+
+      Source |       SS           df       MS      Number of obs   =     1,777
+-------------+----------------------------------   F(2, 1774)      =      0.59
+       Model |  301690.551         2  150845.275   Prob > F        =    0.5536
+    Residual |   452440317     1,774  255039.638   R-squared       =    0.0007
+-------------+----------------------------------   Adj R-squared   =   -0.0005
+       Total |   452742008     1,776  254922.302   Root MSE        =    505.01
+
+------------------------------------------------------------------------------
+      totbal |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   treatment |   3.676564   29.15807     0.13   0.900    -53.51121    60.86434
+     control |   31.72941   33.03165     0.96   0.337    -33.05563    96.51446
+       _cons |   499.0084   23.39434    21.33   0.000      453.125    544.8918
+------------------------------------------------------------------------------
+
+. reg active treatment control if call ==1
+
+      Source |       SS           df       MS      Number of obs   =     1,777
+-------------+----------------------------------   F(2, 1774)      =      0.15
+       Model |   .06859733         2  .034298665   Prob > F        =    0.8612
+    Residual |  407.157064     1,774  .229513565   R-squared       =    0.0002
+-------------+----------------------------------   Adj R-squared   =   -0.0010
+       Total |  407.225661     1,776  .229293728   Root MSE        =    .47908
+
+------------------------------------------------------------------------------
+      active |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   treatment |  -.0134923   .0276604    -0.49   0.626    -.0677428    .0407582
+     control |  -.0023198   .0313351    -0.07   0.941    -.0637773    .0591377
+       _cons |   .3626609   .0221928    16.34   0.000     .3191342    .4061876
+------------------------------------------------------------------------------
+
+. sort brgy
+
+. tabstat dist_GB brgy_penetration sd_totbal mean_totbal pop if call==1, by(group) stats(mean sem)
+
+Summary statistics: mean, se(mean)
+  by categories of: group 
+
+ group |   dist_GB  brgy_p~n  sd_tot~l  mean_t~l       pop
+-------+--------------------------------------------------
+     C |  21.86567  .0219365  487.1321  473.3466  5853.949
+       |  .8419475  .0004179  3.507831   3.74361  213.4831
+-------+--------------------------------------------------
+     M |  23.22961  .0216379  491.3003  476.9744  5708.208
+       |  .8874667  .0004076  3.449334  3.716019  203.4358
+-------+--------------------------------------------------
+     T |  22.70784  .0219269  488.0445  476.0261    5729.5
+       |  .6718419   .000292  2.442733  2.599624    152.98
+-------+--------------------------------------------------
+ Total |   22.6224  .0218536  488.6575  475.5676  5756.762
+       |  .4525451  .0002066  1.735807  1.854791  106.1334
+----------------------------------------------------------
+
+. reg dist_GB treatment control if call ==1
+
+      Source |       SS           df       MS      Number of obs   =     1,777
+-------------+----------------------------------   F(2, 1774)      =      0.61
+       Model |  446.531678         2  223.265839   Prob > F        =    0.5417
+    Residual |  645883.097     1,774  364.082918   R-squared       =    0.0007
+-------------+----------------------------------   Adj R-squared   =   -0.0004
+       Total |  646329.629     1,776   363.92434   Root MSE        =    19.081
+
+------------------------------------------------------------------------------
+     dist_GB |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   treatment |  -.5217753   1.101679    -0.47   0.636      -2.6825     1.63895
+     control |  -1.363942   1.248034    -1.09   0.275    -3.811715    1.083831
+       _cons |   23.22961   .8839083    26.28   0.000       21.496    24.96322
+------------------------------------------------------------------------------
+
+. reg brgy_penetration treatment control if call ==1
+
+      Source |       SS           df       MS      Number of obs   =     1,777
+-------------+----------------------------------   F(2, 1774)      =      0.19
+       Model |   .00002944         2   .00001472   Prob > F        =    0.8238
+    Residual |  .134701232     1,774  .000075931   R-squared       =    0.0002
+-------------+----------------------------------   Adj R-squared   =   -0.0009
+       Total |  .134730672     1,776  .000075862   Root MSE        =    .00871
+
+------------------------------------------------------------------------------
+brgy_penet~n |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   treatment |    .000289   .0005031     0.57   0.566    -.0006977    .0012758
+     control |   .0002987   .0005699     0.52   0.600    -.0008192    .0014165
+       _cons |   .0216379   .0004037    53.60   0.000     .0208462    .0224296
+------------------------------------------------------------------------------
+
+. reg sd_totbal treatment control if call ==1
+
+      Source |       SS           df       MS      Number of obs   =     1,777
+-------------+----------------------------------   F(2, 1774)      =      0.44
+       Model |  4662.35264         2  2331.17632   Prob > F        =    0.6473
+    Residual |  9504305.63     1,774  5357.55672   R-squared       =    0.0005
+-------------+----------------------------------   Adj R-squared   =   -0.0006
+       Total |  9508967.98     1,776  5354.14864   Root MSE        =    73.195
+
+------------------------------------------------------------------------------
+   sd_totbal |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   treatment |  -3.255741   4.226085    -0.77   0.441    -11.54437    5.032889
+     control |  -4.168199   4.787511    -0.87   0.384    -13.55796    5.221557
+       _cons |   491.3003   3.390708   144.90   0.000     484.6501    497.9505
+------------------------------------------------------------------------------
+
+. reg mean_totbal treatment control if call ==1
+
+      Source |       SS           df       MS      Number of obs   =     1,777
+-------------+----------------------------------   F(2, 1774)      =      0.28
+       Model |  3412.62158         2  1706.31079   Prob > F        =    0.7567
+    Residual |  10853846.7     1,774  6118.29015   R-squared       =    0.0003
+-------------+----------------------------------   Adj R-squared   =   -0.0008
+       Total |  10857259.4     1,776  6113.32171   Root MSE        =    78.219
+
+------------------------------------------------------------------------------
+ mean_totbal |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   treatment |  -.9482933   4.516166    -0.21   0.834    -9.805859    7.909273
+     control |  -3.627729   5.116129    -0.71   0.478      -13.662    6.406545
+       _cons |   476.9744   3.623448   131.64   0.000     469.8677     484.081
+------------------------------------------------------------------------------
+
+. reg pop treatment control if call ==1
+
+      Source |       SS           df       MS      Number of obs   =     1,777
+-------------+----------------------------------   F(2, 1774)      =      0.15
+       Model |  6154208.23         2  3077104.11   Prob > F        =    0.8576
+    Residual |  3.5543e+10     1,774  20035747.1   R-squared       =    0.0002
+-------------+----------------------------------   Adj R-squared   =   -0.0010
+       Total |  3.5550e+10     1,776  20016649.5   Root MSE        =    4476.1
+
+------------------------------------------------------------------------------
+         pop |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   treatment |   21.29185   258.4388     0.08   0.934    -485.5846    528.1683
+     control |   145.7407   292.7718     0.50   0.619    -428.4732    719.9546
+       _cons |   5708.208   207.3528    27.53   0.000     5301.527     6114.89
+------------------------------------------------------------------------------
+
+. 
+. *Panel B
+. tabstat yearsed female age impatient_mon01 hyper_mon_new2 if call==1, by(group) stats(mean sem) 
+
+Summary statistics: mean, se(mean)
+  by categories of: group 
+
+ group |   yearsed    female       age  impa~n01  h~n_new2
+-------+--------------------------------------------------
+     C |  18.19403  .6162047  42.05117  .8081023  .2622601
+       |  .1373271  .0224796  .5943071  .0393999  .0203327
+-------+--------------------------------------------------
+     M |  17.91845  .5472103  42.87124  .8903226  .2758621
+       |   .144761  .0230834   .658222  .0409272  .0207714
+-------+--------------------------------------------------
+     T |  18.22209  .5985748  42.10808  .8690476  .2782402
+       |  .1052178   .016903  .4578191  .0296984   .015462
+-------+--------------------------------------------------
+ Total |  18.13506   .589758  42.29319  .8585118  .2733935
+       |   .072415  .0116717   .318447  .0205285   .010585
+----------------------------------------------------------
+
+. reg yearsed treatment control if call ==1
+
+      Source |       SS           df       MS      Number of obs   =     1,777
+-------------+----------------------------------   F(2, 1774)      =      1.60
+       Model |  29.8721265         2  14.9360633   Prob > F        =    0.2014
+    Residual |  16519.7137     1,774  9.31212722   R-squared       =    0.0018
+-------------+----------------------------------   Adj R-squared   =    0.0007
+       Total |  16549.5858     1,776  9.31846048   Root MSE        =    3.0516
+
+------------------------------------------------------------------------------
+     yearsed |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   treatment |   .3036353   .1761892     1.72   0.085     -.041925    .6491956
+     control |   .2755749   .1995956     1.38   0.168    -.1158923    .6670421
+       _cons |   17.91845   .1413616   126.76   0.000      17.6412    18.19571
+------------------------------------------------------------------------------
+
+. reg female treatment control if call ==1
+
+      Source |       SS           df       MS      Number of obs   =     1,777
+-------------+----------------------------------   F(2, 1774)      =      2.56
+       Model |  1.23708842         2  .618544211   Prob > F        =    0.0776
+    Residual |  428.696508     1,774  .241655303   R-squared       =    0.0029
+-------------+----------------------------------   Adj R-squared   =    0.0018
+       Total |  429.933596     1,776  .242079727   Root MSE        =    .49158
+
+------------------------------------------------------------------------------
+      female |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   treatment |   .0513645   .0283827     1.81   0.071    -.0043024    .1070315
+     control |   .0689944   .0321532     2.15   0.032     .0059322    .1320566
+       _cons |   .5472103   .0227722    24.03   0.000     .5025471    .5918735
+------------------------------------------------------------------------------
+
+. reg age treatment control if call ==1
+
+      Source |       SS           df       MS      Number of obs   =     1,777
+-------------+----------------------------------   F(2, 1774)      =      0.59
+       Model |  212.035992         2  106.017996   Prob > F        =    0.5555
+    Residual |  319828.212     1,774  180.286478   R-squared       =    0.0007
+-------------+----------------------------------   Adj R-squared   =   -0.0005
+       Total |  320040.248     1,776  180.202842   Root MSE        =    13.427
+
+------------------------------------------------------------------------------
+         age |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   treatment |  -.7631686   .7752405    -0.98   0.325    -2.283649    .7573122
+     control |  -.8200719   .8782295    -0.93   0.351    -2.542545    .9024014
+       _cons |   42.87124   .6219975    68.93   0.000     41.65132    44.09117
+------------------------------------------------------------------------------
+
+. reg impatient_mon01 treatment control if call ==1
+
+      Source |       SS           df       MS      Number of obs   =     1,774
+-------------+----------------------------------   F(2, 1771)      =      1.17
+       Model |  1.75557046         2  .877785228   Prob > F        =    0.3093
+    Residual |   1323.7309     1,771  .747448278   R-squared       =    0.0013
+-------------+----------------------------------   Adj R-squared   =    0.0002
+       Total |  1325.48647     1,773  .747595302   Root MSE        =    .86455
+
+------------------------------------------------------------------------------
+impatien~n01 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   treatment |   -.021275   .0499723    -0.43   0.670    -.1192859     .076736
+     control |  -.0822202   .0565785    -1.45   0.146    -.1931878    .0287473
+       _cons |   .8903226   .0400926    22.21   0.000     .8116888    .9689564
+------------------------------------------------------------------------------
+
+. reg hyper_mon_new2 treatment control if call ==1
+
+      Source |       SS           df       MS      Number of obs   =     1,774
+-------------+----------------------------------   F(2, 1771)      =      0.20
+       Model |  .080716446         2  .040358223   Prob > F        =    0.8164
+    Residual |  352.323455     1,771  .198940404   R-squared       =    0.0002
+-------------+----------------------------------   Adj R-squared   =   -0.0009
+       Total |  352.404171     1,773  .198761518   Root MSE        =    .44603
+
+------------------------------------------------------------------------------
+hyper_mon~w2 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   treatment |   .0023781   .0257935     0.09   0.927    -.0482107     .052967
+     control |  -.0136019    .029205    -0.47   0.641    -.0708818    .0436779
+       _cons |   .2758621   .0207063    13.32   0.000     .2352507    .3164734
+------------------------------------------------------------------------------
+
+. 
+. *TABLE 3: Hypo Summary Table
+. tab impatient_mon01 impatient_mon67 if call==1
+
+ Impatient |
+ Now w/r/t |   Impatient Later w/r/t money
+     money |         0          1          2 |     Total
+-----------+---------------------------------+----------
+         0 |       606        126         73 |       805 
+         1 |       206        146         59 |       411 
+         2 |       154         93        299 |       546 
+-----------+---------------------------------+----------
+     Total |       966        365        431 |     1,762 
+
+
+. 
+. *log close
+. 
+. *TABLE 4: Determinants of Time Preference Questions
+.         *combines tables 9/10/11 hyper/impatient/silly
+.         *add share of household income (referee #1)
+. *TABLE 5: Determinants of Takeup
+.         *include female*HHpower + HHPower
+.         *include female*hyper (as well as splitting sample)
+. 
+. *TABLE 4: DETERMINANTS OF TIME PREFERENCE QUESTIONS
+. 
+. tab female if call==1 & fem_frac_veryown_inc !=., sum(impatient_mon01)
+
+            |   Summary of Impatient Now w/r/t
+            |                money
+     Female |        Mean   Std. Dev.       Freq.
+------------+------------------------------------
+          0 |   .89554318   .86877151         718
+          1 |   .84143969    .8631562       1,028
+------------+------------------------------------
+      Total |   .86368843   .86563088       1,746
+
+. tab female if call==1 & fem_frac_veryown_inc !=., sum(hyper_mon_new2)
+
+            | Summary of Time inconsistent, Money
+     Female |        Mean   Std. Dev.       Freq.
+------------+------------------------------------
+          0 |   .25069638   .43371615         718
+          1 |   .29182879   .45482522       1,028
+------------+------------------------------------
+      Total |   .27491409   .44659889       1,746
+
+. tab female if call==1 & fem_frac_veryown_inc !=., sum(silly_mon_any)
+
+            | Summary of Patient Now & Impatient
+            |  in Future w/r/t money (any level)
+     Female |        Mean   Std. Dev.       Freq.
+------------+------------------------------------
+          0 |   .20612813   .40480558         718
+          1 |   .19455253   .39604851       1,028
+------------+------------------------------------
+      Total |   .19931271   .39959806       1,746
+
+. 
+. oprobit impatient_mon01 efeel mis_efeel female fem_married $fullset_noGB lownow_high6mos_jj highnow_low6mos_jj  frac_veryown_inc fem_frac_veryown_inc a
+> ctive if call ==1, robust
+
+Iteration 0:   log pseudolikelihood = -1854.4546  
+Iteration 1:   log pseudolikelihood = -1837.0014  
+Iteration 2:   log pseudolikelihood = -1836.9956  
+Iteration 3:   log pseudolikelihood = -1836.9956  
+
+Ordered probit regression                       Number of obs     =      1,746
+                                                Wald chi2(16)     =      35.23
+                                                Prob > chi2       =     0.0037
+Log pseudolikelihood = -1836.9956               Pseudo R2         =     0.0094
+
+--------------------------------------------------------------------------------------
+                     |               Robust
+     impatient_mon01 |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------------+----------------------------------------------------------------
+               efeel |  -.0552673      .0264    -2.09   0.036    -.1070104   -.0035242
+           mis_efeel |  -.1782864    .358223    -0.50   0.619    -.8803907    .5238178
+              female |   -.099285   .1646324    -0.60   0.546    -.4219585    .2233885
+         fem_married |   .2265886   .1527083     1.48   0.138    -.0727141    .5258914
+             married |  -.0364978   .1299328    -0.28   0.779    -.2911613    .2181657
+                edhi |   .0447274   .0617091     0.72   0.469    -.0762203    .1656751
+               numhh |   .0086454   .0122013     0.71   0.479    -.0152687    .0325596
+          unemployed |   .3175176   .1841197     1.72   0.085    -.0433503    .6783855
+                 age |   .0018849   .0021845     0.86   0.388    -.0023967    .0061665
+              hh_inc |  -.0719372   .0277994    -2.59   0.010    -.1264231   -.0174514
+             hh_inc2 |    .002388   .0013294     1.80   0.072    -.0002175    .0049935
+  lownow_high6mos_jj |  -.0843295   .1170569    -0.72   0.471    -.3137567    .1450978
+  highnow_low6mos_jj |  -.0112746   .1594869    -0.07   0.944     -.323863    .3013139
+    frac_veryown_inc |   .3516133   .1432646     2.45   0.014     .0708199    .6324067
+fem_frac_veryown_inc |  -.1259551    .176675    -0.71   0.476    -.4722318    .2203216
+              active |   -.017636   .0583572    -0.30   0.762    -.1320141    .0967421
+---------------------+----------------------------------------------------------------
+               /cut1 |  -.0205801   .1944957                     -.4017846    .3606245
+               /cut2 |   .5884827   .1948104                      .2066613    .9703041
+--------------------------------------------------------------------------------------
+
+. *outreg using timepreferences, se replace coefastr 3aster title("Determinants of Responses to Time Preference Questions") ctitle("oprobit impatient_mon
+> 01, All")
+. oprobit impatient_mon01 efeel mis_efeel female fem_married $fullset_noGB lownow_high6mos_jj highnow_low6mos_jj  frac_veryown_inc fem_frac_veryown_inc a
+> ctive if call ==1 & female ==1, robust
+
+note: female omitted because of collinearity
+note: married omitted because of collinearity
+note: fem_frac_veryown_inc omitted because of collinearity
+Iteration 0:   log pseudolikelihood = -1086.4158  
+Iteration 1:   log pseudolikelihood = -1072.2384  
+Iteration 2:   log pseudolikelihood = -1072.1481  
+Iteration 3:   log pseudolikelihood = -1072.1477  
+Iteration 4:   log pseudolikelihood = -1072.1477  
+
+Ordered probit regression                       Number of obs     =      1,028
+                                                Wald chi2(13)     =      28.69
+                                                Prob > chi2       =     0.0072
+Log pseudolikelihood = -1072.1477               Pseudo R2         =     0.0131
+
+--------------------------------------------------------------------------------------
+                     |               Robust
+     impatient_mon01 |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------------+----------------------------------------------------------------
+               efeel |  -.0727605   .0342532    -2.12   0.034    -.1398956   -.0056255
+           mis_efeel |  -.1221633   .4371366    -0.28   0.780    -.9789354    .7346088
+              female |          0  (omitted)
+         fem_married |   .1975966   .0815333     2.42   0.015     .0377944    .3573989
+             married |          0  (omitted)
+                edhi |   .0907743   .0841214     1.08   0.281    -.0741006    .2556492
+               numhh |   .0106529   .0155253     0.69   0.493    -.0197762     .041082
+          unemployed |    .438354   .2216434     1.98   0.048     .0039408    .8727671
+                 age |    .002429   .0028581     0.85   0.395    -.0031727    .0080307
+              hh_inc |  -.1085512   .0354293    -3.06   0.002    -.1779913    -.039111
+             hh_inc2 |   .0049675   .0016496     3.01   0.003     .0017344    .0082005
+  lownow_high6mos_jj |  -.0926008   .1415044    -0.65   0.513    -.3699444    .1847428
+  highnow_low6mos_jj |  -.0578443   .2001213    -0.29   0.773    -.4500749    .3343863
+    frac_veryown_inc |   .2342083   .1141942     2.05   0.040     .0103917    .4580249
+fem_frac_veryown_inc |          0  (omitted)
+              active |  -.0408529   .0761442    -0.54   0.592    -.1900927    .1083869
+---------------------+----------------------------------------------------------------
+               /cut1 |   .0621644   .1967673                     -.3234925    .4478213
+               /cut2 |   .6723622   .1972763                      .2857076    1.059017
+--------------------------------------------------------------------------------------
+
+. *outreg using timepreferences, se append coefastr 3aster ctitle("oprobit impatient_mon01, Female")
+. oprobit impatient_mon01 efeel mis_efeel female fem_married $fullset_noGB lownow_high6mos_jj highnow_low6mos_jj  frac_veryown_inc fem_frac_veryown_inc a
+> ctive if call ==1 & female ==0, robust
+
+note: female omitted because of collinearity
+note: fem_married omitted because of collinearity
+note: fem_frac_veryown_inc omitted because of collinearity
+Iteration 0:   log pseudolikelihood = -767.20502  
+Iteration 1:   log pseudolikelihood = -761.17433  
+Iteration 2:   log pseudolikelihood = -760.72272  
+Iteration 3:   log pseudolikelihood = -760.64808  
+Iteration 4:   log pseudolikelihood = -760.64802  
+
+Ordered probit regression                       Number of obs     =        718
+                                                Wald chi2(13)     =      14.62
+                                                Prob > chi2       =     0.3319
+Log pseudolikelihood = -760.64802               Pseudo R2         =     0.0085
+
+--------------------------------------------------------------------------------------
+                     |               Robust
+     impatient_mon01 |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+---------------------+----------------------------------------------------------------
+               efeel |  -.0345111   .0417718    -0.83   0.409    -.1163823    .0473601
+           mis_efeel |  -.4837257    .535455    -0.90   0.366    -1.533198    .5657469
+              female |          0  (omitted)
+         fem_married |          0  (omitted)
+             married |  -.0528133   .1326138    -0.40   0.690    -.3127315    .2071049
+                edhi |  -.0151077   .0935672    -0.16   0.872    -.1984962    .1682807
+               numhh |   .0090754   .0201111     0.45   0.652    -.0303417    .0484924
+          unemployed |   .0874825   .3381841     0.26   0.796    -.5753461    .7503111
+                 age |   .0018554   .0034086     0.54   0.586    -.0048253     .008536
+              hh_inc |   .0355727   .0784275     0.45   0.650    -.1181424    .1892878
+             hh_inc2 |  -.0101346   .0083639    -1.21   0.226    -.0265276    .0062584
+  lownow_high6mos_jj |  -.0767337   .2085579    -0.37   0.713    -.4854998    .3320323
+  highnow_low6mos_jj |   .1129452   .2662072     0.42   0.671    -.4088112    .6347017
+    frac_veryown_inc |   .3564618   .1530082     2.33   0.020     .0565712    .6563524
+fem_frac_veryown_inc |          0  (omitted)
+              active |   .0150194   .0916925     0.16   0.870    -.1646945    .1947334
+---------------------+----------------------------------------------------------------
+               /cut1 |   .0920446   .2671856                     -.4316296    .6157188
+               /cut2 |    .703503   .2679619                      .1783074    1.228699
+--------------------------------------------------------------------------------------
+Note: 1 observation completely determined.  Standard errors questionable.
+
+. *outreg using timepreferences, se append coefastr 3aster  ctitle("oprobit impatient_mon01, Male")
+. 
+. dprobit hyper_mon_new2 efeel mis_efeel female fem_married $fullset_noGB lownow_high6mos_jj highnow_low6mos_jj  frac_veryown_inc fem_frac_veryown_inc ac
+> tive if call ==1, robust
+
+Iteration 0:   log pseudolikelihood = -1026.7972
+Iteration 1:   log pseudolikelihood = -1014.2457
+Iteration 2:   log pseudolikelihood = -1014.0571
+Iteration 3:   log pseudolikelihood = -1014.0286
+Iteration 4:   log pseudolikelihood = -1014.0264
+Iteration 5:   log pseudolikelihood = -1014.0264
+
+Probit regression, reporting marginal effects           Number of obs =   1746
+                                                        Wald chi2(16) =  24.94
+                                                        Prob > chi2   = 0.0710
+Log pseudolikelihood = -1014.0264                       Pseudo R2     = 0.0124
+
+------------------------------------------------------------------------------
+         |               Robust
+h~n_new2 |      dF/dx   Std. Err.      z    P>|z|     x-bar  [    95% C.I.   ]
+---------+--------------------------------------------------------------------
+   efeel |  -.0174681   .0101794    -1.71   0.086   2.29152  -.037419  .002483
+mis_ef~l*|   .1345968   .1702237     0.84   0.398   .005155  -.199036  .468229
+  female*|   .0978525    .062014     1.54   0.123   .588774  -.023693  .219398
+fem_ma~d*|  -.0318975   .0596504    -0.53   0.595   .411798   -.14881  .085015
+ married*|   .0752229   .0475669     1.51   0.131   .762314  -.018006  .168452
+    edhi*|   .0199496   .0241085     0.82   0.409   .582474  -.027302  .067201
+   numhh |   .0001646   .0046343     0.04   0.972   5.61226  -.008919  .009248
+unempl~d*|   .0459278   .0695306     0.68   0.495   .030355   -.09035  .182205
+     age |   .0006746   .0008565     0.79   0.431   42.3694  -.001004  .002353
+  hh_inc |  -.0110907    .013039    -0.85   0.395   1.53158  -.036647  .014465
+ hh_inc2 |  -.0003756   .0008429    -0.45   0.656   6.18823  -.002028  .001277
+lownow~j*|  -.0634867   .0389316    -1.53   0.126   .071019  -.139791  .012818
+highno~j*|  -.0674818   .0534675    -1.17   0.242   .034937  -.172276  .037313
+frac_v~c |   .0350932   .0543339     0.65   0.518   .581549  -.071399  .141586
+fem_fr.. |  -.0254367    .067678    -0.38   0.707   .302536  -.158083   .10721
+  active*|    .028445   .0226724     1.26   0.207   .356816  -.015992  .072882
+---------+--------------------------------------------------------------------
+  obs. P |   .2749141
+ pred. P |    .271456  (at x-bar)
+------------------------------------------------------------------------------
+(*) dF/dx is for discrete change of dummy variable from 0 to 1
+    z and P>|z| correspond to the test of the underlying coefficient being 0
+
+. *outreg using timepreferences, se append coefastr 3aster ctitle("dprobit hyper_mon_new2, All")
+. dprobit hyper_mon_new2 efeel mis_efeel female fem_married $fullset_noGB lownow_high6mos_jj highnow_low6mos_jj  frac_veryown_inc fem_frac_veryown_inc ac
+> tive if call ==1 & female ==1, robust
+
+note: female dropped because of collinearity
+note: married dropped because of collinearity
+note: fem_frac_veryown_inc dropped because of collinearity
+Iteration 0:   log pseudolikelihood = -620.68691
+Iteration 1:   log pseudolikelihood = -611.93644
+Iteration 2:   log pseudolikelihood = -611.81204
+Iteration 3:   log pseudolikelihood = -611.79255
+Iteration 4:   log pseudolikelihood = -611.79146
+Iteration 5:   log pseudolikelihood = -611.79146
+
+Probit regression, reporting marginal effects           Number of obs =   1028
+                                                        Wald chi2(13) =  17.52
+                                                        Prob > chi2   = 0.1765
+Log pseudolikelihood = -611.79146                       Pseudo R2     = 0.0143
+
+------------------------------------------------------------------------------
+         |               Robust
+h~n_new2 |      dF/dx   Std. Err.      z    P>|z|     x-bar  [    95% C.I.   ]
+---------+--------------------------------------------------------------------
+   efeel |  -.0264172   .0134902    -1.96   0.050   2.31615  -.052858  .000023
+mis_ef~l*|   .0827145   .1842317     0.47   0.638   .006809  -.278373  .443802
+fem_ma~d*|   .0436122   .0311909     1.38   0.169   .699416  -.017521  .104745
+    edhi*|   .0513481   .0327987     1.55   0.122   .629377  -.012936  .115632
+   numhh |  -.0027463   .0061643    -0.45   0.656   5.66537  -.014828  .009335
+unempl~d*|   .0150783   .0830112     0.18   0.854   .035019  -.147621  .177777
+     age |   .0003738   .0011462     0.33   0.744    41.535  -.001873   .00262
+  hh_inc |  -.0110094   .0167798    -0.66   0.512   1.64067  -.043897  .021878
+ hh_inc2 |  -.0003619   .0010934    -0.33   0.741    7.0698  -.002505  .001781
+lownow~j*|  -.0611099   .0486832    -1.19   0.234   .082685  -.156527  .034307
+highno~j*|  -.0962328   .0643174    -1.34   0.180   .039883  -.222292  .029827
+frac_v~c |   .0012358   .0454994     0.03   0.978    .51384  -.087941  .090413
+  active*|   .0413117   .0301745     1.38   0.168   .368677  -.017829  .100453
+---------+--------------------------------------------------------------------
+  obs. P |   .2918288
+ pred. P |    .288091  (at x-bar)
+------------------------------------------------------------------------------
+(*) dF/dx is for discrete change of dummy variable from 0 to 1
+    z and P>|z| correspond to the test of the underlying coefficient being 0
+
+. *outreg using timepreferences, se append coefastr 3aster ctitle("dprobit hyper_mon_new2, Female")
+. dprobit hyper_mon_new2 efeel mis_efeel female fem_married $fullset_noGB lownow_high6mos_jj highnow_low6mos_jj  frac_veryown_inc fem_frac_veryown_inc ac
+> tive if call ==1 & female ==0, robust
+
+note: female dropped because of collinearity
+note: fem_married dropped because of collinearity
+note: fem_frac_veryown_inc dropped because of collinearity
+Iteration 0:   log pseudolikelihood = -404.30501
+Iteration 1:   log pseudolikelihood =  -399.3103
+Iteration 2:   log pseudolikelihood = -399.23976
+Iteration 3:   log pseudolikelihood = -399.22606
+Iteration 4:   log pseudolikelihood = -399.22254
+Iteration 5:   log pseudolikelihood = -399.22206
+Iteration 6:   log pseudolikelihood = -399.22205
+Iteration 7:   log pseudolikelihood = -399.22205
+
+Probit regression, reporting marginal effects           Number of obs =    718
+                                                        Wald chi2(13) =  11.05
+                                                        Prob > chi2   = 0.6068
+Log pseudolikelihood = -399.22205                       Pseudo R2     = 0.0126
+
+------------------------------------------------------------------------------
+         |               Robust
+h~n_new2 |      dF/dx   Std. Err.      z    P>|z|     x-bar  [    95% C.I.   ]
+---------+--------------------------------------------------------------------
+   efeel |  -.0026487   .0153568    -0.17   0.863   2.25627  -.032747   .02745
+mis_ef~l*|   .3329074   .3763141     0.92   0.357   .002786  -.404655  1.07047
+ married*|   .0630925   .0450566     1.32   0.187   .852368  -.025217  .151402
+    edhi*|  -.0204891   .0353921    -0.58   0.563    .51532  -.089856  .048878
+   numhh |   .0049976   .0071032     0.70   0.482   5.53621  -.008924   .01892
+unempl~d*|   .1013793   .1251612     0.87   0.386   .023677  -.143932  .346691
+     age |   .0011206   .0012856     0.87   0.384   43.5641  -.001399   .00364
+  hh_inc |  -.0092865   .0252265    -0.37   0.713    1.3754  -.058729  .040156
+ hh_inc2 |  -.0005726   .0020225    -0.28   0.777   4.92604  -.004537  .003391
+lownow~j*|   -.065577   .0661144    -0.91   0.361   .054318  -.195159  .064005
+highno~j*|  -.0066531   .0995656    -0.07   0.947   .027855  -.201798  .188492
+frac_v~c |   .0459251   .0545563     0.84   0.400   .678491  -.061003  .152853
+  active*|   .0146131   .0345884     0.42   0.671   .339833  -.053179  .082405
+---------+--------------------------------------------------------------------
+  obs. P |   .2506964
+ pred. P |   .2468265  (at x-bar)
+------------------------------------------------------------------------------
+(*) dF/dx is for discrete change of dummy variable from 0 to 1
+    z and P>|z| correspond to the test of the underlying coefficient being 0
+
+. *outreg using timepreferences, se append coefastr 3aster  ctitle("dprobit hyper_mon_new2, Male")
+. 
+. dprobit silly_mon_any efeel mis_efeel female fem_married $fullset_noGB lownow_high6mos_jj highnow_low6mos_jj  frac_veryown_inc fem_frac_veryown_inc act
+> ive if call ==1, robust
+
+Iteration 0:   log pseudolikelihood =  -872.0365
+Iteration 1:   log pseudolikelihood =  -864.9717
+Iteration 2:   log pseudolikelihood = -864.86856
+Iteration 3:   log pseudolikelihood = -864.86704
+Iteration 4:   log pseudolikelihood = -864.86704
+
+Probit regression, reporting marginal effects           Number of obs =   1746
+                                                        Wald chi2(16) =  19.72
+                                                        Prob > chi2   = 0.2329
+Log pseudolikelihood = -864.86704                       Pseudo R2     = 0.0082
+
+------------------------------------------------------------------------------
+         |               Robust
+si~n_any |      dF/dx   Std. Err.      z    P>|z|     x-bar  [    95% C.I.   ]
+---------+--------------------------------------------------------------------
+   efeel |  -.0007118   .0090244    -0.08   0.937   2.29152  -.018399  .016976
+mis_ef~l*|   .0129404   .1364065     0.10   0.923   .005155  -.254411  .280292
+  female*|  -.0946572   .0554475    -1.74   0.082   .588774  -.203332  .014018
+fem_ma~d*|   .0126839   .0520768     0.24   0.807   .411798  -.089385  .114753
+ married*|   .0090635   .0430426     0.21   0.834   .762314  -.075298  .093425
+    edhi*|  -.0079576   .0214052    -0.37   0.710   .582474  -.049911  .033996
+   numhh |  -.0037392   .0041236    -0.91   0.365   5.61226  -.011821  .004343
+unempl~d*|  -.0369049   .0541341    -0.64   0.522   .030355  -.143006  .069196
+     age |  -.0012468   .0007629    -1.63   0.102   42.3694  -.002742  .000248
+  hh_inc |  -.0074359   .0088117    -0.84   0.399   1.53158  -.024706  .009835
+ hh_inc2 |   .0007202   .0003365     2.14   0.032   6.18823   .000061   .00138
+lownow~j*|    .000213    .037302     0.01   0.995   .071019  -.072898  .073324
+highno~j*|   .0710411   .0581025     1.32   0.187   .034937  -.042838   .18492
+frac_v~c |  -.0782597   .0472146    -1.66   0.098   .581549  -.170799  .014279
+fem_fr.. |   .1156414   .0587391     1.97   0.049   .302536   .000515  .230768
+  active*|   .0064865   .0203494     0.32   0.749   .356816  -.033397  .046371
+---------+--------------------------------------------------------------------
+  obs. P |   .1993127
+ pred. P |   .1978602  (at x-bar)
+------------------------------------------------------------------------------
+(*) dF/dx is for discrete change of dummy variable from 0 to 1
+    z and P>|z| correspond to the test of the underlying coefficient being 0
+
+. *outreg using timepreferences, se append coefastr 3aster ctitle("dprobit silly_mon_any, All")
+. dprobit silly_mon_any efeel mis_efeel female fem_married $fullset_noGB lownow_high6mos_jj highnow_low6mos_jj  frac_veryown_inc fem_frac_veryown_inc act
+> ive if call ==1 & female ==1, robust
+
+note: female dropped because of collinearity
+note: married dropped because of collinearity
+note: fem_frac_veryown_inc dropped because of collinearity
+Iteration 0:   log pseudolikelihood = -506.55445
+Iteration 1:   log pseudolikelihood = -499.15616
+Iteration 2:   log pseudolikelihood = -499.12802
+Iteration 3:   log pseudolikelihood = -499.12799
+
+Probit regression, reporting marginal effects           Number of obs =   1028
+                                                        Wald chi2(13) =  16.52
+                                                        Prob > chi2   = 0.2224
+Log pseudolikelihood = -499.12799                       Pseudo R2     = 0.0147
+
+------------------------------------------------------------------------------
+         |               Robust
+si~n_any |      dF/dx   Std. Err.      z    P>|z|     x-bar  [    95% C.I.   ]
+---------+--------------------------------------------------------------------
+   efeel |  -.0010809   .0113817    -0.09   0.924   2.31615  -.023388  .021227
+mis_ef~l*|  -.0742522   .1214653    -0.51   0.607   .006809   -.31232  .163815
+fem_ma~d*|   .0265344   .0270874     0.96   0.336   .699416  -.026556  .079625
+    edhi*|  -.0422226   .0291871    -1.47   0.142   .629377  -.099428  .014983
+   numhh |  -.0056812   .0051524    -1.10   0.270   5.66537   -.01578  .004417
+unempl~d*|   .0162346   .0744401     0.22   0.823   .035019  -.129665  .162135
+     age |  -.0015451   .0009822    -1.57   0.116    41.535   -.00347   .00038
+  hh_inc |  -.0006242   .0107618    -0.06   0.954   1.64067  -.021717  .020468
+ hh_inc2 |   .0003164   .0004285     0.74   0.460    7.0698  -.000523  .001156
+lownow~j*|   -.050437    .039934    -1.16   0.245   .082685  -.128706  .027832
+highno~j*|   .1483333   .0748192     2.23   0.026   .039883    .00169  .294976
+frac_v~c |   .0519061   .0380137     1.36   0.172    .51384  -.022599  .126412
+  active*|   -.019059   .0256478    -0.74   0.461   .368677  -.069328   .03121
+---------+--------------------------------------------------------------------
+  obs. P |   .1945525
+ pred. P |   .1914778  (at x-bar)
+------------------------------------------------------------------------------
+(*) dF/dx is for discrete change of dummy variable from 0 to 1
+    z and P>|z| correspond to the test of the underlying coefficient being 0
+
+. *outreg using timepreferences, se append coefastr 3aster ctitle("dprobit silly_mon_any, Female")
+. dprobit silly_mon_any efeel mis_efeel female fem_married $fullset_noGB lownow_high6mos_jj highnow_low6mos_jj  frac_veryown_inc fem_frac_veryown_inc act
+> ive if call ==1 & female ==0, robust
+
+note: female dropped because of collinearity
+note: fem_married dropped because of collinearity
+note: fem_frac_veryown_inc dropped because of collinearity
+Iteration 0:   log pseudolikelihood = -365.30501
+Iteration 1:   log pseudolikelihood = -357.62644
+Iteration 2:   log pseudolikelihood = -357.36733
+Iteration 3:   log pseudolikelihood = -357.24204
+Iteration 4:   log pseudolikelihood = -357.05626
+Iteration 5:   log pseudolikelihood = -357.04741
+Iteration 6:   log pseudolikelihood = -357.04741
+
+Probit regression, reporting marginal effects           Number of obs =    718
+                                                        Wald chi2(13) =  13.01
+                                                        Prob > chi2   = 0.4469
+Log pseudolikelihood = -357.04741                       Pseudo R2     = 0.0226
+
+------------------------------------------------------------------------------
+         |               Robust
+si~n_any |      dF/dx   Std. Err.      z    P>|z|     x-bar  [    95% C.I.   ]
+---------+--------------------------------------------------------------------
+   efeel |  -.0024393   .0150356    -0.16   0.871   2.25627  -.031909   .02703
+mis_ef~l*|   .2955324   .3430564     0.96   0.337   .002786  -.376846  .967911
+ married*|   .0071681   .0453091     0.16   0.875   .852368  -.081636  .095972
+    edhi*|   .0302852    .032725     0.92   0.355    .51532  -.033855  .094425
+   numhh |   .0008043   .0069429     0.12   0.908   5.53621  -.012804  .014412
+unempl~d*|  -.1345732    .059599    -1.54   0.124   .023677  -.251385 -.017761
+     age |  -.0010474   .0012117    -0.86   0.388   43.5641  -.003422  .001327
+  hh_inc |  -.0408576    .026779    -1.54   0.123    1.3754  -.093344  .011628
+ hh_inc2 |   .0038034   .0028336     1.36   0.175   4.92604   -.00175  .009357
+lownow~j*|   .1147885   .0780318     1.62   0.106   .054318  -.038151  .267728
+highno~j*|  -.1052677   .0725269    -1.13   0.257   .027855  -.247418  .036882
+frac_v~c |  -.0993025   .0503014    -1.98   0.048   .678491  -.197891 -.000714
+  active*|   .0340696   .0329183     1.05   0.294   .339833  -.030449  .098588
+---------+--------------------------------------------------------------------
+  obs. P |   .2061281
+ pred. P |    .204502  (at x-bar)
+------------------------------------------------------------------------------
+(*) dF/dx is for discrete change of dummy variable from 0 to 1
+    z and P>|z| correspond to the test of the underlying coefficient being 0
+
+. *outreg using timepreferences, se append coefastr 3aster  ctitle("dprobit silly_mon_any, Male")
+. 
+. 
+. *TABLE 5: DETERMINANTS OF TAKEUP
+. gen female_hyper_mon_new2 = female * hyper_mon_new2
+(1,379 missing values generated)
+
+. *       frac_veryown_inc fem_frac_veryown_inc 
+. 
+. #delimit ;
+delimiter now ;
+. local apprep = "replace" ;
+
+. **COLUMN 1: ALL, NO FEMALE_HYPER INTERACTION;
+. #delimit ;
+delimiter now ;
+. xi: dprobit seedtakeup hyper_mon_new2 female 
+>         impatient_200p250_01 impatient_250p200_01 impatient_200p250_67 impatient_250p200_67 
+>         fem_married $fullset fem_frac_veryown_inc_0_25 fem_frac_veryown_inc_25_50 fem_frac_veryown_inc_50_75 fem_frac_veryown_inc_75_100 frac_veryown_i
+> nc_0_25 frac_veryown_inc_25_50 frac_veryown_inc_50_75 frac_veryown_inc_75_100 
+>         active
+>         if group=="T" & call==1 & reached==1, robust ;
+
+Iteration 0:   log pseudolikelihood = -425.65043
+Iteration 1:   log pseudolikelihood = -408.47662
+Iteration 2:   log pseudolikelihood = -407.69152
+Iteration 3:   log pseudolikelihood =   -407.141
+Iteration 4:   log pseudolikelihood = -407.06088
+Iteration 5:   log pseudolikelihood = -407.05886
+Iteration 6:   log pseudolikelihood = -407.05886
+
+Probit regression, reporting marginal effects           Number of obs =    715
+                                                        Wald chi2(25) =  35.68
+                                                        Prob > chi2   = 0.0767
+Log pseudolikelihood = -407.05886                       Pseudo R2     = 0.0437
+
+------------------------------------------------------------------------------
+         |               Robust
+seedta~p |      dF/dx   Std. Err.      z    P>|z|     x-bar  [    95% C.I.   ]
+---------+--------------------------------------------------------------------
+h~n_new2*|   .1248659   .0667069     1.94   0.053   .278322  -.005877  .255609
+  female*|    .098883   .1372349     0.70   0.482        .6  -.170093  .367858
+im~50_01*|  -.0300081   .0496469    -0.59   0.552   .241958  -.127314  .067298
+i~200_01*|   .0764479   .0718961     1.07   0.285   .444755  -.064466  .217362
+im~50_67*|   .0968518   .0646814     1.56   0.119   .206993  -.029922  .223625
+i~200_67*|   .0150482    .063883     0.24   0.814   .545455   -.11016  .140257
+fem_ma~d*|  -.1132497   .0905445    -1.22   0.222   .423776  -.290714  .064214
+ married*|   .0489946   .0770504     0.62   0.536   .765035  -.102021  .200011
+    edhi*|   .0834128   .0383418     2.14   0.032    .59021   .008264  .158561
+   numhh |   .0001891   .0076993     0.02   0.980   5.58462  -.014901   .01528
+unempl~d*|   .0404135   .1091283     0.38   0.703   .033566  -.173474  .254301
+     age |  -.0019155   .0013788    -1.39   0.165   42.6531  -.004618  .000787
+  GBloan*|  -.0141822   .0363595    -0.39   0.697   .502098  -.085445  .057081
+GBloan~t*|  -.0317615    .072292    -0.43   0.670   .055944  -.173451  .109928
+  hh_inc |   .0486918   .0307147     1.56   0.118   1.55682  -.011508  .108892
+ hh_inc2 |   -.007847    .004361    -1.76   0.078   5.82637  -.016394    .0007
+fem_f~25*|   .0153704   .1822196     0.09   0.932   .051748  -.341773  .372514
+fem~5_50*|   .0480785     .16932     0.29   0.770    .14965  -.283783   .37994
+fem_f~75*|   .1349672   .1818598     0.79   0.431   .114685  -.221472  .491406
+fe~5_100*|   .0182208   .1546866     0.12   0.905   .174825  -.284959  .321401
+frac_~25*|  -.0106804   .1540169    -0.07   0.945   .095105  -.312548  .291187
+fra~5_50*|  -.0472313   .1407564    -0.33   0.745   .218182  -.323109  .228646
+frac_~75*|  -.0340687   .1388783    -0.24   0.810   .202797  -.306265  .238128
+fr~5_100*|   .0247978    .142089     0.18   0.861   .355245  -.253692  .303287
+  active*|  -.0360562   .0341531    -1.04   0.296   .353846  -.102995  .030883
+---------+--------------------------------------------------------------------
+  obs. P |   .2825175
+ pred. P |   .2647361  (at x-bar)
+------------------------------------------------------------------------------
+(*) dF/dx is for discrete change of dummy variable from 0 to 1
+    z and P>|z| correspond to the test of the underlying coefficient being 0
+
+. *capture `1' outreg using seedtakeup, se `apprep' coefastr 3aster title("Determinants of SEED Takeup") ctitle("All")
+>                 addstat(Mean dependent variable, e(pbar)) ;
+. local apprep = "append";
+
+. **COLUMN 2: ALL, FEMALE_HYPER INTERACTION;
+. xi: dprobit seedtakeup hyper_mon_new2 female female_hyper_mon_new2 
+>         impatient_200p250_01 impatient_250p200_01 impatient_200p250_67 impatient_250p200_67 
+>         fem_married $fullset fem_frac_veryown_inc_0_25 fem_frac_veryown_inc_25_50 fem_frac_veryown_inc_50_75 fem_frac_veryown_inc_75_100 frac_veryown_i
+> nc_0_25 frac_veryown_inc_25_50 frac_veryown_inc_50_75 frac_veryown_inc_75_100 
+>         active
+>         if group=="T" & call==1 & reached==1, robust ;
+
+Iteration 0:   log pseudolikelihood = -425.65043
+Iteration 1:   log pseudolikelihood = -406.11228
+Iteration 2:   log pseudolikelihood = -405.22649
+Iteration 3:   log pseudolikelihood = -404.59983
+Iteration 4:   log pseudolikelihood = -404.51713
+Iteration 5:   log pseudolikelihood = -404.51488
+Iteration 6:   log pseudolikelihood = -404.51488
+
+Probit regression, reporting marginal effects           Number of obs =    715
+                                                        Wald chi2(26) =  40.40
+                                                        Prob > chi2   = 0.0356
+Log pseudolikelihood = -404.51488                       Pseudo R2     = 0.0497
+
+------------------------------------------------------------------------------
+         |               Robust
+seedta~p |      dF/dx   Std. Err.      z    P>|z|     x-bar  [    95% C.I.   ]
+---------+--------------------------------------------------------------------
+h~n_new2*|   .0047862   .0800839     0.06   0.952   .278322  -.152175  .161748
+  female*|   .0698106   .1379646     0.50   0.619        .6  -.200595  .340216
+female~2*|   .1905595   .0900889     2.24   0.025   .173427   .013989  .367131
+im~50_01*|   -.038645   .0499333    -0.76   0.449   .241958  -.136512  .059222
+i~200_01*|   .0704154   .0716143     0.99   0.323   .444755  -.069946  .210777
+im~50_67*|   .1077903   .0651166     1.73   0.084   .206993  -.019836  .235416
+i~200_67*|   .0216565   .0636077     0.34   0.734   .545455  -.103012  .146325
+fem_ma~d*|  -.1166593   .0896853    -1.27   0.204   .423776  -.292439  .059121
+ married*|   .0500284   .0760255     0.64   0.523   .765035  -.098979  .199036
+    edhi*|   .0814459   .0382911     2.09   0.036    .59021   .006397  .156495
+   numhh |    -.00029   .0077623    -0.04   0.970   5.58462  -.015504  .014924
+unempl~d*|   .0327046   .1082218     0.31   0.756   .033566  -.179406  .244815
+     age |  -.0016826   .0013823    -1.22   0.224   42.6531  -.004392  .001027
+  GBloan*|   -.013582    .036346    -0.37   0.709   .502098  -.084819  .057655
+GBloan~t*|   -.035643   .0707025    -0.49   0.627   .055944  -.174217  .102931
+  hh_inc |   .0497551   .0307411     1.59   0.111   1.55682  -.010496  .110007
+ hh_inc2 |   -.008141   .0043197    -1.84   0.065   5.82637  -.016607  .000326
+fem_f~25*|  -.0004397   .1747075    -0.00   0.998   .051748   -.34286  .341981
+fem~5_50*|    .036709   .1644809     0.23   0.820    .14965  -.285668  .359086
+fem_f~75*|   .1096521    .175468     0.66   0.509   .114685  -.234259  .453563
+fe~5_100*|  -.0016894   .1481134    -0.01   0.991   .174825  -.291986  .288607
+frac_~25*|   .0068483   .1554693     0.04   0.965   .095105  -.297866  .311563
+fra~5_50*|  -.0376539   .1394817    -0.26   0.792   .218182  -.311033  .235725
+frac_~75*|  -.0190742   .1384494    -0.14   0.892   .202797   -.29043  .252282
+fr~5_100*|   .0363038   .1394353     0.26   0.793   .355245  -.236984  .309592
+  active*|  -.0395607   .0341992    -1.14   0.253   .353846   -.10659  .027468
+---------+--------------------------------------------------------------------
+  obs. P |   .2825175
+ pred. P |   .2634274  (at x-bar)
+------------------------------------------------------------------------------
+(*) dF/dx is for discrete change of dummy variable from 0 to 1
+    z and P>|z| correspond to the test of the underlying coefficient being 0
+
+. *capture `1'*outreg using seedtakeup, se `apprep' coefastr 3aster title("Determinants of SEED Takeup") ctitle("All")
+>                 addstat(Mean dependent variable, e(pbar)) ;
+. **COLUMN 3: FEMALE;
+. xi: dprobit seedtakeup hyper_mon_new2 female 
+>         impatient_200p250_01 impatient_250p200_01 impatient_200p250_67 impatient_250p200_67 
+>         fem_married $fullset frac_veryown_inc_0_25 frac_veryown_inc_25_50 frac_veryown_inc_50_75 frac_veryown_inc_75_100 
+>         active
+>         if group=="T" & call==1 & reached==1 & female==1, robust ;
+
+note: female dropped because of collinearity
+note: married dropped because of collinearity
+Iteration 0:   log pseudolikelihood = -266.39675
+Iteration 1:   log pseudolikelihood = -252.88184
+Iteration 2:   log pseudolikelihood = -251.85709
+Iteration 3:   log pseudolikelihood = -250.36791
+Iteration 4:   log pseudolikelihood = -249.23074
+Iteration 5:   log pseudolikelihood = -249.01883
+Iteration 6:   log pseudolikelihood = -249.01745
+Iteration 7:   log pseudolikelihood = -249.01745
+
+Probit regression, reporting marginal effects           Number of obs =    429
+                                                        Wald chi2(19) =  30.48
+                                                        Prob > chi2   = 0.0461
+Log pseudolikelihood = -249.01745                       Pseudo R2     = 0.0652
+
+------------------------------------------------------------------------------
+         |               Robust
+seedta~p |      dF/dx   Std. Err.      z    P>|z|     x-bar  [    95% C.I.   ]
+---------+--------------------------------------------------------------------
+h~n_new2*|   .1584749   .0848576     1.96   0.050   .289044  -.007843  .324793
+im~50_01*|  -.0363132   .0622564    -0.57   0.569   .235431  -.158334  .085707
+i~200_01*|   .0352522   .0889128     0.40   0.691   .456876  -.139014  .209518
+im~50_67*|   .1243198   .0871311     1.50   0.133   .202797  -.046454  .295094
+i~200_67*|   .0566801   .0806173     0.70   0.487   .568765  -.101327  .214687
+fem_ma~d*|  -.0804105   .0506707    -1.63   0.103   .706294  -.179723  .018902
+    edhi*|   .0809635   .0495907     1.60   0.109   .655012  -.016232  .178159
+   numhh |   .0028548   .0096206     0.30   0.767   5.58974  -.016001  .021711
+unempl~d*|   .0393375   .1154983     0.35   0.725    .04662  -.187035   .26571
+     age |   -.000919   .0017402    -0.53   0.597   42.3823   -.00433  .002492
+  GBloan*|  -.0591738   .0458136    -1.27   0.202    .44289  -.148967  .030619
+GBloan~t*|  -.0186816   .0879032    -0.21   0.835   .062937  -.190969  .153606
+  hh_inc |   .1362118    .045132     2.69   0.007   1.63322   .047755  .224669
+ hh_inc2 |  -.0237586   .0079421    -2.63   0.009   6.82962  -.039325 -.008192
+frac_~25*|  -.0202154   .0902761    -0.22   0.827   .086247  -.197153  .156723
+fra~5_50*|  -.0350301   .0714399    -0.48   0.633   .249417   -.17505   .10499
+frac_~75*|   .0607974    .083771     0.75   0.450   .191142  -.103391  .224985
+fr~5_100*|   .0195808   .0759136     0.26   0.794   .291375  -.129207  .168369
+  active*|  -.0331418   .0425212    -0.77   0.441   .356643  -.116482  .050198
+---------+--------------------------------------------------------------------
+  obs. P |   .3123543
+ pred. P |   .2469591  (at x-bar)
+------------------------------------------------------------------------------
+(*) dF/dx is for discrete change of dummy variable from 0 to 1
+    z and P>|z| correspond to the test of the underlying coefficient being 0
+
+. *capture `1'*outreg using seedtakeup, se `apprep' coefastr 3aster title("Determinants of SEED Takeup") ctitle("Female")
+>                 addstat(Mean dependent variable, e(pbar)) ;
+. **COLUMN 4: MALE;
+. xi: dprobit seedtakeup hyper_mon_new2 female 
+>         impatient_200p250_01 impatient_250p200_01 impatient_200p250_67 impatient_250p200_67 
+>         $fullset frac_veryown_inc_0_25 frac_veryown_inc_25_50 frac_veryown_inc_50_75 frac_veryown_inc_75_100 
+>         active
+>         if group=="T" & call==1 & reached==1 & female==0, robust ;
+
+note: female dropped because of collinearity
+Iteration 0:   log pseudolikelihood = -156.86721
+Iteration 1:   log pseudolikelihood =  -151.0257
+Iteration 2:   log pseudolikelihood = -150.99613
+Iteration 3:   log pseudolikelihood = -150.99613
+
+Probit regression, reporting marginal effects           Number of obs =    286
+                                                        Wald chi2(19) =  13.57
+                                                        Prob > chi2   = 0.8084
+Log pseudolikelihood = -150.99613                       Pseudo R2     = 0.0374
+
+------------------------------------------------------------------------------
+         |               Robust
+seedta~p |      dF/dx   Std. Err.      z    P>|z|     x-bar  [    95% C.I.   ]
+---------+--------------------------------------------------------------------
+h~n_new2*|   .0457439   .0984649     0.48   0.634   .262238  -.147244  .238732
+im~50_01*|  -.0414726   .0748062    -0.54   0.590   .251748   -.18809  .105145
+i~200_01*|   .1194356   .1100187     1.10   0.271   .426573  -.096197  .335068
+im~50_67*|   .0780737   .0910061     0.90   0.370   .213287  -.100295  .256443
+i~200_67*|  -.0207512   .0931595    -0.22   0.824    .51049   -.20334  .161838
+ married*|   .0539173   .0677922     0.75   0.452   .853147  -.078953  .186788
+    edhi*|     .07918   .0545902     1.45   0.147   .493007  -.027815  .186175
+   numhh |  -.0063895   .0113671    -0.56   0.574   5.57692  -.028669   .01589
+unempl~d*|   .0593614   .2903895     0.22   0.829   .013986  -.509792  .628514
+     age |  -.0029693   .0020317    -1.46   0.144   43.0594  -.006951  .001013
+  GBloan*|   .0356446    .052931     0.67   0.505   .590909  -.068098  .139387
+GBloan~t*|  -.0566002   .1030467    -0.51   0.612   .045455  -.258568  .145368
+  hh_inc |  -.0257955   .0431687    -0.60   0.550   1.44222  -.110405  .058814
+ hh_inc2 |   .0010126   .0043703     0.23   0.817   4.32151  -.007553  .009578
+frac_~25*|    .046297   .1724737     0.28   0.780   .108392  -.291745  .384339
+fra~5_50*|    .027374   .1604709     0.17   0.862   .171329  -.287143  .341891
+frac_~75*|   .0237084   .1556405     0.15   0.877    .22028  -.281341  .328758
+fr~5_100*|   .0619112   .1482065     0.42   0.674   .451049  -.228568  .352391
+  active*|  -.0329948   .0518259    -0.63   0.530    .34965  -.134572  .068582
+---------+--------------------------------------------------------------------
+  obs. P |   .2377622
+ pred. P |   .2285457  (at x-bar)
+------------------------------------------------------------------------------
+(*) dF/dx is for discrete change of dummy variable from 0 to 1
+    z and P>|z| correspond to the test of the underlying coefficient being 0
+
+. *capture `1'*outreg using seedtakeup, se `apprep' coefastr 3aster title("Determinants of SEED Takeup") ctitle("Male")
+>                 addstat(Mean dependent variable, e(pbar)) ;
+. #delimit cr
+delimiter now cr
+. 
+. /*
+> log on
+> *footnote 21
+> **ice cream: female
+> xi: dprobit seedtakeup hyper_ice_new2 female impatient_200p250_01ice impatient_250p200_01ice impatient_200p250_67ice impatient_250p200_67ice fem_marrie
+> d $fullset frac_veryown_inc_0_25 frac_veryown_inc_25_50 frac_veryown_inc_50_75 frac_veryown_inc_75_100 active if group=="T" & call==1 & reached==1 & fe
+> male==1, robust
+> **rice: female
+> xi: dprobit seedtakeup hyper_rice_new2 female impatient_200p250_01rice impatient_250p200_01rice impatient_200p250_67rice impatient_250p200_67rice fem_m
+> arried $fullset frac_veryown_inc_0_25 frac_veryown_inc_25_50 frac_veryown_inc_50_75 frac_veryown_inc_75_100 active if group=="T" & call==1 & reached==1
+>  & female==1, robust
+> 
+> log off
+> */
+. 
+. 
+. gen surveyed = 1 if call==1
+(1,376 missing values generated)
+
+. replace surveyed = 0 if call ==.
+(1,376 real changes made)
+
+. *gen dist_GB = dbutuan if cid ==cid2
+. replace dist_GB = dampayon if butuan ==0
+(0 real changes made)
+
+. destring pop, ignore(",") replace
+pop already numeric; no replace
+
+. *gen brgy_penetration = no_clients /pop
+. *bysort brgy: egen sd_totbal = sd(totbal)
+. *bysort brgy: egen mean_totbal = mean(totbal)
+. 
+. *log using appendix1.log, replace
+. /*Appendix 1*/
+. *PanelA
+. ttest dist_GB, by(surveyed)
+
+Two-sample t test with equal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+       0 |   1,376    20.85029    .5075566    18.82755    19.85462    21.84596
+       1 |   1,777     22.6224    .4525451     19.0768    21.73482    23.50997
+---------+--------------------------------------------------------------------
+combined |   3,153    21.84903    .3381167    18.98579    21.18608    22.51198
+---------+--------------------------------------------------------------------
+    diff |           -1.772107    .6811466               -3.107642   -.4365708
+------------------------------------------------------------------------------
+    diff = mean(0) - mean(1)                                      t =  -2.6017
+Ho: diff = 0                                     degrees of freedom =     3151
+
+    Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = 0.0047         Pr(|T| > |t|) = 0.0093          Pr(T > t) = 0.9953
+
+. ttest totbal, by(surveyed)
+
+Two-sample t test with equal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+       0 |   1,376    430.6673     12.9124    478.9787    405.3372    455.9975
+       1 |   1,777    509.1248    11.97734    504.8983    485.6336    532.6159
+---------+--------------------------------------------------------------------
+combined |   3,153    474.8852    8.819134    495.2083    457.5933     492.177
+---------+--------------------------------------------------------------------
+    diff |           -78.45743    17.73049               -113.2219   -43.69296
+------------------------------------------------------------------------------
+    diff = mean(0) - mean(1)                                      t =  -4.4250
+Ho: diff = 0                                     degrees of freedom =     3151
+
+    Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = 0.0000         Pr(|T| > |t|) = 0.0000          Pr(T > t) = 1.0000
+
+. ttest active, by(surveyed)
+
+Two-sample t test with equal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+       0 |   1,376    .2877907    .0122093    .4528976    .2638398    .3117416
+       1 |   1,777    .3556556    .0113593    .4788462    .3333766    .3779346
+---------+--------------------------------------------------------------------
+combined |   3,153    .3260387    .0083495     .468836    .3096677    .3424096
+---------+--------------------------------------------------------------------
+    diff |           -.0678649    .0167949               -.1007949   -.0349349
+------------------------------------------------------------------------------
+    diff = mean(0) - mean(1)                                      t =  -4.0408
+Ho: diff = 0                                     degrees of freedom =     3151
+
+    Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = 0.0000         Pr(|T| > |t|) = 0.0001          Pr(T > t) = 1.0000
+
+. ttest brgy_penetration, by(surveyed)
+
+Two-sample t test with equal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+       0 |   1,376    .0230045    .0002505    .0092936     .022513    .0234959
+       1 |   1,777    .0218536    .0002066    .0087099    .0214484    .0222589
+---------+--------------------------------------------------------------------
+combined |   3,153    .0223559      .00016     .008986    .0220421    .0226696
+---------+--------------------------------------------------------------------
+    diff |            .0011508    .0003221                .0005193    .0017823
+------------------------------------------------------------------------------
+    diff = mean(0) - mean(1)                                      t =   3.5730
+Ho: diff = 0                                     degrees of freedom =     3151
+
+    Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = 0.9998         Pr(|T| > |t|) = 0.0004          Pr(T > t) = 0.0002
+
+. ttest mean_totbal, by(surveyed)
+
+Two-sample t test with equal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+       0 |   1,376    474.0039    1.902841     70.5849    470.2711    477.7367
+       1 |   1,777    475.5676    1.854791    78.18773    471.9298    479.2054
+---------+--------------------------------------------------------------------
+combined |   3,153    474.8852    1.334906    74.95709    472.2678    477.5025
+---------+--------------------------------------------------------------------
+    diff |           -1.563645    2.691953               -6.841803    3.714513
+------------------------------------------------------------------------------
+    diff = mean(0) - mean(1)                                      t =  -0.5809
+Ho: diff = 0                                     degrees of freedom =     3151
+
+    Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = 0.2807         Pr(|T| > |t|) = 0.5614          Pr(T > t) = 0.7193
+
+. ttest sd_totbal, by(surveyed)
+
+Two-sample t test with equal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+       0 |   1,376    489.1356    1.894689     70.2825    485.4188    492.8524
+       1 |   1,777    488.6575    1.735807    73.17205    485.2531    492.0619
+---------+--------------------------------------------------------------------
+combined |   3,153    488.8662    1.280719     71.9144     486.355    491.3773
+---------+--------------------------------------------------------------------
+    diff |            .4781089    2.582804               -4.586039    5.542257
+------------------------------------------------------------------------------
+    diff = mean(0) - mean(1)                                      t =   0.1851
+Ho: diff = 0                                     degrees of freedom =     3151
+
+    Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = 0.5734         Pr(|T| > |t|) = 0.8532          Pr(T > t) = 0.4266
+
+. ttest pop, by(surveyed)
+
+Two-sample t test with equal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+       0 |   1,376    6986.898    135.9332    5042.371    6720.239    7253.557
+       1 |   1,777    5756.762    106.1334    4473.997    5548.603    5964.921
+---------+--------------------------------------------------------------------
+combined |   3,153    6293.605     84.9285     4768.87    6127.085    6460.126
+---------+--------------------------------------------------------------------
+    diff |            1230.136     169.867                897.0751    1563.197
+------------------------------------------------------------------------------
+    diff = mean(0) - mean(1)                                      t =   7.2418
+Ho: diff = 0                                     degrees of freedom =     3151
+
+    Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = 1.0000         Pr(|T| > |t|) = 0.0000          Pr(T > t) = 0.0000
+
+. 
+. *PanelB
+. tab group surveyed, row
+
++----------------+
+| Key            |
+|----------------|
+|   frequency    |
+| row percentage |
++----------------+
+
+           |       surveyed
+     group |         0          1 |     Total
+-----------+----------------------+----------
+         C |       340        469 |       809 
+           |     42.03      57.97 |    100.00 
+-----------+----------------------+----------
+         M |       310        466 |       776 
+           |     39.95      60.05 |    100.00 
+-----------+----------------------+----------
+         T |       726        842 |     1,568 
+           |     46.30      53.70 |    100.00 
+-----------+----------------------+----------
+     Total |     1,376      1,777 |     3,153 
+           |     43.64      56.36 |    100.00 
+
+
+. 
+. *PanelC
+. tabstat balchange if group =="T", by(surveyed) stats(mean sem)
+
+Summary for variables: balchange
+     by categories of: surveyed 
+
+surveyed |      mean  se(mean)
+---------+--------------------
+       0 |  45.33218  50.31359
+       1 |  476.6494  209.9868
+---------+--------------------
+   Total |  276.9451   115.238
+------------------------------
+
+. tabstat balchange if group =="M", by(surveyed) stats(mean sem)
+
+Summary for variables: balchange
+     by categories of: surveyed 
+
+surveyed |      mean  se(mean)
+---------+--------------------
+       0 |  93.43681  108.6527
+       1 |   189.074   90.1002
+---------+--------------------
+   Total |  150.8684  69.34108
+------------------------------
+
+. tabstat balchange if group =="C", by(surveyed) stats(mean sem)
+
+Summary for variables: balchange
+     by categories of: surveyed 
+
+surveyed |      mean  se(mean)
+---------+--------------------
+       0 |   13.7705  77.73263
+       1 |    65.183  124.2429
+---------+--------------------
+   Total |  43.57577  79.05361
+------------------------------
+
+. tabstat balchange, by(surveyed) stats(mean sem)
+
+Summary for variables: balchange
+     by categories of: surveyed 
+
+surveyed |      mean  se(mean)
+---------+--------------------
+       0 |  48.37103  40.87287
+       1 |  292.6382  107.4385
+---------+--------------------
+   Total |  186.0376  63.15264
+------------------------------
+
+. 
+. log close
+      name:  <unnamed>
+       log:  D:\Users\jconning\Google Drive\GC\DevII_S15\other\SEED.QJEtables.takeup.log
+  log type:  text
+ closed on:  18 Mar 2016, 16:06:12
+---------------------------------------------------------------------------------------------------------------------------------------------------------

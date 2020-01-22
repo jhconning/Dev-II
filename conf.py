@@ -34,8 +34,7 @@ from recommonmark.parser import CommonMarkParser
 # ones.
 extensions = [
     'sphinx.ext.mathjax',
-    'nbsphinx',
-	'recommonmark'
+    'nbsphinx'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -44,11 +43,8 @@ templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
-source_suffix = ['.rst', '.md']
 
-source_parsers = {
-    '.md': CommonMarkParser,
-}
+source_suffix = [".rst", ".md"]
 
 
 # The encoding of source files.
@@ -59,7 +55,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Development II seminar'
-copyright = '2016, Jonathan Conning'
+copyright = '2016, 2020 Jonathan Conning'
 author = 'Jonathan Conning'
 
 # The version info for the project you're documenting, acts as replacement for

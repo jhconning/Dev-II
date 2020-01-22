@@ -1,0 +1,1901 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}G:\GC\Dev-II\notebooks\codebook.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 4 Apr 2016, 14:04:36
+
+{com}. codebook, compact
+{res}
+{txt}Variable       Obs Unique       Mean        Min       Max  Label
+{txt}{hline 153}
+{txt}_merge      {res}  3153      2   1.067238          1         3  {txt}
+{txt}cid2        {res}  3153   3153   39773.97         17    112723  {txt}CID2
+{txt}married     {res}  3153      2   .4291151          0         1  {txt}Married
+{txt}civilstat   {res}   106      2          .          .         .  {txt}CIVILSTAT
+{txt}butuan      {res}  2391      1          1          1         1  {txt}
+{txt}formno      {res}  1777   1777   1582.494          1      3155  {txt}FORM no
+{txt}call_t2     {res}  1777      1          1          1         1  {txt}Result of call
+{txt}area        {res}  1777      2   1.712999          1         2  {txt}Area
+{txt}age         {res}  1777     69   42.29319         13        84  {txt}Age
+{txt}mstat       {res}  1777      4   2.055149          1         4  {txt}Marital Status
+{txt}dead        {res}   157      4   2.847134          1         4  {txt}Cause of death on the spouse
+{txt}hgc         {res}  1777     17   11.60101          0        16  {txt}Highest grade completed
+{txt}child       {res}  1777      2   1.158132          1         2  {txt}Have children
+{txt}tnum        {res}  1777     16    3.26224          0        16  {txt}Number of Children
+{txt}matchnum    {res}     0      0          .          .         .  {txt}
+{txt}tmale       {res}  1487     11    2.02959          0        10  {txt}Number of male children
+{txt}tfem        {res}  1482     10   1.875169          0         9  {txt}Number of female children
+{txt}tschage     {res}  1772     11   1.696388          0        10  {txt}Number of school age children
+{txt}numsch      {res}  1763      9   1.353375          0        10  {txt}Number of school age children who are attending school
+{txt}moresh      {res}     0      0          .          .         .  {txt}
+{txt}minc        {res}  1777     58   38.80979          0        94  {txt}Main source of income
+{txt}sinc        {res}   349     37   36.96275          2        94  {txt}Secondary ource of income
+{txt}numhh       {res}  1777     17   5.602138          1        17  {txt}Number of household members
+{txt}insured     {res}  1777     16   3.752392          0        97  {txt}Number of hh member coverd health insurance
+{txt}health      {res}  1777      5   2.525042          1         5  {txt}Health condition at present
+{txt}compare     {res}  1777      5   2.992684          1         5  {txt}Health improved versus last year
+{txt}food        {res}  1777      5   3.016882          1         5  {txt}Food consumption improved versus last year
+{txt}whysay      {res}  1777     23   28.57006          1        41  {txt}Why say so?
+{txt}amount      {res}  1772    186   3661.276          0     24000  {txt}Average amount sspent on food in the past month
+{txt}foodamnt    {res}  1772      5   2.447517          1         5  {txt}Average amount spent on food in the past month (grouped)
+{txt}lacfund     {res}  1777      2   1.976365          1         2  {txt}Member skip meal
+{txt}skpmeal     {res}    42      9   3.357143          1        10  {txt}Number of hhmember skip meal
+{txt}hmen1       {res}    42     11    4.47619          1        15  {txt}Number of times hhmember have to skip meals
+{txt}hmen2       {res}    33     11   4.818182          1        15  {txt}Number of times hhmember have to skip meals
+{txt}hmen3       {res}    22      9   4.954545          1        15  {txt}Number of times hhmember have to skip meals
+{txt}hmen4       {res}    13      7   6.076923          2        15  {txt}Number of times hhmember have to skip meals
+{txt}hmen5       {res}    10      6        6.1          2        15  {txt}Number of times hhmember have to skip meals
+{txt}hmen6       {res}     8      5      7.125          3        15  {txt}Number of times hhmember have to skip meals
+{txt}hmen7       {res}     4      4       7.75          3        15  {txt}Number of times hhmember have to skip meals
+{txt}hmen8       {res}     3      3   8.666667          3        15  {txt}Number of times hhmember have to skip meals
+{txt}hmen9       {res}     1      1         15         15        15  {txt}Number of times hhmember have to skip meals
+{txt}hmen10      {res}     1      1         15         15        15  {txt}Number of times hhmember have to skip meals
+{txt}labor1      {res}  3153    411    2755.39          0     75000  {txt}Income from labor 1
+{txt}tlb1        {res}  3153      2   1.089439          0         3  {txt}Time unit for ist labor
+{txt}pension1    {res}  3153     77   172.1684          0     19207  {txt}Income from pension 1
+{txt}tppen1      {res}  3153      2   .1569933          0         3  {txt}Time unit for income from ist pension
+{txt}farminc1    {res}  3153    133   251.4635          0     41666  {txt}Income from farming 1
+{txt}tfarmc1     {res}  3153      2   .2150333          0         3  {txt}Time unit for income from ist farming
+{txt}entinc1     {res}  3153    138   1560.045          0    330000  {txt}Income from  enterprise1
+{txt}tent1       {res}  3153      2   .4072312          0         3  {txt}Time unit for ist enterprise income
+{txt}rent1       {res}  3153     40   54.89534          0     12000  {txt}Income from rent1
+{txt}trent1      {res}  3153      2   .0618459          0         3  {txt}Time unit for 1st rent income
+{txt}labor2      {res}  3153    165   1619.042          0    100000  {txt}Income from labor 2
+{txt}grplabr2    {res}  3153      6   .7789407          0         5  {txt}Labor 2 income (grouped)
+{txt}tlab2       {res}  3153      2   .7288297          0         3  {txt}Time unit for 2nd labor
+{txt}pension2    {res}  3153     43   107.0082          0     13600  {txt}Income from pension 2
+{txt}grpensi2    {res}  3153      6   .0735807          0         7  {txt}Pension income 2
+{txt}tpent2      {res}  3153      2   .0875357          0         3  {txt}Time unit for income from 2nd pension
+{txt}farminc2    {res}  3153     78   167.1927          0     60000  {txt}Income from farming 2
+{txt}grpfrm2     {res}  3153      6    .086267          0         5  {txt}Farming income 2 grp
+{txt}tfarmc2     {res}  3153      2   .1065652          0         3  {txt}Time unit for income from 2nd farming
+{txt}entinc2     {res}  3153     93   1172.962          0    300000  {txt}Income from  enterprise2
+{txt}grpent2     {res}  3153      6   .3393593          0         5  {txt}Enterprise 2 income (grp)
+{txt}tent2       {res}  3153      2   .3301618          0         3  {txt}Time unit for 2nd enterprise income
+{txt}rent2       {res}  3153     23   38.05677          0     24000  {txt}Income from rent2
+{txt}grprent2    {res}  3153      5   .0206153          0         5  {txt}Rent income 2 (grp)
+{txt}trent2      {res}  3153      2   .0256898          0         3  {txt}Time unit for 2nd rent income
+{txt}labor3      {res}  3153     77   403.7127          0     67500  {txt}Income from labor 3
+{txt}grplabr3    {res}  3153      6   .1979068          0         5  {txt}Labor 3 income (Grp)
+{txt}tlab3       {res}  3153      2   .2007612          0         3  {txt}Time unit for 3rd labor
+{txt}pension3    {res}  3153     21   24.71931          0     10000  {txt}Income from pension 3rd
+{txt}grpens3     {res}  3153      5    .018078          0         5  {txt}Pension 3 income (Grp)
+{txt}tpen3       {res}  3153      2   .0237869          0         3  {txt}Time unit for income from 3rd pension
+{txt}farminc3    {res}  3153     14   19.55756          0     20499  {txt}Income from farming 3rd
+{txt}grpfarm3    {res}  3153      6   .0104662          0         5  {txt}Farming 3 income (Grp)
+{txt}tfarmc3     {res}  3153      2   .0123692          0         3  {txt}Time unit for income from 3rd farming
+{txt}entinc3     {res}  3153     23   77.37615          0     45000  {txt}Income from  enterprise3
+{txt}grpenti3    {res}  3153      6   .0329845          0         5  {txt}Enterprise 3 income (Grp)
+{txt}tent3       {res}  3153      2   .0371075          0         3  {txt}Time unit for 3rd enterprise income
+{txt}rent3       {res}  3153      4   2.220108          0      3800  {txt}Income from rent3
+{txt}grprent3    {res}  3153      2   .0019029          0         2  {txt}Rent 3 income (Grp)
+{txt}trent3      {res}  3153      2   .0028544          0         3  {txt}Time unit for 3rd rent income
+{txt}labor4      {res}  3153     21   45.47288          0     12000  {txt}Income from labor 4
+{txt}grplab4     {res}  3153      6   .0269585          0         5  {txt}Labor 4 income (Grp)
+{txt}tlab4       {res}  3153      2   .0275928          0         3  {txt}Time unit for 4th labor
+{txt}pension4    {res}  3153      2   1.585791          0      5000  {txt}Income from pension 4
+{txt}grpens4     {res}  3153      2   .0009515          0         3  {txt}Pension 4 Income (Grp)
+{txt}tpen4       {res}  3153      2   .0009515          0         3  {txt}Time unit for income from 4th pension
+{txt}farminc4    {res}  3153      4   4.836663          0     11000  {txt}Income from farming 4
+{txt}grpfarm4    {res}  3153      4   .0025373          0         5  {txt}Farming 4 Income (Grp)
+{txt}tfarmc4     {res}  3153      2   .0028544          0         3  {txt}Time unit for income from 4thfarming
+{txt}entinc4     {res}  3153      3   4.123057          0      9000  {txt}Income from enterprise4
+{txt}grpenti4    {res}  3153      3   .0022201          0         4  {txt}Enterprise 4 Income (Grp)
+{txt}tent4       {res}  3153      2   .0019029          0         3  {txt}Time unit for 4th enterprise income
+{txt}labor5      {res}  3153      5   8.563273          0      8000  {txt}Income from labor 5
+{txt}grplabr5    {res}  3153      4   .0044402          0         4  {txt}Labor 5 income (Grp)
+{txt}tlab5       {res}  3153      2   .0047574          0         3  {txt}Time unit for 5th labor
+{txt}pension5    {res}  3153      2   .8404694          0      2650  {txt}Income from pension 5
+{txt}grpens5     {res}  3153      2   .0006343          0         2  {txt}Pension 5 Income (Grp)
+{txt}tpen5       {res}  3153      2   .0009515          0         3  {txt}Time unit for income from 5th pension
+{txt}labr6       {res}  3153      2   .6343165          0      2000  {txt}Income from labor 6
+{txt}grplabr6    {res}  3153      2   .0006343          0         2  {txt}Labor 6 Income
+{txt}tlab6       {res}  3153      2   .0009515          0         3  {txt}Time unit for 6th labor
+{txt}pension6    {res}  3153      2    .919759          0      2900  {txt}Income from pension 6
+{txt}grpensn6    {res}  3153      2   .0006343          0         2  {txt}Pension 6 Income
+{txt}tpen6       {res}  3153      2   .0009515          0         3  {txt}Time unit for income from 6th pension
+{txt}floor       {res}  1777      5   3.438942          1         5  {txt}
+{txt}wall        {res}  1777      7   5.548115          1         7  {txt}
+{txt}roof        {res}  1777      5   2.842431          1         5  {txt}
+{txt}own         {res}  1777      2   1.199212          1         2  {txt}
+{txt}arrange     {res}   353      4   1.966006          1         4  {txt}
+{txt}paid        {res}    81     68     243687          0   9999998  {txt}
+{txt}spaying     {res}  3153     68   7001.483          0    999997  {txt}
+{txt}value       {res}  1500     92   160632.1        500   4000000  {txt}
+{txt}lot         {res}  1777      2   1.633652          1         2  {txt}
+{txt}aircon      {res}  1777      2   .9217783          0         1  {txt}
+{txt}naircon     {res}  3153      4   .0507453          0         3  {txt}
+{txt}ref         {res}  1777      2   .3511536          0         1  {txt}
+{txt}nref        {res}  3153      4   .3821757          0         3  {txt}
+{txt}freezer     {res}  1777      2   .9752392          0         1  {txt}
+{txt}nfrezeer    {res}  3153      3   .0145893          0         2  {txt}
+{txt}rcooker     {res}  1777      2   .6612268          0         1  {txt}
+{txt}nrcooker    {res}  3153      4   .2042499          0         3  {txt}
+{txt}radio       {res}  1777      2   .4490715          0         1  {txt}
+{txt}nradio      {res}  3153      6    .344751          0         5  {txt}
+{txt}smachine    {res}  1777      2   .7625211          0         1  {txt}
+{txt}nsmach      {res}  3153      5   .1436727          0         4  {txt}
+{txt}car         {res}  1777      2   .9003939          0         1  {txt}
+{txt}ncar        {res}  3153      4    .064066          0         4  {txt}
+{txt}motor       {res}  1777      2   .8187957          0         1  {txt}
+{txt}nmotor      {res}  3153      6    .114177          0         6  {txt}
+{txt}bike        {res}  1777      2   .7433877          0         1  {txt}
+{txt}nbike       {res}  3153      4   .1687282          0         3  {txt}
+{txt}telcp       {res}  1777      2   .4338773          0         1  {txt}
+{txt}ntelcp      {res}  3153     10   .6095782          0        11  {txt}
+{txt}telev       {res}  1777      2   .1727631          0         1  {txt}
+{txt}ntelev      {res}  3153      6   .5613701          0         5  {txt}
+{txt}wmach       {res}  1777      2   .6162071          0         1  {txt}
+{txt}nwmach      {res}  3153      3   .2213765          0         2  {txt}
+{txt}tburner     {res}  1777      2   .3792909          0         1  {txt}
+{txt}ntburner    {res}  3153      5   .3710752          0         4  {txt}
+{txt}grange      {res}  1777      2   .8187957          0         1  {txt}
+{txt}ngrange     {res}  3153      4   .1046622          0         3  {txt}
+{txt}bed         {res}  1777      2   .2644907          0         1  {txt}
+{txt}nbed        {res}  3153     11   .8820171          0        10  {txt}
+{txt}sofa        {res}  1777      2   .2391671          0         1  {txt}
+{txt}nsofa       {res}  3153      5   .4804948          0         4  {txt}
+{txt}cd          {res}  1769      2   .3504805          0         1  {txt}
+{txt}ncd         {res}  3153      5   .4579765          0         4  {txt}
+{txt}efan        {res}  1777      2   .3145751          0         1  {txt}
+{txt}nefan       {res}  3153      8   .6038693          0        12  {txt}
+{txt}eiron       {res}  1777      2   .2566123          0         1  {txt}
+{txt}neiron      {res}  3153      5   .4519505          0         4  {txt}
+{txt}aparador    {res}  1777      2   .9949353          0         1  {txt}
+{txt}naparado    {res}  3153      4   .0041231          0         3  {txt}
+{txt}piano       {res}  1777      2   .9926843          0         1  {txt}
+{txt}npiano      {res}  3153      2   .0041231          0         1  {txt}
+{txt}blender     {res}  1777      2   .9358469          0         1  {txt}
+{txt}nblender    {res}  3153      3   .0371075          0         2  {txt}
+{txt}toaster     {res}  1777      2   .9718627          0         1  {txt}
+{txt}ntoaster    {res}  3153      3   .0168094          0         2  {txt}
+{txt}mwave       {res}  1777      2   .9819921          0         1  {txt}
+{txt}nmwave      {res}  3153      3   .0104662          0         2  {txt}
+{txt}cputer      {res}  1777      2   .9724254          0         1  {txt}
+{txt}ncputer     {res}  3153      2   .0155408          0         1  {txt}
+{txt}twriter     {res}  1777      2   .9971863          0         1  {txt}
+{txt}ntwriter    {res}  3153      2   .0015858          0         1  {txt}
+{txt}camera      {res}  1777      2   .9701745          0         1  {txt}
+{txt}ncamera     {res}  3153      3   .0174437          0         2  {txt}
+{txt}vcamera     {res}  1777      2    .997749          0         1  {txt}
+{txt}nvcamera    {res}  3153      2   .0012686          0         1  {txt}
+{txt}wdispens    {res}  1777      2   1.997186          1         2  {txt}Water dispenser
+{txt}ndispen     {res}     5      1          1          1         1  {txt}Number of water dispenser
+{txt}cmaker      {res}  1777      2   1.998875          1         2  {txt}Coffee maker
+{txt}ncmaker     {res}     2      1          1          1         1  {txt}Number of coffee maker
+{txt}vclean      {res}  1777      2   1.998312          1         2  {txt}Vacuum cleaner
+{txt}nvclean     {res}     3      1          1          1         1  {txt}Number of vaccum cleaner
+{txt}buy         {res}  1777      2   1.910523          1         2  {txt}Bought something such as jewelry, furniture, and clothing in the past 12 months
+{txt}numbuy      {res}   159      9   1.893082          1        20  {txt}Number bought materials on a lay-away plan in the past 12 months
+{txt}uland       {res}  1777      4   1.858751          1         5  {txt}Any member of the household use land for agricultural use?
+{txt}nplot       {res}   385      5   1.480519          1         5  {txt}Number of plots used for agricultural purposes by the household member
+{txt}uselot1     {res}   385      5   1.306494          1         7  {txt}Primary use of the land - First lot
+{txt}irrig1      {res}   304      2   1.605263          1         2  {txt}Irrigated lot - First lot
+{txt}crop1       {res}   385     19   3.818182          1        22  {txt}Main crop/livestock grown -First lot
+{txt}usecrop1    {res}   385      3   2.322078          1         3  {txt}Use of the plot - First lot
+{txt}ownlot1     {res}   384      7   2.778646          1         7  {txt}Type of lot ownership - First Lot
+{txt}arealot1    {res}   384     67   18367.62          4    500000  {txt}Plot area - First lot
+{txt}value1      {res}   172     57   472515.4        500  1.00e+07  {txt}Market value of the lot - First lot
+{txt}uselot2     {res}   129      5   1.837209          1         6  {txt}Primary use of the land - 2nd lot
+{txt}irrig2      {res}    84      2       1.75          1         2  {txt}Irrigated lot - 2nd lot
+{txt}crop2       {res}   129     15   5.224806          1        23  {txt}Main crop/livestock grown -2nd lot
+{txt}usecrop2    {res}   129      3   2.317829          1         3  {txt}Use of the plot - 2nd lot
+{txt}ownlot2     {res}   129      7   2.728682          1         7  {txt}Type of lot ownership - 2nd Lot
+{txt}arealot2    {res}   129     38   16759.97          1    230000  {txt}Plot area - 2nd lot
+{txt}value2      {res}    64     30   274803.8        195   3000000  {txt}Market value of the lot - 2nd lot
+{txt}uselot3     {res}    44      5   2.159091          1         6  {txt}Primary use of the land - First lot
+{txt}irrig3      {res}    24      2   1.708333          1         2  {txt}Irrigated lot - 3rd lot
+{txt}crop3       {res}    44     15   7.545455          1        23  {txt}Main crop/livestock grown -3rd lot
+{txt}usecrop3    {res}    44      3   2.272727          1         3  {txt}Use of the plot - 3rd lot
+{txt}ownlot3     {res}    44      6   2.477273          1         7  {txt}Type of lot ownership - 3rd Lot
+{txt}arelot3     {res}    43     19   13668.07          8    230000  {txt}Plot area - 3rd lot
+{txt}value3      {res}    23     18   140032.9        160   1000000  {txt}Market value of the lot - 3rd lot
+{txt}uselot4     {res}    11      2   1.363636          1         2  {txt}Primary use of the land - 4th lot
+{txt}irrig4      {res}     7      2   1.428571          1         2  {txt}Irrigated lot - 4th lot
+{txt}crop4       {res}    11      5   3.727273          1        11  {txt}Main crop/livestock grown -4th lot
+{txt}usecrop4    {res}    11      3   2.090909          1         3  {txt}Use of the plot - 4th lot
+{txt}ownlot4     {res}    11      5   3.090909          1         7  {txt}Type of lot ownership - 4th Lot
+{txt}arealot4    {res}    11      9   25795.55          1    150000  {txt}Plot area - 4th lot
+{txt}value4      {res}     5      5     970000     100000   3000000  {txt}Market value of the lot - 4th lot
+{txt}uselot5     {res}     1      1          1          1         1  {txt}Primary use of the land - 5th lot
+{txt}irrig5      {res}     0      0          .          .         .  {txt}Irrigated lot - 5th lot
+{txt}crop5       {res}     1      1          2          2         2  {txt}Main crop/livestock grown - 5th lot
+{txt}usecrop5    {res}     1      1          2          2         2  {txt}Use of the plot - 5th lot
+{txt}ownlot5     {res}     1      1          1          1         1  {txt}Type of lot ownership - 5th Lot
+{txt}arelot5     {res}     1      1     100000     100000    100000  {txt}Plot area - 5th lot
+{txt}value5      {res}     1      1    1000000    1000000   1000000  {txt}Market value of the lot - 5th lot
+{txt}stractor    {res}  3153      3   .2261338          0         2  {txt}Own tractor
+{txt}nstracto    {res}  3153      4   .0145893          0         3  {txt}Number of small tractor owned
+{txt}ltractor    {res}  3153      3   .2410403          0         2  {txt}Own large tractor
+{txt}nltract     {res}  3153      2   .0012686          0         1  {txt}Number of large tractor
+{txt}plow        {res}  3153      3   .2039328          0         2  {txt}Own plow
+{txt}nplow       {res}  3153      5   .0453536          0         4  {txt}Number of plow owned
+{txt}harrow      {res}  3153      3   .2147161          0         2  {txt}Own harrow
+{txt}nharrow     {res}  3153      4     .03013          0         4  {txt}Number of harrow owned
+{txt}wpump       {res}  3153      3   .2350143          0         2  {txt}Own hand water pump
+{txt}nwpump      {res}  3153      3   .0076118          0         2  {txt}Number of hand water pump owned
+{txt}mpump       {res}  3153      3   .2356486          0         2  {txt}Owned mechanical water pump
+{txt}nmpump      {res}  3153      3   .0069775          0         2  {txt}Number of mechanical water pump owned
+{txt}sprink      {res}  3153      3   .2305741          0         2  {txt}Owned sprinkler
+{txt}nsprink     {res}  3153      5   .0168094          0         6  {txt}Number of sprinkler owned
+{txt}thresh      {res}  3153      3   .2305741          0         2  {txt}Owned motor thresher
+{txt}nthresh     {res}  3153      3   .0123692          0         2  {txt}Number of motor thresher owned
+{txt}hthresh     {res}  3153      3   .2397716          0         2  {txt}Owned hand thresher
+{txt}nhtresh     {res}  3153      2   .0019029          0         1  {txt}Number of hand thresher owned
+{txt}shell       {res}  3153      3   .2416746          0         2  {txt}Owned sheller
+{txt}nshell      {res}  3153      3   .0009515          0         2  {txt}Number of sheller owned
+{txt}ipump       {res}  3153      3   .2099588          0         2  {txt}Owned insectecide pump
+{txt}nimpump     {res}  3153      5   .0371075          0         6  {txt}Number of insecticide pump owned
+{txt}cart        {res}  3153      3   .2283539          0         2  {txt}Owned cart/wheel-barrow
+{txt}ncart       {res}  3153      3   .0133206          0         3  {txt}Number of cart-wheel-barrow owned
+{txt}hcseeds     {res}   379     75   2022.744          0    240000  {txt}Amount spent on certified seeds in the past 12 months
+{txt}uncseeds    {res}   381      2   1.910761          1         2  {txt}Needed but was not able to buy enough certified seeds in the last 12 months
+{txt}hfertile    {res}   381    120   2379.672          0     99200  {txt}Amount spent on fertilizer in the past 12 mo
+{txt}unfertil    {res}   381      2   1.832021          1         2  {txt}Needed but was not able to buy enough fertilizer in the past 12 mo
+{txt}hmanure     {res}   380     15   94.82368          0     16000  {txt}Amount spent on manure in the past 12 mo
+{txt}unmanure    {res}   381      2   1.989501          1         2  {txt}Needed but was not able to buy enough manure in the past 12 mo
+{txt}hpest       {res}   379     79   908.7731          0     28000  {txt}Amount spent on pesticide in the past 12 mo
+{txt}upest       {res}   381      2   1.887139          1         2  {txt}Needed but was not able to buy enough pesticide in the past 12 mo
+{txt}hherb       {res}   379     57   451.8549          0     10000  {txt}Amount spent on herbicide in the past 12 mo
+{txt}uherb       {res}   381      2    1.91601          1         2  {txt}Needed but was not able to buy enough herbicide in the past 12 mos
+{txt}hfungi      {res}   379     28   205.5567          0     12000  {txt}Amount spent on fungicide in the past 12 mos
+{txt}cfungi      {res}   380      2   1.976316          1         2  {txt}Needed but was not able to buy enough fungicide in the past 12 mos
+{txt}hfeeds      {res}   492    101   1814.234          0    265080  {txt}Amount spent on feeds in the past 12 mos
+{txt}cfeeds      {res}   474      2   1.938819          1         2  {txt}Needed but was not able to buy enough feeds in the past 12 mos
+{txt}occaraba    {res}   504      2   1.787698          1         2  {txt}Owned carabao
+{txt}ncarabao    {res}   107      5   1.411215          1         5  {txt}Number of carabao owned
+{txt}obeef       {res}   503      2   1.930417          1         2  {txt}Owned cattle (Beef)
+{txt}nbeef       {res}    35      5        1.8          1         6  {txt}Number of cattle (Beef) owned
+{txt}omilk       {res}   504      2   1.954365          1         2  {txt}Owned cows (Milk)
+{txt}nmilk       {res}    23      5   1.869565          1         9  {txt}Number of cows (Milk) owned
+{txt}ohorse      {res}   504      2   1.990079          1         2  {txt}Owned horses
+{txt}nhorse      {res}     5      2        1.4          1         3  {txt}Number of horses owned
+{txt}opig        {res}   504      2    1.47619          1         2  {txt}Owned pig
+{txt}npig        {res}   263     16   2.961977          1        36  {txt}Number of pigs owned
+{txt}ogoat       {res}   504      2   1.890873          1         2  {txt}Owned goat
+{txt}ngoat       {res}    54     11   4.259259          1        48  {txt}Number of goats owned
+{txt}ochicken    {res}   504      2   1.452381          1         2  {txt}Owned chicken
+{txt}nchiken     {res}   275     36      14.92          1       150  {txt}Number of chickens owned
+{txt}higher      {res}   503      7   38.02982          1       998  {txt}Are ther months when farm income is higher than other months?
+{txt}highmo1a    {res}   321     12   6.049844          1        12  {txt}Months when farm income is higher
+{txt}highmo1b    {res}   144     12   6.368056          1        12  {txt}Months when farm income is higher
+{txt}highmo1c    {res}     9      5   9.555556          4        12  {txt}Months when farm income is higher
+{txt}highmo1d    {res}     2      2        7.5          5        10  {txt}Months when farm income is higher
+{txt}lowerinc    {res}   499      6   37.57916          1       998  {txt}Are ther months when farm income is lower than other months?
+{txt}lowmo1      {res}   319     12   7.341693          1        12  {txt}Months when farm income is lower
+{txt}lowmo2      {res}   153     12   7.405229          1        12  {txt}Months when farm income is lower
+{txt}lowmo3      {res}    14      5   6.571429          1        12  {txt}Months when farm income is lower
+{txt}lowmo4      {res}     9      3   6.888889          3        12  {txt}Months when farm income is lower
+{txt}lowmo5      {res}     0      0          .          .         .  {txt}Months when farm income is lower
+{txt}invest      {res}  1777      2   1.732133          1         2  {txt}
+{txt}howmany     {res}   476      4   1.186975          1         4  {txt}
+{txt}kent1       {res}   476     30   5.619748          1        30  {txt}
+{txt}oper1       {res}   476      4   1.252101          1        98  {txt}
+{txt}operate1    {res}   476     11   4.342437          1        98  {txt}
+{txt}kent2       {res}    76     19   7.315789          1        25  {txt}
+{txt}oper2       {res}    76      2   1.039474          1         2  {txt}
+{txt}operate2    {res}    76      8   4.039474          1         8  {txt}
+{txt}kent3       {res}    10      7        5.7          1        19  {txt}
+{txt}oper3       {res}    10      2        1.1          1         2  {txt}
+{txt}operate3    {res}    10      4        5.5          1         8  {txt}
+{txt}kent4       {res}     3      2          3          2         5  {txt}
+{txt}oper4       {res}     3      1          1          1         1  {txt}
+{txt}operate4    {res}     3      3   5.666667          2         8  {txt}
+{txt}moinc1      {res}  3153    124   1754.762          0    300000  {txt}Gross income in a typical month (First Enterprise)
+{txt}highinc1    {res}   469      2   1.240938          1         2  {txt}Are there months where income is higher than normal
+{txt}hginc1      {res}  3153    111   2737.055          0    600000  {txt}Ecpected earning during months where income is higher than normal
+{txt}wmonh1a     {res}  3153      2   .1129083          0         1  {txt}High income months
+{txt}wmonh1b     {res}  3153      2   .0643831          0         1  {txt}High income months
+{txt}wmonh1c     {res}  3153      2   .0171265          0         1  {txt}High income months
+{txt}wmonh1d     {res}  3153      2    .006026          0         1  {txt}High income months
+{txt}wmonh1e     {res}  3153      2   .0041231          0         1  {txt}High income months
+{txt}wmonh1f     {res}  3153      2   .0034887          0         1  {txt}High income months
+{txt}wmonh1g     {res}  3153      2   .0006343          0         1  {txt}High income months
+{txt}wmonh1h     {res}  3153      2   .0015858          0         1  {txt}High income months
+{txt}wmonh1i     {res}  3153      1          0          0         0  {txt}High Income Months
+{txt}lowinc1     {res}   476      4   15.83613          1       998  {txt}Are there low income months?
+{txt}lginc1      {res}  3153     97   994.8571          0    240000  {txt}Ecpected earning during low income months
+{txt}wlmoh1a     {res}  3153      2   .1176657          0         1  {txt}Low Income Months (First ent) -1st men
+{txt}wlmoh1b     {res}  3153      2   .0729464          0         1  {txt}Low Income Months (First ent) -2nd men
+{txt}wlmoh1c     {res}  3153      2   .0288614          0         1  {txt}Low Income Months (First ent) -3rd men
+{txt}wlmoh1d     {res}  3153      2   .0101491          0         1  {txt}Low Income Months (First ent) -4th men
+{txt}wlmoh1e     {res}  3153      2   .0041231          0         1  {txt}Low Income Months (First ent) -5th men
+{txt}wlmoh1f     {res}  3153      2   .0015858          0         1  {txt}Low Income Months (First ent) -6th men
+{txt}wlmoh1g     {res}  3153      2   .0006343          0         1  {txt}Low Income Months (First ent) -7th men
+{txt}wlmoh1h     {res}  3153      2   .0006343          0         1  {txt}Low Income Months (First ent) -8th men
+{txt}wmolh1h     {res}     1      1         11         11        11  {txt}
+{txt}moinc2      {res}  3153     40   187.2883          0     90000  {txt}Gross income in a typical month for second enterprise
+{txt}highinc2    {res}    77      3   14.44156          1       998  {txt}Are there high income months?
+{txt}hginc2      {res}  3153     24   168.8719          0    120000  {txt}Expected earning during high income months
+{txt}wmoh2a      {res}  3153      2    .012052          0         1  {txt}High Income months (Second ent)- 1st Men
+{txt}wmoh2b      {res}  3153      2   .0063432          0         1  {txt}High Income months (Second ent)- 2nd Men
+{txt}wmoh2c      {res}  3153      2   .0022201          0         1  {txt}High Income months (Second ent)- 3rd Men
+{txt}wmoh2d      {res}  3153      2   .0015858          0         1  {txt}High Income months (Second ent)- 4th Men
+{txt}wmoh2e      {res}  3153      2   .0003172          0         1  {txt}High Income months (Second ent)- 5th Men
+{txt}wmoh2f      {res}  3153      2   .0003172          0         1  {txt}High Income months (Second ent)- 6th Men
+{txt}lowinc2     {res}    77      3   14.38961          1       998  {txt}Are there low income months? (Second ent)
+{txt}lginc2      {res}  3153     24   73.80685          0     75000  {txt}Expected income in low-income months (Second ent)
+{txt}wmol2a      {res}  3153      2   .0133206          0         1  {txt}Low income months (Second ent)- 1st Men
+{txt}wmol2b      {res}  3153      2   .0082461          0         1  {txt}Low income months (Second ent)- 2nd Men
+{txt}wmol2c      {res}  3153      2   .0028544          0         1  {txt}Low income months (Second ent)- 3rd Men
+{txt}wmol2d      {res}  3153      2   .0009515          0         1  {txt}Low income months (Second ent)- 4th Men
+{txt}wmol2e      {res}  3153      2   .0003172          0         1  {txt}Low income months (Second ent)- 5th Men
+{txt}wmol2f      {res}  3153      2   .0003172          0         1  {txt}Low income months (Second ent)- 6th Men
+{txt}moinc3      {res}  3153     11   11.10466          0     10000  {txt}Gross income earned in a typical month (Third ent)
+{txt}highinc3    {res}    10      2        1.6          1         2  {txt}Are there high-income months?
+{txt}hginc3      {res}  3153      5   10.30764          0     15000  {txt}Expected income in high income months
+{txt}wmoh3a      {res}  3153      2   .0012686          0         1  {txt}High income months (Third ent)-1st Men
+{txt}wmoh3b      {res}  3153      2   .0009515          0         1  {txt}High income months (Third ent)-2nd Men
+{txt}lowinc3     {res}    10      2        1.5          1         2  {txt}Are there months where income is low?
+{txt}lginc3      {res}  3153      5   4.059626          0      5000  {txt}Expected gross earning in low income months? (Third Ent)
+{txt}wmol3a      {res}  3153      2   .0015858          0         1  {txt}Low income months (Third ent)-1st Men
+{txt}wmol3b      {res}  3153      2   .0012686          0         1  {txt}Low income months (Third ent)-2nd Men
+{txt}wmol3c      {res}  3153      2   .0009515          0         1  {txt}Low income months (Third ent)-3rd Men
+{txt}wmol3d      {res}  3153      2   .0003172          0         1  {txt}Low income months (Third ent)-4th Men
+{txt}moinc4      {res}  3153      4   2.029813          0      4800  {txt}Gross Monthly income for 4th ent
+{txt}highinc4    {res}     3      2   1.666667          1         2  {txt}Are there high income months?
+{txt}hginc4      {res}  3153      2   .3171583          0      1000  {txt}Gross earning in high income months
+{txt}wmoh4a      {res}  3153      2   .0003172          0         1  {txt}High income months (Fourth ent)- 1st Men
+{txt}wmoh4b      {res}  3153      2   .0003172          0         1  {txt}High income months (Fourth ent)- 2nd Men
+{txt}lowinc4     {res}     3      2   1.666667          1         2  {txt}Are there low income months?
+{txt}lginc4      {res}  3153      2   .1110054          0       350  {txt}Expected gross earning in low income months (Fourth Ent)
+{txt}wmol4a      {res}  3153      2   .0003172          0         1  {txt}Low income months (Fourth En)-1st Men
+{txt}wmol4b      {res}  3153      2   .0003172          0         1  {txt}Low income months (Fourth En)-2nd Men
+{txt}wmol4c      {res}  3153      2   .0003172          0         1  {txt}Low income months (Fourth En)-3rd Men
+{txt}wmol4d      {res}     0      0          .          .         .  {txt}Low income months (Fourth En)-4th Men
+{txt}etypical    {res}  3153    206   1318.775          0    288000  {txt}Typical Monthly Expenses (First Ent)
+{txt}hexpen1     {res}   459      5   2.309368          1        98  {txt}Are there months when expenditures are higher? (First Ent)
+{txt}hspent1     {res}  3153    170   1913.487          0    480000  {txt}Expenses during months when expenditures are higher (First Ent)
+{txt}wmohs1a     {res}  3153      2   .1037108          0         1  {txt}High Expenditure Months (First Ent) - 1st Men
+{txt}wmohs1b     {res}  3153      2   .0570885          0         1  {txt}High Expenditure Months (First Ent) - 2nd Men
+{txt}wmohs1c     {res}  3153      2   .0187123          0         1  {txt}High Expenditure Months (First Ent) - 3rd Men
+{txt}wmohs1d     {res}  3153      2   .0111005          0         1  {txt}High Expenditure Months (First Ent) - 4th Men
+{txt}wmohs1e     {res}  3153      2   .0057088          0         1  {txt}High Expenditure Months (First Ent) - 5th Men
+{txt}wmohs1f     {res}  3153      2   .0050745          0         1  {txt}High Expenditure Months (First Ent) - 6th Men
+{txt}wmohs1g     {res}  3153      2   .0038059          0         1  {txt}High Expenditure Months (First Ent) - 7th Men
+{txt}wmohs1h     {res}  3153      2   .0006343          0         1  {txt}High Expenditure Months (First Ent) - 8th Men
+{txt}wmohs1i     {res}  3153      2   .0003172          0         1  {txt}High Expenditure Months (First Ent) - 9th Men
+{txt}lexpen1     {res}   459      8   229.2767          1     99997  {txt}Are there months when expenditures are lower? (First Ent)
+{txt}lspent1     {res}  3153    133   617.4631          0    150000  {txt}Expenses during months when expenditures are lower. (First Ent)
+{txt}wmols1a     {res}  3153      2   .0888043          0         1  {txt}Low Expenditure Months (First Ent) - 1st Men
+{txt}wmols1b     {res}  3153      2   .0608944          0         1  {txt}Low Expenditure Months (First Ent) - 2nd Men
+{txt}wmols1c     {res}  3153      2   .0187123          0         1  {txt}Low Expenditure Months (First Ent) - 3rd Men
+{txt}wmols1d     {res}  3153      2   .0057088          0         1  {txt}Low Expenditure Months (First Ent) - 4th Men
+{txt}wmols1e     {res}  3153      2   .0028544          0         1  {txt}Low Expenditure Months (First Ent) - 5th Men
+{txt}wmols1f     {res}  3153      2   .0009515          0         1  {txt}Low Expenditure Months (First Ent) - 6th Men
+{txt}wmols1g     {res}  3153      2   .0003172          0         1  {txt}Low Expenditure Months (First Ent) - 7th Men
+{txt}wmols1h     {res}  3153      2   .0009515          0         1  {txt}Low Expenditure Months (First Ent) - 8th Men
+{txt}wmols1i     {res}  3153      2   .0003172          0         1  {txt}Low Expenditure Months (First Ent) - 9th Men
+{txt}etypica2    {res}  3153     40   163.7872          0     99998  {txt}Typical Monthly Expenses (Second Ent)
+{txt}hexpen2     {res}    69      3   2.898551          1        98  {txt}Are there months when expenditures are higher?(Second Ent)
+{txt}hspent2     {res}  3153     26   76.05392          0     32400  {txt}Expenses during months when expenditures are higher (Second Ent)
+{txt}wmohs2a     {res}  3153      1          0          0         0  {txt}High Expenditure Months (Second Ent) -1st Me
+{txt}wmohs2b     {res}  3153      2   .0044402          0         1  {txt}High Expenditure Months (Second Ent) -2nd Men
+{txt}wmohs2c     {res}  3153      2   .0022201          0         1  {txt}High Expenditure Months (Second Ent) -3rd Men
+{txt}wmohs2d     {res}  3153      2   .0012686          0         1  {txt}High Expenditure Months (Second Ent) -4th Men
+{txt}lexpen2     {res}    70      4   2.914286          1        98  {txt}Are there months when expenditures are lower? (Second Ent)
+{txt}lspent2     {res}  3153     23     61.719          0     69000  {txt}Expenses during months when expenditures are lower. (Second Ent)
+{txt}wmols2a     {res}  3153      1          0          0         0  {txt}Low Expenditure Months (Second Ent) - 1st Men
+{txt}wmols2b     {res}  3153      2   .0066603          0         1  {txt}Low Expenditure Months (Second Ent) - 2nd Men
+{txt}wmols2c     {res}  3153      2   .0025373          0         1  {txt}Low Expenditure Months (Second Ent) - 3rd Men
+{txt}wmols2d     {res}  3153      2   .0006343          0         1  {txt}Low Expenditure Months (Second Ent) - 4th Men
+{txt}wmols2e     {res}  3153      2   .0003172          0         1  {txt}Low Expenditure Months (Second Ent) - 5th Men
+{txt}etypica3    {res}  3153      9   9.211862          0     13248  {txt}Typical Monthly Expenses (Third Ent)
+{txt}hexpen3     {res}     9      2   1.555556          1         2  {txt}Are there months when expenditures are higher? (Third Ent)
+{txt}hspent3     {res}  3153      5   13.25722          0     28800  {txt}Expenses during months when expenditures are higher (Third Ent)
+{txt}wmohs3a     {res}  3153      1          0          0         0  {txt}High Expenditure Months (Third Ent) -1st Men
+{txt}wmohs3b     {res}  3153      2   .0006343          0         1  {txt}High Expenditure Months (Third Ent) -2nd Men
+{txt}lexpen3     {res}     9      2   1.444444          1         2  {txt}Are there months when expenditures are lower? Third Ent)
+{txt}lspent3     {res}  3153      6   4.205519          0      5760  {txt}Expenses during months when expenditures are lower. (Third Ent)
+{txt}wmols3a     {res}  3153      1          0          0         0  {txt}Low Expenditure Months (Third Ent) - 1st Men
+{txt}wmols3b     {res}  3153      2   .0006343          0         1  {txt}Low Expenditure Months (Third Ent) - 2nd Men
+{txt}wmols3c     {res}  3153      2   .0003172          0         1  {txt}Low Expenditure Months (Third Ent) - 3rd Men
+{txt}etypica4    {res}  3153      4   1.162702          0      2400  {txt}Typical Monthly Expenses (Fourth Ent)
+{txt}hexpen4     {res}     4      2        1.5          1         2  {txt}Are there months when expenditures are higher? (Fourth Ent)
+{txt}hspent4     {res}  3153      3    1.14177          0      3200  {txt}Expenses during months when expenditures are higher (Fourth Ent)
+{txt}wmohs4a     {res}  3153      2   .0003172          0         1  {txt}High Expenditure Months (Fourth Ent) -1st Men
+{txt}wmohs4b     {res}  3153      2   .0003172          0         1  {txt}High Expenditure Months (Fourth Ent) -2nd Men
+{txt}lexpen4     {res}     0      0          .          .         .  {txt}Are there months when expenditures are lower? (Fourth Ent)
+{txt}lspent4     {res}  3153      3   .0450365          0       140  {txt}Expenses during months when expenditures are lower. (Fourth Ent)
+{txt}wmols4a     {res}  3153      2   .0003172          0         1  {txt}Low Expenditure Months Fourth Ent) - 1st Men
+{txt}wmols4b     {res}  3153      2   .0003172          0         1  {txt}Low Expenditure Months Fourth Ent) - 2nd Men
+{txt}land1       {res}  3153      2   .0149064          0         1  {txt}Enterprise Own Land (Enterprise 1)
+{txt}pland1      {res}    47      2    1.93617          1         2  {txt}Borrow money for the purchase of land (Enterprise 1)
+{txt}hmland1     {res}  3153      3   7.478909          0     18000  {txt}Amount still owed on land (Enterprise 1)
+{txt}sland1      {res}  3153     24    2262.33          0   1690000  {txt}Amount land can be sold (Enterprise 1)
+{txt}bldg1       {res}   473      2   1.750529          1         2  {txt}Enterprise own Bldg (Enterprise 1)
+{txt}pbldg1      {res}   118      2   1.805085          1         2  {txt}Borrow money for the purchase of the Bldg (Enterprise 1)
+{txt}hmbldg1     {res}  3153     14   89.03901          0    114000  {txt}Amount still owed on Bldg (Enterprise 1)
+{txt}sbldg1      {res}  3153     37   2772.256          0   4000000  {txt}Amount bldg can be sold (Enterprise 1)
+{txt}mat1        {res}  3153      2   .0780209          0         1  {txt}Enterprise own equioment/materials (Enterprise 1)
+{txt}pmat1       {res}   246      2   1.902439          1         2  {txt}Borrow money for the purchase of equipment/materials (Enterprise 1)
+{txt}pmmat1      {res}  3153     10   64.03425          0     80000  {txt}Amount still owed on Equipment/materials (Enterprise 1)
+{txt}smat1       {res}  3153    138   809.1576          0    250000  {txt}Amount equipment/materials can be sold (Enterprise 1)
+{txt}fur1        {res}  3153      2   .0183952          0         1  {txt}Enterprise own Furniture (Enterprise 1)
+{txt}pfur1       {res}    58      2   1.965517          1         2  {txt}Borrow money for the purchase of furniture (Enterprise 1)
+{txt}pmfur1      {res}  3153      2   .0158579          0        50  {txt}Amount still owe on furniture (Enterprise 1)
+{txt}sfur1       {res}  3153     33   49.63844          0     25000  {txt}Amount furniture can be sold (Enterprise 1)
+{txt}tools1      {res}  3153      2   .0212496          0         1  {txt}Enterprise own tools (Enterprise 1)
+{txt}ptools1     {res}    67      2   1.955224          1         2  {txt}Borrow money for the purchase of tools (Enterprise 1)
+{txt}pmtools1    {res}  3153      3    3.56803          0     11000  {txt}Amount still owed on tools (Enterprise 1)
+{txt}stools1     {res}  3153     33   36.05867          0     20000  {txt}Amount tools can be sold (Enterprise 1)
+{txt}lvehic1     {res}  3153      2   .0012686          0         1  {txt}Enterprise own large vehicles (Enterprise 1)
+{txt}plvehic1    {res}     4      2       1.75          1         2  {txt}Borrow money for the purchase of vehicles (Enterprise 1)
+{txt}pmlvehi1    {res}  3153      1          0          0         0  {txt}Amount still owed on vehicles (Enterprise 1)
+{txt}slvehic1    {res}  3153      5   412.3057          0    500000  {txt}Amount large vehicle can be sold (Enterprise 1)
+{txt}svehic1     {res}  3153      2   .0218839          0         1  {txt}Enterprise own small vehicle (Enterprise 1)
+{txt}psvehic1    {res}    69      2   1.724638          1         2  {txt}Borrow money for the purchase of small vehicle (Enterprise 1)
+{txt}pmsvehi1    {res}  3153     11   259.3685          0    300000  {txt}Amount still owed on small vehicle (Enterprise 1)
+{txt}ssvehic1    {res}  3153     25   1615.921          0    580000  {txt}Amount small vehicle can be sold (Enterprise 1)
+{txt}sikad1      {res}  3153      2   .0041231          0         1  {txt}Enterprise own trisikad (Enterprise 1)
+{txt}psikad1     {res}    13      2   1.692308          1         2  {txt}Borrow money for the purchase of trisikad (Enterprise 1)
+{txt}pmsikad1    {res}  3153      2   10.78338          0     34000  {txt}Amount still owed on trisikad (Enterprise 1)
+{txt}ssikad1     {res}  3153     12   80.62163          0     70000  {txt}Amount trisikad can be sold (Enterprise 1)
+{txt}ugood1      {res}  3153      2   .0034887          0         1  {txt}Enterprise own unfinished Goods (Enterprise 1)
+{txt}pugood1     {res}    11      2   1.727273          1         2  {txt}Borrow money for the purchase of unfinished goods (Enterprise 1)
+{txt}pmgood1     {res}  3153      3   2.220108          0      5000  {txt}Amount still owed on unfinished goods (Enterprise 1)
+{txt}sgood1      {res}  3153     11   25.89661          0     25000  {txt}Amount unfinished goods can be sold (Enterprise 1)
+{txt}stock1      {res}  3153      2   .0777038          0         1  {txt}Enterprise own stocks/inventory (Enterprise 1)
+{txt}pstock1     {res}   245      2   1.783673          1         2  {txt}Borrow money for the purchase of stocks/inventory (Enterprise 1)
+{txt}pmstock1    {res}  3153     22   89.69997          0     80000  {txt}Amount still owed on stocks/inventory (Enterprise 1)
+{txt}sstock1     {res}  3153     79   859.8783          0    392400  {txt}Amount stocks/inventory can be sold (Enterprise 1)
+{txt}land2       {res}  3153      2   .0012686          0         1  {txt}Enterprise Own Land (Enterprise 2)
+{txt}pland2      {res}     4      2       1.75          1         2  {txt}Borrow money for the purchase of land (Enterprise 2)
+{txt}hmland2     {res}  3153      2   3.171583          0     10000  {txt}Amount still owed on land (Enterprise 2)
+{txt}sland2      {res}  3153      5    35.6803          0     50000  {txt}Amount land can be sold (Enterprise 2)
+{txt}bldg2       {res}    76      2   1.881579          1         2  {txt}Enterprise own Bldg (Enterprise 2)
+{txt}pbldg2      {res}     9      1          2          2         2  {txt}Borrow money for the purchase of the Bldg (Enterprise 2)
+{txt}hmbldg2     {res}  3153      1          0          0         0  {txt}Amount still owed on Bldg (Enterprise 2)
+{txt}sbldg2      {res}  3153      8   20.93245          0     30000  {txt}Amount land can be sold (Enterprise 2)
+{txt}mat2        {res}  3153      2   .0085633          0         1  {txt}Enterprise own equioment/materials (Enterprise 2)
+{txt}pmat2       {res}    27      1          2          2         2  {txt}Borrow money for the purchase of equipment/materials (Enterprise 2)
+{txt}pmmat2      {res}  3153      1          0          0         0  {txt}Amount still owed on Equipment/materials (Enterprise 2)
+{txt}smat2       {res}  3153     23   77.98922          0     45000  {txt}Amount equipment/materials can be sold (Enterprise 2)
+{txt}fur2        {res}  3153      2   .0034887          0         1  {txt}Enterprise own Furniture (Enterprise 2)
+{txt}pfur2       {res}    11      2   1.909091          1         2  {txt}Borrow money for the purchase of furniture (Enterprise 2)
+{txt}pmfur2      {res}  3153      1          0          0         0  {txt}Amount still owe on furniture (Enterprise 2)
+{txt}sfur2       {res}  3153      9    24.7542          0     75000  {txt}Amount furniture can be sold (Enterprise 2)
+{txt}tools2      {res}  3153      2   .0044402          0         1  {txt}Enterprise own tools (Enterprise 2)
+{txt}ptools2     {res}    13      1          2          2         2  {txt}Borrow money for the purchase of tools (Enterprise 2)
+{txt}pmtools2    {res}  3153      1          0          0         0  {txt}Amount still owed on tools (Enterprise 2)
+{txt}stools2     {res}  3153     10   11.47479          0     17000  {txt}Amount tools can be sold (Enterprise 2)
+{txt}lvehic2     {res}  3153      2   .0003172          0         1  {txt}Enterprise own large vehicles (Enterprise 2)
+{txt}plvehic2    {res}     1      1          2          2         2  {txt}Borrow money for the purchase of vehicles (Enterprise 2)
+{txt}pmlvehi2    {res}  3153      1          0          0         0  {txt}Amount still owed on vehicles (Enterprise 2)
+{txt}slvehic2    {res}  3153      2    53.9169          0    170000  {txt}Amount large vehicle can be sold (Enterprise 2)
+{txt}svehic2     {res}  3153      2   .0038059          0         1  {txt}Enterprise own small vehicle (Enterprise 2)
+{txt}psvehic2    {res}    12      2   1.416667          1         2  {txt}Borrow money for the purchase of small vehicle (Enterprise 2)
+{txt}pmsvehi2    {res}  3153      5   73.27688          0     60000  {txt}Amount still owed on small vehicle (Enterprise 2)
+{txt}ssvehic2    {res}  3153      8   408.1827          0    450000  {txt}Amount small vehicle can be sold (Enterprise 2)
+{txt}sikad2      {res}  3153      2   .0009515          0         1  {txt}Enterprise own trisikad (Enterprise 2)
+{txt}psikad2     {res}     3      2   1.666667          1         2  {txt}Borrow money for the purchase of trisikad (Enterprise 2)
+{txt}pmsikad2    {res}  3153      2   3.805899          0     12000  {txt}Amount still owed on trisikad (Enterprise 2)
+{txt}ssikad2     {res}  3153      4   18.07802          0     35000  {txt}Amount trisikad can be sold (Enterprise 2)
+{txt}ugood2      {res}  3153      2   .0003172          0         1  {txt}Enterprise own unfinished Goods (Enterprise 2)
+{txt}pugood2     {res}     1      1          2          2         2  {txt}Borrow money for the purchase of unfinished goods (Enterprise 2)
+{txt}pmgood2     {res}  3153      1          0          0         0  {txt}Amount still owed on unfinished goods (Enterprise 2)
+{txt}sgood2      {res}  3153      2   .3805899          0      1200  {txt}Amount unfinished goods can be sold (Enterprise 2)
+{txt}stock2      {res}  3153      2    .007929          0         1  {txt}Enterprise own stocks/inventory (Enterprise 2)
+{txt}pstock2     {res}    25      2       1.96          1         2  {txt}Borrow money for the purchase of stocks/inventory (Enterprise 2)
+{txt}pmstock2    {res}  3153      2   3.171583          0     10000  {txt}Amount still owed on stocks/inventory (Enterprise 2)
+{txt}sstock2     {res}  3153     21   107.2366          0    210000  {txt}Amount stocks/inventory can be sold (Enterprise 2)
+{txt}land3       {res}  3153      2   .0006343          0         1  {txt}Enterprise Own Land (Enterprise 3)
+{txt}pland3      {res}     2      2        1.5          1         2  {txt}Borrow money for the purchase of land (Enterprise 3)
+{txt}hmland3     {res}  3153      2   1.373295          0      4330  {txt}Amount still owed on land (Enterprise 3)
+{txt}sland3      {res}  3153      3   9.990485          0     30000  {txt}Amount land can be sold (Enterprise 3)
+{txt}bldg3       {res}    10      2        1.8          1         2  {txt}Enterprise own Bldg (Enterprise 3)
+{txt}pbldg3      {res}     2      2        1.5          1         2  {txt}Borrow money for the purchase of the Bldg (Enterprise 3)
+{txt}hmbldg3     {res}  3153      2   1.373295          0      4330  {txt}Amount still owed on Bldg (Enterprise 3)
+{txt}sbldg3      {res}  3153      3   16.33365          0     50000  {txt}Amount bldg can be sold (Enterprise 3)
+{txt}mat3        {res}  3153      2   .0006343          0         1  {txt}Enterprise own equioment/materials (Enterprise 3)
+{txt}pmat3       {res}     2      1          2          2         2  {txt}Borrow money for the purchase of equipment/materials (Enterprise 3)
+{txt}pmmat3      {res}  3153      1          0          0         0  {txt}Amount still owed on Equipment/materials (Enterprise 3)
+{txt}smat3       {res}  3153      3   8.514114          0     26000  {txt}Amount equipment/materials can be sold (Enterprise 3)
+{txt}fur3        {res}  3153      1          0          0         0  {txt}Enterprise own Furniture (Enterprise 3)
+{txt}pfur3       {res}     0      0          .          .         .  {txt}Borrow money for the purchase of furniture (Enterprise 3)
+{txt}pmfur3      {res}  3153      1          0          0         0  {txt}Amount still owe on furniture (Enterprise 3)
+{txt}sfur3       {res}  3153      1          0          0         0  {txt}Amount furniture can be sold (Enterprise 3)
+{txt}tools3      {res}  3153      2   .0009515          0         1  {txt}Enterprise own tools (Enterprise 3)
+{txt}ptools3     {res}     3      1          2          2         2  {txt}Borrow money for the purchase of tools (Enterprise 3)
+{txt}pmtools3    {res}  3153      1          0          0         0  {txt}Amount still owed on tools (Enterprise 3)
+{txt}stools3     {res}  3153      4   .2695845          0       350  {txt}Amount tools can be sold (Enterprise 3)
+{txt}lvehic3     {res}  3153      1          0          0         0  {txt}Enterprise own large vehicles (Enterprise 3)
+{txt}plvehic3    {res}     0      0          .          .         .  {txt}Borrow money for the purchase of vehicles (Enterprise 3)
+{txt}pmlvehi3    {res}  3153      1          0          0         0  {txt}Amount still owed on vehicles (Enterprise 3)
+{txt}slvehic3    {res}  3153      1          0          0         0  {txt}Amount large vehicle can be sold (Enterprise 3)
+{txt}svehic3     {res}  3153      2   .0003172          0         1  {txt}Enterprise own small vehicle (Enterprise 3)
+{txt}psvehic3    {res}     1      1          2          2         2  {txt}Borrow money for the purchase of small vehicle (Enterprise 3)
+{txt}pmsvehi3    {res}  3153      1          0          0         0  {txt}Amount still owed on small vehicle (Enterprise 3)
+{txt}ssvehic3    {res}  3153      2   6.343165          0     20000  {txt}Amount small vehicle can be sold (Enterprise 3)
+{txt}sikad3      {res}  3153      2   .0006343          0         1  {txt}Enterprise own trisikad (Enterprise 3)
+{txt}psikad3     {res}     2      1          2          2         2  {txt}Borrow money for the purchase of trisikad (Enterprise 3)
+{txt}pmsikad3    {res}  3153      1          0          0         0  {txt}Amount still owed on trisikad (Enterprise 3)
+{txt}ssikad3     {res}  3153      2    1.90295          0      3000  {txt}Amount trisikad can be sold (Enterprise 3)
+{txt}ugood3      {res}  3153      1          0          0         0  {txt}Enterprise own unfinished Goods (Enterprise 3)
+{txt}pugood3     {res}     0      0          .          .         .  {txt}Borrow money for the purchase of unfinished goods (Enterprise 3)
+{txt}pmgood3     {res}  3153      1          0          0         0  {txt}Amount still owed on unfinished goods (Enterprise 3)
+{txt}sgood3      {res}  3153      1          0          0         0  {txt}Amount unfinished goods can be sold (Enterprise 3)
+{txt}stock3      {res}  3153      2   .0006343          0         1  {txt}Enterprise own stocks/inventory (Enterprise 3)
+{txt}pstock3     {res}     2      1          2          2         2  {txt}Borrow money for the purchase of stocks/inventory (Enterprise 3)
+{txt}pmstock3    {res}  3153      1          0          0         0  {txt}Amount still owed on stocks/inventory (Enterprise 3)
+{txt}sstock3     {res}  3153      3   15.85791          0     35000  {txt}Amount stocks/inventory can be sold (Enterprise 3)
+{txt}var00001    {res}   476      4   1.186975          1         4  {txt}
+{txt}land4       {res}  3153      2   .0006343          0         1  {txt}Enterprise Own Land (Enterprise 4)
+{txt}pland4      {res}     2      1          2          2         2  {txt}Borrow money for the purchase of land (Enterprise 4)
+{txt}hmland4     {res}  3153      1          0          0         0  {txt}Amount still owed on land (Enterprise 4)
+{txt}sland4      {res}  3153      3   10.78338          0     30000  {txt}Amount land can be sold (Enterprise 4)
+{txt}bldg4       {res}     2      1          1          1         1  {txt}Enterprise own Bldg (Enterprise 4)
+{txt}pbldg4      {res}     2      1          2          2         2  {txt}Borrow money for the purchase of the Bldg (Enterprise 4)
+{txt}hmbldg4     {res}  3153      1          0          0         0  {txt}Amount still owed on Bldg (Enterprise 4)
+{txt}sbldg4      {res}  3153      3   84.04694          0    250000  {txt}Amount land can be sold (Enterprise 4)
+{txt}mat4        {res}  3153      2   .0003172          0         1  {txt}Enterprise own equioment/materials (Enterprise 4)
+{txt}pmat4       {res}     1      1          2          2         2  {txt}Borrow money for the purchase of equipment/materials (Enterprise 4)
+{txt}pmmat4      {res}  3153      1          0          0         0  {txt}Amount still owed on Equipment/materials (Enterprise 4)
+{txt}smat4       {res}  3153      2   25.37266          0     80000  {txt}Amount equipment/materials can be sold (Enterprise 4)
+{txt}fur4        {res}  3153      1          0          0         0  {txt}Enterprise own Furniture (Enterprise 4)
+{txt}pfur4       {res}     0      0          .          .         .  {txt}Borrow money for the purchase of furniture (Enterprise 4)
+{txt}pmfur4      {res}  3153      1          0          0         0  {txt}Amount still owe on furniture (Enterprise 4)
+{txt}sfur4       {res}  3153      1          0          0         0  {txt}Amount furniture can be sold (Enterprise 4)
+{txt}tools4      {res}  3153      1          0          0         0  {txt}Enterprise own tools (Enterprise 4)
+{txt}ptools4     {res}     0      0          .          .         .  {txt}Borrow money for the purchase of tools (Enterprise 4)
+{txt}pmtools4    {res}  3153      1          0          0         0  {txt}Amount still owed on tools (Enterprise 4)
+{txt}stools4     {res}  3153      1          0          0         0  {txt}Amount tools can be sold (Enterprise 4)
+{txt}lvehic4     {res}  3153      1          0          0         0  {txt}Enterprise own large vehicles (Enterprise 4)
+{txt}plvehic4    {res}     0      0          .          .         .  {txt}Borrow money for the purchase of vehicles (Enterprise 4)
+{txt}pmlvehi4    {res}  3153      1          0          0         0  {txt}Amount still owed on vehicles (Enterprise 4)
+{txt}slvehic4    {res}  3153      1          0          0         0  {txt}Amount large vehicle can be sold (Enterprise 4)
+{txt}svehic4     {res}  3153      1          0          0         0  {txt}Enterprise own small vehicle (Enterprise 4)
+{txt}psvehic4    {res}     0      0          .          .         .  {txt}Borrow money for the purchase of small vehicle (Enterprise 4)
+{txt}pmsvehi4    {res}  3153      1          0          0         0  {txt}Amount still owed on small vehicle (Enterprise 4)
+{txt}ssvehic4    {res}  3153      1          0          0         0  {txt}Amount small vehicle can be sold (Enterprise 4)
+{txt}sikad4      {res}  3153      1          0          0         0  {txt}Enterprise own trisikad (Enterprise 4)
+{txt}psikad4     {res}     0      0          .          .         .  {txt}Borrow money for the purchase of trisikad (Enterprise 4)
+{txt}pmsikad4    {res}  3153      1          0          0         0  {txt}Amount still owed on trisikad (Enterprise 4)
+{txt}ssikad4     {res}  3153      1          0          0         0  {txt}Amount trisikad can be sold (Enterprise 4)
+{txt}ugood4      {res}  3153      1          0          0         0  {txt}Enterprise own unfinished Goods (Enterprise 4)
+{txt}pugood4     {res}     0      0          .          .         .  {txt}Borrow money for the purchase of unfinished goods (Enterprise 4)
+{txt}pmgood4     {res}  3153      1          0          0         0  {txt}Amount still owed on unfinished goods (Enterprise 4)
+{txt}sgood4      {res}  3153      1          0          0         0  {txt}Amount unfinished goods can be sold (Enterprise 4)
+{txt}stock4      {res}  3153      1          0          0         0  {txt}Enterprise own stocks/inventory (Enterprise 4)
+{txt}pstock4     {res}     0      0          .          .         .  {txt}Borrow money for the purchase of stocks/inventory (Enterprise 4)
+{txt}pmstock4    {res}  3153      1          0          0         0  {txt}Amount still owed on stocks/inventory (Enterprise 4)
+{txt}sstock4     {res}  3153      1          0          0         0  {txt}Amount stocks/inventory can be sold (Enterprise 4)
+{txt}hmange      {res}  1777      2   1.779966          1         2  {txt}R there other household members who opereate enterprise not operated by RSP
+{txt}capital     {res}   392      3    1.97449          1        98  {txt}Invest money in other enterprise operated by HH member other than RSP
+{txt}account     {res}  1777      2   1.024761          1         2  {txt}Ever opened an acct in a formal financial institution
+{txt}deposit     {res}  1733      2   1.001731          1         2  {txt}Currently depositing money in a formal institution
+{txt}wdepos1     {res}  1733     28   1.799769          1        98  {txt}Institution currently depositing momey (First Men)
+{txt}wdepos2     {res}  1008     46   12.12302          2        54  {txt}Institution currently depositing momey (Second Men)
+{txt}wdepos3     {res}   447     43   15.49441          2        79  {txt}Institution currently depositing momey (Third Men)
+{txt}wdepos4     {res}   145     35   18.47586          2        54  {txt}Institution currently depositing momey (Fourth Men)
+{txt}wdepos5     {res}    44     23   20.13636          1        54  {txt}Institution currently depositing momey (Fifth Men)
+{txt}wdepos6     {res}     1      1         54         54        54  {txt}Institution currently depositing momey (Sixth Men)
+{txt}cdeposit    {res}  1777      3   1.705121          1        98  {txt}Closed an account in a formal institution in the last month
+{txt}numinsti    {res}  1733      7   2.005193          1        98  {txt}Number of institution (Dummy)
+{txt}closedd     {res}  1733      5    .473745          0         4  {txt}DUMMY
+{txt}exist       {res}  1733      7   1.532025          0        98  {txt}Existing Account (opened-closed) [DUMMY]
+{txt}wclose1     {res}   621     31   7.529791          1        47  {txt}Where closed the account (First Mention)
+{txt}wclose2     {res}   160     31   13.06875          2        52  {txt}Where closed the account (Second Mention)
+{txt}wclose3     {res}    35     20   12.08571          2        38  {txt}Where closed the account (Third Mention)
+{txt}wclose4     {res}     4      4         12          3        18  {txt}Where closed the account (Fourth Mention)
+{txt}wclose5     {res}     0      0          .          .         .  {txt}Where closed the account (Fifth Mention)
+{txt}opngreen    {res}  1693      2   1.056704          1         2  {txt}Opened Green Bank Acct (DUMMY)
+{txt}clgreen     {res}  1597      2   1.878522          1         2  {txt}Closed green bank account (DUMMY)
+{txt}curgreen    {res}  1597      2   1.121478          1         2  {txt}Current Green Bank Depositor
+{txt}pergreen    {res}  1403      2   1.228083          1         2  {txt}Personally conducting bank transaction at Green Bank
+{txt}vstgreen    {res}  1394     21   4.764706          0        21  {txt}Number of times making transaction at Green Bank Branch  in a typical month
+{txt}travgree    {res}  1391      4   1.491014          1         4  {txt}Point of origin when traveling to transact business at Green Bank Branch
+{txt}fargreen    {res}  1375     70   5414.687          0     81000  {txt}Distance of Green Bank Barnach from point of origin
+{txt}cosgreen    {res}  1386     41   6.729791          0        73  {txt}Cost of travel from point of origin to Green Bank Branch
+{txt}mtgreen     {res}  1390     22   4.915108          0        32  {txt}Mode of transportation to Green Bank Branch
+{txt}numoinst    {res}  1576      5    .731599          0         4  {txt}Number of other institution (DUMMY)
+{txt}persono1    {res}   827      3   1.180169          1         3  {txt}Personally conduct bank transaction-1st Non-Green Brank Institution
+{txt}vstbrao1    {res}   824     22   4.695388          0        21  {txt}Number of times visiting bank to make transaction in a typical month-1st Non-Gre
+{txt}travelo1    {res}   822      4   1.537713          1         4  {txt}Travel to the banks branch from-1st Non-Green Bank Institution
+{txt}frabrao1    {res}   812     71   7827.063          0    220000  {txt}Distance of the bank branch from point of origin-1st Non-Green Bank Institution
+{txt}costro1     {res}   821     52   9.956151          0       600  {txt}Cost of travel from point of origin-1st Non-Green Bank Institution
+{txt}mtrano1     {res}   822     20   5.012165          0        30  {txt}Mode of transportation to the bank-1st Non-Green Bank Institution
+{txt}persono2    {res}   251      2   1.179283          1         2  {txt}Personally conduct bank transaction-2nd Non-Green Brank Institution
+{txt}vstbrao2    {res}   251     18   4.298805          0        24  {txt}Number of times visiting bank to make transaction in a typical month-2nd Non-Gre
+{txt}travelo2    {res}   251      3   1.589641          1         3  {txt}Travel to the banks branch from-2nd Non-Green Bank Institution
+{txt}frabrao2    {res}   244     48   11031.46          0    198000  {txt}Distance of the bank branch from point of origin-2nd Non-Green Bank Institution
+{txt}costrvo2    {res}   250     36     12.442          0       200  {txt}Cost of travel from point of origin-2nd Non-Green Bank Institution
+{txt}mtrano2     {res}   251     18    5.01992          0        32  {txt}Mode of transportation to the bank-2nd Non-Green Bank Institution
+{txt}persono3    {res}    61      2   1.213115          1         2  {txt}Personally conduct bank transaction-3rd Non-Green Brank Institution
+{txt}vstbrao3    {res}    61     11   4.295082          0        15  {txt}Number of times visiting bank to make transaction in a typical month-3rd Non-Gre
+{txt}travelo3    {res}    61      3   1.770492          1         3  {txt}Travel to the banks branch from-3rd Non-Green Bank Institution
+{txt}frabrao3    {res}    59     24    12066.1          0    198000  {txt}Distance of the bank branch from point of origin-3rd Non-Green Bank Institution
+{txt}costro3     {res}    59     19   13.10169          0       200  {txt}Cost of travel from point of origin-3rd Non-Green Bank Institution
+{txt}mtrano3     {res}    61      8   3.639344          0         9  {txt}Mode of transportation to the bank-3rd Non-Green Bank Institution
+{txt}persono4    {res}    11      2   1.181818          1         2  {txt}Personally conduct bank transaction-4th Non-Green Brank Institution
+{txt}vstbrao4    {res}    11      7   6.090909          2        21  {txt}Number of times visiting bank to make transaction in a typical month-4th Non-Gre
+{txt}travelo4    {res}    11      3          2          1         3  {txt}Travel to the banks branch from-4th Non-Green Bank Institution
+{txt}frabrao4    {res}     9      7   3622.222          0     14000  {txt}Distance of the bank branch from point of origin-4th Non-Green Bank Institution
+{txt}costro4     {res}    10      7       13.1          0        90  {txt}Cost of travel from point of origin-4th Non-Green Bank Institution
+{txt}mtrano4     {res}    11      8   5.636364          1        16  {txt}Mode of transportation to the bank-4th Non-Green Bank Institution
+{txt}green       {res}  1597      2   1.121478          1         2  {txt}Current Green Bank Depositor
+{txt}numgreen    {res}  1403      2   1.002138          1         2  {txt}Number of Green Bank Account
+{txt}greenac1    {res}  1402      3   1.005706          1         4  {txt}Type of account in Green Bank - First Acct
+{txt}greenpr1    {res}  1401      2   1.022841          1         2  {txt}RSP principal user of  Green Bank Account - First Acct
+{txt}greenpm1    {res}  1401      2   1.945039          1         2  {txt}Other individual put money in RSPs Green Bank account - First Acct
+{txt}grenrel1    {res}    74      9   2.297297          1        11  {txt}Relation of person putting money in RSPs Green Bank account- First Acct
+{txt}greensv1    {res}  3153    110   533.4738          0    100000  {txt}RSPs savings in Green Bank account - First Acct
+{txt}greenac2    {res}     3      3          2          1         3  {txt}Type of account in Green Bank - 2nd Acct
+{txt}greenpr2    {res}     3      1          1          1         1  {txt}RSP principal user of  Green Bank Account - 2nd Acct
+{txt}greenpm2    {res}     3      2   1.666667          1         2  {txt}Other individual put money in RSPs Green Bank account - 2nd Acct
+{txt}grenrel2    {res}     1      1          1          1         1  {txt}Relation of person putting money in RSPs Green Bank account- 2nd Acct
+{txt}greensv2    {res}  3153      4   3.932762          0     10000  {txt}RSPs savings in Green Bank account - 2nd Acct
+{txt}numofac     {res}   827      2   1.012092          1         2  {txt}Number of account in first Non-Green Bank Institution (DUMMY)
+{txt}otype11     {res}   827      4   1.025393          1         4  {txt}Type of Account -First Non-Green Bank Acct 1
+{txt}opriac11    {res}   827      2   1.026602          1         2  {txt}RSP principal user of the account - FIrst Non-Green Bank Acct 1
+{txt}oinmo11     {res}   827      2   1.853688          1         2  {txt}Other individual put money in RSPs account - First Non-Green Bank Acct 1
+{txt}orel11      {res}   118     10   3.194915          1        10  {txt}RSPs relationship to indiv putting money in RSPs account- First Non Green Bank A
+{txt}osav11      {res}  3153    122   953.8431          0    300000  {txt}RSPs savings in the account-2nd Institution Acct 1
+{txt}otype12     {res}    10      4          2          1         4  {txt}Type of Account -First Non-Green Bank Acct 2
+{txt}oprin12     {res}    10      2        1.1          1         2  {txt}RSP principal user of the account - FIrst Non-Green Bank Acct 2
+{txt}oinmo12     {res}    10      2        1.8          1         2  {txt}Other individual put money in RSPs account - First Non-Green Bank Acct 2
+{txt}orel12      {res}     2      1          1          1         1  {txt}RSPs relationship to indiv putting money in RSPs account- First Non Green Bank A
+{txt}osav12      {res}  3153      8   150.8088          0    400000  {txt}RSPs savings in the account- First Non-Green Bank Acct 2
+{txt}numosacc    {res}   252      1          1          1         1  {txt}Number of account in Second Non-Green Bank Institution (DUMMY)
+{txt}otype21     {res}   252      4   1.059524          1         4  {txt}Type of Account -Second Non-Green Bank Acct 1
+{txt}oprin21     {res}   252      2   1.039683          1         2  {txt}RSP principal user of the account - Second Non-Green Bank Acct 1
+{txt}oinmo21     {res}   252      2   1.896825          1         2  {txt}Other individual put money in RSPs account - 2nd Non-Green Bank Acct 1
+{txt}orel21      {res}    24      6   3.041667          1         8  {txt}RSPs relationship to indiv putting money in RSPs account- Second Non Green Bank
+{txt}osav21      {res}  3153     58   303.2275          0     74000  {txt}RSPs savings in the account- 2nd Non-Green Bank Acct 1
+{txt}oinstitu    {res}  1576      5   .7322335          0         4  {txt}Number of other institution (DUMMY)
+{txt}otacc3      {res}    61      1          1          1         1  {txt}Number of accounts in 3rd Non-Green Bank Institution
+{txt}otype31     {res}    60      3   1.066667          1         4  {txt}Type of Account -3rd Non-Green Bank Acct 1
+{txt}oprin31     {res}    61      1          1          1         1  {txt}RSP principal user of the account - 3rd Non-Green Bank Acct 1
+{txt}oinmo31     {res}    61      2   1.918033          1         2  {txt}Other individual put money in RSPs account - 3rd Non-Green Bank Acct 1
+{txt}orel31      {res}     4      3        5.5          2         8  {txt}RSPs relationship to indiv putting money in RSPs account- 3rd Non Green Bank Acc
+{txt}osav31      {res}  3153     29   90.35046          0     30000  {txt}RSPs savings in the account- 3rd Non-Green Bank Acct 1
+{txt}ofacc       {res}    10      1          1          1         1  {txt}Number of accounts in Fourth Non-Green Bank Institution
+{txt}otype41     {res}    10      2        1.4          1         5  {txt}Type of Account - 4th Non-Green Bank Acct 1
+{txt}oprin41     {res}    10      1          1          1         1  {txt}RSP principal user of the account - 4th Non-Green Bank Acct 1
+{txt}oinmo41     {res}    10      1          2          2         2  {txt}Other individual put money in RSPs account - 4th Non-Green Bank Acct 1
+{txt}orel41      {res}     0      0          .          .         .  {txt}RSPs relationship to indiv putting money in RSPs account- 4th Non Green Bank Acc
+{txt}osav41      {res}  3153      8   5.757691          0     10100  {txt}RSPs savings in the account- 4th Non-Green Bank Acct 1
+{txt}dformal     {res}  1775      2   1.712113          1         2  {txt}Other HH member deposit in a formal institution
+{txt}hsave       {res}  3153     81   1338.596          0   2500000  {txt}Amount saved by other HH member
+{txt}member      {res}  1777      2   1.781654          1         2  {txt}Mmber of informal saving org
+{txt}kindsave    {res}   388      9   1.963918          1         9  {txt}Kind of saving org RSP is a member of
+{txt}hmsave      {res}   376     84   79.42287          3      8000  {txt}Number of saving org members RSP is a member of
+{txt}main        {res}   388     15   5.391753          1        30  {txt}Main members of the saving org
+{txt}tiedloan    {res}   388      2   1.286082          1         2  {txt}Saving tied to loan
+{txt}contribu    {res}   387     14   3.410853          0        14  {txt}Number of times contributing saving to org
+{txt}htwith      {res}   388     11   1.958763          0        11  {txt}Number of times withdrawing from org
+{txt}restrict    {res}  3153      2   .1052965          0         1  {txt}Informal savings with withdrawal restrictions
+{txt}hmuchsv     {res}  3153     90   345.7088          0     40000  {txt}Amount currently saved in the org
+{txt}shome       {res}  1777      2   1.802476          1         2  {txt}Keep savings at home
+{txt}keephom     {res}  3153     48   536.7092          0    999998  {txt}Amount typically kept at home
+{txt}finstitu    {res}   351      2   1.789174          1         2  {txt}Typically deposit savings in an account at a formal institution
+{txt}apply       {res}  1777      2    1.26224          1         2  {txt}Applied any kind of loan in the past 12 months
+{txt}nborrow1    {res}   467     11   6.040685          1        98  {txt}Why not attempt to borrow money in the past 12 months
+{txt}nborrow2    {res}    32      4    5.40625          4         8  {txt}Why not attempt to borrow (Second Mention)
+{txt}bloan       {res}  1311      2   1.313501          1         2  {txt}Applied loan from a bank in the past 12 months
+{txt}abloan      {res}   900      2   1.002222          1         2  {txt}Most recent loan approved?
+{txt}ppbloan     {res}   898      2   1.811804          1         2  {txt}Paid off most of the most recent loan
+{txt}hbowe       {res}  3153    302   3703.681          0    400000  {txt}Amount currently owed
+{txt}brate       {res}   864     53   7.173229          1        42  {txt}Interest rate of the current loan
+{txt}btime       {res}   868      4   1.876728          1         4  {txt}Time unit of interest rate
+{txt}wbrejct1    {res}     2      2          4          2         6  {txt}Reason why rejected - First Mention
+{txt}wbrejct2    {res}     0      0          .          .         .  {txt}Reason why rejected - Second Mention
+{txt}wbrejct3    {res}     0      0          .          .         .  {txt}Reason why rejected - Third Mention
+{txt}cloan       {res}  1310      2   1.838931          1         2  {txt}Applied loan in the the past 12 months from a Credit Union/Coop
+{txt}acloan      {res}   211      1          1          1         1  {txt}Most recent loan approved? (Credit Union)
+{txt}ppcloan     {res}   211      2    1.78673          1         2  {txt}Paid off most of the most recent loan (Credit Union)
+{txt}hcowe       {res}  3153     96   797.1124          0    100000  {txt}Amount currently owed (Credit Union)
+{txt}crate       {res}   211     32   483.7979          0     99997  {txt}Interest rate of the current loan (Credit Union)
+{txt}ctime       {res}   204      6   5.357843          1        98  {txt}Time unit of interest rate (Credit Union)
+{txt}wreject4    {res}     0      0          .          .         .  {txt}Reason why rejected - First Mention (Credit Union)
+{txt}wreject5    {res}     0      0          .          .         .  {txt}Reason why rejected - Second Mention (Credit Union)
+{txt}wreject6    {res}     0      0          .          .         .  {txt}Reason why rejected - Third Mention (Credit Union)
+{txt}ngoloan     {res}  1328      2   1.993223          1         2  {txt}
+{txt}anloan      {res}    15      2        1.4          1         2  {txt}Most recent loan approved? (NGO)
+{txt}ppnloan     {res}    13      2   1.846154          1         2  {txt}Paid off most of the most recent loan (NGO)
+{txt}hnowe       {res}  3153      9   53.21662          0     66832  {txt}Amount currently owed (NGO)
+{txt}nrate       {res}     9      6   24.33333          0        97  {txt}Interest rate of the current loan (NGO)
+{txt}ntime       {res}     7      2   14.71429          1        97  {txt}Time unit of interest rate (NGO)
+{txt}wnrejct1    {res}     0      0          .          .         .  {txt}Reason why rejected - First Mention (NGO)
+{txt}wnrejct2    {res}     0      0          .          .         .  {txt}Reason why rejected - Second Mention (NGO)
+{txt}wnrejct3    {res}     0      0          .          .         .  {txt}Reason why rejected - Third Mention (NGO)
+{txt}ploan       {res}  1334      2   1.949775          1         2  {txt}
+{txt}aploan      {res}    67      1          1          1         1  {txt}Most recent loan approved? (PALUWAGAN)
+{txt}ppploan     {res}    67      2   1.761194          1         2  {txt}Paid off most of the most recent loan (PALUWAGAN)
+{txt}hpowe       {res}  3153     34   110.3974          0     99997  {txt}Amount currently owed (PALUWAGAN)
+{txt}prate       {res}    67     11   12.35075          0        97  {txt}Interest rate of the current loan (PALUWAGAN)
+{txt}ptime       {res}    66      5   8.621212          1        98  {txt}Time unit of interest rate (PALUWAGAN)
+{txt}wreject1    {res}     0      0          .          .         .  {txt}Reason why rejected - First Mention (PALUWAGAN)
+{txt}wrejc11     {res}     0      0          .          .         .  {txt}Reason why rejected - Second Mention (PALUWAGAN)
+{txt}wrejec12    {res}     0      0          .          .         .  {txt}Reason why rejected - Third Mention (PALUWAGAN)
+{txt}floan       {res}  1332      3    1.78979          1        22  {txt}
+{txt}afloan      {res}   300      2   1.003333          1         2  {txt}Most recent loan approved? (Friends/Family)
+{txt}pfloan      {res}   299      3   1.501672          0         2  {txt}Paid off most of the most recent loan (Friends/Family)
+{txt}hfowe       {res}  3153     49   529.9415          0    300000  {txt}Amount currently owed (Friends/Family)
+{txt}frate       {res}   295     17   20.18814          0      3000  {txt}Interest rate of the current loan (Friends/Family)
+{txt}ftime       {res}    89      6   3.123596          0        98  {txt}Time unit of interest rate (Friends/Family)
+{txt}wfrejec1    {res}     2      2         50          2        98  {txt}Reason why rejected - First Mention (Friends/Family)
+{txt}wfrjec2     {res}     0      0          .          .         .  {txt}Reason why rejected - Second Mention (Friends/Family)
+{txt}wfrejec3    {res}     0      0          .          .         .  {txt}Reason why rejected - Third Mention (Friends/Family)
+{txt}eloan       {res}  1331      3   1.969947          0         2  {txt}
+{txt}aeloan      {res}    37      1          1          1         1  {txt}Most recent loan approved?
+{txt}peloan      {res}    38      2        1.5          1         2  {txt}Paid off most of the most recent loan (Employer)
+{txt}heowe       {res}  3153     14   47.98605          0     50000  {txt}Amount currently owed (Employer)
+{txt}erate       {res}    37      8    4.22973          0        97  {txt}Interest rate of the current loan (Employer)
+{txt}etime       {res}     8      2      1.875          1         8  {txt}Time unit of interest rate (Employer)
+{txt}werjec1     {res}     0      0          .          .         .  {txt}Reason why rejected - First Mention (Employer)
+{txt}werjec2     {res}     0      0          .          .         .  {txt}Reason why rejected - Second Mention (Employer)
+{txt}werjec3     {res}     9      2   1.888889          1         2  {txt}Reason why rejected - Third Mention (Employer)
+{txt}mloan       {res}  1328      2    1.82003          1         2  {txt}
+{txt}amloan      {res}   239      2   1.004184          1         2  {txt}Most recent loan approved? (Money Lender)
+{txt}pmloan      {res}   239      4   12.20502          0      2500  {txt}Paid off most of the most recent loan (Money Lender)
+{txt}hmowe       {res}  3153      8   33.93593          0     32000  {txt}Amount currently owed (Money Lender)
+{txt}mrate       {res}   237     30   23.56582          0      3000  {txt}Interest rate of the current loan (Money Lender)
+{txt}mtime       {res}   233      8   2.858369          1        98  {txt}Time unit of interest rate (Money Lender)
+{txt}wmrjec1     {res}     2      1          1          1         1  {txt}Reason why rejected - First Mention (Money Lender)
+{txt}wmrjec2     {res}     0      0          .          .         .  {txt}Reason why rejected - Second Mention (Money Lender)
+{txt}wmrjec3     {res}     0      0          .          .         .  {txt}Reason why rejected - Third Mention (Money Lender)
+{txt}gloan       {res}  1330      3   1.699248          1         6  {txt}
+{txt}agloan      {res}   411      2   1.021898          1         2  {txt}Most recent loan approved? (Govt Agency)
+{txt}pgloan      {res}   410      6    140.239          1     51000  {txt}Paid off most of the most recent loan (Government Agency)
+{txt}hgowe       {res}  3153    208   3786.458          0    480000  {txt}Amount currently owed (Government Agency)
+{txt}grate       {res}   405     39   98.68543          0     12960  {txt}Interest rate of the current loan (Government Agency)
+{txt}gtime       {res}   376      8   2680.944          1    999997  {txt}Time unit of interest rate (Government Agency)
+{txt}wgrjec1     {res}     2      2       50.5          4        97  {txt}Reason why rejected - First Mention (Government Agency)
+{txt}wgrjec2     {res}     0      0          .          .         .  {txt}Reason why rejected - Second Mention (Government Agency)
+{txt}wgrjec3     {res}     2      1          2          2         2  {txt}Reason why rejected - Third Mention (Government Agency)
+{txt}tloan       {res}  1334      2   1.984258          1         2  {txt}
+{txt}atloan      {res}    21      1          1          1         1  {txt}Most recent loan approved? (Trader/Supplier)
+{txt}ptloan      {res}    21      2   1.714286          1         2  {txt}Paid off most of the most recent loan (Trader/Supplier)
+{txt}htowe       {res}  3153     15   52.65335          0     34000  {txt}Amount currently owed (Trader/Supplier)
+{txt}trate       {res}    21     10   26.35714          0        98  {txt}Interest rate of the current loan (Trader/Supplier)
+{txt}ttime       {res}    17      7         19          1        98  {txt}Time unit of interest rate (Trader/Supplier)
+{txt}wtrjec1     {res}     0      0          .          .         .  {txt}Reason why rejected - First Mention (Trader/Supplier)
+{txt}wtrjec2     {res}     0      0          .          .         .  {txt}Reason why rejected - Second Mention (Trader/Supplier)
+{txt}wtrjec3     {res}     0      0          .          .         .  {txt}Reason why rejected - Third Mention (Trader/Supplier)
+{txt}statbank    {res}  1777      4   1.910523          1        97  {txt}Can obtain loan from state bank
+{txt}privbank    {res}  1777      4   1.372538          1        97  {txt}Can obtain loan from commercial bank
+{txt}creditu     {res}  1777      3   1.466517          1        97  {txt}Can obtain loan from credit union or other cooperative
+{txt}employer    {res}  1777      2   1.731007          1         2  {txt}Can obtain loan from employer/landlord
+{txt}mlender     {res}  1777      2   1.196961          1         2  {txt}Can obtain loan from money lender
+{txt}informal    {res}  1774      3   1.484216          1        97  {txt}Can obtain loan from informal group
+{txt}family      {res}  1777      2   1.039955          1         2  {txt}Can obtain loan from family/friends
+{txt}filter__    {res}  1777      2   .0005627          0         1  {txt}shome eq 22. (FILTER)
+{txt}sex         {res}  1777      2   1.589758          1         2  {txt}Sex
+{txt}f1          {res}  1349      2   1.032617          1         2  {txt}does your husband/wife/partner live in your household
+{txt}f2          {res}  1304      6   1.661043          1         6  {txt}what to buy in the market or what to cook
+{txt}whatif1     {res}   297      4   1.996633          1         5  {txt}whose decision will prevail
+{txt}f3          {res}  1304      5   2.328221          1         6  {txt}when buying expensive things
+{txt}whatif2     {res}   684      3   2.166667          1         3  {txt}whose decision will prevail
+{txt}f4          {res}  1303      4   2.561013          1         6  {txt}how many children to have
+{txt}whatif3     {res}   794      3   2.235516          1         3  {txt}whose decision will prevail
+{txt}f5          {res}  1304      5   2.349693          1         6  {txt}what family planning method to use
+{txt}whatif4     {res}   578      3    2.16609          1         3  {txt}whose decision will prevail
+{txt}f6          {res}  1304      5   2.464724          1         6  {txt}giving of assitance and support to parents, in laws
+{txt}whatif5     {res}   710      3   2.352113          1         3  {txt}whose decision will prevail
+{txt}f7          {res}  1305      6   1.595402          1         8  {txt}buying item for personal use
+{txt}whatif6     {res}   209      3   2.129187          1         3  {txt}whose decision will prevail
+{txt}f8          {res}  1304      5   2.004601          1         6  {txt}spend money for personal recreation
+{txt}whatif7     {res}   379      3   2.311346          1         3  {txt}whose decision will prevail
+{txt}f9          {res}  1304      6   2.457055          1         6  {txt}selling or buying of items for family use
+{txt}whatif8     {res}   744      3   2.370968          1         3  {txt}whose decision will prevail
+{txt}f10         {res}  1301      5   2.007686          1         6  {txt}working outside the household
+{txt}whatif9     {res}   371      3   2.493261          1         3  {txt}whose decision will prevail
+{txt}f11         {res}  1303      4   1.952417          1         6  {txt}during quarrels or conflicts, who initiates reconciliation
+{txt}whatif10    {res}   180      3   2.538889          1         3  {txt}whose decision will prevail
+{txt}yeschild    {res}  1777      2   1.158694          1         2  {txt}Have children
+{txt}f12         {res}  1247      6   2.522053          1         6  {txt}what level of schooling will the children be supported
+{txt}whatif11    {res}   745      3    2.42953          1         3  {txt}whose decision will prevail
+{txt}efeel       {res}  3153      6   1.290517          0         5  {txt}Satisfied with savings, 1-5
+{txt}e2          {res}  1776      2   1.454955          1         2  {txt}Prefer Php 200 prize guaranteed today or Php 250 guaranteed 1 month from now
+{txt}e3          {res}  1777      3   1.740574          1        98  {txt}Would you prefer to receive Php 200.00 guaranteed today or Php 300.00 guaranteed
+{txt}e4          {res}   553     23   1457.609          0    100000  {txt}How much would the prize have to be for you to choose to wait?
+{txt}e5          {res}  1775      2   1.445634          1         2  {txt}Ten (10) kilos rice today or 15 kilos of rice rice 1 month from now?
+{txt}e6          {res}  1775      2   1.675493          1         2  {txt}Ten (10) kilos rice today or 20 kilos of rice rice 1 month from now?
+{txt}e7          {res}   572     17   50.67308          0      5000  {txt}How many kilos to choose to wait?
+{txt}e8          {res}  1774      2    1.51522          1         2  {txt}Half gallon of ice cream today or 1 1/2 gallons 1 month from now?
+{txt}e9          {res}  1774      2   1.721533          1         2  {txt}Half gallon of ice cream today or 2 gallons 1 month from now?
+{txt}e10         {res}   492     16   2.635163          0        20  {txt}how much ice cream to wait?
+{txt}e11a        {res}  1776     13    5.19482          1        13  {txt}Large expenditures of the household (Mention-1)
+{txt}e11b        {res}  1677     13   4.319618          1        13  {txt}Large expenditures of the household (Mention-2)
+{txt}e11c        {res}  1117     13   4.512086          1        13  {txt}Large expenditures of the household (Mention-3)
+{txt}payed       {res}  1776      3   2.003378          1         3  {txt}Able to pay amount planned for education
+{txt}hed1        {res}   915      8   1.795628          1         8  {txt}How did you manage to pay for education? Mention-1
+{txt}hed2        {res}   167      8   5.191617          1         8  {txt}How did you manage to pay for education? Mention-2
+{txt}hed3        {res}    16      5      6.625          4         8  {txt}How did you manage to pay for education? Mention-3
+{txt}paymed      {res}  1776      3   2.731419          1         3  {txt}Able to pay amount planned for medical expenses
+{txt}hmed1       {res}   251      8   2.103586          1         8  {txt}How did you manage to pay for medical expenses? Mention-1
+{txt}hmed2       {res}    43      7   5.023256          1         8  {txt}How did you manage to pay for medical expenses? Mention-2
+{txt}hmed3       {res}     1      1          5          5         5  {txt}How did you manage to pay for medical expenses? Mention-3
+{txt}payent      {res}  1777      4   2.984806          1        98  {txt}Able to pay amount planned for enterprise
+{txt}hent1       {res}    66      7    2.30303          1         9  {txt}How did you manage to pay for enterprise? Mention-1
+{txt}hent2       {res}     3      3   6.333333          5         8  {txt}How did you manage to pay for enterprise? Mention-2
+{txt}hent3       {res}     1      1          7          7         7  {txt}How did you manage to pay for enterprise? Mention-3
+{txt}payhou      {res}  1776      3   2.938063          1         3  {txt}Able to pay amount planned for houserepairs
+{txt}hhou1       {res}    61      6   2.229508          1         8  {txt}How did you manage to pay for house repairs? Mention-1
+{txt}hhou2       {res}    16      5        5.5          1         8  {txt}How did you manage to pay for house repairs? Mention-2
+{txt}paybill     {res}  1776      3   1.835586          1         3  {txt}Able to pay amount planned for bills
+{txt}hbill1      {res}  1075      7   1.434419          1         8  {txt}How did you manage to pay for bills? Mention-1
+{txt}hbill2      {res}   121      7   5.338843          1         8  {txt}How did you manage to pay forbills? Mention-2
+{txt}hbill3      {res}    11      5   3.363636          1         8  {txt}How did you manage to pay for bills? Mention-3
+{txt}payfood     {res}  1775      3   1.144789          1         3  {txt}Able to pay amount planned for foods
+{txt}hfood1      {res}  1688      9   1.340047          1         9  {txt}How did you manage to pay for foods? Mention-1
+{txt}hfood2      {res}   240      9   5.545833          1         9  {txt}How did you manage to pay for foods? Mention-2
+{txt}hfood3      {res}    27      8   4.222222          1         8  {txt}How did you manage to pay for foods? Mention-3
+{txt}payneed     {res}  1776      3    2.79223          1         3  {txt}Able to pay amount planned for needs of infants and children
+{txt}hneed1      {res}   189      5   1.534392          1         8  {txt}How did you manage to pay for needs of infants? Mention-1
+{txt}hneed2      {res}    30      7   5.466667          2         9  {txt}How did you manage to pay for needs of infants? Mention-2
+{txt}hneed3      {res}    38      3   3.026316          1         6  {txt}How did you manage to pay for needs of infants? Mention-3
+{txt}transpo     {res}  1777      3   2.940912          1         3  {txt}Able to pay amount planned for transportation
+{txt}htransp1    {res}    53      3   1.169811          1         8  {txt}How did you manage to pay for transportation? Mention-1
+{txt}htransp2    {res}     9      4   4.111111          1         5  {txt}How did you manage to pay for transportation? Mention-2
+{txt}htransp3    {res}     1      1          4          4         4  {txt}How did you manage to pay for transportation? Mention-3
+{txt}esavmo1     {res}  1397     44   4022.097          0   5000500  {txt}Expected savings in 1 month-1sth institution
+{txt}esavmo31    {res}  1403     44   692.7106          0     50000  {txt}Expected savings in 3 months-1st institution
+{txt}esav6mo1    {res}  1403     49   1360.525          0    125000  {txt}Expected savings in 6 months-1st institution
+{txt}esavmo2     {res}   821     42   1039.427          0    100000  {txt}Expected savings in 1 month-2nd institution
+{txt}esav3mo2    {res}   818     41   1048.224          0     50000  {txt}Expected savings in 3 months-2nd institution
+{txt}esav6mo2    {res}   816     49   2012.496          0    150000  {txt}Expected savings in 6 months-2nd institution
+{txt}esavmo3     {res}   256     30    2159.84          0    350000  {txt}Expected savings in 1 month-3rd institution
+{txt}esav3mo3    {res}   248     31   882.1331          0     30000  {txt}Expected savings in 3 months-3rd institution
+{txt}esav6mo3    {res}   242     34   2240.574          0    100000  {txt}Expected savings in 6 months-3rd institution
+{txt}esavmo4     {res}    59     10   1239.068          0     67500  {txt}Expected savings in 1 month-4th institution
+{txt}esav3mo4    {res}    59     11   259.3559          0      5000  {txt}Expected savings in 3 months-4th institution
+{txt}esav6mo4    {res}    56     12   324.9643          0      5000  {txt}Expected savings in 6 months-4th institution
+{txt}esavmo5     {res}    11      4   4752.727          0     50000  {txt}Expected savings in 1 month-5th institution
+{txt}esav3mo5    {res}    11      4   134.5455          0      1000  {txt}Expected savings in 3 months-5th institution
+{txt}esav6mo5    {res}    10      4        478          0      2000  {txt}Expected savings in 6 months-5th institution
+{txt}var00012    {res}  1777   1777   1582.494          1      3155  {txt}FORM no
+{txt}smoking     {res}  1777      2   1.809792          1         2  {txt}Smoking
+{txt}smoking_tr~t{res}   338      2   .3550296          0         1  {txt}Wanted to quit smoking
+{txt}drink       {res}  1777      2   1.772088          1         2  {txt}Drink alcohol more than once a week
+{txt}drink_more~e{res}   405      2   1.661728          1         2  {txt}Drink more than one liked to
+{txt}e21         {res}  1774      3   1.554115          1         8  {txt}Prefer Php 200.00 guaranted 6 mo from now or Php 250 prize guaranteed seven mos
+{txt}e22         {res}  1774      3   1.754791          1         8  {txt}Prefer Php 200.00 guaranteed 6 mos from no or a Php 300.00 seven mos from now
+{txt}e23         {res}   434     29   2214.631          0    100000  {txt}How much would the prize have to be for you to choose to wait?
+{txt}e24         {res}  1773      2   1.617597          1         2  {txt}Prefer 10 kilos guaranteed 6 mos from now or 15 kilos of rice guaranteed 7 mos f
+{txt}e25         {res}  1773      2   1.783418          1         2  {txt}Prefer 10 kls of rice guaranteed 6 mos from now or 20 kilos 7 mos from now
+{txt}e26         {res}   382     22   98.07068          0      5000  {txt}How many kilos of rice would the price have to be for you to choose to wait?
+{txt}e27         {res}  1772      4   1.687359          1         8  {txt}Prefer half-gallon of ice cream guaranteed in six mos or 1-1/2 gallon seven mos
+{txt}e28         {res}  1772      3   1.805305          1         8  {txt}How many gallon of ice cream would the prize have to be for you to choose to wai
+{txt}e29         {res}   364     17   4.221154          0        98  {txt}
+{txt}pfarm       {res}  1777      4   3.024761          1        98  {txt}Able to pay amount planned for maintenance
+{txt}hfarm1      {res}    26      6   2.846154          1         9  {txt}How did you manage to pay for farm maintenance? Mention-1
+{txt}hfarm2      {res}     8      5        4.5          1         9  {txt}How did you manage to pay for farm maintenance? Mention-2
+{txt}hfarm3      {res}     0      0          .          .         .  {txt}How did you manage to pay for farm maintenance? Mention-3
+{txt}pserv       {res}  1777      4   3.029826          1        98  {txt}Able to pay amount planned for Service maintenance
+{txt}hserv1      {res}    21      3   1.809524          1         8  {txt}How did you manage to pay for service maintenance? Mention-1
+{txt}hserv2      {res}     3      1          5          5         5  {txt}How did you manage to pay for service maintenance? Mention-2
+{txt}hserv3      {res}     0      0          .          .         .  {txt}How did you manage to pay for service maintenance? Mention-3
+{txt}pcloth      {res}  1777      4   2.965672          1        98  {txt}Able to pay amount planned for clothing and personal effects
+{txt}hcloth1     {res}    95      5   1.557895          1        10  {txt}How did you manage to pay for clothing and personal effects? Mention-1
+{txt}hcloth2     {res}    14      7   5.928571          1         8  {txt}How did you manage to pay for clothing and personal effects? Mention-2
+{txt}hcloth3     {res}     0      0          .          .         .  {txt}How did you manage to pay for clothing and personal effects? Mention-3
+{txt}payedebt    {res}  1777      4     3.0287          1        98  {txt}Able to pay amount planned for debts
+{txt}deb1        {res}    28      6       5.75          0        98  {txt}How did you manage to pay for debts? Mention-1
+{txt}deb2        {res}     5      2        4.4          4         5  {txt}How did you manage to pay for debts? Mention-2
+{txt}deb3        {res}     0      0          .          .         .  {txt}How did you manage to pay for debts? Mention-3
+{txt}payedrec    {res}  1777      2   2.995498          1         3  {txt}Able to pay amount planned for recreation
+{txt}rec1        {res}     4      1          1          1         1  {txt}How did you manage to pay for recreation? Mention-1
+{txt}rec2        {res}     2      1          5          5         5  {txt}How did you manage to pay for recreation? Mention-2
+{txt}rec3        {res}     0      0          .          .         .  {txt}How did you manage to pay for recreation? Mention-3
+{txt}received    {res}  1777      2   1.594823          1         2  {txt}Any member of the HH received money or goods from non HH member in the past 12 m
+{txt}hpeople     {res}   719      7   1.485396          1         7  {txt}Number of people given assistance in the past 12 months
+{txt}gamnt1      {res}  3153    122   5450.834          0   1200000  {txt}Amount received from 1st Donor
+{txt}gspeci1     {res}   719      2   1.308762          1         2  {txt}Assistance specifically sent by 1st Donor to a specific HH member
+{txt}hassist1    {res}   717     14   4.246862          1        48  {txt}Number of times donor give assistance - 1st Donor
+{txt}mreasona    {res}   718     20   7.009749          1        20  {txt}Main reason why donor give assistance - 1st Donor 1st mention
+{txt}mreasonb    {res}    85     11   7.529412          1        18  {txt}Main reason why donor give assistance - 1st Donor  2nd mention
+{txt}mreasonc    {res}    35      9   7.971429          1        18  {txt}Main reason why donor give assistance - 1st Donor 3rd mention
+{txt}mreasond    {res}     1      1          7          7         7  {txt}Main reason why donor give assistance - 1st Donor 4th mention
+{txt}repay1      {res}  3153      3   .4471931          0         2  {txt}Repay assistance sent by 1st Donor
+{txt}var00019    {res}  1777   1777   1582.494          1      3155  {txt}
+{txt}gamnt2      {res}  3153     60   794.9302          0    350000  {txt}Amount received from 2nd Donor
+{txt}gspeci2     {res}   241      2   1.298755          1         2  {txt}Assistance specifically sent by 2nd Donor to a specific HH member
+{txt}hassist2    {res}   240     13   3.895833          1        48  {txt}Number of times donor give assistance - 2nd Donor
+{txt}mreasone    {res}   240     15   7.691667          1        17  {txt}Main reason why donor give assistance - 2nd Donor 1st mention
+{txt}mreasonf    {res}    21      5    7.52381          2        12  {txt}Main reason why donor give assistance - 2nd Donor 2nd Mention
+{txt}mreasong    {res}     8      4      6.125          1        11  {txt}Main reason why donor give assistance - 2nd Donor 3rd mention
+{txt}mreasonh    {res}     1      1          7          7         7  {txt}Main reason why donor give assistance - 2nd Donor 4th mention
+{txt}repay2      {res}  3153      3   .1512845          0         2  {txt}Repay assistance sent by 2nd Donor
+{txt}gamnt3      {res}  3153     29   228.6346          0    220000  {txt}Amount received from 3rd Donor
+{txt}gspeci3     {res}    77      2   1.298701          1         2  {txt}Assistance specifically sent by 3rd Donor to a specific HH member
+{txt}hassist3    {res}    77     10   3.545455          1        36  {txt}Number of times donor give assistance - 3rd Donor
+{txt}mreasoni    {res}    77     13   7.714286          1        17  {txt}Main reason why donor give assistance - 3rd Donor 1st mention
+{txt}mreasonj    {res}     3      2   6.333333          3         8  {txt}Main reason why donor give assistance - 3rd Donor 2nd mention
+{txt}mreasonk    {res}     2      2          6          1        11  {txt}Main reason why donor give assistance - 3rd Donor 3rd mention
+{txt}repay3      {res}  3153      3   .0482081          0         2  {txt}Repay assistance sent by 3rd Donor
+{txt}gamnt4      {res}  3153     16   20.82144          0     12000  {txt}Amount received from 4th Donor
+{txt}gspeci4     {res}    22      2   1.272727          1         2  {txt}Assistance specifically sent by 4th Donor to a specific HH member
+{txt}hassist4    {res}    22      4   2.318182          1        12  {txt}Number of times donor give assistance - 4th Donor
+{txt}mreasonl    {res}    22      9   6.954545          1        13  {txt}Main reason why donor give assistance - 4th Donor 1st mention
+{txt}mreasonm    {res}     2      2        5.5          3         8  {txt}Main reason why donor give assistance - 4th Donor 2nd mention
+{txt}mreasonn    {res}     1      1          1          1         1  {txt}Main reason why donor give assistance - 4th Donor 3rd mention
+{txt}repay4      {res}  3153      2    .013955          0         2  {txt}Repay assistance sent by 4th Donor
+{txt}gamnt5      {res}  3153      6   4.154773          0     10000  {txt}Amount received from 5th Donor
+{txt}gspeci5     {res}     6      2   1.166667          1         2  {txt}Assistance specifically sent by 5th Donor to a specific HH member
+{txt}hassist5    {res}     6      3   2.666667          1        10  {txt}Number of times donor give assistance - 5th Donor
+{txt}mreasono    {res}     6      5   7.166667          1        12  {txt}Main reason why donor give assistance - 5th Donor 1st mention
+{txt}repay5      {res}  3153      2   .0038059          0         2  {txt}Repay assistance sent by 5th Donor
+{txt}gamnt6      {res}     2      2       1600        200      3000  {txt}Amount received from 6th Donor
+{txt}gspeci6     {res}     2      1          1          1         1  {txt}Assistance specifically sent by 6th Donor to a specific HH member
+{txt}hassist6    {res}     2      2        1.5          1         2  {txt}Number of times donor give assistance - 6th Donor
+{txt}mreason6    {res}     2      2        1.5          1         2  {txt}Main reason why donor give assistance - 6th Donor
+{txt}repay6      {res}     2      1          2          2         2  {txt}Repay assistance sent by 6th Donor
+{txt}gamnt7      {res}     1      1       8000       8000      8000  {txt}Amount received from 7th Donor
+{txt}gspeci7     {res}     1      1          1          1         1  {txt}Assistance specifically sent by 7th Donor to a specific HH member
+{txt}hassist7    {res}     1      1          8          8         8  {txt}Number of times donor give assistance - 7th Donor
+{txt}mreason7    {res}     1      1          2          2         2  {txt}Main reason why donor give assistance - 7th Donor
+{txt}repay7      {res}     1      1          2          2         2  {txt}Repay assistance sent by 7th Donor
+{txt}cid         {res}  3153   3115   15606.51         11     33295  {txt}CID
+{txt}dolt        {res}  3153    824   37229.96      35694     37773  {txt}DOLT
+{txt}totbal      {res}  3153   2457   47488.52          0    223836  {txt}Client savings balance (hundreds)
+{txt}many        {res}  3153      3    1.02791          1         3  {txt}
+{txt}barangay    {res}  3153     60   860072.3     860002    861106  {txt}
+{txt}dampayon    {res}  3153     12   28.61719         10       135  {txt}
+{txt}dbutuan     {res}  3153     13   23.12242          5       135  {txt}
+{txt}barangaych~k{res}  3153     60   860072.3     860002    861106  {txt}
+{txt}pop         {res}  3153     60          .          .         .  {txt}Population of barangay (thousands)
+{txt}v6          {res}     0      0          .          .         .  {txt}
+{txt}_mbarangayb {res}  2391      1          3          3         3  {txt}
+{txt}acc         {res}   762    762    5102923    5100004   5105106  {txt}ACC
+{txt}ampayon     {res}   762      1          1          1         1  {txt}
+{txt}_mbarangaya {res}   762      1          3          3         3  {txt}
+{txt}dormantb    {res}  3153      2   .6784015          0         1  {txt}
+{txt}meandorm    {res}  3153      5   .6782958          0         1  {txt}
+{txt}dormant     {res}  3153      2   .3174754          0         1  {txt}
+{txt}highbal     {res}  3153      1          0          0         0  {txt}
+{txt}one2        {res}  3153      1          1          1         1  {txt}
+{txt}no_clients  {res}  3153     49   151.0926         16       520  {txt}
+{txt}libertad    {res}  3153      2   .1274976          0         1  {txt}
+{txt}group       {res}  3153      3          .          .         .  {txt}
+{txt}firstrand   {res}  3153      2   .8699651          0         1  {txt}
+{txt}v1          {res}   801    801   42858.94         17    112709  {txt}
+{txt}kind_of_loan{res}   403      2          .          .         .  {txt}
+{txt}status      {res}   403      3          .          .         .  {txt}
+{txt}date_inter~d{res}   798     49          .          .         .  {txt}
+{txt}date_opened {res}   212     82   37862.02      37799     38119  {txt}
+{txt}inconsiste~n{res}     9      1          1          1         1  {txt}inconsistent between date_opened and Comments
+{txt}gendermf    {res}   728      3          .          .         .  {txt}Gender (M/F)
+{txt}datereache~g{res}   728     93          .          .         .  {txt}Date Reached at First Marketing
+{txt}clientrece~o{res}   728      1          1          1         1  {txt}Client received marketing? (1=yes; 0=no)
+{txt}ofvisitsb4~d{res}   726      5   1.140496          1         5  {txt}# of visits b4 reached (conducted)
+{txt}howdidclie~b{res}   728      1          .          .         .  {txt}How did client hear of it? (DD=Dr2Dr; IB=InBranch/wordmouth)
+{txt}clientopen~o{res}   725      2   .2689655          0         1  {txt}Client Opened SEED? (1=yes;0=no)
+{txt}clientopen~r{res}   724      2   .1229282          0         1  {txt}Client opened SEED at 1st marketing presentation? (1=yes; 0=no)
+{txt}oftimesmar~d{res}   636      6   .4795597          0         5  {txt}# of Times Marketed b4 Opened
+{txt}goal_type   {res}   209      2          .          .         .  {txt}Type of savings goal
+{txt}goaltypeda~r{res}   147     95   38169.11      37909     40437  {txt}GOAL Type: Date (Date-Month-Year)
+{txt}goaltypeam~s{res}    62     13   8403.226        500     50000  {txt}GOAL Type: Amount (no commas)
+{txt}box1yes0no  {res}   198      2   .8434343          0         1  {txt}Box? (1=yes;0=no)
+{txt}autotransf~o{res}   162      2   .0123457          0         1  {txt}Auto. Transfer? (1=yes;0=no)
+{txt}amount_tra~r{res}   118      2   3.389831          0       200  {txt}
+{txt}v26         {res}     0      0          .          .         .  {txt}
+{txt}goal_categ~v{res}   212      9          .          .         .  {txt}Savings goal
+{txt}_clientrep~t{res}  3153      2   1.462417          1         3  {txt}
+{txt}no_seed     {res}  3153      3   .0627973          0         2  {txt}(mean) no_seed
+{txt}seedbal     {res}  3152     81   52.34954          0  45525.25  {txt}(mean) seedbal
+{txt}savbalance  {res}  3153   1627   46379.08          0  1.15e+07  {txt}(mean) savbalance
+{txt}newtotbal   {res}  3153   1965   66090.58          0  1.15e+07  {txt}(mean) newtotbal
+{txt}dolt_seed   {res}   202    118   37953.58      37797     38207  {txt}(mean) dolt_seed
+{txt}dolt_sav    {res}  2645    971   37446.44      35694     38210  {txt}(mean) dolt_sav
+{txt}dolt_other  {res}  1126    648   37282.12      35928     38210  {txt}(mean) dolt_other
+{txt}_savingsdata{res}  3153      1          3          3         3  {txt}
+{txt}dates_month {res}  1777      4    6.78897          6         9  {txt}Month of interview
+{txt}dates_day   {res}  1777     31   13.95948          1       220  {txt}Day of interview
+{txt}Mdates      {res}  3153      2    2.12718          1         3  {txt}
+{txt}active      {res}  3153      2   .3260387          0         1  {txt}Active account
+{txt}hasfarmequip{res}  3153      2   .1211545          0         1  {txt}
+{txt}farmequip_~1{res}  3153     95   .0612764  -.1409879  24.60333  {txt}
+{txt}farmequip_~2{res}  3153     95   .0052032  -11.67863  28.11999  {txt}
+{txt}farmequip_~3{res}  3153     95  -.0115293  -13.68696  20.29252  {txt}
+{txt}farmequip_~4{res}  3153     95  -.0182194   -10.1377  16.47895  {txt}
+{txt}farmequip_~5{res}  3153     95  -.0041644   -10.7483  9.645727  {txt}
+{txt}farmequip_~6{res}  3153     95  -.0010725  -7.997485  10.05211  {txt}
+{txt}farmequip_~t{res}  3153     95   .0612764  -.1409879  24.60333  {txt}
+{txt}farmequip_~s{res}  3153     90   .1291845  -.3036707  3.446484  {txt}
+{txt}netassets_~1{res}  3153    303   8400.995    -199880   5000000  {txt}
+{txt}netassets_~2{res}  3153     51   675.1998          0    391000  {txt}
+{txt}netassets_~3{res}  3153      6   56.46527          0    121000  {txt}
+{txt}netassets_~l{res}  3153    315    9132.66    -199880   5000000  {txt}
+{txt}female      {res}  3153      2   .3323819          0         1  {txt}Female
+{txt}nochild     {res}  3153      2   .0891215          0         1  {txt}
+{txt}insured_perc{res}  1775     52   .6704515          0         1  {txt}% of hhold with health insurance
+{txt}insured_any {res}  3153      2   .4896924          0         1  {txt}
+{txt}urban       {res}  3153      2   .1617507          0         1  {txt}Urban
+{txt}single      {res}  3153      2   .0764351          0         1  {txt}
+{txt}separated   {res}  3153      2   .0085633          0         1  {txt}
+{txt}widowed     {res}  3153      2   .0494767          0         1  {txt}Widowed
+{txt}single_sep  {res}  3153      2   .0849984          0         1  {txt}
+{txt}single_sep_w{res}  3153      2   .1344751          0         1  {txt}
+{txt}skippedmeal {res}  3153      2   .0133206          0         1  {txt}HHold Has Skipped a Meal in Past Month
+{txt}edhi        {res}  1777      2   .5830051          0         1  {txt}Some College
+{txt}age2        {res}  1777     69   1968.815        169      7056  {txt}Age - squared
+{txt}hgc2        {res}  1777     17   146.5689          0       256  {txt}
+{txt}fem_married {res}  3153      2    .232477          0         1  {txt}Married X Female
+{txt}havechild   {res}  3153      2   .4744688          0         1  {txt}
+{txt}unemployed  {res}  3153      2   .0196638          0         1  {txt}Unemployed
+{txt}housewife   {res}  3153      2   .0212496          0         1  {txt}Housewife
+{txt}retired     {res}  3153      2   .0399619          0         1  {txt}Retired
+{txt}variable_occ{res}  3153      2   .1506502          0         1  {txt}Seasonal Occupation
+{txt}hungry      {res}  3153      2   .0133206          0         1  {txt}
+{txt}yearsed     {res}  1777     16   18.13506          7        22  {txt}
+{txt}yearsed2    {res}  1777     16   338.1936         49       484  {txt}
+{txt}ent_inc     {res}   477    162    12923.9          0    330000  {txt}typical monthly ent. income
+{txt}ent_exp     {res}   461    229   10210.91          0    288000  {txt}typical monthly ent. expend.
+{txt}highincmon  {res}  3153      2   .4573422          0         1  {txt}One of next 2 months is high income month
+{txt}lowincmon   {res}  3153      2   .4754202          0         1  {txt}One of next 2 months is a low income month
+{txt}highi~n_6mos{res}  3153      2   .4592452          0         1  {txt}Six or Seven months is high income month
+{txt}lowin~n_6mos{res}  3153      2   .4383127          0         1  {txt}
+{txt}highincmon~j{res}  1777      2   .0590884          0         1  {txt}Jun or Jul is high income month
+{txt}lowincmon_jj{res}  1777      2   .0934159          0         1  {txt}Jun or Jul is a low income month
+{txt}highi~j_6mos{res}  1777      2   .0934159          0         1  {txt}Dec or Jan is high income month
+{txt}lowin~j_6mos{res}  1777      2   .0388295          0         1  {txt}
+{txt}highexpmon  {res}  3153      2   .4560736          0         1  {txt}One of Next 2 months is high expend. month
+{txt}lowexpmon   {res}  3153      2   .4687599          0         1  {txt}One of Next 2 months is a low expend. month
+{txt}ent_asset_~x{res}  3153     10   .2768792          0         9  {txt}
+{txt}val_hmland1 {res}  3153     24  -2254.851   -1690000         0  {txt}
+{txt}val_hmland2 {res}  3153      5  -32.50872     -50000         0  {txt}
+{txt}val_hmland3 {res}  3153      3   -8.61719     -30000      2830  {txt}
+{txt}val_hmland4 {res}  3153      3  -10.78338     -30000         0  {txt}
+{txt}val_hmbldg1 {res}  3153     43  -2683.217   -4000000     54000  {txt}
+{txt}val_hmbldg2 {res}  3153      8  -20.93245     -30000         0  {txt}
+{txt}val_hmbldg3 {res}  3153      3  -14.96036     -50000      2830  {txt}
+{txt}val_hmbldg4 {res}  3153      3  -84.04694    -250000         0  {txt}
+{txt}val_pmmat1  {res}  3153    141  -745.1234    -250000     75000  {txt}
+{txt}val_pmmat2  {res}  3153     23  -77.98922     -45000         0  {txt}
+{txt}val_pmmat3  {res}  3153      3  -8.514114     -26000         0  {txt}
+{txt}val_pmmat4  {res}  3153      2  -25.37266     -80000         0  {txt}
+{txt}val_pmfur1  {res}  3153     33  -49.62258     -25000         0  {txt}
+{txt}val_pmfur2  {res}  3153      9   -24.7542     -75000         0  {txt}
+{txt}val_pmfur3  {res}  3153      1          0          0         0  {txt}
+{txt}val_pmfur4  {res}  3153      1          0          0         0  {txt}
+{txt}val_pmtools1{res}  3153     34  -32.49064     -20000     10500  {txt}
+{txt}val_pmtools2{res}  3153     10  -11.47479     -17000         0  {txt}
+{txt}val_pmtools3{res}  3153      4  -.2695845       -350         0  {txt}
+{txt}val_pmtools4{res}  3153      1          0          0         0  {txt}
+{txt}val_pmlvehi1{res}  3153      5  -412.3057    -500000         0  {txt}
+{txt}val_pmlvehi2{res}  3153      2   -53.9169    -170000         0  {txt}
+{txt}val_pmlvehi3{res}  3153      1          0          0         0  {txt}
+{txt}val_pmlvehi4{res}  3153      1          0          0         0  {txt}
+{txt}val_pmsvehi1{res}  3153     32  -1356.553    -580000    200000  {txt}
+{txt}val_pmsvehi2{res}  3153     10  -334.9058    -390000         0  {txt}
+{txt}val_pmsvehi3{res}  3153      2  -6.343165     -20000         0  {txt}
+{txt}val_pmsvehi4{res}  3153      1          0          0         0  {txt}
+{txt}val_pmsikad1{res}  3153     12  -69.83825     -70000         0  {txt}
+{txt}val_pmsikad2{res}  3153      4  -14.27212     -35000         0  {txt}
+{txt}val_pmsikad3{res}  3153      2   -1.90295      -3000         0  {txt}
+{txt}val_pmsikad4{res}  3153      1          0          0         0  {txt}
+{txt}val_pmgood1 {res}  3153     12   -23.6765     -25000      2000  {txt}
+{txt}val_pmgood2 {res}  3153      2  -.3805899      -1200         0  {txt}
+{txt}val_pmgood3 {res}  3153      1          0          0         0  {txt}
+{txt}val_pmgood4 {res}  3153      1          0          0         0  {txt}
+{txt}val_pmstock1{res}  3153     96  -770.1783    -392400     69000  {txt}
+{txt}val_pmstock2{res}  3153     21   -104.065    -210000         0  {txt}
+{txt}val_pmstock3{res}  3153      3  -15.85791     -35000         0  {txt}
+{txt}val_pmstock4{res}  3153      1          0          0         0  {txt}
+{txt}val_land    {res}  3153     27   -2306.76   -1690000       330  {txt}equity in enterprise land
+{txt}val_build   {res}  3153     45  -2803.157   -4000000     54000  {txt}equity in enterprise building
+{txt}val_material{res}  3153    150  -856.9994    -260000     75000  {txt}equity in enterprise materials
+{txt}val_furnit~e{res}  3153     36  -74.37678     -75000         0  {txt}equity in enterprise furniture
+{txt}val_tools   {res}  3153     40  -44.23501     -20000     10500  {txt}equity in enterprise tools
+{txt}val_lvehic~s{res}  3153      6  -466.2226    -500000         0  {txt}equity in enterprise lvehicles
+{txt}val_svehic~s{res}  3153     35  -1697.802    -580000    200000  {txt}equity in enterprise svehicles
+{txt}val_trisikad{res}  3153     13  -86.01332     -70000         0  {txt}equity in enterprise trisikad
+{txt}val_unfing~s{res}  3153     13  -24.05709     -25000      2000  {txt}equity in enterprise unfinished goods
+{txt}val_invent~y{res}  3153    108  -890.1012    -392400     69000  {txt}equity in enterprise inventory
+{txt}val_enter_~s{res}  3153    306  -9175.347   -5000000    199880  {txt}value of total enterprise assets
+{txt}home_equity {res}  1771    152   123361.1    -849997   4000000  {txt}
+{txt}enter       {res}  3153      2   .1509673          0         1  {txt}
+{txt}farmer      {res}  3153      2   .0174437          0         1  {txt}
+{txt}own_inc     {res}  3153    653   .4793962          0        33  {txt}own monthly typ. income
+{txt}veryown_inc {res}  3153    552   .4544562          0        33  {txt}Own labor and pension income
+{txt}veryown_inc2{res}  3153    552   1.235233          0      1089  {txt}Own income - squared
+{txt}veryown_in~m{res}  3153    361   .2729381          0        33  {txt}Own labor and pension income X Female
+{txt}other_inc   {res}  3153    358   .3698824          0        30  {txt}other hh mem's monthly typ. income
+{txt}hh_inc      {res}  3153    983   .8492786          0   34.2623  {txt}Total household income
+{txt}hh_inc2     {res}  3153    983    3.42825          0  1173.905  {txt}Total household monthly income - squared
+{txt}mid_own_inc {res}  3153      2   .0222011          0         1  {txt}
+{txt}high_own_inc{res}  3153      2    .483032          0         1  {txt}
+{txt}low_own_inc {res}  3153      2   .4947669          0         1  {txt}
+{txt}mid_other_~c{res}  3153      1          0          0         0  {txt}
+{txt}high_other~c{res}  3153      2    .384713          0         1  {txt}
+{txt}low_other_~c{res}  3153      2    .615287          0         1  {txt}
+{txt}mid_hh_inc  {res}  3153      2   .0732636          0         1  {txt}
+{txt}high_hh_inc {res}  3153      2   .4814462          0         1  {txt}
+{txt}low_hh_inc  {res}  3153      2   .4452902          0         1  {txt}
+{txt}frac_own_inc{res}  1749    849   .6187513          0         1  {txt}Share of Household Income
+{txt}fem_frac_o~c{res}  3153    578   .1779243          0         1  {txt}
+{txt}frac_own_i~2{res}  1749    849   .5000833          0         1  {txt}Share of Household Income - squared
+{txt}frac_veryo~c{res}  1749    895   .5818449          0         1  {txt}
+{txt}fem_frac_v~c{res}  1749    585   .3027513          0         1  {txt}
+{txt}fem_frac_v~2{res}  1749    585   .2259455          0         1  {txt}
+{txt}fem_frac_~25{res}  1777      2   .0619021          0         1  {txt}Female X Income share >0  & <=25%
+{txt}fem_fra~5_50{res}  1777      2   .1395611          0         1  {txt}Female X Income share >25 & <=50%
+{txt}fem_frac_~75{res}  1777      2   .1164885          0         1  {txt}Female X Income share >50 & <=75%
+{txt}fem_fr~5_100{res}  1777      2   .1710748          0         1  {txt}Female X Income share >75 & <=100%
+{txt}fem_fra~0_50{res}  1777      2   .2014631          0         1  {txt}Female X Income share >0 & <=50%
+{txt}fem_fr~0_100{res}  1777      2   .2875633          0         1  {txt}Female X Income share >50 & <=100%
+{txt}frac_very~25{res}  1777      2   .0934159          0         1  {txt}Income share >0  & <=25%
+{txt}frac_ve~5_50{res}  1777      2   .2104671          0         1  {txt}Income share >25 & <=50%
+{txt}frac_very~75{res}  1777      2   .1986494          0         1  {txt}Income share >50 & <=75%
+{txt}frac_v~5_100{res}  1777      2    .368036          0         1  {txt}Income share >75 & <=100%
+{txt}frac_ve~0_50{res}  1777      2   .3038829          0         1  {txt}Income share >0 & <=50%
+{txt}frac_v~0_100{res}  1777      2   .5666854          0         1  {txt}Income share >50 & <=100%
+{txt}useland     {res}  3153      2   .1620679          0         1  {txt}use land for agriculture: 1-yes, 0-no
+{txt}ownland     {res}   511      2   .4129159          0         1  {txt}owns or paying off some land: 1-yes, 0-no
+{txt}val_ownlot1 {res}   194     58     418920        -99  1.00e+07  {txt}value of owned lot1, missing=-99
+{txt}val_ownlot2 {res}   202     31   86998.93        -99   3000000  {txt}value of owned lot3, missing=-99
+{txt}val_ownlot3 {res}   201     19      15936        -99   1000000  {txt}value of owned lot3, missing=-99
+{txt}val_ownlot4 {res}   195      6   24775.33        -99   3000000  {txt}value of owned lot4, missing=-99
+{txt}val_ownlot5 {res}   194      2   5056.149        -99   1000000  {txt}value of owned lot5, missing=-99
+{txt}val_lotall~n{res}   194      3   78766.98        -99  1.23e+07  {txt}value of all lots owned; missing=-99
+{txt}val_lot1    {res}   384     58   211592.9        -99  1.00e+07  {txt}value of lot1, missing=-99
+{txt}val_lot2    {res}   129     31   136286.9        -99   3000000  {txt}value of lot2, missing=-99
+{txt}val_lot3    {res}    44     19   73151.77        -99   1000000  {txt}value of lot3, missing=-99
+{txt}val_lot4    {res}    11      6   440855.1        -99   3000000  {txt}value of lot4, missing=-99
+{txt}val_lot5    {res}     1      1    1000000    1000000   1000000  {txt}value of lot5, missing=-99
+{txt}val_lotall  {res}   226      1        -99        -99       -99  {txt}value of all lots used for agri; missing=-99
+{txt}unablepay   {res}   489      2   .2106339          0         1  {txt}unable to pay for one agri input last 12mo
+{txt}expseeds    {res}   381      2   -.519685        -99         0  {txt}
+{txt}expfertile  {res}   381      1          0          0         0  {txt}
+{txt}expmanure   {res}   381      2  -.2598425        -99         0  {txt}
+{txt}exppest     {res}   381      2   -.519685        -99         0  {txt}
+{txt}expherb     {res}   381      2   -.519685        -99         0  {txt}
+{txt}expfungi    {res}   381      2   -.519685        -99         0  {txt}
+{txt}expfeeds    {res}   492     57   748.1748          0    104000  {txt}
+{txt}expagric    {res}   378      1          0          0         0  {txt}expend on agriculture inputs
+{txt}highagmon   {res}  3153      2   .4500476          0         1  {txt}One of next 2 months is high ag income month
+{txt}lowagmon    {res}  3153      2   .4554393          0         1  {txt}One of next 2 months is a low ag income month
+{txt}lowagmon_6~s{res}  3153      2   .4548049          0         1  {txt}Next 6 months is a low ag income month
+{txt}higha~n_6mos{res}  3153      2   .4478275          0         1  {txt}Next 6 months is a high ag income month
+{txt}highagmon_jj{res}  1777      2   .0337648          0         1  {txt}Jun or Jul is high ag income month
+{txt}lowagmon_jj {res}  1777      2    .039955          0         1  {txt}Jun or Jul is a low ag income month
+{txt}lowagmon_j~s{res}  1777      2   .0619021          0         1  {txt}Dec or Jan is a low ag income month
+{txt}higha~j_6mos{res}  1777      2   .0416432          0         1  {txt}Dec or Jan is a high ag income month
+{txt}no_banks    {res}  3153      7   1.071361          0         6  {txt}
+{txt}gb_sav      {res}  3153      1          0          0         0  {txt}self rep. savings in GB sav acct.
+{txt}gb_chk      {res}  3153      1          0          0         0  {txt}self rep. savings in GB check acct.
+{txt}gb_time     {res}  3153      1          0          0         0  {txt}self rep. savings in GB time acct.
+{txt}gb_share    {res}  3153      1          0          0         0  {txt}self rep. savings in GB share acct.
+{txt}gb_tot      {res}  3153      1          0          0         0  {txt}total gb savings, self reported
+{txt}other_tot   {res}  3153    183   1503.988          0    440000  {txt}
+{txt}gb_frac     {res}   789      1          0          0         0  {txt}fraction of self rep. savings at the GB
+{txt}miss_HHsav  {res}  3153      2   .4947669          0         1  {txt}hsave or dformal (other HH mem's deposit bal.) missing
+{txt}tot_formal~v{res}  3153    222   2842.584          0   2940000  {txt}total self report formal deposits
+{txt}freq_infor~l{res}  3153      2   .0516968          0         1  {txt}contrib to informal savings 4 or more x/year
+{txt}miss_infor~v{res}  3153      2   .0012686          0         1  {txt}
+{txt}shome2      {res}  1777      2   1.802476          1         2  {txt}
+{txt}fixed22_2   {res}  3153      1          0          0         0  {txt}
+{txt}tot_inform~v{res}  3153    130    882.418          0    999998  {txt}total self reported infomal savings
+{txt}informal_s~s{res}  3153      2   .2029813          0         1  {txt}informal savings positive
+{txt}tot_savings {res}  3153    329   3725.002          0   2940250  {txt}total self reported savings - ALL
+{txt}high_mon    {res}  1777      2   .0596511          0         1  {txt}
+{txt}low_mon     {res}  1777      2   .0979178          0         1  {txt}
+{txt}high_mon_jj {res}  1777      2   .0900394          0         1  {txt}
+{txt}low_mon_jj  {res}  1777      2   .1283061          0         1  {txt}
+{txt}low_mon_6mos{res}  3153      2   .4560736          0         1  {txt}
+{txt}high_mon_6~s{res}  3153      2   .4697114          0         1  {txt}
+{txt}low_mon_jj~s{res}  3153      2   .0545512          0         1  {txt}
+{txt}high_mon_j~s{res}  3153      2   .0738979          0         1  {txt}
+{txt}highnow_lo~s{res}  3153      2   .0053917          0         1  {txt}High Income Now, Low Income in 6 Months
+{txt}lownow_hig~s{res}  3153      2   .0155408          0         1  {txt}Low Income Now, High Income in 6 Months
+{txt}highnow_lo~j{res}  3153      2   .0196638          0         1  {txt}
+{txt}lownow_hig~j{res}  3153      2   .0393276          0         1  {txt}
+{txt}asset_coun~l{res}  3153    315    9132.66    -199880   5000000  {txt}
+{txt}rosca       {res}  3153      2   .0948303          0         1  {txt}Rosca
+{txt}rosca_fem   {res}  3153      2   .0650174          0         1  {txt}
+{txt}restrict_fem{res}  3153      2   .0694577          0         1  {txt}
+{txt}e4demean    {res}   441     22   11.26114  -1718.535  98183.47  {txt}
+{txt}e7demean    {res}   473     16  -1.897032   -43.1761  4936.824  {txt}
+{txt}e10demean   {res}   311     15   .0005411  -3.668269  15.83173  {txt}
+{txt}e23demean   {res}   346     28   13.09137  -2464.799   97235.2  {txt}
+{txt}e26demean   {res}   300     21  -2.815387  -104.6921  4872.308  {txt}
+{txt}e29demean   {res}   230     16   .0015555  -5.678879  91.32112  {txt}
+{txt}hyper_mo~250{res}  1774      2   .2074408          0         1  {txt}
+{txt}hyper_mo~300{res}  1773      2   .1398759          0         1  {txt}
+{txt}hyper_mon~e2{res}   225      2   .1422222          0         1  {txt}
+{txt}hyper_ri~250{res}  1773      2   .2233503          0         1  {txt}
+{txt}hyper_ri~300{res}  1773      2   .1511562          0         1  {txt}
+{txt}hyper_rice~e{res}   221      2   .8597285          0         1  {txt}
+{txt}hyper_ric~e2{res}   231      2   .0995671          0         1  {txt}
+{txt}hyper_ic~250{res}  1762      2   .2054484          0         1  {txt}
+{txt}hyper_ic~300{res}  1771      2    .120271          0         1  {txt}
+{txt}hyper_ice_~e{res}   146      2   .9657534          0         1  {txt}
+{txt}hyper_ice~e2{res}   167      2    .239521          0         1  {txt}
+{txt}hyper_money {res}  1777      2   .0866629          0         1  {txt}
+{txt}hyper_rice  {res}  1777      2   .0911649          0         1  {txt}
+{txt}hyper_ice   {res}  1777      2   .0827237          0         1  {txt}
+{txt}hyper_mone~c{res}  1777     15   1.038829          0        16  {txt}
+{txt}hyper_rice~c{res}  1777     15   1.052898          0        16  {txt}
+{txt}hyper_ice_~c{res}  1777     16   .9476646          0        16  {txt}
+{txt}silly_mo~250{res}  1774      2   .1127396          0         1  {txt}
+{txt}silly_mo~300{res}  1773      2   .0750141          0         1  {txt}
+{txt}silly_mon_~e{res}   215      2   .1488372          0         1  {txt}
+{txt}silly_mon~e2{res}   227      2   .4096916          0         1  {txt}
+{txt}silly_ri~250{res}  1773      2   .0518895          0         1  {txt}
+{txt}silly_ri~300{res}  1773      2   .0434292          0         1  {txt}
+{txt}silly_rice~e{res}   221      2   .1402715          0         1  {txt}
+{txt}silly_ric~e2{res}   231      2   .3376623          0         1  {txt}
+{txt}silly_ic~250{res}  1762      2   .0431328          0         1  {txt}
+{txt}silly_ic~300{res}  1771      2    .040655          0         1  {txt}
+{txt}silly_ice_~e{res}   146      2   .0342466          0         1  {txt}
+{txt}silly_ice~e2{res}   153      2   .3137255          0         1  {txt}
+{txt}silly_money {res}  1777      2   .0410805          0         1  {txt}
+{txt}silly_rice  {res}  1777      2   .0236353          0         1  {txt}
+{txt}silly_ice   {res}  1777      2   .0185706          0         1  {txt}
+{txt}impatien~n01{res}  1774      3   .8585118          0         2  {txt}Impatient Now w/r/t money
+{txt}impat~300_01{res}  1776      2      .3125          0         1  {txt}Very impatient, Now versus 1 Month
+{txt}impati~50_01{res}  1776      2    .232545          0         1  {txt}Impatient, Now versus 1 Month
+{txt}impat~200_01{res}  1776      2   .4538288          0         1  {txt}Patient, Now versus 1 Month
+{txt}impat~300_67{res}  1774      2   .2435175          0         1  {txt}Very impatient, 6 months versus 7 Months
+{txt}impati~50_67{res}  1774      2   .2057497          0         1  {txt}Impatient, 6 months versus 7 Months
+{txt}impat~200_67{res}  1774      2   .5450958          0         1  {txt}Patient, 6 months versus 7 Months
+{txt}i~300_01rice{res}  1775      2    .324507          0         1  {txt}Very impatient, Now versus 1 Month, Rice
+{txt}im~50_01rice{res}  1775      2   .2298592          0         1  {txt}Impatient, Now versus 1 Month, Rice
+{txt}i~200_01rice{res}  1775      2   .4456338          0         1  {txt}Patient, Now versus 1 Month, Rice
+{txt}i~300_67rice{res}  1773      2   .2165821          0         1  {txt}Very impatient, 6 months versus 7 Months, Rice
+{txt}im~50_67rice{res}  1773      2   .1658206          0         1  {txt}Impatient, 6 months versus 7 Months, Rice
+{txt}i~200_67rice{res}  1773      2   .6175973          0         1  {txt}Patient, 6 months versus 7 Months, Rice
+{txt}im~300_01ice{res}  1775      2   .2783099          0         1  {txt}Very impatient, Now versus 1 Month, Ice Cream
+{txt}imp~50_01ice{res}  1775      2   .2061972          0         1  {txt}Impatient, Now versus 1 Month, Ice Cream
+{txt}im~200_01ice{res}  1775      2   .5149296          0         1  {txt}Patient, Now versus 1 Month, Ice Cream
+{txt}im~300_67ice{res}  1772      2   .1980813          0         1  {txt}Very impatient, 6 months versus 7 Months, Ice Cream
+{txt}imp~50_67ice{res}  1772      2   .1230248          0         1  {txt}Impatient, 6 months versus 7 Months, Ice Cream
+{txt}im~200_67ice{res}  1772      2   .6732506          0         1  {txt}Patient, 6 months versus 7 Months, Ice Cream
+{txt}hyper_mon_~w{res}  1774      2   .2553551          0         1  {txt}
+{txt}hyper_mon~w2{res}  1774      2   .2733935          0         1  {txt}Time inconsistent, Money
+{txt}hyper_ric~w2{res}  1773      2   .2961083          0         1  {txt}Time inconsistent, RIce
+{txt}hyper_ice~w2{res}  1772      2    .263544          0         1  {txt}Time inconsistent, Ice Cream
+{txt}silly_mon~w2{res}  1774      2   .1645998          0         1  {txt}
+{txt}silly_ric~w2{res}  1773      2   .0958827          0         1  {txt}
+{txt}silly_ice~w2{res}  1772      2   .1055305          0         1  {txt}
+{txt}hyper_~Xedhi{res}  1774      2   .1629087          0         1  {txt}
+{txt}impatien~n67{res}  1764      3    .696712          0         2  {txt}Impatient Later w/r/t money
+{txt}imp~n01_educ{res}  1774     25   9.966742          0        32  {txt}
+{txt}impat~rice01{res}  1775      3   .8788732          0         2  {txt}
+{txt}impat~rice67{res}  1773      3   .5989848          0         2  {txt}
+{txt}~rice01_educ{res}  1775     24   10.10986          0        32  {txt}
+{txt}impat~_ice01{res}  1774      3   .7632469          0         2  {txt}
+{txt}impat~_ice67{res}  1762      3   .5221339          0         2  {txt}
+{txt}~_ice01_educ{res}  1774     25   8.921082          0        32  {txt}
+{txt}impatient_~y{res}  1776      2   .0822072          0         1  {txt}
+{txt}impati~_rice{res}  1775      2   .0777465          0         1  {txt}
+{txt}impatie~_ice{res}  1774      2   .0614431          0         1  {txt}
+{txt}hyper_mon~nd{res}  3153      3   .2055186          0         2  {txt}
+{txt}hyper_ric~nd{res}  3153      3   .2178877          0         2  {txt}
+{txt}hyper_ice~nd{res}  3153      3   .1950523          0         2  {txt}
+{txt}silly_mon~nd{res}  3153      3   .1351094          0         2  {txt}
+{txt}silly_ric~nd{res}  3153      3   .0783381          0         2  {txt}
+{txt}silly_ice~nd{res}  3153      3    .062163          0         2  {txt}
+{txt}hyper_mon_~y{res}  1774      2   .2784667          0         1  {txt}Impatient Now and Patient Later
+{txt}hyper_rice~y{res}  1773      2   .2961083          0         1  {txt}Impatient Now & Patient Later w/r/t rice (any level)
+{txt}hyper_ice_~y{res}  1773      2   .2639594          0         1  {txt}Impatient Now & Patient Later w/r/t ice (any level)
+{txt}silly_mon_~y{res}  1774      2   .1989853          0         1  {txt}Patient Now & Impatient in Future w/r/t money (any level)
+{txt}silly_rice~y{res}  1773      2   .1156232          0         1  {txt}Patient Now & Impatient in Future w/r/t rice (any level)
+{txt}silly_ice_~y{res}  1771      2   .0920384          0         1  {txt}Patient Now & Impatient in Future w/r/t ice (any level)
+{txt}hyper_mon~ed{res}  1774      4   .4543405          0         3  {txt}Impatient Now & Patient Later (ordered 0-3) w/r/t money
+{txt}hyper_ric~ed{res}  1773      4   .4732092          0         3  {txt}Impatient Now & Patient Later (ordered 0-3) w/r/t rice
+{txt}hyper_ice~ed{res}  1773      4    .429216          0         3  {txt}Impatient Now & Patient Later (ordered 0-3) w/r/t ice
+{txt}silly_mon~ed{res}  1774      4    .378805          0         3  {txt}
+{txt}silly_ric~ed{res}  1773      4   .2470389          0         3  {txt}
+{txt}silly_ice~ed{res}  1771      4   .1869001          0         3  {txt}
+{txt}hyper_mon~nt{res}  1774      4   .2232244         -1         2  {txt}Impatient Now & Patient Later (ordered 0-3, with inconsistent=-1) w/r/t money
+{txt}hyper_rice~t{res}  1773      4   .2419628         -1         2  {txt}Impatient Now & Patient Later (ordered 0-3, with inconsistent=-1) w/r/t rice
+{txt}hyper_ice_~t{res}  1773      4   .2272984         -1         2  {txt}Impatient Now & Patient Later (ordered 0-3, with inconsistent=-1) w/r/t ice
+{txt}silly_mon~nt{res}  1774      4   .0676437         -1         2  {txt}
+{txt}silly_rice~t{res}  1773      4   .0118443         -1         2  {txt}
+{txt}silly_ice_~t{res}  1771      4   .0124224         -1         2  {txt}
+{txt}mis_efeel   {res}  3153      2   .0028544          0         1  {txt}
+{txt}assetcount  {res}  3153     23   4.932762          0        23  {txt}
+{txt}hypermon30~u{res}  1773     17   1.629442          0        16  {txt}
+{txt}hypermon25~u{res}  1774     16    2.45885          0        16  {txt}
+{txt}hyperice25~u{res}  1771     16   1.391869          0        16  {txt}
+{txt}hyperice30~u{res}  1771     16   1.391869          0        16  {txt}
+{txt}hyperrice2~u{res}  1773     15    2.64749          0        16  {txt}
+{txt}hyperrice3~u{res}  1773     16   1.739425          0        16  {txt}
+{txt}hypermonan~c{res}  1774     17   3.278467          0        16  {txt}
+{txt}hyperricea~c{res}  1773     16    3.49577          0        16  {txt}
+{txt}hypericean~c{res}  1773     16   3.116751          0        16  {txt}
+{txt}hypermon30~i{res}  1773      2   .0812183          0         1  {txt}
+{txt}hypermon25~i{res}  1774      2    .126832          0         1  {txt}
+{txt}hyperice25~i{res}  1771      2   .0694523          0         1  {txt}
+{txt}hyperice30~i{res}  1771      2   .0694523          0         1  {txt}
+{txt}hyperrice2~i{res}  1773      2   .1325437          0         1  {txt}
+{txt}hyperrice3~i{res}  1773      2   .0817823          0         1  {txt}
+{txt}hypermonan~i{res}  1774      2   .1668546          0         1  {txt}Impatient Now & Patient Later X Some College
+{txt}hyperricea~i{res}  1773      2   .1737169          0         1  {txt}
+{txt}hypericean~i{res}  1773      2   .1607445          0         1  {txt}
+{txt}hypermonan~d{res}  1774     17   5.089064          0        22  {txt}
+{txt}hyperricea~d{res}  1773     16    5.42414          0        22  {txt}
+{txt}hypericean~d{res}  1773     16   4.833051          0        22  {txt}
+{txt}hypermonan~2{res}  1774     17   95.52988          0       484  {txt}
+{txt}hyperricea~2{res}  1773     16   101.8754          0       484  {txt}
+{txt}hypericean~2{res}  1773     16   90.91427          0       484  {txt}
+{txt}h~00femrosca{res}  1773      2   .0152284          0         1  {txt}
+{txt}hypermon30~m{res}  1773      2   .0829103          0         1  {txt}
+{txt}hype~00rosca{res}  1773      2   .0225606          0         1  {txt}
+{txt}h~50femrosca{res}  1774      2   .0225479          0         1  {txt}
+{txt}hypermon25~m{res}  1774      2   .1313416          0         1  {txt}
+{txt}hype~50rosca{res}  1774      2   .0343856          0         1  {txt}
+{txt}hypermonan~m{res}  1774      2   .1730552          0         1  {txt}
+{txt}hyper~_rosca{res}  1774      2   .0439684          0         1  {txt}
+{txt}hy~_femrosca{res}  1774      2   .0276212          0         1  {txt}
+{txt}h~00restrict{res}  1773      2   .0265087          0         1  {txt}
+{txt}hypermon30..{res}  1773      2   .0169205          0         1  {txt}
+{txt}h~50restrict{res}  1774      2   .0394589          0         1  {txt}
+{txt}hypermon25..{res}  1774      2   .0248027          0         1  {txt}
+{txt}hy~_restrict{res}  1774      2   .0501691          0         1  {txt}Impatient Now & Patient Later X Restrict
+{txt}hypermonan..{res}  1774      2   .0310034          0         1  {txt}
+{txt}hypermonan~s{res}  1774      2   .0935738          0         1  {txt}
+{txt}gren_julaug {res}  1377     42   4064.542          0   5000500  {txt}
+{txt}green_octnov{res}  1383     43   699.8388          0     50000  {txt}
+{txt}green_janfeb{res}  1383     46   1286.059          0    100000  {txt}
+{txt}naiv        {res}  1383   1052   86326.84          0  1.15e+07  {txt}
+{txt}asset_index {res}  1769   1316  -.0035522  -3.035199  1.900517  {txt}
+{txt}med         {res}  3153      2   .1852204          0         1  {txt}
+{txt}rich        {res}  3153      2   .6289248          0         1  {txt}
+{txt}wmonh1a_orig{res}  3153     15   2.268316          0       998  {txt}
+{txt}wmonh1b_orig{res}  3153     13   .5283857          0        12  {txt}
+{txt}wmonh1c_orig{res}  3153     11   .1379638          0        12  {txt}
+{txt}wmonh1d_orig{res}  3153      8   .0555027          0        12  {txt}
+{txt}wmonh1e_orig{res}  3153      5   .0399619          0        12  {txt}
+{txt}wmonh1f_orig{res}  3153      4   .0364732          0        11  {txt}
+{txt}wmonh1g_orig{res}  3153      3   .0072946          0        12  {txt}
+{txt}wmonh1h_orig{res}  3153      5   .0161751          0        12  {txt}
+{txt}wmonh1i_orig{res}  3153      1          0          0         0  {txt}
+{txt}wlmoh1a_orig{res}  3153     15   2.168411          0       998  {txt}
+{txt}wlmoh1b_orig{res}  3153     13   .4211862          0        12  {txt}
+{txt}wlmoh1c_orig{res}  3153     12    .190295          0        12  {txt}
+{txt}wlmoh1d_orig{res}  3153     11    .076118          0        12  {txt}
+{txt}wlmoh1e_orig{res}  3153      9   .0326673          0        11  {txt}
+{txt}wlmoh1f_orig{res}  3153      4    .013955          0        11  {txt}
+{txt}wlmoh1g_orig{res}  3153      3   .0041231          0         9  {txt}
+{txt}wlmoh1h_orig{res}  3153      3   .0047574          0        10  {txt}
+{txt}wmoh2a_orig {res}  3153     10   .0926102          0        12  {txt}
+{txt}wmoh2b_orig {res}  3153     10   .0523311          0        12  {txt}
+{txt}wmoh2c_orig {res}  3153      7   .0158579          0        10  {txt}
+{txt}wmoh2d_orig {res}  3153      6   .0145893          0        12  {txt}
+{txt}wmoh2e_orig {res}  3153      2   .0031716          0        10  {txt}
+{txt}wmoh2f_orig {res}  3153      2   .0034887          0        11  {txt}
+{txt}wmol2a_orig {res}  3153     11   .0618459          0        12  {txt}
+{txt}wmol2b_orig {res}  3153     10   .0504282          0        12  {txt}
+{txt}wmol2c_orig {res}  3153      6   .0174437          0         8  {txt}
+{txt}wmol2d_orig {res}  3153      3   .0082461          0         9  {txt}
+{txt}wmol2e_orig {res}  3153      2   .0031716          0        10  {txt}
+{txt}wmol2f_orig {res}  3153      2   .0034887          0        11  {txt}
+{txt}wmoh3a_orig {res}  3153      5   .0069775          0        12  {txt}
+{txt}wmoh3b_orig {res}  3153      4   .0057088          0        12  {txt}
+{txt}wmol3a_orig {res}  3153      6   .0098319          0        11  {txt}
+{txt}wmol3b_orig {res}  3153      4    .012052          0        12  {txt}
+{txt}wmol3c_orig {res}  3153      4   .0085633          0        11  {txt}
+{txt}wmol3d_orig {res}  3153      2   .0025373          0         8  {txt}
+{txt}wmoh4a_orig {res}  3153      2   .0019029          0         6  {txt}
+{txt}wmoh4b_orig {res}  3153      2   .0038059          0        12  {txt}
+{txt}wmol4a_orig {res}  3153      2   .0006343          0         2  {txt}
+{txt}wmol4b_orig {res}  3153      2   .0025373          0         8  {txt}
+{txt}wmol4c_orig {res}  3153      2   .0034887          0        11  {txt}
+{txt}highbusgin~1{res}  3153      9   .2102759          0         8  {txt}
+{txt}highbusgin~2{res}  3153      6   .0228354          0         6  {txt}
+{txt}highbusgin~3{res}  3153      4   .0034887          0         3  {txt}
+{txt}highbusgin~4{res}  3153      2   .0006343          0         2  {txt}
+{txt}lowbusginc~1{res}  3153      8   .2366001          0         8  {txt}
+{txt}lowbusginc~2{res}  3153      6    .026007          0         6  {txt}
+{txt}lowbusginc~3{res}  3153      5   .0041231          0         4  {txt}
+{txt}lowbusginc~4{res}  3153      2   .0009515          0         3  {txt}
+{txt}typicalbus..{res}  3153     11   11.55312          1        12  {txt}
+{txt}typicalbus..{res}  3153      9   11.95116          4        12  {txt}
+{txt}typicalbus..{res}  3153      4   11.99239          6        12  {txt}
+{txt}typicalbus..{res}  3153      2   11.99841          7        12  {txt}
+{txt}wmohs1a_orig{res}  3153     15    .899778          0        98  {txt}
+{txt}wmohs1b_orig{res}  3153     13   .4462417          0        12  {txt}
+{txt}wmohs1c_orig{res}  3153     12   .1376467          0        12  {txt}
+{txt}wmohs1d_orig{res}  3153     11   .0935617          0        12  {txt}
+{txt}wmohs1e_orig{res}  3153      5   .0558199          0        12  {txt}
+{txt}wmohs1f_orig{res}  3153      4   .0539169          0        11  {txt}
+{txt}wmohs1g_orig{res}  3153      3   .0453536          0        12  {txt}
+{txt}wmohs1h_orig{res}  3153      3   .0041231          0        12  {txt}
+{txt}wmohs1i_orig{res}  3153      2   .0006343          0         2  {txt}
+{txt}wmols1a_orig{res}  3153     15    .555027          0        98  {txt}
+{txt}wmols1b_orig{res}  3153     13   .3751982          0        12  {txt}
+{txt}wmols1c_orig{res}  3153     12   .1335236          0        12  {txt}
+{txt}wmols1d_orig{res}  3153     10   .0456708          0        12  {txt}
+{txt}wmols1e_orig{res}  3153      7   .0237869          0        11  {txt}
+{txt}wmols1f_orig{res}  3153      3   .0095147          0        11  {txt}
+{txt}wmols1g_orig{res}  3153      2   .0028544          0         9  {txt}
+{txt}wmols1h_orig{res}  3153      3   .0091976          0        10  {txt}
+{txt}wmols1i_orig{res}  3153      2   .0034887          0        11  {txt}
+{txt}wmohs2a_orig{res}  3153      1          0          0         0  {txt}
+{txt}wmohs2b_orig{res}  3153      8   .0377418          0        12  {txt}
+{txt}wmohs2c_orig{res}  3153      7   .0155408          0        10  {txt}
+{txt}wmohs2d_orig{res}  3153      5   .0133206          0        12  {txt}
+{txt}wmols2a_orig{res}  3153      1          0          0         0  {txt}
+{txt}wmols2b_orig{res}  3153     10   .0386933          0        12  {txt}
+{txt}wmols2c_orig{res}  3153      4   .0161751          0         8  {txt}
+{txt}wmols2d_orig{res}  3153      2   .0057088          0         9  {txt}
+{txt}wmols2e_orig{res}  3153      2   .0031716          0        10  {txt}
+{txt}wmohs3a_orig{res}  3153      1          0          0         0  {txt}
+{txt}wmohs3b_orig{res}  3153      3   .0044402          0        12  {txt}
+{txt}wmols3a_orig{res}  3153      1          0          0         0  {txt}
+{txt}wmols3b_orig{res}  3153      2   .0050745          0         8  {txt}
+{txt}wmols3c_orig{res}  3153      2   .0034887          0        11  {txt}
+{txt}wmohs4a_orig{res}  3153      2   .0019029          0         6  {txt}
+{txt}wmohs4b_orig{res}  3153      2   .0038059          0        12  {txt}
+{txt}wmols4a_orig{res}  3153      2   .0006343          0         2  {txt}
+{txt}wmols4b_orig{res}  3153      2   .0025373          0         8  {txt}
+{txt}highbusexp~1{res}  3153     10   .2061529          0         9  {txt}
+{txt}highbusexp~2{res}  3153      4    .007929          0         3  {txt}
+{txt}highbusexp~3{res}  3153      2   .0006343          0         1  {txt}
+{txt}highbusexp~4{res}  3153      2   .0006343          0         2  {txt}
+{txt}lowbusexpn~1{res}  3153      9   .1795116          0         9  {txt}
+{txt}lowbusexpn~2{res}  3153      5   .0101491          0         4  {txt}
+{txt}lowbusexpn~3{res}  3153      3   .0009515          0         2  {txt}
+{txt}lowbusexpn~4{res}  3153      2   .0006343          0         2  {txt}
+{txt}typicalbus..{res}  3153     12   11.61434          0        12  {txt}
+{txt}typicalbus..{res}  3153      6   11.98192          7        12  {txt}
+{txt}typicalbus..{res}  3153      3   11.99841          9        12  {txt}
+{txt}typicalbus..{res}  3153      2   11.99873          8        12  {txt}
+{txt}clientbus1~c{res}  3153    381   430.8065    -288000    300000  {txt}monthly income from client's first own non-agr business (average over past year)
+{txt}clientbus2~c{res}  3153     66   26.95784   -94998.1     12489  {txt}monthly income from client's second own non-agr business (average over past year
+{txt}clientbus3~c{res}  3153     11   1.121683   -12658.5      6000  {txt}monthly income from client's third own non-agr business (average over past year)
+{txt}clientbus4~c{res}  3153      4   .8680093      -2400      4800  {txt}monthly income from client's fourth own non-agr business (average over past year
+{txt}clientbusn~t{res}  3153    403   459.7541    -288000    300000  {txt}total monthly net income from all of the client's non-agr businesses (average ov
+{txt}grossi~1_mo1{res}  3153    125   1968.492          0    555000  {txt}gross income for client's first business during month 1
+{txt}grossi~1_mo2{res}  3153    120   1701.725          0    300000  {txt}gross income for client's first business during month 2
+{txt}grossi~1_mo3{res}  3153    119   1735.258          0    300000  {txt}gross income for client's first business during month 3
+{txt}grossi~1_mo4{res}  3153    124    1773.97          0    300000  {txt}gross income for client's first business during month 4
+{txt}grossi~1_mo5{res}  3153    122   1847.962          0    300000  {txt}gross income for client's first business during month 5
+{txt}grossi~1_mo6{res}  3153    122    1704.02          0    300000  {txt}gross income for client's first business during month 6
+{txt}grossi~1_mo7{res}  3153    122   1736.357          0    360000  {txt}gross income for client's first business during month 7
+{txt}grossi~1_mo8{res}  3153    125   1729.785          0    300000  {txt}gross income for client's first business during month 8
+{txt}grossi~1_mo9{res}  3153    123   1774.812          0    300000  {txt}gross income for client's first business during month 9
+{txt}gross~1_mo10{res}  3153    123   1787.016          0    300000  {txt}gross income for client's first business during month 10
+{txt}gross~1_mo11{res}  3153    120   1767.617          0    300000  {txt}gross income for client's first business during month 11
+{txt}gross~1_mo12{res}  3153    128   2348.466          0    600000  {txt}gross income for client's first business during month 12
+{txt}grossi~2_mo1{res}  3153     40   189.6352          0     90000  {txt}gross income for client's second business during month 1
+{txt}grossi~2_mo2{res}  3153     40   187.1931          0     90000  {txt}gross income for client's second business during month 2
+{txt}grossi~2_mo3{res}  3153     41   185.4805          0     90000  {txt}gross income for client's second business during month 3
+{txt}grossi~2_mo4{res}  3153     40   183.0383          0     90000  {txt}gross income for client's second business during month 4
+{txt}grossi~2_mo5{res}  3153     41   197.8814          0     90000  {txt}gross income for client's second business during month 5
+{txt}grossi~2_mo6{res}  3153     46   193.8376          0    120000  {txt}gross income for client's second business during month 6
+{txt}grossi~2_mo7{res}  3153     41   180.0666          0     90000  {txt}gross income for client's second business during month 7
+{txt}grossi~2_mo8{res}  3153     41   188.5886          0     90000  {txt}gross income for client's second business during month 8
+{txt}grossi~2_mo9{res}  3153     41   188.6838          0     90000  {txt}gross income for client's second business during month 9
+{txt}gross~2_mo10{res}  3153     41   188.9058          0     90000  {txt}gross income for client's second business during month 10
+{txt}gross~2_mo11{res}  3153     39   189.2705          0     90000  {txt}gross income for client's second business during month 11
+{txt}gross~2_mo12{res}  3153     42   207.1265          0     90000  {txt}gross income for client's second business during month 12
+{txt}grossi~3_mo1{res}  3153     10   12.69045          0     10000  {txt}gross income for client's third business during month 1
+{txt}grossi~3_mo2{res}  3153     10   12.61116          0     10000  {txt}gross income for client's third business during month 2
+{txt}grossi~3_mo3{res}  3153     11   12.69045          0     15000  {txt}gross income for client's third business during month 3
+{txt}grossi~3_mo4{res}  3153     11   12.69045          0     15000  {txt}gross income for client's third business during month 4
+{txt}grossi~3_mo5{res}  3153     10   9.836029          0     10000  {txt}gross income for client's third business during month 5
+{txt}grossi~3_mo6{res}  3153     11   9.788455          0     10000  {txt}gross income for client's third business during month 6
+{txt}grossi~3_mo7{res}  3153     10   9.201713          0     10000  {txt}gross income for client's third business during month 7
+{txt}grossi~3_mo8{res}  3153     10   9.122423          0     10000  {txt}gross income for client's third business during month 8
+{txt}grossi~3_mo9{res}  3153     11   10.47035          0     10000  {txt}gross income for client's third business during month 9
+{txt}gross~3_mo10{res}  3153     10   9.836029          0     10000  {txt}gross income for client's third business during month 10
+{txt}gross~3_mo11{res}  3153     10   9.439581          0      9000  {txt}gross income for client's third business during month 11
+{txt}gross~3_mo12{res}  3153     11   10.43863          0      9000  {txt}gross income for client's third business during month 12
+{txt}grossi~4_mo1{res}  3153      4   2.029813          0      4800  {txt}gross income for client's fourth business during month 1
+{txt}grossi~4_mo2{res}  3153      4   1.950523          0      4800  {txt}gross income for client's fourth business during month 2
+{txt}grossi~4_mo3{res}  3153      4   2.029813          0      4800  {txt}gross income for client's fourth business during month 3
+{txt}grossi~4_mo4{res}  3153      4   2.029813          0      4800  {txt}gross income for client's fourth business during month 4
+{txt}grossi~4_mo5{res}  3153      4   2.029813          0      4800  {txt}gross income for client's fourth business during month 5
+{txt}grossi~4_mo6{res}  3153      3   2.156676          0      4800  {txt}gross income for client's fourth business during month 6
+{txt}grossi~4_mo7{res}  3153      4   2.029813          0      4800  {txt}gross income for client's fourth business during month 7
+{txt}grossi~4_mo8{res}  3153      4   1.950523          0      4800  {txt}gross income for client's fourth business during month 8
+{txt}grossi~4_mo9{res}  3153      4   2.029813          0      4800  {txt}gross income for client's fourth business during month 9
+{txt}gross~4_mo10{res}  3153      4   2.029813          0      4800  {txt}gross income for client's fourth business during month 10
+{txt}gross~4_mo11{res}  3153      4   1.950523          0      4800  {txt}gross income for client's fourth business during month 11
+{txt}gross~4_mo12{res}  3153      3   2.156676          0      4800  {txt}gross income for client's fourth business during month 12
+{txt}exp_ent1_mo1{res}  3153    212   1570.574          0    480000  {txt}expenditures for client's first enterprise in month 1
+{txt}exp_ent1_mo2{res}  3153    204   1437.931          0    480000  {txt}expenditures for client's first enterprise in month 2
+{txt}exp_ent1_mo3{res}  3153    204   1435.467          0    480000  {txt}expenditures for client's first enterprise in month 3
+{txt}exp_ent1_mo4{res}  3153    205   1324.393          0    288000  {txt}expenditures for client's first enterprise in month 4
+{txt}exp_ent1_mo5{res}  3153    205   1370.991          0    288000  {txt}expenditures for client's first enterprise in month 5
+{txt}exp_ent1_mo6{res}  3153    206   1289.157          0    288000  {txt}expenditures for client's first enterprise in month 6
+{txt}exp_ent1_mo7{res}  3153    199   1254.921          0    288000  {txt}expenditures for client's first enterprise in month 7
+{txt}exp_ent1_mo8{res}  3153    202   1304.047          0    288000  {txt}expenditures for client's first enterprise in month 8
+{txt}exp_ent1_mo9{res}  3153    206    1326.63          0    288000  {txt}expenditures for client's first enterprise in month 9
+{txt}exp_ent1_~10{res}  3153    209   1344.697          0    288000  {txt}expenditures for client's first enterprise in month 10
+{txt}exp_ent1_~11{res}  3153    211   1340.059          0    288000  {txt}expenditures for client's first enterprise in month 11
+{txt}exp_ent1_~12{res}  3153    216   1699.131          0    420000  {txt}expenditures for client's first enterprise in month 12
+{txt}exp_ent2_mo1{res}  3153     40   163.4066          0     99998  {txt}expenditures for client's second enterprise in month 1
+{txt}exp_ent2_mo2{res}  3153     39   161.1992          0     99998  {txt}expenditures for client's second enterprise in month 2
+{txt}exp_ent2_mo3{res}  3153     40   161.5671          0     99998  {txt}expenditures for client's second enterprise in month 3
+{txt}exp_ent2_mo4{res}  3153     40   158.0783          0     99998  {txt}expenditures for client's second enterprise in month 4
+{txt}exp_ent2_mo5{res}  3153     43   158.9664          0     99998  {txt}expenditures for client's second enterprise in month 5
+{txt}exp_ent2_mo6{res}  3153     42    159.791          0     99998  {txt}expenditures for client's second enterprise in month 6
+{txt}exp_ent2_mo7{res}  3153     39   170.6695          0     99998  {txt}expenditures for client's second enterprise in month 7
+{txt}exp_ent2_mo8{res}  3153     39   164.5642          0     99998  {txt}expenditures for client's second enterprise in month 8
+{txt}exp_ent2_mo9{res}  3153     40   164.9924          0     99998  {txt}expenditures for client's second enterprise in month 9
+{txt}exp_ent2_~10{res}  3153     39   164.5642          0     99998  {txt}expenditures for client's second enterprise in month 10
+{txt}exp_ent2_~11{res}  3153     39   164.4215          0     99998  {txt}expenditures for client's second enterprise in month 11
+{txt}exp_ent2_~12{res}  3153     41   170.3365          0     99998  {txt}expenditures for client's second enterprise in month 12
+{txt}exp_ent3_mo1{res}  3153      9   9.211862          0     13248  {txt}expenditures for client's third enterprise in month 1
+{txt}exp_ent3_mo2{res}  3153      9   10.16334          0     13248  {txt}expenditures for client's third enterprise in month 2
+{txt}exp_ent3_mo3{res}  3153      9   9.211862          0     13248  {txt}expenditures for client's third enterprise in month 3
+{txt}exp_ent3_mo4{res}  3153      9   9.211862          0     13248  {txt}expenditures for client's third enterprise in month 4
+{txt}exp_ent3_mo5{res}  3153      9   9.211862          0     13248  {txt}expenditures for client's third enterprise in month 5
+{txt}exp_ent3_mo6{res}  3153      9   9.211862          0     13248  {txt}expenditures for client's third enterprise in month 6
+{txt}exp_ent3_mo7{res}  3153      9   9.211862          0     13248  {txt}expenditures for client's third enterprise in month 7
+{txt}exp_ent3_mo8{res}  3153      9   6.519822          0      7200  {txt}expenditures for client's third enterprise in month 8
+{txt}exp_ent3_mo9{res}  3153      9   9.211862          0     13248  {txt}expenditures for client's third enterprise in month 9
+{txt}exp_ent3_~10{res}  3153      9   9.211862          0     13248  {txt}expenditures for client's third enterprise in month 10
+{txt}exp_ent3_~11{res}  3153      9   6.836981          0      7200  {txt}expenditures for client's third enterprise in month 11
+{txt}exp_ent3_~12{res}  3153      9   14.14431          0     28800  {txt}expenditures for client's third enterprise in month 12
+{txt}exp_ent4_mo1{res}  3153      4   1.162702          0      2400  {txt}expenditures for client's fourth enterprise in month 1
+{txt}exp_ent4_mo2{res}  3153      4    1.12274          0      2400  {txt}expenditures for client's fourth enterprise in month 2
+{txt}exp_ent4_mo3{res}  3153      4   1.162702          0      2400  {txt}expenditures for client's fourth enterprise in month 3
+{txt}exp_ent4_mo4{res}  3153      4   1.162702          0      2400  {txt}expenditures for client's fourth enterprise in month 4
+{txt}exp_ent4_mo5{res}  3153      4   1.162702          0      2400  {txt}expenditures for client's fourth enterprise in month 5
+{txt}exp_ent4_mo6{res}  3153      4   1.205201          0      2400  {txt}expenditures for client's fourth enterprise in month 6
+{txt}exp_ent4_mo7{res}  3153      4   1.162702          0      2400  {txt}expenditures for client's fourth enterprise in month 7
+{txt}exp_ent4_mo8{res}  3153      4    1.12274          0      2400  {txt}expenditures for client's fourth enterprise in month 8
+{txt}exp_ent4_mo9{res}  3153      4   1.162702          0      2400  {txt}expenditures for client's fourth enterprise in month 9
+{txt}exp_ent4_~10{res}  3153      4   1.162702          0      2400  {txt}expenditures for client's fourth enterprise in month 10
+{txt}exp_ent4_~11{res}  3153      4   1.162702          0      2400  {txt}expenditures for client's fourth enterprise in month 11
+{txt}exp_ent4_~12{res}  3153      4   1.205201          0      2400  {txt}expenditures for client's fourth enterprise in month 12
+{txt}netinc~1_mo1{res}  3153    201   397.9175    -420000    300000  {txt}net income for client's first business during month 1
+{txt}netinc~1_mo2{res}  3153    206   263.7942    -420000    300000  {txt}net income for client's first business during month 2
+{txt}netinc~1_mo3{res}  3153    209   299.7919    -430000    300000  {txt}net income for client's first business during month 3
+{txt}netinc~1_mo4{res}  3153    210   449.5769    -288000    300000  {txt}net income for client's first business during month 4
+{txt}netinc~1_mo5{res}  3153    214   476.9708    -288000    300000  {txt}net income for client's first business during month 5
+{txt}netinc~1_mo6{res}  3153    215   414.8624    -288000    150000  {txt}net income for client's first business during month 6
+{txt}netinc~1_mo7{res}  3153    208   481.4361    -288000    300000  {txt}net income for client's first business during month 7
+{txt}netinc~1_mo8{res}  3153    205   425.7383    -288000    150000  {txt}net income for client's first business during month 8
+{txt}netinc~1_mo9{res}  3153    207    448.182    -288000    300000  {txt}net income for client's first business during month 9
+{txt}netin~1_mo10{res}  3153    207   442.3191    -288000    300000  {txt}net income for client's first business during month 10
+{txt}netin~1_mo11{res}  3153    204   427.5579    -288000    300000  {txt}net income for client's first business during month 11
+{txt}netin~1_mo12{res}  3153    208   649.3356    -288000    600000  {txt}net income for client's first business during month 12
+{txt}netinc~2_mo1{res}  3153     44   26.22864   -94998.1     13000  {txt}net income for client's second business during month 1
+{txt}netinc~2_mo2{res}  3153     42   25.99394   -94998.1     20000  {txt}net income for client's second business during month 2
+{txt}netinc~2_mo3{res}  3153     44   23.91338   -94998.1     20000  {txt}net income for client's second business during month 3
+{txt}netinc~2_mo4{res}  3153     45   24.96001   -94998.1     27209  {txt}net income for client's second business during month 4
+{txt}netinc~2_mo5{res}  3153     50   38.91497   -94998.1     27209  {txt}net income for client's second business during month 5
+{txt}netinc~2_mo6{res}  3153     53   34.04659   -94998.1     36000  {txt}net income for client's second business during month 6
+{txt}netinc~2_mo7{res}  3153     44    9.39705   -94998.1     15000  {txt}net income for client's second business during month 7
+{txt}netinc~2_mo8{res}  3153     42   24.02439   -94998.1     12209  {txt}net income for client's second business during month 8
+{txt}netinc~2_mo9{res}  3153     45   23.69137   -94998.1     12209  {txt}net income for client's second business during month 9
+{txt}netin~2_mo10{res}  3153     44   24.34155   -94998.1     12209  {txt}net income for client's second business during month 10
+{txt}netin~2_mo11{res}  3153     46     24.849   -94998.1     12209  {txt}net income for client's second business during month 11
+{txt}netin~2_mo12{res}  3153     50   36.79001   -94998.1     14400  {txt}net income for client's second business during month 12
+{txt}netinc~3_mo1{res}  3153     11   3.478592     -12648      7000  {txt}net income for client's third business during month 1
+{txt}netinc~3_mo2{res}  3153     11   2.447827     -12898      6000  {txt}net income for client's third business during month 2
+{txt}netinc~3_mo3{res}  3153     11   3.478592     -12648     11000  {txt}net income for client's third business during month 3
+{txt}netinc~3_mo4{res}  3153     11   3.478592     -12648     11000  {txt}net income for client's third business during month 4
+{txt}netinc~3_mo5{res}  3153     11   .6241675     -12648      6000  {txt}net income for client's third business during month 5
+{txt}netinc~3_mo6{res}  3153     11   .5765937     -12248      6000  {txt}net income for client's third business during month 6
+{txt}netinc~3_mo7{res}  3153     10  -.0101491     -12648      6000  {txt}net income for client's third business during month 7
+{txt}netinc~3_mo8{res}  3153     11   2.602601      -5410      6000  {txt}net income for client's third business during month 8
+{txt}netinc~3_mo9{res}  3153     10   1.258484     -12648      6000  {txt}net income for client's third business during month 9
+{txt}netin~3_mo10{res}  3153     11   .6241675     -12648      6000  {txt}net income for client's third business during month 10
+{txt}netin~3_mo11{res}  3153     11   2.602601      -5410      3500  {txt}net income for client's third business during month 11
+{txt}netin~3_mo12{res}  3153     11  -3.705677     -27800      6000  {txt}net income for client's third business during month 12
+{txt}netinc~4_mo1{res}  3153      4   .8671107      -2400      4800  {txt}net income for client's fourth business during month 1
+{txt}netinc~4_mo2{res}  3153      4   .8277831      -2400      4800  {txt}net income for client's fourth business during month 2
+{txt}netinc~4_mo3{res}  3153      4   .8671107      -2400      4800  {txt}net income for client's fourth business during month 3
+{txt}netinc~4_mo4{res}  3153      4   .8671107      -2400      4800  {txt}net income for client's fourth business during month 4
+{txt}netinc~4_mo5{res}  3153      4   .8671107      -2400      4800  {txt}net income for client's fourth business during month 5
+{txt}netinc~4_mo6{res}  3153      4   .9514748      -2400      4800  {txt}net income for client's fourth business during month 6
+{txt}netinc~4_mo7{res}  3153      4   .8671107      -2400      4800  {txt}net income for client's fourth business during month 7
+{txt}netinc~4_mo8{res}  3153      4   .8277831      -2400      4800  {txt}net income for client's fourth business during month 8
+{txt}netinc~4_mo9{res}  3153      4   .8671107      -2400      4800  {txt}net income for client's fourth business during month 9
+{txt}netin~4_mo10{res}  3153      4   .8671107      -2400      4800  {txt}net income for client's fourth business during month 10
+{txt}netin~4_mo11{res}  3153      4   .7878211      -2400      4800  {txt}net income for client's fourth business during month 11
+{txt}netin~4_mo12{res}  3153      4   .9514748      -2400      4800  {txt}net income for client's fourth business during month 12
+{txt}netinco~1_sd{res}  3153    342   361.4505          0  195601.6  {txt}variance of monthly net income for enterprise 1
+{txt}netinco~2_sd{res}  3153     42   29.50187          0  10961.36  {txt}variance of monthly net income for enterprise 2
+{txt}netinco~3_sd{res}  3153      6   4.410118          0  5514.937  {txt}variance of monthly net income for enterprise 3
+{txt}netinco~4_sd{res}  3153      2    .046324          0  146.0597  {txt}variance of monthly net income for enterprise 4
+{txt}remit1      {res}  3153    121   5342.994          0   1200000  {txt}
+{txt}remit2      {res}  3153     60   792.6625          0    350000  {txt}
+{txt}remit3      {res}  3153     29   228.2223          0    220000  {txt}
+{txt}remit4      {res}  3153     16   20.82144          0     12000  {txt}
+{txt}remit5      {res}  3153      6   4.154773          0     10000  {txt}
+{txt}housremit   {res}  3153    177   532.4046          0    100000  {txt}total amount of non-loan remitances received by the household in the last year d
+{txt}housinctot  {res}  3153   1331     7924.9  -277958.3  318583.3  {txt}total monthly net income for the household
+{txt}housincper~p{res}  1777   1462   2790.996  -55591.67   42353.6  {txt}household income per capita, monthly net income measured by the total members of
+{txt}housincmin~d{res}  1772   1438   14080.81  -277961.3  318581.3  {txt}monthly household income net of food consumption
+{txt}housincmin~p{res}  1747   1673   3707.755  -79417.52     96844  {txt}monthly household income net of food consumption per capita(household member)
+{txt}remitloan1  {res}  3153     18   106.8887          0    100000  {txt}
+{txt}remitloan2  {res}  3153      4   1.474786          0      4000  {txt}
+{txt}remitloan3  {res}  3153      3   .4123057          0      1000  {txt}
+{txt}remitloan4  {res}  3153      1          0          0         0  {txt}
+{txt}remitloan5  {res}  3153      1          0          0         0  {txt}
+{txt}housedebt   {res}  3153    600   16842.33          0   1123239  {txt}total household debt (amount owed on dwelling, loans, agricultural assets and re
+{txt}housedebtp~p{res}  1777    737    6345.49          0    374413  {txt}household debt per capita
+{txt}debtincratio{res}  1770   1073   3.039135  -3.589744  994.2197  {txt}household debt as a fraction of total household income
+{txt}debtinc_ne~o{res}  1772   1097  -1.192412      -7500  998.8386  {txt}household debt as a fraction of total household income (net of food consumption)
+{txt}pay_able_c~t{res}  3153      5   1.272756          0         4  {txt}
+{txt}pay_count   {res}  3153      5   1.364098          0         4  {txt}
+{txt}pay_unable~c{res}  1761      5   .0717395          0         1  {txt}% of times respondent was NOT able to pay for major expense
+{txt}pay_unable~e{res}  3153      2   .0726292          0         1  {txt}
+{txt}pay_borrow  {res}  3153      4   .1129083          0         3  {txt}
+{txt}hhou3       {res}     0      0          .          .         .  {txt}
+{txt}pay_borrow~c{res}  1761      5   .0853682          0         1  {txt}% of Major Purchases Paid for by Borrowing
+{txt}timespermo~h{res}  1394     16   .9991061          0        10  {txt}
+{txt}timetobank  {res}  1365     92   26.15068          0       405  {txt}
+{txt}methods     {res}  1381      4   2.060825          0         3  {txt}
+{txt}husbandinh~e{res}   606      1          1          1         1  {txt}
+{txt}pwifemarket {res}  1304      2   .6832822          0         1  {txt}
+{txt}phusbmarket {res}  1304      2   .2254601          0         1  {txt}
+{txt}pbothmarket {res}  1304      2   .0789877          0         1  {txt}
+{txt}pothermarket{res}  1304      2   .0115031          0         1  {txt}
+{txt}pwifebuy    {res}  1304      2   .3496933          0         1  {txt}
+{txt}phusbbuy    {res}  1304      2   .4302147          0         1  {txt}
+{txt}pbothbuy    {res}  1304      2   .2108896          0         1  {txt}
+{txt}potherbuy   {res}  1304      2   .0092025          0         1  {txt}
+{txt}pwifechild  {res}  1303      2    .342287          0         1  {txt}
+{txt}phusbchild  {res}  1303      2   .3215656          0         1  {txt}
+{txt}pbothchild  {res}  1303      2   .3016117          0         1  {txt}
+{txt}potherchild {res}  1303      2   .0337682          0         1  {txt}
+{txt}pwifeplan   {res}  1304      2    .506135          0         1  {txt}
+{txt}phusbplan   {res}  1304      2   .2047546          0         1  {txt}
+{txt}pbothplan   {res}  1304      2   .2223926          0         1  {txt}
+{txt}potherplan  {res}  1304      2   .0667178          0         1  {txt}
+{txt}pwifeassis~m{res}  1304      2   .2944785          0         1  {txt}
+{txt}phusassist~m{res}  1304      2   .3903374          0         1  {txt}
+{txt}pbothassis~m{res}  1304      2   .2845092          0         1  {txt}
+{txt}potherassi~m{res}  1304      2   .0306748          0         1  {txt}
+{txt}pwifeperso~l{res}  1305      2   .6444444          0         1  {txt}
+{txt}phusbperso~l{res}  1305      2   .2743295          0         1  {txt}
+{txt}pbothperso~l{res}  1305      2   .0743295          0         1  {txt}
+{txt}potherpers~l{res}  1305      2   .0068966          0         1  {txt}
+{txt}pwiferec    {res}  1304      2    .398773          0         1  {txt}
+{txt}phusbrec    {res}  1304      2   .4317485          0         1  {txt}
+{txt}pbothrec    {res}  1304      2   .1572086          0         1  {txt}
+{txt}potherrec   {res}  1304      2   .0115031          0         1  {txt}
+{txt}pwifefam    {res}  1304      2   .2484663          0         1  {txt}
+{txt}phusbfam    {res}  1304      2   .4432515          0         1  {txt}
+{txt}pbothfam    {res}  1304      2   .2944785          0         1  {txt}
+{txt}potherfam   {res}  1304      2   .0138037          0         1  {txt}
+{txt}pwifework   {res}  1301      2   .3458878          0         1  {txt}
+{txt}phusbwork   {res}  1301      2   .4650269          0         1  {txt}
+{txt}pbothwork   {res}  1301      2   .1798616          0         1  {txt}
+{txt}potherwork  {res}  1301      2   .0076864          0         1  {txt}
+{txt}pwifeiniti~e{res}  1303      2   .2064467          0         1  {txt}
+{txt}phusbiniti~e{res}  1303      2   .7052955          0         1  {txt}
+{txt}pbothiniti~e{res}  1303      2   .0859555          0         1  {txt}
+{txt}potherinit~e{res}  1303      2   .0023024          0         1  {txt}
+{txt}pwifeschkids{res}  1247      2   .2598236          0         1  {txt}
+{txt}phusbschkids{res}  1247      2    .351243          0         1  {txt}
+{txt}pbothschkids{res}  1247      2   .3584603          0         1  {txt}
+{txt}potherschk~s{res}  1247      2   .0248597          0         1  {txt}
+{txt}husbdom_in~x{res}  1243    185  -.0003555  -1.090277  1.894975  {txt}
+{txt}husbanddom~s{res}  3153     13   .0550156          0         1  {txt}
+{txt}mis_dominate{res}  3153      2   .5864256          0         1  {txt}
+{txt}husbuy_edu  {res}  1304     16   5.021472          0        16  {txt}
+{txt}husbchild_~u{res}  1303     15   3.752111          0        16  {txt}
+{txt}husbfam_edu {res}  1304     16   5.160276          0        16  {txt}
+{txt}husbschkid~u{res}  1247     16   3.990377          0        16  {txt}
+{txt}husbplan_edu{res}  1304     15   2.423313          0        16  {txt}
+{txt}GBloan      {res}  3153      2   .1278148          0         1  {txt}Lending client from bank
+{txt}GBloandefa~t{res}  3153      2   .0161751          0         1  {txt}Lending client with default
+{txt}marketbuy   {res}  1303      3   2.458173          1         3  {txt}
+{txt}expensivebuy{res}  1304      3   1.919479          1         3  {txt}
+{txt}numchild    {res}  1302      3   2.020737          1         3  {txt}
+{txt}familyplan  {res}  1304      3    2.30138          1         3  {txt}
+{txt}assistfam   {res}  1304      3   1.904141          1         3  {txt}
+{txt}personaluse {res}  1305      3   2.370115          1         3  {txt}
+{txt}recreation  {res}  1303      3   1.966999          1         3  {txt}
+{txt}familypurc~e{res}  1304      3   1.805215          1         3  {txt}
+{txt}workout     {res}  1299      3   1.880677          1         3  {txt}
+{txt}initiatepe~e{res}  1303      3   1.501151          1         3  {txt}
+{txt}schkids     {res}  1240      3   1.908065          1         3  {txt}
+{txt}hhdm        {res}  3153     22   .2668147          0         1  {txt}Score of female decisionmaking power
+{txt}hhdm2       {res}  3153     22   .1916665          0         1  {txt}Score of female decisionmaking power - squared
+{txt}hhdm_hgc    {res}  1231    169   8.011427          0        16  {txt}
+{txt}hhdm2_hgc   {res}  1231    233   5.781303          0        16  {txt}
+{txt}hhdm_fem    {res}  1231     21   .4012998          0         1  {txt}
+{txt}hhdm2_fem   {res}  1231     21   .3117971          0         1  {txt}
+{txt}fpower1     {res}  1231    898  -.0004555  -1.847408  1.769958  {txt}
+{txt}fpower2     {res}  1231    898  -.0014914  -1.714242  1.324092  {txt}
+{txt}fpower3     {res}  1231    898    .000635  -1.452527  1.634032  {txt}
+{txt}fpower4     {res}  1231    898    .000987  -.8665715  .8121266  {txt}
+{txt}fpower5     {res}  1231    898   .0001073  -.3175557  .2379104  {txt}
+{txt}time_acct_~t{res}  3153      3   10.14906          0     22000  {txt}
+{txt}tot_liquid~t{res}  3153    329   3714.853      -2100   2940250  {txt}total liquid assets, equal to total savings
+{txt}val_ow~1_pos{res}  3153     58   25776.29          0  1.00e+07  {txt}
+{txt}val_ow~2_pos{res}  3153     31   5578.003          0   3000000  {txt}
+{txt}val_ow~3_pos{res}  3153     19    1021.49          0   1000000  {txt}
+{txt}val_ow~4_pos{res}  3153      6   1538.218          0   3000000  {txt}
+{txt}val_ow~5_pos{res}  3153      2   317.1583          0   1000000  {txt}
+{txt}val_lotall~s{res}  3153     76   34231.16          0  1.23e+07  {txt}Total value of all lots owned, all positive (missings = 0)
+{txt}aircon_val  {res}  3153      1       5000       5000      5000  {txt}
+{txt}ref_val     {res}  3153      1       8000       8000      8000  {txt}
+{txt}freezer_val {res}  3153      1       8000       8000      8000  {txt}
+{txt}rcooker_val {res}  3153      1        725        725       725  {txt}
+{txt}radio_val   {res}  3153      1       1500       1500      1500  {txt}
+{txt}smachine_val{res}  3153      1       3000       3000      3000  {txt}
+{txt}car_val     {res}  3153      1      80000      80000     80000  {txt}
+{txt}motor_val   {res}  3153      1      20000      20000     20000  {txt}
+{txt}bike_val    {res}  3153      1       1000       1000      1000  {txt}
+{txt}telcp_val   {res}  3153      1        150        150       150  {txt}
+{txt}telev_val   {res}  3153      1       6875       6875      6875  {txt}
+{txt}wmach_val   {res}  3153      1       1500       1500      1500  {txt}
+{txt}tburner_val {res}  3153      1        700        700       700  {txt}
+{txt}grange_val  {res}  3153      1       5000       5000      5000  {txt}
+{txt}bed_val     {res}  3153      1       5250       5250      5250  {txt}
+{txt}sofa_val    {res}  3153      1       1200       1200      1200  {txt}
+{txt}cd_val      {res}  3153      1       1500       1500      1500  {txt}
+{txt}efan_val    {res}  3153      1        650        650       650  {txt}
+{txt}eiron_val   {res}  3153      1        300        300       300  {txt}
+{txt}aparador_val{res}  3153      1       2500       2500      2500  {txt}
+{txt}piano_val   {res}  3153      1      10250      10250     10250  {txt}
+{txt}blender_val {res}  3153      1       1000       1000      1000  {txt}
+{txt}toaster_val {res}  3153      1        800        800       800  {txt}
+{txt}mwave_val   {res}  3153      1       7750       7750      7750  {txt}
+{txt}cputer_val  {res}  3153      1      50000      50000     50000  {txt}
+{txt}twriter_val {res}  3153      1       3250       3250      3250  {txt}
+{txt}camera_val  {res}  3153      1      10175      10175     10175  {txt}
+{txt}vcamera_val {res}  3153      1      20000      20000     20000  {txt}
+{txt}wdispens_val{res}  3153      1       2750       2750      2750  {txt}
+{txt}cmaker_val  {res}  3153      1        700        700       700  {txt}
+{txt}vclean_val  {res}  3153      1       4500       4500      4500  {txt}
+{txt}tot_cons_d~l{res}  3153   1232   24759.14          0    409750  {txt}total value of all consumer durable goods owned by hh
+{txt}home_equit~s{res}  3153    124   70904.77          0   4000000  {txt}
+{txt}tot_illiq_~t{res}  3153   1573   1.299052          0  133.5435  {txt}total illiquid assets
+{txt}tot_asset_~e{res}  3153   1729   .0371615  -.0209956  29.40279  {txt}Total HH Assets
+{txt}percent_as~q{res}  1774   1196    32576.8  -20.81386    100000  {txt}Illiquid Assets / Total Assets
+{txt}infsaving1  {res}  1777      2   .2183455          0         1  {txt}
+{txt}infsaving2  {res}  1777      2   .1288689          0         1  {txt}
+{txt}infsaving3  {res}  1777      2   .0405177          0         1  {txt}
+{txt}infsaving4  {res}  1777      2   .1918965          0         1  {txt}
+{txt}member_nol~n{res}  1777      2   .0624648          0         1  {txt}
+{txt}savedathome {res}  1777      2   .1975239          0         1  {txt}
+{txt}hypermonan~3{res}  1774      2   .0129651          0         1  {txt}
+{txt}hypermonan~n{res}  1774      2   .0191657          0         1  {txt}
+{txt}hmuchsv_re~t{res}  3153     86   276.4041          0     40000  {txt}
+{txt}hmuchsv_re~2{res}  3153      2   .0304472          0         1  {txt}
+{txt}noaccess    {res}  3153      2   .0053917          0         1  {txt}
+{txt}noaccess_e~m{res}  3153      2   .0272756          0         1  {txt}
+{txt}accesssum   {res}  1774     15   10.19899          7       201  {txt}Sum of Credit Access, 0 to 7
+{txt}accessindex {res}  1774     96   .0005405  -.2499739  17.14768  {txt}Credit Access Index, Principal Factors
+{txt}reached_raw {res}   812      2          .          .         .  {txt}Reached
+{txt}reached     {res}   813      2    .899139          0         1  {txt}
+{txt}Mreached    {res}  3153      2   1.515699          1         3  {txt}
+{txt}balchange   {res}  3153   2134   186.0376   -2168.88    114001  {txt}Change in total savings held at bank
+{txt}balchange90 {res}  3153      1     171.69     171.69    171.69  {txt}
+{txt}balchange10 {res}  3153      1       -500       -500      -500  {txt}
+{txt}balchange~80{res}  2520      1          1          1         1  {txt}
+{txt}balchange95 {res}  3153      1    1078.24    1078.24   1078.24  {txt}
+{txt}balchange5  {res}  3153      1       -940       -940      -940  {txt}
+{txt}balchang~d90{res}  2837      1          1          1         1  {txt}
+{txt}balchang~7_5{res}  3153      1    3002.79    3002.79   3002.79  {txt}
+{txt}balchange2_5{res}  3153      1   -1214.23   -1214.23  -1214.23  {txt}
+{txt}balchang~d95{res}  2995      1          1          1         1  {txt}
+{txt}balcha~e99_5{res}  3153      1   13635.78   13635.78  13635.78  {txt}
+{txt}balchange0_5{res}  3153      1   -1913.76   -1913.76  -1913.76  {txt}
+{txt}balchang~d99{res}  3121      1          1          1         1  {txt}
+{txt}balchange99 {res}  3153      1    6166.11    6166.11   6166.11  {txt}
+{txt}balchange1  {res}  3153      1   -1455.04   -1455.04  -1455.04  {txt}
+{txt}balchang~d98{res}  3089      1          1          1         1  {txt}
+{txt}balchange98 {res}  3153      1    3300.76    3300.76   3300.76  {txt}
+{txt}balc~e_bot99{res}  3121      1          1          1         1  {txt}
+{txt}balchang~t98{res}  3089      1          1          1         1  {txt}
+{txt}balchang~t95{res}  3121      1          1          1         1  {txt}
+{txt}balchang~t90{res}  2837      1          1          1         1  {txt}
+{txt}totbal90    {res}  3153      1     111492     111492    111492  {txt}
+{txt}totbal_bo~90{res}  2837      1          1          1         1  {txt}
+{txt}totbal95    {res}  3153      1     160997     160997    160997  {txt}
+{txt}totbal_bo~95{res}  2995      1          1          1         1  {txt}
+{txt}treatment   {res}  1777      2   .4738323          0         1  {txt}Treatment Group
+{txt}marketing   {res}  1777      2   .2622397          0         1  {txt}Marketing Group
+{txt}active_tr~nt{res}  1777      2   .1654474          0         1  {txt}
+{txt}balchange~at{res}   842    652   476.6494   -2059.38    114001  {txt}
+{txt}rank_balc~at{res}   842    842      421.5          1       842  {txt}
+{txt}no_treat    {res}  3153      1        842        842       842  {txt}
+{txt}balc~t_bot99{res}  1769      1          1          1         1  {txt}
+{txt}balcha~t99_5{res}  1773      1          1          1         1  {txt}
+{txt}balchange~et{res}   466    369    189.074   -1913.76  20310.34  {txt}
+{txt}rank_balc~et{res}   466    466      233.5          1       466  {txt}
+{txt}balchange_~l{res}  1777   1305   292.6382   -2168.88    114001  {txt}
+{txt}rank_balch~l{res}  1777   1777        889          1      1777  {txt}
+{txt}box         {res}  1778      2   .0967379          0         1  {txt}Bought ganansiya box
+{txt}goal_amount {res}  1778      2   .0354331          0         1  {txt}
+{txt}active_treat{res}  1777      2   .1654474          0         1  {txt}
+{txt}female_treat{res}  1777      2   .2836241          0         1  {txt}
+{txt}edhi_treat  {res}  1777      2   .2841868          0         1  {txt}
+{txt}hi_hh_inc   {res}  3153      2   .2819537          0         1  {txt}
+{txt}hi_hh_inc_~t{res}  1777      2   .2453573          0         1  {txt}
+{txt}silly_mon~at{res}  1774      2   .0755355          0         1  {txt}
+{txt}hyper_mon~at{res}  1774      2   .1319053          0         1  {txt}
+{txt}recent_nov  {res}  3153      2   .8655249          0         1  {txt}
+{txt}recent_oct  {res}  3153      2   .8693308          0         1  {txt}
+{txt}recent_sept {res}  3153      2   .8718681          0         1  {txt}
+{txt}recent_aug  {res}  3153      2   .8759911          0         1  {txt}
+{txt}recent_jul  {res}  3153      2   .8778941          0         1  {txt}
+{txt}recent_jun  {res}  3153      2   .8794799          0         1  {txt}
+{txt}recent_may  {res}  3153      2   .8813828          0         1  {txt}
+{txt}recent_jan03{res}  3153      2   .8899461          0         1  {txt}
+{txt}nonseedbal~e{res}  3152   2117   133.8924   -4541.77    114001  {txt}
+{txt}howlongopen {res}   212     82   340.9764         84       404  {txt}
+{txt}goallength  {res}   147    121   561.1224         62     38108  {txt}
+{txt}active_box  {res}  1778      2   .0320585          0         1  {txt}
+{txt}goallength~x{res}   140    100   530.9643          0     38108  {txt}
+{txt}hyper_box   {res}  1774      2   .0326945          0         1  {txt}
+{txt}impatient_~x{res}  1776      2   .0067568          0         1  {txt}
+{txt}zerototbal  {res}  1777      2   .0866629          0         1  {txt}
+{txt}frac_change {res}  2839   1990   .8703123         -1  256.7195  {txt}
+{txt}frac_chan~00{res}  3153      2    .256581          0         1  {txt}= 1 if change in balance > 0%
+{txt}frac_chan~10{res}  3153      2   .1398668          0         1  {txt}
+{txt}frac_chan~20{res}  3153      2   .1294006          0         1  {txt}= 1 if change in balance > 20%
+{txt}frac_chan~30{res}  3153      2   .1186172          0         1  {txt}
+{txt}frac_chan~40{res}  3153      2   .1129083          0         1  {txt}
+{txt}frac_chan~50{res}  3153      2   .1065652          0         1  {txt}
+{txt}seedbal_no~p{res}  3152     81  -47.17458       -100  45425.25  {txt}
+{txt}balchange_~p{res}  3153   2124   179.7747   -2168.88    114001  {txt}
+{txt}impatien~1_1{res}  1774      2   .4543405          0         1  {txt}impatient_mon01==     0.0000
+{txt}impatien~1_2{res}  1774      2   .2328072          0         1  {txt}impatient_mon01==     1.0000
+{txt}impatien~1_3{res}  1774      2   .3128523          0         1  {txt}impatient_mon01==     2.0000
+{txt}impatien~7_1{res}  1764      2   .5481859          0         1  {txt}impatient_mon67==     0.0000
+{txt}impatien~7_2{res}  1764      2   .2069161          0         1  {txt}impatient_mon67==     1.0000
+{txt}impatien~7_3{res}  1764      2    .244898          0         1  {txt}impatient_mon67==     2.0000
+{txt}seedtreat   {res}   842      2   .2434679          0         1  {txt}
+{txt}seedtakeup~r{res}  3152      2   .0666244          0         1  {txt}
+{txt}date        {res}   111     14          .          .         .  {txt}Date
+{txt}session     {res}   111     35   18.31532          1        41  {txt}Session
+{txt}sessiontype {res}   111      3          .          .         .  {txt}SessionType
+{txt}code        {res}   111     17          .          .         .  {txt}Code
+{txt}seed        {res}   111      2          .          .         .  {txt}SEED?
+{txt}openedseed~o{res}    48      2        .25          0         1  {txt}Opened SEED?(1=yes; 0=no)
+{txt}dateopened  {res}     8      6          .          .         .  {txt}Date Opened
+{txt}returnedwi~e{res}    46      2          .          .         .  {txt}Returned with Spouse (Was spouse there when you were marketing SEED)
+{txt}rank        {res}  1777   1305        889          1      1777  {txt}rank of (balchange)
+{txt}treat_hyper {res}  1774      2   .1319053          0         1  {txt}
+{txt}mark_hyper  {res}  1774      2   .0721533          0         1  {txt}
+{txt}dategoal    {res}   209      2   .7033493          0         1  {txt}
+{txt}investment~l{res}   208      2   .4711538          0         1  {txt}
+{txt}datehat     {res}  1383    169   .6063673    .060829  .9962547  {txt}Pr(dategoal)
+{txt}hyperdatehat{res}  1383     82   .1926514          0  .9962547  {txt}
+{txt}datehat2    {res}  1774      6   .6949631   .5979415  .8123483  {txt}Pr(dategoal)
+{txt}hyperdateh~2{res}  1774      4   .2074285          0  .8123483  {txt}
+{txt}hyper_~_edhi{res}  1774      2   .1629087          0         1  {txt}
+{txt}call        {res}  1777      1          1          1         1  {txt}Result of call
+{txt}group_t1    {res}  3153      3          .          .         .  {txt}
+{txt}goal_type_t1{res}   202      2          .          .         .  {txt}
+{txt}seedbal_t1  {res}  3152     66    36.0021          0  20180.76  {txt}(mean) seedbal
+{txt}savbalance~1{res}  3153   1861   44841.14          0   5031547  {txt}(mean) savbalance
+{txt}totbal_t1   {res}  3153   2260   67788.24          0  1.50e+07  {txt}(mean) newtotbal
+{txt}seedtakeup  {res}  3152      2   .0640863          0         1  {txt}SEED take up
+{txt}balchange_t1{res}  3153   1739   203.0143    -2130.4  149944.4  {txt}
+{txt}treatment_t1{res}  1777      2   .4738323          0         1  {txt}
+{txt}nonseedbal~1{res}  3152   1716   167.5445   -5053.51  149944.4  {txt}
+{txt}barangcoun~1{res}  3153     27    28.4307          2        84  {txt}
+{txt}balchange_~a{res}  3153   1539  -16.97661    -150000  106694.5  {txt}
+{txt}navaseed_o~d{res}   106      2   .4433962          0         1  {txt}
+{txt}navaseed_t~p{res}   106      2   .1320755          0         1  {txt}
+{txt}nava        {res}   106      1          1          1         1  {txt}
+{txt}{hline 153}
+
+{com}.             
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}G:\GC\Dev-II\notebooks\codebook.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res} 4 Apr 2016, 14:05:03
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

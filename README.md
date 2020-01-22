@@ -27,7 +27,7 @@ and run them on your own computer.
 The following table describes the contents of the notebooks folders and links
 to quick static views of the notebook content. If you plan to only read the content without interaction you may prefer the [HTML rendering at this site.
 
-| Lecture/Reading Note |Description  |
+| Lecture/Reading Note | Description  |
 | --------| :-----|
 | [jupyter_notebooks]  |Economics with Jupyter Notebooks  |
 | [Lucas90] |Lucas' 1990 AER paper 'Why Doesn't Capital Flow from Rich to Poor Countries?'' |
@@ -40,6 +40,7 @@ to quick static views of the notebook content. If you plan to only read the cont
 | [InsecureRights] |Causes and consequences of insecure property rights to land|
 | [consume_opt1] | Static and intertemporal consumer optimum w/interactive indifference plots  |
 | [SavingsCommit] | Time-inconsistent preferences and commitment savings (theory and data replication) |
+| [moralhazard] | Principal-Intermediary-Agent models in procurement and corruption |
 | [Incentives_Corruption] | Principal-Intermediary-Agent models in procurement and corruption |
 | __Jupyter & python tips__ | |
 | [DHBox] | How to run notebooks using the GC's DHBox service (no setup on your machine)  |
@@ -61,6 +62,7 @@ to quick static views of the notebook content. If you plan to only read the cont
 [SFM]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SFM.ipynb
 [consume_opt1]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/consume_opt1.ipynb
 [SavingsCommit]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SavingsCommit.ipynb
+[moralhazard]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/moralhazard.ipynb
 [Incentives_Corruption]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/incentives_corruption.ipynb
 [DHBox]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DHBox.ipynb
 [DataAPIs]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DataAPIs.ipynb

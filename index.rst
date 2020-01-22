@@ -1,10 +1,10 @@
-Econ 842 Development II (Spring 2018)
+Econ 842 Development II (Spring 2020)
 =======================================
 Lecture Notes and materials for The Graduate
 Center's Economics 842 taught by Jonathan Conning
 
-- `Reading list`_ (links to weekly reading assignments and slides)
-- `Syllabus`_ (course details and longer bibliography)
+- `Reading list`_ (links to weekly reading assignments and slides..from 2018)
+- `Syllabus`_ (course details and longer bibliography..from 2018)
 
 .. _Reading list:  https://docs.google.com/document/d/1J-wXvwgqtep2HkwHhlahWs6Te-UgxKcaR0h73pIPQSs/edit?usp=sharing
 .. _Syllabus: https://drive.google.com/file/d/1mJqvqNlmItmcTtVu9dexiNJcAZu8r-M-/view?usp=sharing
@@ -35,11 +35,14 @@ List of notebooks:
    notebooks/SizeDistribution
    notebooks/InsecureRights
    notebooks/consume_opt1
+   notebooks/Village_sharing
    notebooks/SavingsCommit
+   notebooks/moralhazard
    notebooks/incentives_corruption
+   notebooks/Stata_in_jupyter
    notebooks/RDD_R
    notebooks/DataAPIs
-   notebooks/Stata_in_jupyter
+
 
 .. _Economics 842: http://www.gc.cuny.edu/Page-Elements/Academics-Research-Centers-Initiatives/Doctoral-Programs/Economics/Courses
 
