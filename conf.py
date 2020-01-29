@@ -287,3 +287,6 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+# This makes sure the notebooks are not executed (to avoid errors on notebooks that still have 'code sections')
+nbsphinx_execute = 'never'
