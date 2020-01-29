@@ -1,31 +1,25 @@
 # Dev-II
- Repository for The Graduate Center's Spring [2018 Economics
- Development II PhD seminar](https://dev-ii-seminar.readthedocs.io/en/latest/index.html) (HTML rendered).
 
-__Lecture and reading Notes as Jupyter Notebooks__
 
-Click on the link above for HTML rendered content but look here for the jupyter notebooks. 
+## Jupyter Notebooks for Development Economics Seminar
 
-These notebooks can also now be run from the Microsoft Azure jupyter notebook server](https://notebooks.azure.com/jhconning/libraries/DevII) which mirrors this content. See instructions below.
+This repository houses jupyter notebooks and other content used to build the course site for [2020 Economics
+ Development II PhD seminar](https://dev-ii-seminar.readthedocs.io/en/latest/index.html) taught at CUNY's Graduate Center. 
 
-These jupyter notebooks expand on topics in the Microeconomics of Development. 
-First developed for a Spring 2016 version of this course, many of the notebooks are still only
-very rough notes. With time I hope to edit the rough ones and add new content.  
+[Jupyter notebooks](http://jupyter.org/) allow the mix of markdown text, math equations, and code for interactive simulation, visualization and data analysis in languages such as python, Stata, or R. For a guide to jupyter notebooks and their application in Economics, including how to set things up to create and run notebooks interactively on your own machine or in the cloud visit the [QuantEcon.py](https://quantecon.org/quantecon-py/) site. 
 
-In present form this is less like a coherent sequential
-collection of lecture notes and more like an idiosyncratic collection
-of reading notes and materials that complement class lectures and that can be used to
-explore and extend the embedded simulations and data analyses.
+ The notebooks in this collection, first developed for a Spring 2016 version of this course and then extended in 2018 and 2020 range in degree of quality from 'very rough notes' to more polished. This is less a coherent sequential collection of lecture notes and more idiosyncratic collection of topics that seemed amenable to presentation this way. They complement separate class lecture slides to show how key diagrams are constructed and/or to allow interactive exploration and extension of economic models and data analyses.
 
-Viewing and interacting with content
+### How to view and run these jupyter notebooks
+
 ----------------------------------------------
-[Jupyter notebooks](http://jupyter.org/) open a world of new ways for creating and sharing content that mixes text, math and code for interactive simulation and visualization. Jupyter notebooks can also be easily converted to render the content in different ways and formats (HTML, markdown, PDF, etc).
 
-This content is now mirrored to a [Microsoft Azure Notebook library for this content](https://notebooks.azure.com/jhconning/libraries/DevII).  If you login with a free Microsoft account you can launch a cloud-based juptyer notebook server that will allow you to run any of the notebooks interactively.  Alternatively, clone this github
-and run them on your own computer.
+ Jupyter notebooks can also be easily converted to render the content in different ways including as static HTML, PDF, and as interactive notebooks that can be run on your local machine or on a cloud server. 
 
-The following table describes the contents of the notebooks folders and links
-to quick static views of the notebook content. If you plan to only read the content without interaction you may prefer the [HTML rendering at this site.
+The table below lists the jupyter notebooks in the collection. Click on a link to get a quick static views of the notebook content on github. If you plan to only browse the content without interaction you may prefer the HTML rendering at [the Dev-II course site](https://dev-ii-seminar.readthedocs.io/en/latest/index.html).  You can also run the python jupyter notebooks in this repository interactively in the cloud using Google Colab by clicking [here](https://colab.research.google.com/github/jhconning/Dev-II) and then selecting the notebook by name.
+
+Coming soon:  ability to run the notebooks via cloud app (via heroku).
+
 
 | Lecture/Reading Note | Description  |
 | --------| :-----|
@@ -42,8 +36,8 @@ to quick static views of the notebook content. If you plan to only read the cont
 | [SavingsCommit] | Time-inconsistent preferences and commitment savings (theory and data replication) |
 | [moralhazard] | Principal-Intermediary-Agent models in procurement and corruption |
 | [Incentives_Corruption] | Principal-Intermediary-Agent models in procurement and corruption |
-| __Jupyter & python tips__ | |
-| [DHBox] | How to run notebooks using the GC's DHBox service (no setup on your machine)  |
+| __Tips for using Jupyter & python__ | |
+| [QuantEcon] | How to run notebooks using the GC's DHBox service (no setup on your machine)  |
 | [Stata_in_jupyter] | Run Stata in a jupyter notebook moving data to and from python  |
 | [DataAPIs] | Use the pandas library and a data API to access online datasets |
 
@@ -64,22 +58,8 @@ to quick static views of the notebook content. If you plan to only read the cont
 [SavingsCommit]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/SavingsCommit.ipynb
 [moralhazard]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/moralhazard.ipynb
 [Incentives_Corruption]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/incentives_corruption.ipynb
-[DHBox]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DHBox.ipynb
+[QuantEcon]:https://quantecon.org/quantecon-py/
 [DataAPIs]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/DataAPIs.ipynb
 [Stata_in_jupyter]:http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/Stata_in_jupyter.ipynb
 [RDD_R]: http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/RDD_R.ipynb
-
-The course site [dev-ii-seminar.readthedocs.org] has the reading list
-and syllabus for the course and auto-generated styled HTML and PDF versions of
-all this content (but sometimes not all repo content converts).
-
- __Other Resources__
-
- A few other sites similar to this using jupyter notebooks and scientific
- python for economics:
-
-| Sites and Repos |Description  |
-| --------| :-----|
-| [Quantecon](https://lectures.quantecon.org/) | Economics with Jupyter Notebooks  |
-|                                              |                                  |
 
