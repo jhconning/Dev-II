@@ -1,6 +1,6 @@
 # Development II 
 
-## Spring 2018
+## Spring 2020
 
 
 
@@ -12,7 +12,40 @@ Jonathan Conning
 
 ---
 
-## Week 2: Why isn't the whole world developed?
+## Week 1
+
+- Class materials: https://dev-ii-seminar.readthedocs.io/
+  - syllabus, reading list
+  - notebooks, slides, etc.
+
+---
+
+## Grading
+
+- 35% Presentations and Participations
+- 35% Midterm and Assignments
+- 30% Final Project 
+
+All are expected to read articles carefully and participate in discussion. 
+Each week two students are topic 'leaders.'.  Before class distribute critical paper summary and list of questions for class. 
+
+Topics set partly by me, partly by your suggestions 
+
+---
+
+## Introductions 
+
+
+
+---
+
+### Economic history periodization and schools of thought
+
+(de Janvry and Sadoulet, 2016)
+
+---
+
+## Why isn't the whole world developed?
 
 - Technology and other assumptions
 - Neo-classical benchmarks
@@ -184,7 +217,6 @@ Variations of the model (see [jupyter notebook](http://dev-ii-seminar.readthedoc
 - Migration across countries, sectors
   - dualism, Lewis, Harris Todaro
 - (mis)allocation across and within sectors.
-
 
 ---
 
