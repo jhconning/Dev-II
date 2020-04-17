@@ -18,6 +18,7 @@ def AG(x, P=Pw):
     return P*(x**0)   # to return an array of len(x)
 
 def AGD(x,P=Pw,d=d):
+    '''Wheat farm profit after damage'''
     return AG(x,P) - d*x**2
 
 def copt(P=Pc,c=c):
@@ -59,21 +60,22 @@ def excost(x,d=1/2):
 
 def coaseplot2(Pw=Pw, Pc=Pc):
     xx = np.linspace(0,6,100)
-    fig = plt.subplots(figsize=(12,8))
+    fig = plt.subplots(figsize=(12,9))
     plt.axhline(Pc);
     plt.plot(xx, MC(xx), label = 'Rancher PMC' )
     plt.plot(xx, MC(xx)+excost(xx), label = 'SMC')
     plt.fill_between(xx, MC(xx)+excost(xx),Pc*xx**0, where=((MC(xx)<=Pc*xx**0) & (xx>2)),
                      facecolor='green', alpha=0.2, label='DWL')
 
-    plt.text(3,5,'DWL' )
-    plt.text(5,3.5,r'$SMB = P_C$')
-    plt.text(5,5.5, r'$PMC$')
-    plt.text(5,10.5, r'$SMC$')
+    plt.text(3,5,'DWL' , fontsize=15)
+    plt.text(5,3.5,r'$SMB = P_C$', fontsize=15)
+    plt.text(5,5.5, r'$PMC$', fontsize=15)
+    plt.text(4.5,8.5, r'$SMC$', fontsize=15)
     #plt.scatter(topt(),G(topt()) + AGD(topt()))
     plt.grid()
     plt.xlim(0,6)
-    plt.ylim(0,13)
+    plt.ylim(0,10)
+    plt.yticks(np.arange(0, 10, 1)) 
     plt.xlabel('x -- head of cattle')
     plt.ylabel('Benefits/Profit')
     plt.legend();
