@@ -1,4 +1,4 @@
-nbsphinx
-ipykernel
-sphinx_rtd_theme
-recommonmark
+jupyter-book
+matplotlib
+numpy
+ipywidgets
