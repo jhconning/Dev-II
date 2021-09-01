@@ -1,0 +1,52 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: DevII
+author: Jonathan Conning
+#logo: logo.png
+
+execute:
+  execute_notebooks: auto
+  exclude_patterns: []  
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+launch_buttons:
+  binderhub_url: "https://mybinder.org"   
+  colab_url: "https://colab.research.google.com"
+  thebe: false
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/jhconning/commitments  # Online location of your book
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+  
+parse:
+  myst_extended_syntax      : true 
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: false
+  use_repository_button: true
+
+only_build_toc_files: true
+
+sphinx:
+  config:
+    html_show_copyright: false
+    html_extra_path: ['files']
+
+    myst_enable_extensions: 
+    - amsmath
+    - colon_fence
+    #- deflist
+    - dollarmath
+    - html_image
+    - linkify
+    #- replacements
+    #- smartquotes
+    #- substitution

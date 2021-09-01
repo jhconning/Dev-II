@@ -1,0 +1,21 @@
+format: jb-book
+root: README
+
+parts:
+- caption: Models
+  chapters:
+   - file: notebooks/neokmodels
+     sections:
+     - file: notebooks/jupyter_notebooks
+     - file: notebooks/EdgeworthProduction
+     - file: notebooks/SFM
+     - file: notebooks/Lucas90
+     - file: notebooks/Vollrath
+     - file: notebooks/HarrisTodaro
+
+- caption: Land and Property
+  chapters:
+   - file: notebooks/FarmHousehold
+   - file: notebooks/Coase
+
+
