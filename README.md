@@ -1,6 +1,6 @@
 # Dev-II
 
-New site under construction at: http://jhconning.github.io/Dev-II/
+New site under construction at: http://jhconning.github.io/DevII/
 
 
 Notes on older site:
